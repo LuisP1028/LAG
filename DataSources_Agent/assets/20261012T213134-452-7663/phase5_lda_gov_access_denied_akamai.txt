@@ -1,0 +1,23 @@
+HTTP/1.1 403 Forbidden
+Server: AkamaiGHost
+Content-Length: 420
+Content-Type: text/html
+Mime-Version: 1.0
+Strict-Transport-Security: max-age=31536000
+X-Reference-Error: 18.c5612817.1791841097.342145c
+Expires: Mon, 12 Oct 2026 21:38:17 GMT
+Cache-Control: max-age=0, no-cache
+Pragma: no-cache
+Date: Mon, 12 Oct 2026 21:38:17 GMT
+Connection: close
+
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;lda&#46;gov&#47;&#36;&#40;SERVE&#95;403&#41;&#47;api&#47;v1&#47;filings&#47;&#63;" on this server.<P>
+Reference&#32;&#35;18&#46;c5612817&#46;1791841097&#46;342145c
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;c5612817&#46;1791841097&#46;342145c</P>
+</BODY>
+</HTML>

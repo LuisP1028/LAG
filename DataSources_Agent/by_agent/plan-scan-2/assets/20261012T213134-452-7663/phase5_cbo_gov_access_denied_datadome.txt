@@ -1,0 +1,26 @@
+HTTP/2 403 
+content-type: text/html;charset=utf-8
+x-datadome: protected
+accept-ch: Sec-CH-UA,Sec-CH-UA-Mobile,Sec-CH-UA-Platform,Sec-CH-UA-Arch,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Model,Sec-CH-Device-Memory,Sec-CH-UA-Platform-Version
+charset: utf-8
+pragma: no-cache
+access-control-allow-credentials: true
+access-control-expose-headers: x-dd-b, x-set-cookie
+access-control-allow-origin: *
+x-datadome-cid: AHrlqAAAAAMAE_fQy_C-N_cAuw3N9g==
+x-dd-b: 2
+set-cookie: datadome=ywxG7boCjrgvZFyrHz8mfxQrYHByOv2G3dbYInVQWrYA2c~MNj9Cp_5mblRXsvp93mWNj3cZtmk0ICL9gkZaeLfYb2vahpDDlnKCG8Gw_kd0QSNVe~78QTGvEw_ZbPjz; Max-Age=31536000; Domain=.cbo.gov; Path=/; Secure; SameSite=Lax
+x-critical-page: true
+accept-ranges: bytes
+date: Mon, 12 Oct 2026 21:38:17 GMT
+x-served-by: cache-qro-mmqt1070022-QRO
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1791841097.452672,VS0,VE5
+cache-control: public, max-age=3600, s-maxage=3600, stale-if-error=86400
+surrogate-control: max-age=3600, stale-if-error=86400
+expires: Mon, 12 Oct 2026 22:38:17 GMT
+strict-transport-security: max-age=31557600
+content-length: 767
+
+<html lang="en"><head><title>cbo.gov</title><style>#cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}}</style></head><body style="margin:0"><p id="cmsg">Please enable JS and disable any ad blocker</p><script data-cfasync="false">var dd={'rt':'c','cid':'AHrlqAAAAAMAE_fQy_C-N_cAuw3N9g==','hsh':'A5C464E45E28E8664DD1D5C59296AB','t':'bv','qp':'','s':56903,'e':'5a3fe3beb9b7578f641daa555e886a993898773b266dbd5713b13d06e6fc32b5836d83241bfed6085153a8825eff2a72','host':'geo.captcha-delivery.com','cookie':'ywxG7boCjrgvZFyrHz8mfxQrYHByOv2G3dbYInVQWrYA2c~MNj9Cp_5mblRXsvp93mWNj3cZtmk0ICL9gkZaeLfYb2vahpDDlnKCG8Gw_kd0QSNVe~78QTGvEw_ZbPjz'}</script><script data-cfasync="false" src="https://ct.captcha-delivery.com/c.js"></script></body></html>

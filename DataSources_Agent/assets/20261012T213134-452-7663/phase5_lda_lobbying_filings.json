@@ -1,0 +1,221 @@
+{
+  "count": 53,
+  "next": "https://lda.gov/api/v1/filings/?client_name=Lymphedema&page=2&page_size=2",
+  "previous": null,
+  "results": [
+    {
+      "url": "https://lda.gov/api/v1/filings/c8697fc5-7f3b-4861-8a49-d9e6357ad287/",
+      "filing_uuid": "c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+      "filing_type": "RR",
+      "filing_type_display": "Registration",
+      "filing_year": 2015,
+      "filing_period": "first_quarter",
+      "filing_period_display": "1st Quarter (Jan 1 - Mar 31)",
+      "filing_document_url": "https://lda.gov/filings/public/filing/c8697fc5-7f3b-4861-8a49-d9e6357ad287/print/",
+      "filing_document_content_type": "text/html",
+      "income": null,
+      "expenses": null,
+      "expenses_method": null,
+      "expenses_method_display": null,
+      "posted_by_name": "Diane M. Major",
+      "dt_posted": "2015-04-16T22:47:20-04:00",
+      "termination_date": null,
+      "registrant_country": "United States of America",
+      "registrant_ppb_country": null,
+      "registrant_address_1": "300 New Jersey Ave., NW, Suite 900",
+      "registrant_address_2": null,
+      "registrant_different_address": null,
+      "registrant_city": "Washington, DC",
+      "registrant_state": "DC",
+      "registrant_zip": "20001",
+      "registrant": {
+        "id": 401103162,
+        "url": "https://lda.gov/api/v1/registrants/401103162/",
+        "house_registrant_id": null,
+        "name": "THE D MAJOR GROUP",
+        "description": "Government affairs consulting",
+        "address_1": "300 New Jersey Ave., NW, Suite 300",
+        "address_2": null,
+        "address_3": null,
+        "address_4": null,
+        "city": "Washington, DC",
+        "state": "DC",
+        "state_display": "District of Columbia",
+        "zip": "20001",
+        "country": "US",
+        "country_display": "United States of America",
+        "ppb_country": "US",
+        "ppb_country_display": "United States of America",
+        "contact_name": "DIANE MAJOR",
+        "contact_telephone": "+1 202-695-0635",
+        "dt_updated": "2026-07-14T14:03:47.385236-04:00"
+      },
+      "client": {
+        "id": 198059,
+        "url": "https://lda.gov/api/v1/clients/198059/",
+        "client_id": 101,
+        "name": "LYMPHEDEMA ADVOCACY GROUP",
+        "general_description": "Non-profit organization advocating for improved coverage of Lymphedema medical care.",
+        "client_government_entity": false,
+        "client_self_select": null,
+        "state": "NC",
+        "state_display": "North Carolina",
+        "country": "US",
+        "country_display": "United States of America",
+        "ppb_state": "NC",
+        "ppb_state_display": "North Carolina",
+        "ppb_country": "US",
+        "ppb_country_display": "United States of America",
+        "effective_date": "2015-03-16"
+      },
+      "lobbying_activities": [
+        {
+          "general_issue_code": "MMM",
+          "general_issue_code_display": "Medicare/Medicaid",
+          "description": "Medicare coverage of prescribed compression therapy.",
+          "foreign_entity_issues": null,
+          "lobbyists": [
+            {
+              "lobbyist": {
+                "id": 59606,
+                "prefix": null,
+                "prefix_display": null,
+                "first_name": "DIANE",
+                "nickname": null,
+                "middle_name": null,
+                "last_name": "MAJOR",
+                "suffix": null,
+                "suffix_display": null
+              },
+              "covered_position": "Health Policy Analyst for Senate Republican Policy Committee",
+              "new": true
+            }
+          ],
+          "government_entities": []
+        }
+      ],
+      "conviction_disclosures": [],
+      "foreign_entities": [],
+      "affiliated_organizations": []
+    },
+    {
+      "url": "https://lda.gov/api/v1/filings/1821a229-8264-40c2-9b04-49169d917adf/",
+      "filing_uuid": "1821a229-8264-40c2-9b04-49169d917adf",
+      "filing_type": "Q2",
+      "filing_type_display": "2nd Quarter - Report",
+      "filing_year": 2015,
+      "filing_period": "second_quarter",
+      "filing_period_display": "2nd Quarter (Apr 1 - June 30)",
+      "filing_document_url": "https://lda.gov/filings/public/filing/1821a229-8264-40c2-9b04-49169d917adf/print/",
+      "filing_document_content_type": "text/html",
+      "income": "20000.00",
+      "expenses": null,
+      "expenses_method": null,
+      "expenses_method_display": null,
+      "posted_by_name": "Diane M. Major",
+      "dt_posted": "2015-07-13T23:28:29.487000-04:00",
+      "termination_date": null,
+      "registrant_country": "United States of America",
+      "registrant_ppb_country": null,
+      "registrant_address_1": "300 New Jersey Ave., NW, Suite 900",
+      "registrant_address_2": null,
+      "registrant_different_address": false,
+      "registrant_city": "Washington, DC",
+      "registrant_state": "DC",
+      "registrant_zip": "20001",
+      "registrant": {
+        "id": 401103162,
+        "url": "https://lda.gov/api/v1/registrants/401103162/",
+        "house_registrant_id": null,
+        "name": "THE D MAJOR GROUP",
+        "description": "Government affairs consulting",
+        "address_1": "300 New Jersey Ave., NW, Suite 300",
+        "address_2": null,
+        "address_3": null,
+        "address_4": null,
+        "city": "Washington, DC",
+        "state": "DC",
+        "state_display": "District of Columbia",
+        "zip": "20001",
+        "country": "US",
+        "country_display": "United States of America",
+        "ppb_country": "US",
+        "ppb_country_display": "United States of America",
+        "contact_name": "DIANE MAJOR",
+        "contact_telephone": "+1 202-695-0635",
+        "dt_updated": "2026-07-14T14:03:47.385236-04:00"
+      },
+      "client": {
+        "id": 198059,
+        "url": "https://lda.gov/api/v1/clients/198059/",
+        "client_id": 101,
+        "name": "LYMPHEDEMA ADVOCACY GROUP",
+        "general_description": "Non-profit organization advocating for improved coverage of Lymphedema medical care.",
+        "client_government_entity": false,
+        "client_self_select": null,
+        "state": "NC",
+        "state_display": "North Carolina",
+        "country": "US",
+        "country_display": "United States of America",
+        "ppb_state": "NC",
+        "ppb_state_display": "North Carolina",
+        "ppb_country": "US",
+        "ppb_country_display": "United States of America",
+        "effective_date": "2015-03-16"
+      },
+      "lobbying_activities": [
+        {
+          "general_issue_code": "MMM",
+          "general_issue_code_display": "Medicare/Medicaid",
+          "description": "Chronic care management of Lymphedema disease, including H.R. 1608, the Lymphedema Treatment Act.",
+          "foreign_entity_issues": "",
+          "lobbyists": [
+            {
+              "lobbyist": {
+                "id": 59606,
+                "prefix": null,
+                "prefix_display": null,
+                "first_name": "DIANE",
+                "nickname": null,
+                "middle_name": null,
+                "last_name": "MAJOR",
+                "suffix": null,
+                "suffix_display": null
+              },
+              "covered_position": "Health Policy Analyst for Senate Republican Policy Committee",
+              "new": false
+            },
+            {
+              "lobbyist": {
+                "id": 60176,
+                "prefix": null,
+                "prefix_display": null,
+                "first_name": "BRENDA",
+                "nickname": null,
+                "middle_name": null,
+                "last_name": "REESE",
+                "suffix": null,
+                "suffix_display": null
+              },
+              "covered_position": "Conference Coordinator for House Republican Conference",
+              "new": false
+            }
+          ],
+          "government_entities": [
+            {
+              "id": 2,
+              "name": "HOUSE OF REPRESENTATIVES"
+            },
+            {
+              "id": 1,
+              "name": "SENATE"
+            }
+          ]
+        }
+      ],
+      "conviction_disclosures": [],
+      "foreign_entities": [],
+      "affiliated_organizations": []
+    }
+  ]
+}
