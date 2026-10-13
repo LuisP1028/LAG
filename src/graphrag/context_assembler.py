@@ -7,6 +7,30 @@ from src.graphrag.models import TraversalResult
 class GraphContextAssembler:
     """Formats verified graph nodes, edges, and provenance into five authoritative sections."""
 
+    @staticmethod
+    def _resolve_contractor_name(juris_node: Any) -> str:
+        default_contractor = (
+            "Noridian Healthcare Solutions"
+            if juris_node.primary_key in ("JURIS-DME-A", "JURIS-DME-D")
+            else "CGS Administrators, LLC"
+        )
+        contractor = juris_node.properties.get("contractor_name") or default_contractor
+        if "CGS" in contractor and "LLC" not in contractor:
+            return "CGS Administrators, LLC"
+        return contractor
+
+    @staticmethod
+    def _format_fee_line(fee_node: Any, hcpcs_override: Optional[str] = None) -> str:
+        h_code = hcpcs_override or fee_node.properties.get("hcpcs_code")
+        st_c = fee_node.properties.get("state_code", "")
+        state_tag = f" (State: [STATE-{st_c}])" if st_c else ""
+        amt = float(fee_node.properties.get("fee_amount", 0.0))
+        coinsurance = round(amt * 0.20, 2)
+        return (
+            f"- [{fee_node.primary_key}]{state_tag} HCPCS {h_code}: Allowable Reimbursement = ${amt:.2f} "
+            f"(Calculated 20% patient coinsurance = ${coinsurance:.2f})"
+        )
+
     def assemble_context(
         self,
         traversal_result: TraversalResult,
@@ -86,13 +110,8 @@ class GraphContextAssembler:
 
         jurisdictions = [n for n in nodes if n.label == "Jurisdiction"]
         for j in jurisdictions:
-            name = j.name
-            contractor = j.properties.get("contractor_name") or (
-                "Noridian Healthcare Solutions" if j.primary_key in ("JURIS-DME-A", "JURIS-DME-D") else "CGS Administrators, LLC"
-            )
-            if "CGS" in contractor and "LLC" not in contractor:
-                contractor = "CGS Administrators, LLC"
-            lines.append(f"- Regional Claims Contractor: [{j.primary_key}] {name} - {contractor}")
+            contractor = self._resolve_contractor_name(j)
+            lines.append(f"- Regional Claims Contractor: [{j.primary_key}] {j.name} - {contractor}")
 
             covered_states = sorted(
                 juris_to_states.get(j.primary_key, []),
@@ -115,11 +134,7 @@ class GraphContextAssembler:
             s_code = s.properties.get("state_code") or s.primary_key.replace("STATE-", "")
             parent_j = state_to_juris.get(s.primary_key)
             if parent_j:
-                p_contractor = parent_j.properties.get("contractor_name") or (
-                    "Noridian Healthcare Solutions" if parent_j.primary_key in ("JURIS-DME-A", "JURIS-DME-D") else "CGS Administrators, LLC"
-                )
-                if "CGS" in p_contractor and "LLC" not in p_contractor:
-                    p_contractor = "CGS Administrators, LLC"
+                p_contractor = self._resolve_contractor_name(parent_j)
                 lines.append(
                     f"- Beneficiary State: [{s.primary_key}] {s_name} (Code: {s_code}, Governing Jurisdiction: [{parent_j.primary_key}] {p_contractor})"
                 )
@@ -142,7 +157,6 @@ class GraphContextAssembler:
         hcpcs_nodes = [n for n in nodes if n.label == "HCPCSCode"]
         if hcpcs_nodes:
             lines.append("- Covered Procedure Codes:")
-            # Prioritize A6522 if present
             a6522_node = next((h for h in hcpcs_nodes if "A6522" in h.primary_key), None)
             sample_hcpcs = [a6522_node] if a6522_node else []
             for h in hcpcs_nodes:
@@ -176,55 +190,29 @@ class GraphContextAssembler:
 
         fees = [n for n in nodes if n.label == "FeeScheduleEntry"]
         if fees:
-            # Prioritize non-rural fees for traversed state(s)
             non_rural_fees = [f for f in fees if not f.properties.get("is_rural")]
             candidate_fees = non_rural_fees if non_rural_fees else fees
 
             emitted_fee_pks = set()
-            # Include all A6522 fee entries across all traversed states
             a6522_fees = sorted(
                 [f for f in candidate_fees if f.properties.get("hcpcs_code") == "A6522"],
                 key=lambda x: x.properties.get("state_code", ""),
             )
             for a6522_fee in a6522_fees:
                 emitted_fee_pks.add(a6522_fee.primary_key)
-                st_c = a6522_fee.properties.get("state_code", "")
-                state_tag = f" (State: [STATE-{st_c}])" if st_c else ""
-                amt = float(a6522_fee.properties.get("fee_amount", 0.0))
-                coinsurance = round(amt * 0.20, 2)
-                lines.append(
-                    f"- [{a6522_fee.primary_key}]{state_tag} HCPCS A6522: Allowable Reimbursement = ${amt:.2f} "
-                    f"(Calculated 20% patient coinsurance = ${coinsurance:.2f})"
-                )
+                lines.append(self._format_fee_line(a6522_fee, "A6522"))
 
-            # Next include any actively illuminated non-A6522 fee entries
             active_set = set(traversal_result.active_node_pks or [])
             for f in sorted(candidate_fees, key=lambda x: (x.properties.get("hcpcs_code", ""), x.properties.get("state_code", ""))):
                 if f.primary_key in active_set and f.primary_key not in emitted_fee_pks:
                     emitted_fee_pks.add(f.primary_key)
-                    h_code = f.properties.get("hcpcs_code")
-                    st_c = f.properties.get("state_code", "")
-                    state_tag = f" (State: [STATE-{st_c}])" if st_c else ""
-                    amt = float(f.properties.get("fee_amount", 0.0))
-                    coinsurance = round(amt * 0.20, 2)
-                    lines.append(
-                        f"- [{f.primary_key}]{state_tag} HCPCS {h_code}: Allowable Reimbursement = ${amt:.2f} "
-                        f"(Calculated 20% patient coinsurance = ${coinsurance:.2f})"
-                    )
+                    lines.append(self._format_fee_line(f))
 
             count = 0
             for f in candidate_fees:
                 if f.primary_key not in emitted_fee_pks and count < 6:
                     emitted_fee_pks.add(f.primary_key)
-                    h_code = f.properties.get("hcpcs_code")
-                    st_c = f.properties.get("state_code", "")
-                    state_tag = f" (State: [STATE-{st_c}])" if st_c else ""
-                    amt = float(f.properties.get("fee_amount", 0.0))
-                    coinsurance = round(amt * 0.20, 2)
-                    lines.append(
-                        f"- [{f.primary_key}]{state_tag} HCPCS {h_code}: Allowable Reimbursement = ${amt:.2f} "
-                        f"(Calculated 20% patient coinsurance = ${coinsurance:.2f})"
-                    )
+                    lines.append(self._format_fee_line(f))
                     count += 1
         elif hcpcs_nodes:
             for h in hcpcs_nodes[:5]:

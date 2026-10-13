@@ -278,29 +278,37 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     setIsIlluminated(false);
   }, []);
 
+  const illuminateJurisdiction = useCallback(
+    (jurisdictionId: string) => {
+      const juris = jurisdictionId ? DME_JURISDICTIONS[jurisdictionId] : undefined;
+      if (!juris) {
+        clearIllumination();
+        return;
+      }
+      setActiveNodePKs(
+        new Set<string>([
+          jurisdictionId,
+          ...juris.states.map((st) => `STATE-${st.code}`),
+        ])
+      );
+      setActiveEdgeKeys(
+        new Set<string>(
+          juris.states.map((st) => `${jurisdictionId}->COVERS_STATE->STATE-${st.code}`)
+        )
+      );
+      setIsIlluminated(true);
+    },
+    [clearIllumination]
+  );
+
   const setFilterJurisdiction = useCallback(
     (jurisdictionId: string) => {
       setFilterJurisdictionState(jurisdictionId);
       setJurisdictionScope(jurisdictionId);
       setFilterStateState("");
-
-      if (jurisdictionId && DME_JURISDICTIONS[jurisdictionId]) {
-        const juris = DME_JURISDICTIONS[jurisdictionId];
-        const nodes = new Set<string>([
-          jurisdictionId,
-          ...juris.states.map((st) => `STATE-${st.code}`),
-        ]);
-        const edges = new Set<string>(
-          juris.states.map((st) => `${jurisdictionId}->COVERS_STATE->STATE-${st.code}`)
-        );
-        setActiveNodePKs(nodes);
-        setActiveEdgeKeys(edges);
-        setIsIlluminated(true);
-      } else {
-        clearIllumination();
-      }
+      illuminateJurisdiction(jurisdictionId);
     },
-    [clearIllumination]
+    [illuminateJurisdiction]
   );
 
   const setFilterState = useCallback(
@@ -323,26 +331,10 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         setActiveEdgeKeys(edges);
         setIsIlluminated(true);
       } else {
-        if (filterJurisdiction && DME_JURISDICTIONS[filterJurisdiction]) {
-          const juris = DME_JURISDICTIONS[filterJurisdiction];
-          setActiveNodePKs(
-            new Set<string>([
-              filterJurisdiction,
-              ...juris.states.map((st) => `STATE-${st.code}`),
-            ])
-          );
-          setActiveEdgeKeys(
-            new Set<string>(
-              juris.states.map((st) => `${filterJurisdiction}->COVERS_STATE->STATE-${st.code}`)
-            )
-          );
-          setIsIlluminated(true);
-        } else {
-          clearIllumination();
-        }
+        illuminateJurisdiction(filterJurisdiction);
       }
     },
-    [clearIllumination, filterJurisdiction]
+    [illuminateJurisdiction, filterJurisdiction]
   );
 
   const submitInquiry = useCallback(
@@ -389,8 +381,8 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
           timestamp: new Date().toLocaleTimeString(),
         };
         setMessages((prev) => [...prev, assistantMsg]);
-      } catch (err: any) {
-        const msg = err.message || 'Error executing GraphRAG query.';
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : 'Error executing GraphRAG query.';
         setErrorMsg(msg);
         const errorChatMsg: ChatMessage = {
           id: `err-${Date.now()}`,
