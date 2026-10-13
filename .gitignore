@@ -3,3 +3,6 @@ node_modules/
 .sandcastle/logs/
 .sandcastle/worktrees/
 .env
+__pycache__/
+*.pyc
+.playwright-mcp/

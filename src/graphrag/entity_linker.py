@@ -57,39 +57,235 @@ class EntityAnchorLinker:
     # Location indicator regex to catch unindexed locations
     GEO_LOCATION_INDICATORS = re.compile(r"(?:from|in|live in|resident of|located in)\s+([A-Za-z\s]+?)(?:,|\.|\bneed|\band|\bon|\bfor|\bsurvived|\bwith|\?|$)", re.IGNORECASE)
 
+    # Direct primary key token pattern
+    PK_TOKEN_REGEX = re.compile(r"\b([A-Z0-9]+-[A-Z0-9\-_.]{2,})\b")
+
     def resolve_anchors(self, query_text: str, session: Session) -> ResolvedAnchors:
-        """Deterministically extracts state, diagnosis, and policy anchors, validating against Neo4j."""
+        """Deterministically extracts anchors across all 14 node entity types, validating against Neo4j."""
         clean_text = query_text.strip()
-        all_anchors: List[AnchorEntity] = []
+        if not clean_text:
+            return ResolvedAnchors()
 
-        # 1. Slot 1: Geographic State Anchor
+        anchors_by_pk: Dict[str, AnchorEntity] = {}
+
+        # 1. Direct Primary Key Token Resolution
+        for m in self.PK_TOKEN_REGEX.finditer(clean_text):
+            candidate = m.group(1)
+            # Query Neo4j to verify existence across all 14 node types
+            record = session.run(
+                "MATCH (n:PolicyNode {primary_key: $pk}) "
+                "RETURN n.primary_key AS primary_key, labels(n) AS labels, n.name AS name, n.title AS title",
+                pk=candidate,
+            ).single()
+            if record:
+                labels = [l for l in record["labels"] if l != "PolicyNode"]
+                label = labels[0] if labels else "PolicyNode"
+                matched = record["name"] or record["title"] or candidate
+                slot = label.lower()
+                if slot == "icd10code":
+                    slot = "diagnosis"
+                elif slot == "hcpcscode":
+                    slot = "hcpcs"
+                elif slot == "coveragepolicy":
+                    slot = "coveragepolicy"
+                elif slot == "changerequest":
+                    slot = "changerequest"
+
+                anchors_by_pk[candidate] = AnchorEntity(
+                    slot=slot,
+                    primary_key=candidate,
+                    matched_text=str(matched),
+                    entity_type=label,
+                    label=label,
+                )
+
+        # 2. Slot 1: Geographic State Anchor
         state_anchor = self._extract_state_anchor(clean_text, session)
-        if state_anchor:
-            all_anchors.append(state_anchor)
+        if state_anchor and state_anchor.primary_key not in anchors_by_pk:
+            anchors_by_pk[state_anchor.primary_key] = state_anchor
 
-        # 2. Slot 2: Clinical Indication Anchor
+        # 3. Slot 2: Clinical Indication Anchor
         diag_anchor = self._extract_diagnosis_anchor(clean_text, session)
-        if diag_anchor:
-            all_anchors.append(diag_anchor)
+        if diag_anchor and diag_anchor.primary_key not in anchors_by_pk:
+            anchors_by_pk[diag_anchor.primary_key] = diag_anchor
 
-        # 3. Slot 3: Policy Domain Anchor(s)
+        # 4. Slot 3: Policy Domain Anchor(s)
         policy_anchors = self._extract_policy_anchors(clean_text, session)
-        all_anchors.extend(policy_anchors)
-        primary_policy_anchor = policy_anchors[0] if policy_anchors else None
+        for pa in policy_anchors:
+            if pa.primary_key not in anchors_by_pk:
+                anchors_by_pk[pa.primary_key] = pa
 
-        # 4. Procedure code anchors (HCPCS) if explicitly cited
+        # 5. Procedure code anchors (HCPCS)
         hcpcs_anchors = self._extract_hcpcs_anchors(clean_text, session)
-        all_anchors.extend(hcpcs_anchors)
+        for ha in hcpcs_anchors:
+            if ha.primary_key not in anchors_by_pk:
+                anchors_by_pk[ha.primary_key] = ha
 
-        # Build ResolvedAnchors
-        result = ResolvedAnchors(
-            state_anchor=state_anchor,
-            diagnosis_anchor=diag_anchor,
-            policy_anchor=primary_policy_anchor,
+        # 6. Jurisdiction Lexical Anchors
+        juris_anchors = self._extract_jurisdiction_anchors(clean_text, session)
+        for ja in juris_anchors:
+            if ja.primary_key not in anchors_by_pk:
+                anchors_by_pk[ja.primary_key] = ja
+
+        # 7. Change Request Lexical Anchors
+        cr_anchors = self._extract_change_request_anchors(clean_text, session)
+        for ca in cr_anchors:
+            if ca.primary_key not in anchors_by_pk:
+                anchors_by_pk[ca.primary_key] = ca
+
+        # 8. Coverage Policy Lexical Anchors
+        cp_anchors = self._extract_coverage_policy_anchors(clean_text, session)
+        for cpa in cp_anchors:
+            if cpa.primary_key not in anchors_by_pk:
+                anchors_by_pk[cpa.primary_key] = cpa
+
+        # 9. Legislative & Regulatory Lexical Anchors
+        leg_anchors = self._extract_legislative_anchors(clean_text, session)
+        for la in leg_anchors:
+            if la.primary_key not in anchors_by_pk:
+                anchors_by_pk[la.primary_key] = la
+
+        all_anchors = list(anchors_by_pk.values())
+
+        # Resolve primary slot pointers
+        st_a = next((a for a in all_anchors if a.slot == "state"), None)
+        dg_a = next((a for a in all_anchors if a.slot in ("diagnosis", "icd10code")), None)
+        pl_a = next((a for a in all_anchors if a.slot == "policy"), None)
+        hc_a = next((a for a in all_anchors if a.slot in ("hcpcs", "hcpcscode")), None)
+        jr_a = next((a for a in all_anchors if a.slot == "jurisdiction"), None)
+        cr_a = next((a for a in all_anchors if a.slot in ("changerequest", "change_request")), None)
+        cp_a = next((a for a in all_anchors if a.slot in ("coveragepolicy", "coverage_policy")), None)
+
+        return ResolvedAnchors(
             all_anchors=all_anchors,
+            state_anchor=st_a,
+            diagnosis_anchor=dg_a,
+            policy_anchor=pl_a,
+            hcpcs_anchor=hc_a,
+            jurisdiction_anchor=jr_a,
+            change_request_anchor=cr_a,
+            coverage_policy_anchor=cp_a,
         )
 
-        return result
+    def _extract_jurisdiction_anchors(self, text: str, session: Session) -> List[AnchorEntity]:
+        """Matches Medicare Administrative Contractor names or jurisdiction codes."""
+        anchors = []
+        mappings = [
+            (re.compile(r"\b(?:noridian|jurisdiction\s*a)\b", re.IGNORECASE), "JURIS-DME-A"),
+            (re.compile(r"\b(?:cgs(?:\s+administrators)?|jurisdiction\s*b)\b", re.IGNORECASE), "JURIS-DME-B"),
+            (re.compile(r"\bjurisdiction\s*c\b", re.IGNORECASE), "JURIS-DME-C"),
+            (re.compile(r"\bjurisdiction\s*d\b", re.IGNORECASE), "JURIS-DME-D"),
+        ]
+        for pattern, pk in mappings:
+            m = pattern.search(text)
+            if m:
+                rec = session.run("MATCH (j:Jurisdiction {primary_key: $pk}) RETURN j", pk=pk).single()
+                if rec:
+                    node = rec["j"]
+                    anchors.append(
+                        AnchorEntity(
+                            slot="jurisdiction",
+                            primary_key=pk,
+                            matched_text=text[m.start():m.end()],
+                            entity_type="Jurisdiction",
+                            label="Jurisdiction",
+                        )
+                    )
+        return anchors
+
+    def _extract_change_request_anchors(self, text: str, session: Session) -> List[AnchorEntity]:
+        """Matches Change Request references (e.g. CR 13286, Transmittal 13286)."""
+        anchors = []
+        pattern = re.compile(r"\b(?:cr|change\s+request|transmittal)\s*([0-9]{4,5})\b", re.IGNORECASE)
+        for m in pattern.finditer(text):
+            num = m.group(1)
+            pk = f"CMS-CR-{num}"
+            rec = session.run("MATCH (cr:ChangeRequest {primary_key: $pk}) RETURN cr", pk=pk).single()
+            if rec:
+                anchors.append(
+                    AnchorEntity(
+                        slot="changerequest",
+                        primary_key=pk,
+                        matched_text=m.group(0),
+                        entity_type="ChangeRequest",
+                        label="ChangeRequest",
+                    )
+                )
+        return anchors
+
+    def _extract_coverage_policy_anchors(self, text: str, session: Session) -> List[AnchorEntity]:
+        """Matches Coverage Policy or Article references (e.g. A59508, LCD A59508)."""
+        anchors = []
+        pattern = re.compile(r"\b(?:lcd|article|coverage\s+policy|mcd)?\s*(A\d{5})\b", re.IGNORECASE)
+        for m in pattern.finditer(text):
+            art_id = m.group(1).upper()
+            pk = f"CMS-MCD-{art_id}"
+            rec = session.run("MATCH (cp:CoveragePolicy {primary_key: $pk}) RETURN cp", pk=pk).single()
+            if rec:
+                anchors.append(
+                    AnchorEntity(
+                        slot="coveragepolicy",
+                        primary_key=pk,
+                        matched_text=m.group(0),
+                        entity_type="CoveragePolicy",
+                        label="CoveragePolicy",
+                    )
+                )
+        return anchors
+
+    def _extract_legislative_anchors(self, text: str, session: Session) -> List[AnchorEntity]:
+        """Matches Public Law, Regulation, and Bill citations."""
+        anchors = []
+
+        # Public Law: Public Law 117-328 or PL 117-328
+        pl_pattern = re.compile(r"\b(?:public\s+law|pl)\s*(\d+)-(\d+)\b", re.IGNORECASE)
+        for m in pl_pattern.finditer(text):
+            pk = f"PLAW-{m.group(1)}-{m.group(2)}"
+            rec = session.run("MATCH (pl:PublicLaw {primary_key: $pk}) RETURN pl", pk=pk).single()
+            if rec:
+                anchors.append(
+                    AnchorEntity(
+                        slot="publiclaw",
+                        primary_key=pk,
+                        matched_text=m.group(0),
+                        entity_type="PublicLaw",
+                        label="PublicLaw",
+                    )
+                )
+
+        # Regulation: 88 FR 77676 or CMS-1784-F
+        reg_pattern = re.compile(r"\b(?:(\d+)\s*fr\s*(\d+)|cms-1784-f)\b", re.IGNORECASE)
+        for m in reg_pattern.finditer(text):
+            pk = "FR-2023-24455"
+            rec = session.run("MATCH (r:Regulation {primary_key: $pk}) RETURN r", pk=pk).single()
+            if rec:
+                anchors.append(
+                    AnchorEntity(
+                        slot="regulation",
+                        primary_key=pk,
+                        matched_text=m.group(0),
+                        entity_type="Regulation",
+                        label="Regulation",
+                    )
+                )
+
+        # Bill: HR 3630 or H.R. 3630
+        bill_pattern = re.compile(r"\b(?:hr|h\.r\.)\s*(\d+)\b", re.IGNORECASE)
+        for m in bill_pattern.finditer(text):
+            pk = f"BILL-117-hr-{m.group(1)}"
+            rec = session.run("MATCH (b:Bill {primary_key: $pk}) RETURN b", pk=pk).single()
+            if rec:
+                anchors.append(
+                    AnchorEntity(
+                        slot="bill",
+                        primary_key=pk,
+                        matched_text=m.group(0),
+                        entity_type="Bill",
+                        label="Bill",
+                    )
+                )
+
+        return anchors
 
     def _extract_state_anchor(self, text: str, session: Session) -> Optional[AnchorEntity]:
         """Matches state name or 2-letter postal code and validates in Neo4j."""

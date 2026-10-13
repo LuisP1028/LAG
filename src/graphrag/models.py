@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 class AnchorEntity(BaseModel):
     """A resolved entity anchor linking user query terms to a knowledge graph entity."""
-    slot: str  # "state" | "diagnosis" | "policy" | "hcpcs" | "jurisdiction"
+    slot: str
     primary_key: str
     matched_text: str
     entity_type: str
@@ -15,10 +15,18 @@ class AnchorEntity(BaseModel):
 
 class ResolvedAnchors(BaseModel):
     """Collection of resolved entity anchors across semantic slots."""
+    all_anchors: List[AnchorEntity] = Field(default_factory=list)
     state_anchor: Optional[AnchorEntity] = None
     diagnosis_anchor: Optional[AnchorEntity] = None
     policy_anchor: Optional[AnchorEntity] = None
-    all_anchors: List[AnchorEntity] = Field(default_factory=list)
+    hcpcs_anchor: Optional[AnchorEntity] = None
+    jurisdiction_anchor: Optional[AnchorEntity] = None
+    change_request_anchor: Optional[AnchorEntity] = None
+    coverage_policy_anchor: Optional[AnchorEntity] = None
+
+    @property
+    def primary_keys(self) -> List[str]:
+        return [a.primary_key for a in self.all_anchors]
 
 
 class TraversalNode(BaseModel):

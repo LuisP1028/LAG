@@ -272,20 +272,24 @@ def get_subgraph_by_anchors(
     req: SubgraphRequest,
     session: Session = Depends(get_neo4j_session),
 ):
-    """Extracts connecting subgraph between given primary key anchors."""
+    """Extracts connecting subgraph between given primary key anchors across all 14 node types."""
     pipeline = get_pipeline()
     if not req.anchors:
         return SubgraphResponse(nodes=[], edges=[], active_node_pks=[], active_edge_keys=[], retrieval_ms=0.0)
 
-    # Reconstruct ResolvedAnchors from PK list
+    # Reconstruct ResolvedAnchors from PK list across all 14 node types
     anchors_list: List[AnchorEntity] = []
     state_anchor = None
     diag_anchor = None
     policy_anchor = None
+    hcpcs_anchor = None
+    jurisdiction_anchor = None
+    change_request_anchor = None
+    coverage_policy_anchor = None
 
     for pk in req.anchors:
-        # Check node in Neo4j
-        rec = session.run("MATCH (n {primary_key: $pk}) RETURN n, labels(n) as lbls", pk=pk).single()
+        # Check node in Neo4j across all 14 node types
+        rec = session.run("MATCH (n:PolicyNode {primary_key: $pk}) RETURN n, labels(n) as lbls", pk=pk).single()
         if not rec:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
@@ -295,7 +299,7 @@ def get_subgraph_by_anchors(
         lbls = [l for l in rec["lbls"] if l != "PolicyNode"]
         label = lbls[0] if lbls else "Node"
 
-        slot = "entity"
+        slot = label.lower()
         if label == "State":
             slot = "state"
         elif label == "ICD10Code":
@@ -304,27 +308,46 @@ def get_subgraph_by_anchors(
             slot = "policy"
         elif label == "HCPCSCode":
             slot = "hcpcs"
+        elif label == "Jurisdiction":
+            slot = "jurisdiction"
+        elif label == "ChangeRequest":
+            slot = "changerequest"
+        elif label == "CoveragePolicy":
+            slot = "coveragepolicy"
 
+        matched = node.get("name") or node.get("title") or pk
         anchor = AnchorEntity(
             slot=slot,
             primary_key=pk,
-            matched_text=node.get("name", pk),
+            matched_text=str(matched),
             entity_type=label,
             label=label,
         )
         anchors_list.append(anchor)
         if slot == "state" and not state_anchor:
             state_anchor = anchor
-        elif slot == "diagnosis" and not diag_anchor:
+        elif slot in ("diagnosis", "icd10code") and not diag_anchor:
             diag_anchor = anchor
         elif slot == "policy" and not policy_anchor:
             policy_anchor = anchor
+        elif slot in ("hcpcs", "hcpcscode") and not hcpcs_anchor:
+            hcpcs_anchor = anchor
+        elif slot == "jurisdiction" and not jurisdiction_anchor:
+            jurisdiction_anchor = anchor
+        elif slot in ("changerequest", "change_request") and not change_request_anchor:
+            change_request_anchor = anchor
+        elif slot in ("coveragepolicy", "coverage_policy") and not coverage_policy_anchor:
+            coverage_policy_anchor = anchor
 
     resolved = ResolvedAnchors(
+        all_anchors=anchors_list,
         state_anchor=state_anchor,
         diagnosis_anchor=diag_anchor,
         policy_anchor=policy_anchor,
-        all_anchors=anchors_list,
+        hcpcs_anchor=hcpcs_anchor,
+        jurisdiction_anchor=jurisdiction_anchor,
+        change_request_anchor=change_request_anchor,
+        coverage_policy_anchor=coverage_policy_anchor,
     )
 
     try:

@@ -61,6 +61,18 @@ def main():
         print(resp_2.answer)
         print("-" * 60)
 
+        print("\n--- Workflow 4: Single-State Dynamic Inquiry (New York) ---")
+        query_3 = "What contractor covers New York and what are the allowable rates?"
+        print(f"User Query: \"{query_3}\"")
+
+        resp_3 = pipeline.execute_query(GraphRAGQueryRequest(query=query_3), session)
+        print(f"\n[Response Duration: {resp_3.duration_ms}ms]")
+        print(f"Illuminated Active Node PKs ({len(resp_3.active_node_pks)}): {resp_3.active_node_pks}")
+        print("\nSynthesized Grounded Guidance:")
+        print("-" * 60)
+        print(resp_3.answer)
+        print("-" * 60)
+
     engine.close()
     print("\n" + "=" * 80)
     print("✓ VERIFICATION COMPLETED SUCCESSFULLY WITH 0 ERRORS")

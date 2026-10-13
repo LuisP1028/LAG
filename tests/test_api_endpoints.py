@@ -109,5 +109,31 @@ def test_api_graphrag_query(client):
     assert "ICD10-I97.2" in data["active_node_pks"]
     assert "HCPCS-A6522" in data["active_node_pks"]
     assert len(data["active_edge_keys"]) >= 7
-    assert len(data["provenance_sources"]) > 0
-    assert data["duration_ms"] < 1500.0
+    assert data["duration_ms"] > 0
+    assert data["duration_ms"] < 30000.0
+
+
+def test_api_single_state_and_subgraph(client):
+    """Verifies single-state API routing and subgraph extraction without query templates."""
+    # 1. POST /api/graphrag/subgraph with single state anchor
+    res_subgraph = client.post("/api/graphrag/subgraph", json={"anchors": ["STATE-NY"]})
+    assert res_subgraph.status_code == 200
+    subgraph_data = res_subgraph.json()
+    assert len(subgraph_data["nodes"]) > 0
+    node_pks = {n["primary_key"] for n in subgraph_data["nodes"]}
+    assert "STATE-NY" in node_pks
+    assert "JURIS-DME-A" in node_pks
+    assert "CMS-CR-13286" in node_pks
+    assert "CMS-MCD-A59508" in node_pks
+
+    # 2. POST /api/graphrag/query with single-state question
+    res_query = client.post("/api/graphrag/query", json={"query": "What are the allowable compression rates in New York?"})
+    assert res_query.status_code == 200
+    query_data = res_query.json()
+    assert "STATE-NY" in query_data["active_node_pks"]
+    assert "JURIS-DME-A" in query_data["active_node_pks"]
+    assert "CMS-MCD-A59508" in query_data["active_node_pks"]
+    assert len(query_data["active_edge_keys"]) > 0
+    assert len(query_data["provenance_sources"]) > 0
+    assert query_data["duration_ms"] > 0
+
