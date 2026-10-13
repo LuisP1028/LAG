@@ -10,6 +10,7 @@ export const AgentChatDrawer: React.FC = () => {
   const {
     isChatOpen,
     setIsChatOpen,
+    clearIllumination,
     quickPrompts,
     messages,
     isQueryLoading,
@@ -69,7 +70,10 @@ export const AgentChatDrawer: React.FC = () => {
         </div>
 
         <button
-          onClick={() => setIsChatOpen(false)}
+          onClick={() => {
+            clearIllumination();
+            setIsChatOpen(false);
+          }}
           style={{
             background: 'none',
             border: 'none',

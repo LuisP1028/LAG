@@ -2,7 +2,7 @@
  * Bidirectional Canvas-Agent Synchronization Bus conforming to Ticket 006 and functional_specification_007.
  */
 
-import React, { createContext, useContext, useState, useCallback, useMemo } from 'react';
+import React, { createContext, useContext, useState, useCallback, useMemo, useRef } from 'react';
 import type { GraphNode, AnchorEntity, GraphRAGQueryResponse } from '../types/graph';
 import { constructInquiryPrompt } from '../utils/promptGenerator';
 
@@ -180,6 +180,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const [isIlluminated, setIsIlluminated] = useState<boolean>(false);
   const [isQueryLoading, setIsQueryLoading] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const latestQueryIdRef = useRef<number>(0);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: 'welcome-1',
@@ -267,12 +268,22 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   }, []);
 
   const setIlluminatedPath = useCallback((response: GraphRAGQueryResponse) => {
-    setActiveNodePKs(new Set(response.active_node_pks));
-    setActiveEdgeKeys(new Set(response.active_edge_keys));
+    const nodePks = Array.isArray(response?.active_node_pks) ? response.active_node_pks : [];
+    const edgeKeys = Array.isArray(response?.active_edge_keys) ? response.active_edge_keys : [];
+    if (nodePks.length === 0) {
+      setActiveNodePKs(new Set());
+      setActiveEdgeKeys(new Set());
+      setIsIlluminated(false);
+      return;
+    }
+    setActiveNodePKs(new Set(nodePks));
+    setActiveEdgeKeys(new Set(edgeKeys));
     setIsIlluminated(true);
   }, []);
 
   const clearIllumination = useCallback(() => {
+    latestQueryIdRef.current += 1;
+    setIsQueryLoading(false);
     setActiveNodePKs(new Set());
     setActiveEdgeKeys(new Set());
     setIsIlluminated(false);
@@ -340,11 +351,12 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const submitInquiry = useCallback(
     async (queryText: string, anchorPk?: string, modelId?: string) => {
       const q = queryText.trim();
-      if (!q || isQueryLoading) return;
+      if (!q) return;
 
+      const queryId = ++latestQueryIdRef.current;
       setErrorMsg(null);
       const userMsg: ChatMessage = {
-        id: `user-${Date.now()}`,
+        id: `user-${Date.now()}-${queryId}`,
         sender: 'user',
         text: q,
         timestamp: new Date().toLocaleTimeString(),
@@ -371,10 +383,12 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         }
 
         const data: GraphRAGQueryResponse = await res.json();
+        if (queryId !== latestQueryIdRef.current) return;
+
         setIlluminatedPath(data);
 
         const assistantMsg: ChatMessage = {
-          id: `asst-${Date.now()}`,
+          id: `asst-${Date.now()}-${queryId}`,
           sender: 'assistant',
           text: data.answer,
           responsePayload: data,
@@ -382,20 +396,23 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         };
         setMessages((prev) => [...prev, assistantMsg]);
       } catch (err: unknown) {
+        if (queryId !== latestQueryIdRef.current) return;
         const msg = err instanceof Error ? err.message : 'Error executing GraphRAG query.';
         setErrorMsg(msg);
         const errorChatMsg: ChatMessage = {
-          id: `err-${Date.now()}`,
+          id: `err-${Date.now()}-${queryId}`,
           sender: 'assistant',
           text: `Error: ${msg}`,
           timestamp: new Date().toLocaleTimeString(),
         };
         setMessages((prev) => [...prev, errorChatMsg]);
       } finally {
-        setIsQueryLoading(false);
+        if (queryId === latestQueryIdRef.current) {
+          setIsQueryLoading(false);
+        }
       }
     },
-    [filterState, filterJurisdiction, isQueryLoading, setIlluminatedPath]
+    [filterState, filterJurisdiction, setIlluminatedPath]
   );
 
   const inquireNode = useCallback(
