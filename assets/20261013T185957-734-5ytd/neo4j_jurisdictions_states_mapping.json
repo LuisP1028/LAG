@@ -1,0 +1,375 @@
+[
+  {
+    "jurisdiction_pk": "JURIS-DME-A",
+    "jurisdiction_properties": {
+      "contractor_name": "Noridian Healthcare Solutions",
+      "code": "JURIS-DME-A",
+      "name": "JURIS-DME-A (Noridian)",
+      "primary_key": "JURIS-DME-A"
+    },
+    "governing_change_requests": [
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      },
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "covered_states": [
+      {
+        "state_name": "Connecticut",
+        "state_code": "CT",
+        "primary_key": "STATE-CT"
+      },
+      {
+        "state_name": "Delaware",
+        "state_code": "DE",
+        "primary_key": "STATE-DE"
+      },
+      {
+        "state_name": "District of Columbia",
+        "state_code": "DC",
+        "primary_key": "STATE-DC"
+      },
+      {
+        "state_name": "Maine",
+        "state_code": "ME",
+        "primary_key": "STATE-ME"
+      },
+      {
+        "state_name": "Maryland",
+        "state_code": "MD",
+        "primary_key": "STATE-MD"
+      },
+      {
+        "state_name": "Massachusetts",
+        "state_code": "MA",
+        "primary_key": "STATE-MA"
+      },
+      {
+        "state_name": "New Hampshire",
+        "state_code": "NH",
+        "primary_key": "STATE-NH"
+      },
+      {
+        "state_name": "New Jersey",
+        "state_code": "NJ",
+        "primary_key": "STATE-NJ"
+      },
+      {
+        "state_name": "New York",
+        "state_code": "NY",
+        "primary_key": "STATE-NY"
+      },
+      {
+        "state_name": "Pennsylvania",
+        "state_code": "PA",
+        "primary_key": "STATE-PA"
+      },
+      {
+        "state_name": "Rhode Island",
+        "state_code": "RI",
+        "primary_key": "STATE-RI"
+      },
+      {
+        "state_name": "Vermont",
+        "state_code": "VT",
+        "primary_key": "STATE-VT"
+      }
+    ]
+  },
+  {
+    "jurisdiction_pk": "JURIS-DME-B",
+    "jurisdiction_properties": {
+      "contractor_name": "CGS Administrators",
+      "code": "JURIS-DME-B",
+      "name": "JURIS-DME-B (CGS)",
+      "primary_key": "JURIS-DME-B"
+    },
+    "governing_change_requests": [
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      },
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "covered_states": [
+      {
+        "state_name": "Illinois",
+        "state_code": "IL",
+        "primary_key": "STATE-IL"
+      },
+      {
+        "state_name": "Indiana",
+        "state_code": "IN",
+        "primary_key": "STATE-IN"
+      },
+      {
+        "state_name": "Kentucky",
+        "state_code": "KY",
+        "primary_key": "STATE-KY"
+      },
+      {
+        "state_name": "Michigan",
+        "state_code": "MI",
+        "primary_key": "STATE-MI"
+      },
+      {
+        "state_name": "Minnesota",
+        "state_code": "MN",
+        "primary_key": "STATE-MN"
+      },
+      {
+        "state_name": "Ohio",
+        "state_code": "OH",
+        "primary_key": "STATE-OH"
+      },
+      {
+        "state_name": "Wisconsin",
+        "state_code": "WI",
+        "primary_key": "STATE-WI"
+      }
+    ]
+  },
+  {
+    "jurisdiction_pk": "JURIS-DME-C",
+    "jurisdiction_properties": {
+      "contractor_name": "CGS Administrators",
+      "code": "JURIS-DME-C",
+      "name": "JURIS-DME-C (CGS)",
+      "primary_key": "JURIS-DME-C"
+    },
+    "governing_change_requests": [
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      },
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "covered_states": [
+      {
+        "state_name": "Alabama",
+        "state_code": "AL",
+        "primary_key": "STATE-AL"
+      },
+      {
+        "state_name": "Arkansas",
+        "state_code": "AR",
+        "primary_key": "STATE-AR"
+      },
+      {
+        "state_name": "Colorado",
+        "state_code": "CO",
+        "primary_key": "STATE-CO"
+      },
+      {
+        "state_name": "Florida",
+        "state_code": "FL",
+        "primary_key": "STATE-FL"
+      },
+      {
+        "state_name": "Georgia",
+        "state_code": "GA",
+        "primary_key": "STATE-GA"
+      },
+      {
+        "state_name": "Louisiana",
+        "state_code": "LA",
+        "primary_key": "STATE-LA"
+      },
+      {
+        "state_name": "Mississippi",
+        "state_code": "MS",
+        "primary_key": "STATE-MS"
+      },
+      {
+        "state_name": "New Mexico",
+        "state_code": "NM",
+        "primary_key": "STATE-NM"
+      },
+      {
+        "state_name": "North Carolina",
+        "state_code": "NC",
+        "primary_key": "STATE-NC"
+      },
+      {
+        "state_name": "Oklahoma",
+        "state_code": "OK",
+        "primary_key": "STATE-OK"
+      },
+      {
+        "state_name": "South Carolina",
+        "state_code": "SC",
+        "primary_key": "STATE-SC"
+      },
+      {
+        "state_name": "Tennessee",
+        "state_code": "TN",
+        "primary_key": "STATE-TN"
+      },
+      {
+        "state_name": "Texas",
+        "state_code": "TX",
+        "primary_key": "STATE-TX"
+      },
+      {
+        "state_name": "Virginia",
+        "state_code": "VA",
+        "primary_key": "STATE-VA"
+      },
+      {
+        "state_name": "West Virginia",
+        "state_code": "WV",
+        "primary_key": "STATE-WV"
+      },
+      {
+        "state_name": "Puerto Rico",
+        "state_code": "PR",
+        "primary_key": "STATE-PR"
+      },
+      {
+        "state_name": "Virgin Islands",
+        "state_code": "VI",
+        "primary_key": "STATE-VI"
+      }
+    ]
+  },
+  {
+    "jurisdiction_pk": "JURIS-DME-D",
+    "jurisdiction_properties": {
+      "contractor_name": "Noridian Healthcare Solutions",
+      "code": "JURIS-DME-D",
+      "name": "JURIS-DME-D (Noridian)",
+      "primary_key": "JURIS-DME-D"
+    },
+    "governing_change_requests": [
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      },
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "covered_states": [
+      {
+        "state_name": "Alaska",
+        "state_code": "AK",
+        "primary_key": "STATE-AK"
+      },
+      {
+        "state_name": "Arizona",
+        "state_code": "AZ",
+        "primary_key": "STATE-AZ"
+      },
+      {
+        "state_name": "California",
+        "state_code": "CA",
+        "primary_key": "STATE-CA"
+      },
+      {
+        "state_name": "Hawaii",
+        "state_code": "HI",
+        "primary_key": "STATE-HI"
+      },
+      {
+        "state_name": "Idaho",
+        "state_code": "ID",
+        "primary_key": "STATE-ID"
+      },
+      {
+        "state_name": "Iowa",
+        "state_code": "IA",
+        "primary_key": "STATE-IA"
+      },
+      {
+        "state_name": "Kansas",
+        "state_code": "KS",
+        "primary_key": "STATE-KS"
+      },
+      {
+        "state_name": "Missouri",
+        "state_code": "MO",
+        "primary_key": "STATE-MO"
+      },
+      {
+        "state_name": "Montana",
+        "state_code": "MT",
+        "primary_key": "STATE-MT"
+      },
+      {
+        "state_name": "Nebraska",
+        "state_code": "NE",
+        "primary_key": "STATE-NE"
+      },
+      {
+        "state_name": "Nevada",
+        "state_code": "NV",
+        "primary_key": "STATE-NV"
+      },
+      {
+        "state_name": "North Dakota",
+        "state_code": "ND",
+        "primary_key": "STATE-ND"
+      },
+      {
+        "state_name": "Oregon",
+        "state_code": "OR",
+        "primary_key": "STATE-OR"
+      },
+      {
+        "state_name": "South Dakota",
+        "state_code": "SD",
+        "primary_key": "STATE-SD"
+      },
+      {
+        "state_name": "Utah",
+        "state_code": "UT",
+        "primary_key": "STATE-UT"
+      },
+      {
+        "state_name": "Washington",
+        "state_code": "WA",
+        "primary_key": "STATE-WA"
+      },
+      {
+        "state_name": "Wyoming",
+        "state_code": "WY",
+        "primary_key": "STATE-WY"
+      }
+    ]
+  }
+]

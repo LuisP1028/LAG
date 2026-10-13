@@ -1,0 +1,128 @@
+[
+  {
+    "state_pk": "STATE-CA",
+    "state_code": "CA",
+    "state_name": "California",
+    "jurisdiction_pk": "JURIS-DME-D",
+    "contractor_name": "Noridian Healthcare Solutions",
+    "change_request_pk": "CMS-CR-13286",
+    "coverage_policy_pk": "CMS-MCD-A59508",
+    "hcpcs_pk": "HCPCS-A6522",
+    "fee_entry": {
+      "ceiling": 0.0,
+      "fee_amount": 290.47,
+      "is_rural": false,
+      "year": 2024,
+      "hcpcs_code": "A6522",
+      "name": "A6522 CA NR ($290.47)",
+      "state_code": "CA",
+      "floor": 0.0,
+      "primary_key": "FEE-A6522-CA-NR-2024"
+    }
+  },
+  {
+    "state_pk": "STATE-FL",
+    "state_code": "FL",
+    "state_name": "Florida",
+    "jurisdiction_pk": "JURIS-DME-C",
+    "contractor_name": "CGS Administrators",
+    "change_request_pk": "CMS-CR-13286",
+    "coverage_policy_pk": "CMS-MCD-A59508",
+    "hcpcs_pk": "HCPCS-A6522",
+    "fee_entry": {
+      "ceiling": 0.0,
+      "fee_amount": 290.47,
+      "is_rural": false,
+      "year": 2024,
+      "hcpcs_code": "A6522",
+      "name": "A6522 FL NR ($290.47)",
+      "state_code": "FL",
+      "floor": 0.0,
+      "primary_key": "FEE-A6522-FL-NR-2024"
+    }
+  },
+  {
+    "state_pk": "STATE-NY",
+    "state_code": "NY",
+    "state_name": "New York",
+    "jurisdiction_pk": "JURIS-DME-A",
+    "contractor_name": "Noridian Healthcare Solutions",
+    "change_request_pk": "CMS-CR-13286",
+    "coverage_policy_pk": "CMS-MCD-A59508",
+    "hcpcs_pk": "HCPCS-A6522",
+    "fee_entry": {
+      "ceiling": 0.0,
+      "fee_amount": 290.47,
+      "is_rural": false,
+      "year": 2024,
+      "hcpcs_code": "A6522",
+      "name": "A6522 NY NR ($290.47)",
+      "state_code": "NY",
+      "floor": 0.0,
+      "primary_key": "FEE-A6522-NY-NR-2024"
+    }
+  },
+  {
+    "state_pk": "STATE-OH",
+    "state_code": "OH",
+    "state_name": "Ohio",
+    "jurisdiction_pk": "JURIS-DME-B",
+    "contractor_name": "CGS Administrators",
+    "change_request_pk": "CMS-CR-13286",
+    "coverage_policy_pk": "CMS-MCD-A59508",
+    "hcpcs_pk": "HCPCS-A6522",
+    "fee_entry": {
+      "ceiling": 0.0,
+      "fee_amount": 290.47,
+      "is_rural": false,
+      "year": 2024,
+      "hcpcs_code": "A6522",
+      "name": "A6522 OH NR ($290.47)",
+      "state_code": "OH",
+      "floor": 0.0,
+      "primary_key": "FEE-A6522-OH-NR-2024"
+    }
+  },
+  {
+    "state_pk": "STATE-TX",
+    "state_code": "TX",
+    "state_name": "Texas",
+    "jurisdiction_pk": "JURIS-DME-C",
+    "contractor_name": "CGS Administrators",
+    "change_request_pk": "CMS-CR-13286",
+    "coverage_policy_pk": "CMS-MCD-A59508",
+    "hcpcs_pk": "HCPCS-A6522",
+    "fee_entry": {
+      "ceiling": 0.0,
+      "fee_amount": 290.47,
+      "is_rural": false,
+      "year": 2024,
+      "hcpcs_code": "A6522",
+      "name": "A6522 TX NR ($290.47)",
+      "state_code": "TX",
+      "floor": 0.0,
+      "primary_key": "FEE-A6522-TX-NR-2024"
+    }
+  },
+  {
+    "state_pk": "STATE-WI",
+    "state_code": "WI",
+    "state_name": "Wisconsin",
+    "jurisdiction_pk": "JURIS-DME-B",
+    "contractor_name": "CGS Administrators",
+    "change_request_pk": "CMS-CR-13286",
+    "coverage_policy_pk": "CMS-MCD-A59508",
+    "hcpcs_pk": "HCPCS-A6522",
+    "fee_entry": {
+      "ceiling": 0.0,
+      "fee_amount": 290.47,
+      "is_rural": false,
+      "year": 2024,
+      "hcpcs_code": "A6522",
+      "name": "A6522 WI NR ($290.47)",
+      "state_code": "WI",
+      "floor": 0.0,
+      "primary_key": "FEE-A6522-WI-NR-2024"
+    }
+  }
+]
