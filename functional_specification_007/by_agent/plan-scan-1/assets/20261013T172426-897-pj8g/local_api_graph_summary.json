@@ -1,0 +1,162 @@
+{
+  "total_nodes": 3971,
+  "total_edges": 7795,
+  "nodes_by_label": [
+    {
+      "labels": [
+        "PolicyNode",
+        "FeeScheduleEntry"
+      ],
+      "count": 3816
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "HCPCSCode"
+      ],
+      "count": 75
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "State"
+      ],
+      "count": 53
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "ICD10Code"
+      ],
+      "count": 6
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "Jurisdiction"
+      ],
+      "count": 4
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "Bill"
+      ],
+      "count": 3
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "Policy"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "StatutorySection"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "ChangeRequest"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "CoveragePolicy"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "LobbyingFiling"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "LiteratureStudy"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "PublicLaw"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "Regulation"
+      ],
+      "count": 1
+    }
+  ],
+  "edges_by_type": [
+    {
+      "rel_type": "HAS_FEE_SCHEDULE",
+      "count": 3816
+    },
+    {
+      "rel_type": "APPLIES_TO",
+      "count": 3816
+    },
+    {
+      "rel_type": "GOVERNS",
+      "count": 75
+    },
+    {
+      "rel_type": "COVERS_STATE",
+      "count": 53
+    },
+    {
+      "rel_type": "APPLIES_TO_JURISDICTION",
+      "count": 8
+    },
+    {
+      "rel_type": "ALLOWS_DIAGNOSIS",
+      "count": 6
+    },
+    {
+      "rel_type": "TARGETS_BILL",
+      "count": 4
+    },
+    {
+      "rel_type": "HAS_ADVOCACY_RECORD",
+      "count": 4
+    },
+    {
+      "rel_type": "ENACTED_AS",
+      "count": 3
+    },
+    {
+      "rel_type": "MODIFIES_CODE",
+      "count": 2
+    },
+    {
+      "rel_type": "IMPLEMENTED_BY",
+      "count": 2
+    },
+    {
+      "rel_type": "ISSUES_TRANSMITTAL",
+      "count": 2
+    },
+    {
+      "rel_type": "SUPPORTED_BY_EVIDENCE",
+      "count": 2
+    },
+    {
+      "rel_type": "MANDATES_POLICY",
+      "count": 2
+    }
+  ]
+}

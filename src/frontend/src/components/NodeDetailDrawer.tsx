@@ -13,7 +13,7 @@ interface NodeDetailDrawerProps {
 }
 
 export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links }) => {
-  const { selectedNode, selectNode, setIsChatOpen } = useGraphSync();
+  const { selectedNode, selectNode, inquireNode, isQueryLoading } = useGraphSync();
 
   if (!selectedNode) return null;
 
@@ -242,26 +242,28 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
 
         {/* Action Button: Ask Agent */}
         <button
-          onClick={() => setIsChatOpen(true)}
+          onClick={() => selectedNode && inquireNode(selectedNode)}
+          disabled={isQueryLoading}
           style={{
             width: '100%',
-            backgroundColor: CANVAS_PALETTE.accentAmber,
+            backgroundColor: isQueryLoading ? 'rgba(255, 183, 3, 0.6)' : CANVAS_PALETTE.accentAmber,
             color: '#0a1128',
             fontWeight: 700,
             fontSize: 13,
             padding: '10px 14px',
             borderRadius: 6,
             border: 'none',
-            cursor: 'pointer',
+            cursor: isQueryLoading ? 'not-allowed' : 'pointer',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             gap: 8,
             marginBottom: 20,
             boxShadow: '0 2px 8px rgba(255, 183, 3, 0.25)',
+            opacity: isQueryLoading ? 0.75 : 1.0,
           }}
         >
-          ◈ INQUIRE IN GRAPHRAG CHAT
+          {isQueryLoading ? '◈ INQUIRING...' : '◈ INQUIRE IN GRAPHRAG CHAT'}
         </button>
 
         {/* Government Authority Link */}

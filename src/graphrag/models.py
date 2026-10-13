@@ -60,6 +60,8 @@ class GraphRAGQueryRequest(BaseModel):
     query: str
     model_id: Optional[str] = "meta-llama/Meta-Llama-3-8B-Instruct"
     state_code: Optional[str] = None
+    primary_key: Optional[str] = None
+    anchor_node_pk: Optional[str] = None
 
 
 class GraphRAGQueryResponse(BaseModel):

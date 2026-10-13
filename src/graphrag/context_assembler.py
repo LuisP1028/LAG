@@ -55,6 +55,16 @@ class GraphContextAssembler:
             title = cp.properties.get("title") or cp.name or "Standard Documentation Requirements"
             lines.append(f"- Authorizing Coverage Policy: [{cp.primary_key}] {title}")
 
+        bills = [n for n in nodes if n.label == "Bill"]
+        for b in bills:
+            title = b.properties.get("title") or b.name
+            lines.append(f"- Introduced Bill: [{b.primary_key}] {title}")
+
+        filings = [n for n in nodes if n.label == "LobbyingFiling"]
+        for lf in filings:
+            client = lf.properties.get("client_name") or lf.name
+            lines.append(f"- Lobbying Filing: [{lf.primary_key}] {client}")
+
         lines.append("")
 
         # ---------------------------------------------------------
@@ -102,6 +112,11 @@ class GraphContextAssembler:
                 h_name = h.properties.get("name") or h.name
                 desc = h.properties.get("description") or h_name
                 lines.append(f"  - [{h.primary_key}] {h_name} (Description: {desc})")
+
+        studies = [n for n in nodes if n.label == "LiteratureStudy"]
+        for st in studies:
+            title = st.properties.get("title") or st.name
+            lines.append(f"- Clinical Study: [{st.primary_key}] {title}")
 
         lines.append("")
 

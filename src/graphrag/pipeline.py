@@ -40,8 +40,12 @@ class GraphRAGPipeline:
         """Executes the full 5-stage GraphRAG pipeline and returns synthesized guidance and canvas telemetry."""
         start_time = time.perf_counter()
 
-        # Stage 1: Entity Anchor Linking
-        anchors: ResolvedAnchors = self.linker.resolve_anchors(request.query, session)
+        # Stage 1: Entity Anchor Linking (Explicit Anchor Bypass)
+        explicit_pk = request.primary_key or request.anchor_node_pk
+        if explicit_pk:
+            anchors: ResolvedAnchors = self.linker.resolve_explicit_anchor(explicit_pk, session)
+        else:
+            anchors: ResolvedAnchors = self.linker.resolve_anchors(request.query, session)
 
         # Stage 2: Topological Subgraph Expansion
         traversal_result: TraversalResult = self.traverser.extract_connecting_subgraph(

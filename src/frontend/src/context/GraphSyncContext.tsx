@@ -1,9 +1,18 @@
 /**
- * Bidirectional Canvas-Agent Synchronization Bus conforming to Ticket 006.
+ * Bidirectional Canvas-Agent Synchronization Bus conforming to Ticket 006 and functional_specification_007.
  */
 
 import React, { createContext, useContext, useState, useCallback, useMemo } from 'react';
 import type { GraphNode, AnchorEntity, GraphRAGQueryResponse } from '../types/graph';
+import { constructInquiryPrompt } from '../utils/promptGenerator';
+
+export interface ChatMessage {
+  id: string;
+  sender: 'user' | 'assistant';
+  text: string;
+  responsePayload?: GraphRAGQueryResponse;
+  timestamp: string;
+}
 
 interface GraphSyncContextType {
   activeNodePKs: Set<string>;
@@ -15,6 +24,9 @@ interface GraphSyncContextType {
   filterState: string;
   policyKeyword: string;
   isChatOpen: boolean;
+  messages: ChatMessage[];
+  isQueryLoading: boolean;
+  errorMsg: string | null;
   focusTarget: { x: number; y: number; zoom?: number } | null;
   
   selectNode: (node: GraphNode | null) => void;
@@ -24,6 +36,8 @@ interface GraphSyncContextType {
   setPolicyKeyword: (keyword: string) => void;
   setIsChatOpen: (open: boolean) => void;
   setFocusTarget: (target: { x: number; y: number; zoom?: number } | null) => void;
+  submitInquiry: (queryText: string, anchorPk?: string, modelId?: string) => Promise<void>;
+  inquireNode: (node: GraphNode) => Promise<void>;
 }
 
 const GraphSyncContext = createContext<GraphSyncContextType | undefined>(undefined);
@@ -34,6 +48,16 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
   const [seededAnchor, setSeededAnchor] = useState<AnchorEntity | null>(null);
   const [isIlluminated, setIsIlluminated] = useState<boolean>(false);
+  const [isQueryLoading, setIsQueryLoading] = useState<boolean>(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [messages, setMessages] = useState<ChatMessage[]>([
+    {
+      id: 'welcome-1',
+      sender: 'assistant',
+      text: "Welcome to the LAG Policy GraphRAG Intelligence Terminal. You can ask natural language clinical, geographic, or macro legislative questions, or select any node on the blueprint canvas to seed a targeted inquiry.",
+      timestamp: new Date().toLocaleTimeString(),
+    },
+  ]);
   const [quickPrompts, setQuickPrompts] = useState<string[]>([
     "I am from Wisconsin, survived breast cancer, need lymphedema supplies, I'm on Medicare, can you help?",
     "How do IVIG and LTA converge under federal law?",
@@ -109,6 +133,75 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     setIsIlluminated(false);
   }, []);
 
+  const submitInquiry = useCallback(
+    async (queryText: string, anchorPk?: string, modelId?: string) => {
+      const q = queryText.trim();
+      if (!q || isQueryLoading) return;
+
+      setErrorMsg(null);
+      const userMsg: ChatMessage = {
+        id: `user-${Date.now()}`,
+        sender: 'user',
+        text: q,
+        timestamp: new Date().toLocaleTimeString(),
+      };
+      setMessages((prev) => [...prev, userMsg]);
+      setIsQueryLoading(true);
+
+      try {
+        const res = await fetch('/api/graphrag/query', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            query: q,
+            model_id: modelId || 'meta-llama/Meta-Llama-3-8B-Instruct',
+            state_code: filterState || 'WI',
+            primary_key: anchorPk,
+          }),
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.message || errData.detail?.message || `API error ${res.status}`);
+        }
+
+        const data: GraphRAGQueryResponse = await res.json();
+        setIlluminatedPath(data);
+
+        const assistantMsg: ChatMessage = {
+          id: `asst-${Date.now()}`,
+          sender: 'assistant',
+          text: data.answer,
+          responsePayload: data,
+          timestamp: new Date().toLocaleTimeString(),
+        };
+        setMessages((prev) => [...prev, assistantMsg]);
+      } catch (err: any) {
+        const msg = err.message || 'Error executing GraphRAG query.';
+        setErrorMsg(msg);
+        const errorChatMsg: ChatMessage = {
+          id: `err-${Date.now()}`,
+          sender: 'assistant',
+          text: `Error: ${msg}`,
+          timestamp: new Date().toLocaleTimeString(),
+        };
+        setMessages((prev) => [...prev, errorChatMsg]);
+      } finally {
+        setIsQueryLoading(false);
+      }
+    },
+    [filterState, isQueryLoading, setIlluminatedPath]
+  );
+
+  const inquireNode = useCallback(
+    async (node: GraphNode) => {
+      setIsChatOpen(true);
+      const prompt = constructInquiryPrompt(node);
+      await submitInquiry(prompt, node.primary_key);
+    },
+    [submitInquiry]
+  );
+
   const value = useMemo(
     () => ({
       activeNodePKs,
@@ -120,6 +213,9 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       filterState,
       policyKeyword,
       isChatOpen,
+      messages,
+      isQueryLoading,
+      errorMsg,
       focusTarget,
       selectNode,
       setIlluminatedPath,
@@ -128,6 +224,8 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       setPolicyKeyword,
       setIsChatOpen,
       setFocusTarget,
+      submitInquiry,
+      inquireNode,
     }),
     [
       activeNodePKs,
@@ -139,10 +237,15 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       filterState,
       policyKeyword,
       isChatOpen,
+      messages,
+      isQueryLoading,
+      errorMsg,
       focusTarget,
       selectNode,
       setIlluminatedPath,
       clearIllumination,
+      submitInquiry,
+      inquireNode,
     ]
   );
 

@@ -1,0 +1,58 @@
+[
+  {
+    "relationshipType": "ALLOWS_DIAGNOSIS",
+    "count": 6
+  },
+  {
+    "relationshipType": "APPLIES_TO",
+    "count": 3816
+  },
+  {
+    "relationshipType": "APPLIES_TO_JURISDICTION",
+    "count": 8
+  },
+  {
+    "relationshipType": "COVERS_STATE",
+    "count": 53
+  },
+  {
+    "relationshipType": "ENACTED_AS",
+    "count": 3
+  },
+  {
+    "relationshipType": "GOVERNS",
+    "count": 75
+  },
+  {
+    "relationshipType": "HAS_ADVOCACY_RECORD",
+    "count": 4
+  },
+  {
+    "relationshipType": "HAS_FEE_SCHEDULE",
+    "count": 3816
+  },
+  {
+    "relationshipType": "IMPLEMENTED_BY",
+    "count": 2
+  },
+  {
+    "relationshipType": "ISSUES_TRANSMITTAL",
+    "count": 2
+  },
+  {
+    "relationshipType": "MANDATES_POLICY",
+    "count": 2
+  },
+  {
+    "relationshipType": "MODIFIES_CODE",
+    "count": 2
+  },
+  {
+    "relationshipType": "SUPPORTED_BY_EVIDENCE",
+    "count": 2
+  },
+  {
+    "relationshipType": "TARGETS_BILL",
+    "count": 4
+  }
+]

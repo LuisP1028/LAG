@@ -1,0 +1,9 @@
+HTTP/1.1 301 Moved Permanently
+Server: nginx/1.31.3
+Content-Type: text/html
+Content-Length: 169
+Location: https://lda.gov/filings/public/filing/c8697fc5-7f3b-4861-8a49-d9e6357ad287/text/
+Date: Tue, 13 Oct 2026 17:30:26 GMT
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000
+

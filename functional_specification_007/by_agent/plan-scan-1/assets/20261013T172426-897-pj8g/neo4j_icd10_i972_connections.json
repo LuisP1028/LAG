@@ -1,0 +1,26 @@
+[
+  {
+    "icd_pk": "ICD10-I97.2",
+    "icd_props": {
+      "code": "I97.2",
+      "description": "Postmastectomy lymphedema syndrome",
+      "primary_key": "ICD10-I97.2"
+    },
+    "rel_type": "ALLOWS_DIAGNOSIS",
+    "rel_props": {
+      "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+      "run_id": "export-run-001",
+      "selector": "table#covered_icd10_codes//row[code='I97.2']",
+      "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html"
+    },
+    "neighbor_pk": "CMS-MCD-A59508",
+    "neighbor_label": "CoveragePolicy",
+    "neighbor_props": {
+      "article_id": "A59508",
+      "policy_type": "Joint DME MAC Policy Article",
+      "effective_date": "2024-01-01",
+      "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+      "primary_key": "CMS-MCD-A59508"
+    }
+  }
+]

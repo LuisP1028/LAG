@@ -1,0 +1,106 @@
+[
+  {
+    "labels": [
+      "PolicyNode",
+      "FeeScheduleEntry"
+    ],
+    "count": 3816
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "HCPCSCode"
+    ],
+    "count": 75
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "State"
+    ],
+    "count": 53
+  },
+  {
+    "labels": [
+      "Strategy"
+    ],
+    "count": 7
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "ICD10Code"
+    ],
+    "count": 6
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "Jurisdiction"
+    ],
+    "count": 4
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "Bill"
+    ],
+    "count": 3
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "Policy"
+    ],
+    "count": 2
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "StatutorySection"
+    ],
+    "count": 2
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "ChangeRequest"
+    ],
+    "count": 2
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "CoveragePolicy"
+    ],
+    "count": 2
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "LobbyingFiling"
+    ],
+    "count": 2
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "LiteratureStudy"
+    ],
+    "count": 2
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "PublicLaw"
+    ],
+    "count": 1
+  },
+  {
+    "labels": [
+      "PolicyNode",
+      "Regulation"
+    ],
+    "count": 1
+  }
+]

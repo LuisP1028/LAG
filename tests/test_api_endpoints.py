@@ -137,3 +137,46 @@ def test_api_single_state_and_subgraph(client):
     assert len(query_data["provenance_sources"]) > 0
     assert query_data["duration_ms"] > 0
 
+
+def test_api_graphrag_query_explicit_anchor_plaw(client):
+    """Verifies one-click inquiry with explicit primary_key for PLAW-117-328."""
+    payload = {
+        "query": "Explain the statutory authority and enacted healthcare provisions of [PLAW-117-328] (Consolidated Appropriations Act, 2023).",
+        "primary_key": "PLAW-117-328",
+    }
+    res = client.post("/api/graphrag/query", json=payload)
+    assert res.status_code == 200
+    data = res.json()
+    assert "PLAW-117-328" in data["active_node_pks"]
+    assert len(data["active_node_pks"]) >= 6
+    assert len(data["active_edge_keys"]) >= 5
+    assert all("UNKNOWN" not in ek for ek in data["active_edge_keys"])
+    assert "[PLAW-117-328]" in data["answer"]
+    assert data["duration_ms"] > 0
+
+
+def test_api_graphrag_query_all_14_entity_types(client):
+    """Verifies that one-click inquiry succeeds with >0 illuminated nodes across all 14 entity types."""
+    sample_entities = [
+        "STATE-WI", "JURIS-DME-B", "CMS-CR-13286", "CMS-MCD-A59508",
+        "HCPCS-A6522", "ICD10-I97.2", "FEE-A6522-WI-NR-2024", "POLICY-LTA",
+        "PLAW-117-328", "FR-2023-24455", "BILL-117-hr-3630",
+        "USC-42-1395x-s-2-JJ", "PUBMED-25574334", "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287"
+    ]
+    for pk in sample_entities:
+        res = client.post("/api/graphrag/query", json={"query": f"Inquire about [{pk}]", "primary_key": pk})
+        assert res.status_code == 200
+        data = res.json()
+        assert len(data["active_node_pks"]) > 0
+        assert pk in data["active_node_pks"]
+
+
+def test_api_graphrag_query_invalid_anchor_fails_fast(client):
+    """Verifies fast-fail HTTP 400 when an invalid primary key is supplied."""
+    payload = {
+        "query": "Inquire about nonexistent node",
+        "primary_key": "NONEXISTENT-PK-9999",
+    }
+    res = client.post("/api/graphrag/query", json=payload)
+    assert res.status_code == 400
+

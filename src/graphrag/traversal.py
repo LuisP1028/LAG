@@ -270,9 +270,13 @@ class TopologicalTraversalEngine:
     ) -> None:
         """Traces 1-to-2 hop incident neighborhood for any arbitrary single entity."""
         query = """
-        MATCH (n:PolicyNode {primary_key: $anchor_pk})-[r]-(m:PolicyNode)
+        MATCH (n:PolicyNode {primary_key: $anchor_pk})
+        OPTIONAL MATCH (n)-[r]-(m:PolicyNode)
         WHERE NOT m:FeeScheduleEntry
-        RETURN n, r, m
+        RETURN n, r, m,
+               startNode(r).primary_key AS src_pk,
+               endNode(r).primary_key AS tgt_pk,
+               type(r) AS rel_type
         LIMIT 50
         """
         results = session.run(query, anchor_pk=anchor_pk).data()
@@ -280,6 +284,9 @@ class TopologicalTraversalEngine:
             n = row.get("n")
             m = row.get("m")
             r = row.get("r")
+            src_pk = row.get("src_pk")
+            tgt_pk = row.get("tgt_pk")
+            rel_type = row.get("rel_type")
             if n:
                 tn = self._convert_node(n)
                 nodes_by_pk[tn.primary_key] = tn
@@ -288,10 +295,8 @@ class TopologicalTraversalEngine:
                 tm = self._convert_node(m)
                 nodes_by_pk[tm.primary_key] = tm
                 active_node_pks.add(tm.primary_key)
-            if r:
-                src = r.start_node["primary_key"] if hasattr(r, "start_node") and "primary_key" in r.start_node else None
-                tgt = r.end_node["primary_key"] if hasattr(r, "end_node") and "primary_key" in r.end_node else None
-                te = self._convert_edge(r, src, tgt)
+            if r and src_pk and tgt_pk:
+                te = self._convert_edge(r, src_pk, tgt_pk)
                 edges_by_key[te.edge_key] = te
                 active_edge_keys.add(te.edge_key)
 

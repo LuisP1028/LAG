@@ -1,0 +1,4 @@
+src/frontend/src/components/FilterToolbar.tsx CHANGED ticket-001
+src/frontend/src/context/GraphSyncContext.tsx CHANGED ticket-001
+src/frontend/src/components/GraphCanvas.tsx CHANGED ticket-001,ticket-002,ticket-003
+src/frontend/src/components/NodeDetailDrawer.tsx CHANGED ticket-004

@@ -5,92 +5,29 @@
 import React, { useState } from 'react';
 import { useGraphSync } from '../context/GraphSyncContext';
 import { CANVAS_PALETTE } from '../styles/graph_theme';
-import type { GraphRAGQueryResponse } from '../types/graph';
-
-interface Message {
-  id: string;
-  sender: 'user' | 'assistant';
-  text: string;
-  responsePayload?: GraphRAGQueryResponse;
-  timestamp: string;
-}
 
 export const AgentChatDrawer: React.FC = () => {
   const {
     isChatOpen,
     setIsChatOpen,
     quickPrompts,
-    setIlluminatedPath,
-    filterState,
+    messages,
+    isQueryLoading,
+    errorMsg,
+    submitInquiry,
+    seededAnchor,
   } = useGraphSync();
 
   const [inputQuery, setInputQuery] = useState<string>('');
   const [modelId, setModelId] = useState<string>('meta-llama/Meta-Llama-3-8B-Instruct');
-  const [loading, setLoading] = useState<boolean>(false);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: 'welcome-1',
-      sender: 'assistant',
-      text: "Welcome to the LAG Policy GraphRAG Intelligence Terminal. You can ask natural language clinical, geographic, or macro legislative questions, or select any node on the blueprint canvas to seed a targeted inquiry.",
-      timestamp: new Date().toLocaleTimeString(),
-    },
-  ]);
 
   if (!isChatOpen) return null;
 
   const handleSend = async (queryText?: string) => {
     const q = (queryText || inputQuery).trim();
-    if (!q || loading) return;
-
-    setErrorMsg(null);
+    if (!q || isQueryLoading) return;
     setInputQuery('');
-
-    // Append user message
-    const userMsg: Message = {
-      id: `user-${Date.now()}`,
-      sender: 'user',
-      text: q,
-      timestamp: new Date().toLocaleTimeString(),
-    };
-    setMessages((prev) => [...prev, userMsg]);
-    setLoading(true);
-
-    try {
-      const res = await fetch('/api/graphrag/query', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          query: q,
-          model_id: modelId,
-          state_code: filterState || 'WI',
-        }),
-      });
-
-      if (!res.ok) {
-        const errData = await res.json().catch(() => ({}));
-        throw new Error(errData.message || `API error ${res.status}`);
-      }
-
-      const data: GraphRAGQueryResponse = await res.json();
-
-      // Trigger bidirectional canvas illumination!
-      setIlluminatedPath(data);
-
-      const assistantMsg: Message = {
-        id: `asst-${Date.now()}`,
-        sender: 'assistant',
-        text: data.answer,
-        responsePayload: data,
-        timestamp: new Date().toLocaleTimeString(),
-      };
-      setMessages((prev) => [...prev, assistantMsg]);
-    } catch (err: any) {
-      setErrorMsg(err.message || 'Error executing GraphRAG query.');
-    } finally {
-      setLoading(false);
-    }
+    await submitInquiry(q, seededAnchor?.primary_key, modelId);
   };
 
   return (
@@ -194,7 +131,7 @@ export const AgentChatDrawer: React.FC = () => {
           <button
             key={idx}
             onClick={() => handleSend(prompt)}
-            disabled={loading}
+            disabled={isQueryLoading}
             style={{
               whiteSpace: 'nowrap',
               backgroundColor: 'rgba(30, 41, 59, 0.8)',
@@ -270,7 +207,7 @@ export const AgentChatDrawer: React.FC = () => {
           </div>
         ))}
 
-        {loading && (
+        {isQueryLoading && (
           <div
             style={{
               padding: '12px 14px',
@@ -322,7 +259,7 @@ export const AgentChatDrawer: React.FC = () => {
             value={inputQuery}
             onChange={(e) => setInputQuery(e.target.value)}
             placeholder="Ask Medicare policy question (e.g. Wisconsin breast cancer...)"
-            disabled={loading}
+            disabled={isQueryLoading}
             style={{
               flex: 1,
               backgroundColor: 'rgba(30, 41, 59, 0.9)',
@@ -336,7 +273,7 @@ export const AgentChatDrawer: React.FC = () => {
           />
           <button
             type="submit"
-            disabled={loading || !inputQuery.trim()}
+            disabled={isQueryLoading || !inputQuery.trim()}
             style={{
               backgroundColor: CANVAS_PALETTE.accentAmber,
               color: '#0a1128',
@@ -345,7 +282,7 @@ export const AgentChatDrawer: React.FC = () => {
               border: 'none',
               borderRadius: 6,
               padding: '0 16px',
-              cursor: loading ? 'not-allowed' : 'pointer',
+              cursor: isQueryLoading ? 'not-allowed' : 'pointer',
               boxShadow: '0 2px 8px rgba(255, 183, 3, 0.3)',
             }}
           >

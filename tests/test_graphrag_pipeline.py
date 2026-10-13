@@ -254,3 +254,29 @@ def test_latency_benchmark_harness(neo4j_engine):
         t_total = (time.perf_counter() - t0) * 1000.0
         assert resp.duration_ms > 0
         assert t_total < 30000.0, f"Total pipeline execution {t_total}ms exceeded SLA"
+
+
+def test_single_entity_general_traversal_integrity(neo4j_engine):
+    """Verifies that single-entity general traversal extracts valid neighbors and zero UNKNOWN edge keys."""
+    traverser = TopologicalTraversalEngine()
+    nodes_by_pk = {}
+    edges_by_key = {}
+    active_node_pks = set()
+    active_edge_keys = set()
+
+    with neo4j_engine.get_driver().session(database=neo4j_engine.database) as session:
+        traverser._execute_single_general_traversal(
+            anchor_pk="PLAW-117-328",
+            session=session,
+            nodes_by_pk=nodes_by_pk,
+            edges_by_key=edges_by_key,
+            active_node_pks=active_node_pks,
+            active_edge_keys=active_edge_keys,
+        )
+
+        assert "PLAW-117-328" in nodes_by_pk
+        assert len(nodes_by_pk) >= 6
+        assert len(edges_by_key) >= 5
+        for ek in edges_by_key:
+            assert "UNKNOWN" not in ek
+            assert "->" in ek

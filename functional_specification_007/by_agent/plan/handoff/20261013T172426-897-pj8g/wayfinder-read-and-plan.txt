@@ -1,0 +1,9 @@
+functional_specification_007.md
+wayfinder/20261013T172426-897-pj8g/tickets/ticket-001.md
+wayfinder/20261013T172426-897-pj8g/tickets/ticket-002.md
+wayfinder/20261013T172426-897-pj8g/tickets/ticket-003.md
+wayfinder/20261013T172426-897-pj8g/tickets/ticket-004.md
+wayfinder/20261013T172426-897-pj8g/tickets/ticket-005.md
+wayfinder/20261013T172426-897-pj8g/tickets/ticket-006.md
+wayfinder/20261013T172426-897-pj8g/map.md
+wayfinder/20261013T172426-897-pj8g/matrix.md

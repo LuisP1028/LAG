@@ -1,0 +1,20 @@
+HTTP 200 https://med.noridianmedicare.com/web/jadme
+Date: Tue, 13 Oct 2026 17:06:43 GMT
+Server: MedProdP3
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Cache-Control: private, no-cache, no-store, must-revalidate
+Pragma: no-cache
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=31536000;
+X-Content-Type-Options: nosniff
+Content-Type: text/html;charset=UTF-8
+Set-Cookie: JSESSIONID=-J8HgOBsCWSwzZ7GUDA6rVrdPNfpZzlABe_172zW.MedProdP3; path=/; secure; HttpOnly; SameSite=Strict
+Set-Cookie: miqVQSJ8AR=!Ca9nQgyQ+lMW9N9OhgcYDmxjnJmgPT7kl2rH63urtyklOW+kpmj4RvyUJRhUNyPbuKe5/K1ny98HJh550igwa6fCSW0XWZ5xxsrSGFGfIQ==; expires=Tue, 13-Oct-2026 18:06:39 GMT; path=/; Httponly; Secure
+PH: 2
+Vary: Accept-Encoding
+Cache-Control: no-store
+Cache-Control: no-cache
+Set-Cookie: ZNPCQ003-37383600=e9ae1f4c; Path=/; Domain=noridianmedicare.com; Secure; HttpOnly
+Connection: close
+Transfer-Encoding: chunked
+Set-Cookie: MiqVQSJ8AR21=!qDSJCrHs1yiDSENOhgcYDmxjnJmgPeUtGLPogbzC2uNAIUdJZ4be8JZg4pZABt2rfbV+88Ry5CyJyje7Y56qvy41bZAdDbMKRGr9AbMx; path=/; Httponly; Secure

@@ -167,6 +167,67 @@ class EntityAnchorLinker:
             coverage_policy_anchor=cp_a,
         )
 
+    def resolve_explicit_anchor(self, primary_key: str, session: Session) -> ResolvedAnchors:
+        """Deterministically verifies an explicit primary key against Neo4j, bypassing regex extraction."""
+        clean_pk = primary_key.strip()
+        record = session.run(
+            "MATCH (n:PolicyNode {primary_key: $pk}) "
+            "RETURN n.primary_key AS primary_key, labels(n) AS labels, n.name AS name, n.title AS title",
+            pk=clean_pk,
+        ).single()
+
+        if not record:
+            raise EntityResolutionError(
+                f"Entity with primary_key '{clean_pk}' not found in knowledge graph.",
+                details={"primary_key": clean_pk},
+            )
+
+        labels = [l for l in record["labels"] if l != "PolicyNode"]
+        label = labels[0] if labels else "PolicyNode"
+        matched = record["name"] or record["title"] or clean_pk
+
+        slot = label.lower()
+        if label == "State":
+            slot = "state"
+        elif label == "ICD10Code":
+            slot = "diagnosis"
+        elif label == "Policy":
+            slot = "policy"
+        elif label == "HCPCSCode":
+            slot = "hcpcs"
+        elif label == "Jurisdiction":
+            slot = "jurisdiction"
+        elif label == "ChangeRequest":
+            slot = "changerequest"
+        elif label == "CoveragePolicy":
+            slot = "coveragepolicy"
+
+        anchor = AnchorEntity(
+            slot=slot,
+            primary_key=clean_pk,
+            matched_text=str(matched),
+            entity_type=label,
+            label=label,
+        )
+
+        resolved = ResolvedAnchors(all_anchors=[anchor])
+        if slot == "state":
+            resolved.state_anchor = anchor
+        elif slot in ("diagnosis", "icd10code"):
+            resolved.diagnosis_anchor = anchor
+        elif slot == "policy":
+            resolved.policy_anchor = anchor
+        elif slot in ("hcpcs", "hcpcscode"):
+            resolved.hcpcs_anchor = anchor
+        elif slot == "jurisdiction":
+            resolved.jurisdiction_anchor = anchor
+        elif slot == "changerequest":
+            resolved.change_request_anchor = anchor
+        elif slot == "coveragepolicy":
+            resolved.coverage_policy_anchor = anchor
+
+        return resolved
+
     def _extract_jurisdiction_anchors(self, text: str, session: Session) -> List[AnchorEntity]:
         """Matches Medicare Administrative Contractor names or jurisdiction codes."""
         anchors = []

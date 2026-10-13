@@ -1,0 +1,34 @@
+{
+  "type": "user",
+  "id": "662eff76b10f82aa4fb0d8ce",
+  "name": "ChoppedCheese",
+  "fullname": "PLATODOOM",
+  "isPro": false,
+  "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/662eff76b10f82aa4fb0d8ce/8oA2MKyvBN4n0UW6L9JLU.png",
+  "orgs": [],
+  "auth": {
+    "type": "access_token",
+    "accessToken": {
+      "displayName": "ACT-KG-",
+      "role": "fineGrained",
+      "createdAt": "2026-10-13T04:11:55.868Z",
+      "fineGrained": {
+        "canReadGatedRepos": false,
+        "global": [],
+        "scoped": [
+          {
+            "entity": {
+              "_id": "662eff76b10f82aa4fb0d8ce",
+              "type": "user",
+              "name": "ChoppedCheese"
+            },
+            "permissions": [
+              "inference.serverless.write",
+              "inference.endpoints.infer.write"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
