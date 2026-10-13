@@ -25,11 +25,16 @@ flowchart TD
     T002["ticket-002.md: Active Node Amber Fill, Radial Glow Halo, Edge Illumination & Selection/Hover Continuity"]
     T003["ticket-003.md: Synchronized Camera Viewport Framing & Rapid Query Transition Interruption"]
     T004["ticket-004.md: Deterministic State Synchronization, Empty Subgraph Guard, Rapid Query Sequencing & De-Illumination"]
+    T005["ticket-005.md: End-to-End Integration Test Architecture, Payload Admissibility & Zero-Gesture Illumination Oracles"]
 
     T001 --> T002
     T001 --> T003
     T002 --> T003
     T001 --> T004
+    T001 --> T005
+    T002 --> T005
+    T003 --> T005
+    T004 --> T005
 ```
 
 ---
@@ -56,3 +61,20 @@ flowchart TD
    - In `GraphSyncContext.tsx`, guard `setIlluminatedPath` so empty `active_node_pks` responses (`length === 0`) immediately clear `activeNodePKs` and `activeEdgeKeys` and set `isIlluminated` to `false`.
    - Use a monotonic request counter (`latestQueryIdRef`) in `submitInquiry` and `clearIllumination` so rapid successive queries execute without being dropped by `isQueryLoading` and overwrite previous paths deterministically.
    - In `AgentChatDrawer.tsx`, invoke `clearIllumination()` when the user closes the chat inquiry drawer (`✕`), immediately reverting `isIlluminated` to `false` and repainting the canvas to baseline blueprint state.
+
+5. **[ticket-005.md](tickets/ticket-005.md) — End-to-End Integration Test Architecture, Payload Admissibility Governance, and Zero-Gesture Canvas Illumination Verification Oracles (Resolved):**
+   - Enforce `INV-PAYLOAD-01`: bind all integration test inputs exclusively to authentic codebase schemas (`GraphNode`, `GraphLink`, `NodeProperties`, `EdgeProvenance`, `AnchorEntity`, `GraphRAGQueryRequest`, `GraphRAGQueryResponse`, `TopologyResponse`) and authentic producer responses from `/api/graph/topology`, `/api/graphrag/query`, `/api/graphrag/subgraph`, and `DME_JURISDICTIONS` with zero synthetic mocks or backfilled optional fields.
+   - Enforce `INV-ASSERTION-01` across five deterministic verification oracles (`IT-01` through `IT-05` in [`test-matrix.md`](test-matrix.md)): (1) zero-gesture immediate reactive redraw & amber/halo illumination in settled simulation state, (2) pre-ticked simulation coordinates & 350ms synchronized camera framing via `renderRef.current()`, (3) zero-gesture de-illumination across `AgentChatDrawer` close (`✕`) and `FilterToolbar` reset triggers, (4) preserved `selectedNode` outer selection ring and non-blocking `hoveredNode` inspection tooltip during illumination, and (5) rapid successive query sequencing (`latestQueryIdRef`), empty subgraph guard (`active_node_pks: []`), and resize continuity.
+
+---
+
+## Not Yet Specified Fog
+
+- **None (Frontier Empty):** All feature implementation decisions (`ticket-001.md` through `ticket-004.md`) and integration test verification decisions (`ticket-005.md` and `test-matrix.md`) for `functional_specification_009.md` are resolved and certified `{sufficient}`.
+
+---
+
+## Out of Scope Boundaries
+
+- Modifying backend Neo4j ingestion pipelines, Cypher traversal logic, or FastAPI route schemas (`src/api/`, `src/graph/`, `src/graphrag/`).
+- Writing executable test code, test fixtures, parsers, or expected-output files during this `read-and-plan` session (`INV-BOUNDARY-01`).
