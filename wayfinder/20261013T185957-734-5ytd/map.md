@@ -30,9 +30,10 @@ flowchart TD
     T003["Ticket 003: Dual Jurisdiction and State Navigation Selectors (FilterToolbar.tsx)"]
     T004["Ticket 004: Multi-State and Regional Contractor Entity Anchor Resolution (EntityAnchorLinker)"]
     T005["Ticket 005: Regional Jurisdiction Lineage and Cross-Jurisdiction Comparative GraphRAG Traversal & Context Assembly"]
+    T006["Ticket 006: End-to-End Integration Test Architecture, Payload Admissibility, and Verification Oracles"]
 
-    T001 --> T002 --> T003
-    T004 --> T005
+    T001 --> T002 --> T003 --> T006
+    T004 --> T005 --> T006
 ```
 
 ---
@@ -49,16 +50,25 @@ flowchart TD
    - Locked `_extract_state_anchors` in `src/graphrag/entity_linker.py` to extract all states in comparative queries (e.g., `STATE-CA` and `STATE-NY`), enhanced `_extract_jurisdiction_anchors` to resolve explicit `Jurisdiction A/B/C/D` and multi-region contractor names (`CGS` -> `JURIS-DME-B`, `JURIS-DME-C`; `Noridian` -> `JURIS-DME-A`, `JURIS-DME-D`), and refined `GEO_LOCATION_INDICATORS` fail-fast boundaries.
 5. **[Ticket 005: Regional Jurisdiction Lineage and Cross-Jurisdiction Comparative GraphRAG Traversal & Context Assembly](file:///Users/diesel/Desktop/LAG/.sandcastle/worktrees/agent-plan-20261013T185957-734-5ytd/wayfinder/20261013T185957-734-5ytd/tickets/ticket-005.md)** — `RESOLVED`
    - Locked `_execute_jurisdiction_traversal` and multi-state comparative traversal in `src/graphrag/traversal.py`, `COVERS_STATE` regional state listing and multi-state `A6522` fee reporting in `src/graphrag/context_assembler.py`, and `state_code` handling in `src/graphrag/pipeline.py`.
+6. **[Ticket 006: End-to-End Integration Test Architecture, Payload Admissibility, and Verification Oracles for Dual Jurisdiction and State Governance](file:///Users/diesel/Desktop/LAG/.sandcastle/worktrees/agent-plan-20261013T185957-734-5ytd/wayfinder/20261013T185957-734-5ytd/tickets/ticket-006.md)** — `RESOLVED`
+   - Locked zero-mock payload admissibility rules (`INV-PAYLOAD-01`), schema-grounded verification oracles (`INV-ASSERTION-01`), and the [Authoritative Integration Test Matrix](file:///Users/diesel/Desktop/LAG/.sandcastle/worktrees/agent-plan-20261013T185957-734-5ytd/wayfinder/20261013T185957-734-5ytd/test_matrix.md) across all 9 modified components and all 6 Acceptance Criteria of `functional_specification_008.md`.
 
 ---
 
 ## 5. Open Frontier
 
-- None. All 5 architectural decision tickets (`ticket-001` through `ticket-005`) are resolved and documented in the [Master Component-to-Edit Matrix](file:///Users/diesel/Desktop/LAG/.sandcastle/worktrees/agent-plan-20261013T185957-734-5ytd/wayfinder/20261013T185957-734-5ytd/master_edit_matrix.md).
+- None. All feature architecture tickets (`ticket-001` through `ticket-005`) and integration test planning tickets (`ticket-006`) are resolved and documented in the [Master Component-to-Edit Matrix](file:///Users/diesel/Desktop/LAG/.sandcastle/worktrees/agent-plan-20261013T185957-734-5ytd/wayfinder/20261013T185957-734-5ytd/master_edit_matrix.md) and [Authoritative Integration Test Matrix](file:///Users/diesel/Desktop/LAG/.sandcastle/worktrees/agent-plan-20261013T185957-734-5ytd/wayfinder/20261013T185957-734-5ytd/test_matrix.md).
 
 ---
 
-## 6. Out of Scope
+## 6. Not Yet Specified (Fog)
+
+- None. Zero ambiguity remains across component schemas, admissible payloads, or verification oracles (`{sufficient}`).
+
+---
+
+## 7. Out of Scope
 
 - Mutating the underlying Tier 1–5 ingestion pipeline or altering the 3,971-node Neo4j database snapshot.
-- Adding synthetic or ungrounded fee schedule records.
+- Adding synthetic or ungrounded fee schedule records or mock test fixtures.
+- Writing executable test code prior to explicit operator authorization (`INV-BOUNDARY-01`).
