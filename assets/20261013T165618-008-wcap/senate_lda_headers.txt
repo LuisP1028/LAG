@@ -1,0 +1,12 @@
+HTTP 200 https://lda.gov/system/public/
+Server: gunicorn
+Content-Type: text/html; charset=utf-8
+x-frame-options: DENY
+x-content-type-options: nosniff
+referrer-policy: same-origin
+cross-origin-opener-policy: same-origin
+Vary: Accept-Encoding
+Date: Tue, 13 Oct 2026 17:06:40 GMT
+Content-Length: 15818
+Connection: close
+Strict-Transport-Security: max-age=31536000
