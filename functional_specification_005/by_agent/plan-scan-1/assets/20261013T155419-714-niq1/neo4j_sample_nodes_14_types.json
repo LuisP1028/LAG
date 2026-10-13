@@ -1,0 +1,125 @@
+{
+  "Policy": {
+    "primary_key": "POLICY-LTA",
+    "label": "Policy",
+    "keyword": "LTA",
+    "run_id": "export-run-001",
+    "timestamp": "2026-10-13T01:08:41.300179+00:00"
+  },
+  "Bill": {
+    "primary_key": "BILL-117-hr-3630",
+    "label": "Bill",
+    "congress": 117,
+    "type": "hr",
+    "number": 3630,
+    "title": "Lymphedema Treatment Act",
+    "introduced_date": "2021-05-28"
+  },
+  "PublicLaw": {
+    "primary_key": "PLAW-117-328",
+    "label": "PublicLaw",
+    "congress": 117,
+    "number": 328,
+    "title": "Consolidated Appropriations Act, 2023",
+    "enacted_date": "2022-12-29"
+  },
+  "StatutorySection": {
+    "primary_key": "USC-42-1395x-s-2-JJ",
+    "label": "StatutorySection",
+    "title": 42,
+    "section": "1395x",
+    "subsections": [
+      "s",
+      "2",
+      "JJ"
+    ],
+    "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+    "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression "
+  },
+  "Regulation": {
+    "primary_key": "FR-2023-24455",
+    "label": "Regulation",
+    "citation": "88 FR 77676",
+    "document_number": "2023-24455",
+    "effective_date": "2024-01-01",
+    "cfr_parts": [
+      "42 CFR 409",
+      "42 CFR 410",
+      "42 CFR 414",
+      "42 CFR 424",
+      "42 CFR 484",
+      "42 CFR 488",
+      "42 CFR 489"
+    ]
+  },
+  "ChangeRequest": {
+    "primary_key": "CMS-CR-13286",
+    "label": "ChangeRequest",
+    "cr_number": "13286",
+    "transmittal_number": "12349",
+    "benefit_category": "LC",
+    "effective_date": "2024-01-01"
+  },
+  "CoveragePolicy": {
+    "primary_key": "CMS-MCD-A59508",
+    "label": "CoveragePolicy",
+    "article_id": "A59508",
+    "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+    "effective_date": "2024-01-01",
+    "policy_type": "Joint DME MAC Policy Article"
+  },
+  "HCPCSCode": {
+    "primary_key": "HCPCS-A6520",
+    "label": "HCPCSCode",
+    "code": "A6520",
+    "short_description": "G com garmnt glove nghttime",
+    "category": "Nighttime Compression Garment"
+  },
+  "ICD10Code": {
+    "primary_key": "ICD10-I89.0",
+    "label": "ICD10Code",
+    "code": "I89.0",
+    "description": "Lymphedema, not elsewhere classified"
+  },
+  "Jurisdiction": {
+    "primary_key": "JURIS-DME-A",
+    "label": "Jurisdiction",
+    "code": "JURIS-DME-A",
+    "contractor_name": "Noridian Healthcare Solutions"
+  },
+  "State": {
+    "primary_key": "STATE-CT",
+    "label": "State",
+    "state_code": "CT",
+    "state_name": "Connecticut"
+  },
+  "FeeScheduleEntry": {
+    "primary_key": "FEE-A6520-AL-NR-2024",
+    "label": "FeeScheduleEntry",
+    "hcpcs_code": "A6520",
+    "state_code": "AL",
+    "is_rural": false,
+    "fee_amount": 119.54,
+    "ceiling": 0.0,
+    "floor": 0.0,
+    "year": 2024
+  },
+  "LobbyingFiling": {
+    "primary_key": "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+    "label": "LobbyingFiling",
+    "filing_uuid": "c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+    "registrant_name": "Immune Deficiency Foundation Advocacy",
+    "client_name": "Immune Deficiency Foundation",
+    "amount": 0.0,
+    "year": 2015
+  },
+  "LiteratureStudy": {
+    "primary_key": "PUBMED-25574334",
+    "label": "LiteratureStudy",
+    "pmid": 25574334,
+    "doi": "10.11604/pamj.2014.19.5.2830",
+    "title": "[Psychosocial impact of sickle cell disease in the parents of children living in Kinshasa, Democratic Republic of Congo: a qualitative study].",
+    "journal": "Pan Afr Med J",
+    "pub_year": 2014
+  }
+}

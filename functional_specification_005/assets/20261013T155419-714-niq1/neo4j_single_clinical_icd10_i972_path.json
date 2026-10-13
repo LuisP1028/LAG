@@ -1,0 +1,56 @@
+[
+  {
+    "d": {
+      "code": "I97.2",
+      "description": "Postmastectomy lymphedema syndrome",
+      "primary_key": "ICD10-I97.2"
+    },
+    "r1": [
+      {
+        "article_id": "A59508",
+        "policy_type": "Joint DME MAC Policy Article",
+        "effective_date": "2024-01-01",
+        "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+        "primary_key": "CMS-MCD-A59508"
+      },
+      "ALLOWS_DIAGNOSIS",
+      {
+        "code": "I97.2",
+        "description": "Postmastectomy lymphedema syndrome",
+        "primary_key": "ICD10-I97.2"
+      }
+    ],
+    "cp": {
+      "article_id": "A59508",
+      "policy_type": "Joint DME MAC Policy Article",
+      "effective_date": "2024-01-01",
+      "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+      "primary_key": "CMS-MCD-A59508"
+    },
+    "r2": [
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      },
+      "MANDATES_POLICY",
+      {
+        "article_id": "A59508",
+        "policy_type": "Joint DME MAC Policy Article",
+        "effective_date": "2024-01-01",
+        "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+        "primary_key": "CMS-MCD-A59508"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12349",
+      "cr_number": "13286",
+      "benefit_category": "LC",
+      "primary_key": "CMS-CR-13286"
+    },
+    "governed_hcpcs_count": 70
+  }
+]

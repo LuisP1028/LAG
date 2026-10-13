@@ -1,0 +1,74 @@
+{
+  "nodes": [
+    {
+      "primary_key": "CMS-CR-13286",
+      "label": "ChangeRequest",
+      "cr_number": "13286",
+      "transmittal_number": "12349",
+      "benefit_category": "LC",
+      "effective_date": "2024-01-01"
+    },
+    {
+      "primary_key": "CMS-MCD-A59508",
+      "label": "CoveragePolicy",
+      "article_id": "A59508",
+      "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+      "effective_date": "2024-01-01",
+      "policy_type": "Joint DME MAC Policy Article"
+    },
+    {
+      "primary_key": "HCPCS-A6583",
+      "label": "HCPCSCode",
+      "code": "A6583",
+      "short_description": "Grad com wrap w straps bk",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "ICD10-I97.2",
+      "label": "ICD10Code",
+      "code": "I97.2",
+      "description": "Postmastectomy lymphedema syndrome"
+    }
+  ],
+  "edges": [
+    {
+      "source_pk": "CMS-CR-13286",
+      "label": "MANDATES_POLICY",
+      "target_pk": "CMS-MCD-A59508",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "directive.policy_article_references",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6583",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6583']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "ALLOWS_DIAGNOSIS",
+      "target_pk": "ICD10-I97.2",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_icd10_codes//row[code='I97.2']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    }
+  ],
+  "active_node_pks": [
+    "CMS-CR-13286",
+    "CMS-MCD-A59508",
+    "HCPCS-A6583",
+    "ICD10-I97.2"
+  ]
+}

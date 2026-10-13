@@ -1,0 +1,3825 @@
+{
+  "nodes": [
+    {
+      "primary_key": "CMS-CR-13286",
+      "label": "ChangeRequest",
+      "cr_number": "13286",
+      "transmittal_number": "12349",
+      "benefit_category": "LC",
+      "effective_date": "2024-01-01"
+    },
+    {
+      "primary_key": "CMS-MCD-A59508",
+      "label": "CoveragePolicy",
+      "article_id": "A59508",
+      "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+      "effective_date": "2024-01-01",
+      "policy_type": "Joint DME MAC Policy Article"
+    },
+    {
+      "primary_key": "HCPCS-A6520",
+      "label": "HCPCSCode",
+      "code": "A6520",
+      "short_description": "G com garmnt glove nghttime",
+      "category": "Nighttime Compression Garment"
+    },
+    {
+      "primary_key": "HCPCS-A6521",
+      "label": "HCPCSCode",
+      "code": "A6521",
+      "short_description": "G com garmnt glove nght cust",
+      "category": "Nighttime Compression Garment"
+    },
+    {
+      "primary_key": "HCPCS-A6522",
+      "label": "HCPCSCode",
+      "code": "A6522",
+      "short_description": "G com garment arm nighttime",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6523",
+      "label": "HCPCSCode",
+      "code": "A6523",
+      "short_description": "G com garment arm nght custm",
+      "category": "Nighttime Compression Garment"
+    },
+    {
+      "primary_key": "HCPCS-A6524",
+      "label": "HCPCSCode",
+      "code": "A6524",
+      "short_description": "G com garmnt lwr leg/ft nght",
+      "category": "Nighttime Compression Garment"
+    },
+    {
+      "primary_key": "HCPCS-A6525",
+      "label": "HCPCSCode",
+      "code": "A6525",
+      "short_description": "G com garm lwrleg/ft ngt cus",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6526",
+      "label": "HCPCSCode",
+      "code": "A6526",
+      "short_description": "G com garmt full leg/ft nght",
+      "category": "Nighttime Compression Garment"
+    },
+    {
+      "primary_key": "HCPCS-A6527",
+      "label": "HCPCSCode",
+      "code": "A6527",
+      "short_description": "G garmt full leg/ft nght cus",
+      "category": "Nighttime Compression Garment"
+    },
+    {
+      "primary_key": "HCPCS-A6528",
+      "label": "HCPCSCode",
+      "code": "A6528",
+      "short_description": "G com garment bra nighttime",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6529",
+      "label": "HCPCSCode",
+      "code": "A6529",
+      "short_description": "G com garmt bra night custm",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6530",
+      "label": "HCPCSCode",
+      "code": "A6530",
+      "short_description": "Compression stocking bk18-30",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6533",
+      "label": "HCPCSCode",
+      "code": "A6533",
+      "short_description": "Gc stocking thighlngth 18-30",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6534",
+      "label": "HCPCSCode",
+      "code": "A6534",
+      "short_description": "Gc stocking thighlngth 30-40",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6535",
+      "label": "HCPCSCode",
+      "code": "A6535",
+      "short_description": "Gc stocking thighlngth 40+",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6536",
+      "label": "HCPCSCode",
+      "code": "A6536",
+      "short_description": "Gc stocking full lngth 18-30",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6537",
+      "label": "HCPCSCode",
+      "code": "A6537",
+      "short_description": "Gc stocking full lngth 30-40",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6538",
+      "label": "HCPCSCode",
+      "code": "A6538",
+      "short_description": "Gc stocking full lngth 40+",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6539",
+      "label": "HCPCSCode",
+      "code": "A6539",
+      "short_description": "Gc stocking waistlngth 18-30",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6540",
+      "label": "HCPCSCode",
+      "code": "A6540",
+      "short_description": "Gc stocking waistlngth 30-40",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6541",
+      "label": "HCPCSCode",
+      "code": "A6541",
+      "short_description": "Gc stocking waistlngth 40+",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6552",
+      "label": "HCPCSCode",
+      "code": "A6552",
+      "short_description": "Grad com stocking bk 30-40",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6553",
+      "label": "HCPCSCode",
+      "code": "A6553",
+      "short_description": "G com stcking bk 30-40 custm",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6554",
+      "label": "HCPCSCode",
+      "code": "A6554",
+      "short_description": "Grad com stocking bk 40+",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6555",
+      "label": "HCPCSCode",
+      "code": "A6555",
+      "short_description": "G com stcking bk 40+ custm",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6556",
+      "label": "HCPCSCode",
+      "code": "A6556",
+      "short_description": "G com stcking thgh18-30 cust",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6557",
+      "label": "HCPCSCode",
+      "code": "A6557",
+      "short_description": "G com stcking thgh30-40 cust",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6558",
+      "label": "HCPCSCode",
+      "code": "A6558",
+      "short_description": "G com stcking thgh 40+ cust",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6562",
+      "label": "HCPCSCode",
+      "code": "A6562",
+      "short_description": "G com stckng waist18-30 cust",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6563",
+      "label": "HCPCSCode",
+      "code": "A6563",
+      "short_description": "G com stckng waist30-40 cust",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6564",
+      "label": "HCPCSCode",
+      "code": "A6564",
+      "short_description": "G com stckng waist 40+ cust",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6565",
+      "label": "HCPCSCode",
+      "code": "A6565",
+      "short_description": "Grad comp gauntlet custom",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6566",
+      "label": "HCPCSCode",
+      "code": "A6566",
+      "short_description": "Grad com garment neck/head",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6567",
+      "label": "HCPCSCode",
+      "code": "A6567",
+      "short_description": "G com garment neck/head cust",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6568",
+      "label": "HCPCSCode",
+      "code": "A6568",
+      "short_description": "G com garment torso/shldr",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6569",
+      "label": "HCPCSCode",
+      "code": "A6569",
+      "short_description": "G com garmnt torso/shdr cust",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6570",
+      "label": "HCPCSCode",
+      "code": "A6570",
+      "short_description": "Grad com garment genital",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6571",
+      "label": "HCPCSCode",
+      "code": "A6571",
+      "short_description": "G com garment genital custm",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6572",
+      "label": "HCPCSCode",
+      "code": "A6572",
+      "short_description": "Grad com garment toe caps",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6573",
+      "label": "HCPCSCode",
+      "code": "A6573",
+      "short_description": "Grad com garmnt toe cap cust",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6574",
+      "label": "HCPCSCode",
+      "code": "A6574",
+      "short_description": "Custom gradient sleev/glov",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6575",
+      "label": "HCPCSCode",
+      "code": "A6575",
+      "short_description": "Gradient comp sleev/glov",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6576",
+      "label": "HCPCSCode",
+      "code": "A6576",
+      "short_description": "Custom grad com sleeve med",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6577",
+      "label": "HCPCSCode",
+      "code": "A6577",
+      "short_description": "Custom grad cm sleeve heavy",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6578",
+      "label": "HCPCSCode",
+      "code": "A6578",
+      "short_description": "Gradient comp sleeve",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6579",
+      "label": "HCPCSCode",
+      "code": "A6579",
+      "short_description": "Custom grad com glove med",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6580",
+      "label": "HCPCSCode",
+      "code": "A6580",
+      "short_description": "Custom grad com glove heavy",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6581",
+      "label": "HCPCSCode",
+      "code": "A6581",
+      "short_description": "Gradient comp glove",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6582",
+      "label": "HCPCSCode",
+      "code": "A6582",
+      "short_description": "Gradient comp gauntlet",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6583",
+      "label": "HCPCSCode",
+      "code": "A6583",
+      "short_description": "Grad com wrap w straps bk",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6585",
+      "label": "HCPCSCode",
+      "code": "A6585",
+      "short_description": "Grad com wrap w straps ak",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6586",
+      "label": "HCPCSCode",
+      "code": "A6586",
+      "short_description": "Grad com wrap w straps leg",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6587",
+      "label": "HCPCSCode",
+      "code": "A6587",
+      "short_description": "Grad com wrap w straps foot",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6588",
+      "label": "HCPCSCode",
+      "code": "A6588",
+      "short_description": "Grad com wrap w straps arm",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6589",
+      "label": "HCPCSCode",
+      "code": "A6589",
+      "short_description": "Grad com wrap w straps bra",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6594",
+      "label": "HCPCSCode",
+      "code": "A6594",
+      "short_description": "G comp bandge liner lwr extr",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6595",
+      "label": "HCPCSCode",
+      "code": "A6595",
+      "short_description": "G comp bandge liner upr extr",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6596",
+      "label": "HCPCSCode",
+      "code": "A6596",
+      "short_description": "G comp bandge conform gauze",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6597",
+      "label": "HCPCSCode",
+      "code": "A6597",
+      "short_description": "G comp bandage long stretch",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6598",
+      "label": "HCPCSCode",
+      "code": "A6598",
+      "short_description": "G comp bandage med stretch",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6599",
+      "label": "HCPCSCode",
+      "code": "A6599",
+      "short_description": "G comp bandage short stretch",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6600",
+      "label": "HCPCSCode",
+      "code": "A6600",
+      "short_description": "G com bandge hgh dn foam sht",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6601",
+      "label": "HCPCSCode",
+      "code": "A6601",
+      "short_description": "G com bandge hgh dn foam pad",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6602",
+      "label": "HCPCSCode",
+      "code": "A6602",
+      "short_description": "G com bandge hgh dn foamroll",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6603",
+      "label": "HCPCSCode",
+      "code": "A6603",
+      "short_description": "G com bandge low dn foamchnl",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6604",
+      "label": "HCPCSCode",
+      "code": "A6604",
+      "short_description": "G com bandge low dn foam flt",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6605",
+      "label": "HCPCSCode",
+      "code": "A6605",
+      "short_description": "G com bandage padded foam",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6606",
+      "label": "HCPCSCode",
+      "code": "A6606",
+      "short_description": "G com bandage padded textile",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6607",
+      "label": "HCPCSCode",
+      "code": "A6607",
+      "short_description": "G com bandage tub protct lyr",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6608",
+      "label": "HCPCSCode",
+      "code": "A6608",
+      "short_description": "G com bandage tub protct pad",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "HCPCS-A6610",
+      "label": "HCPCSCode",
+      "code": "A6610",
+      "short_description": "G com stcking bk 18-30 custm",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "JURIS-DME-A",
+      "label": "Jurisdiction",
+      "code": "JURIS-DME-A",
+      "contractor_name": "Noridian Healthcare Solutions"
+    },
+    {
+      "primary_key": "STATE-NY",
+      "label": "State",
+      "state_code": "NY",
+      "state_name": "New York"
+    },
+    {
+      "primary_key": "FEE-A6520-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6520",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 119.54,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6521-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6521",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 474.33,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6522-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6522",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 290.47,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6523-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6523",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 689.17,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6524-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6524",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 362.39,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6525-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6525",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 731.6,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6526-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6526",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 655.18,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6527-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6527",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 1204.8,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6528-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6528",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 630.0,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6529-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6529",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 995.5,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6530-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6530",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 36.93,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6533-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6533",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 51.86,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6534-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6534",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 59.22,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6535-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6535",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 68.18,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6536-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6536",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 69.91,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6537-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6537",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 82.88,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6538-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6538",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 97.04,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6539-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6539",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 92.51,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6540-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6540",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 110.3,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6541-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6541",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 130.66,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6552-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6552",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 54.81,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6553-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6553",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 214.01,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6554-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6554",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 75.36,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6555-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6555",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 214.01,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6556-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6556",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 293.29,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6557-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6557",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 293.29,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6558-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6558",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 302.67,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6562-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6562",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 959.88,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6563-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6563",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 959.88,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6564-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6564",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 1034.0,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6565-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6565",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 165.86,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6566-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6566",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 240.83,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6567-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6567",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 756.68,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6568-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6568",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 157.17,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6569-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6569",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 895.0,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6570-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6570",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 107.09,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6571-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6571",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 643.63,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6572-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6572",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 99.37,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6573-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6573",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 235.8,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6574-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6574",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 300.61,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6575-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6575",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 97.42,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6576-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6576",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 184.5,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6577-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6577",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 152.7,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6578-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6578",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 75.2,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6579-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6579",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 296.14,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6580-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6580",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 293.96,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6581-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6581",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 69.0,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6582-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6582",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 46.02,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6583-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6583",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 151.38,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6585-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6585",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 179.24,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6586-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6586",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 528.06,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6587-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6587",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 69.17,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6588-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6588",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 230.54,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6589-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6589",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 91.01,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6594-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6594",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 33.14,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6595-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6595",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 32.59,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6596-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6596",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 0.17,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6597-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6597",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 1.47,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6598-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6598",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 0.71,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6599-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6599",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 1.61,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6600-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6600",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 2.9,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6601-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6601",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 3.26,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6602-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6602",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 4.76,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6603-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6603",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 2.23,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6604-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6604",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 1.3,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6605-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6605",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 1.49,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6606-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6606",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 4.42,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6607-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6607",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 1.18,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6608-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6608",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 4.92,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-A6610-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6610",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 214.01,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    },
+    {
+      "primary_key": "HCPCS-Q2052",
+      "label": "HCPCSCode",
+      "code": "Q2052",
+      "short_description": "Intravenous immune globulin, items and services in home",
+      "category": "In-Home IVIG Services"
+    },
+    {
+      "primary_key": "FEE-Q2052-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    }
+  ],
+  "edges": [
+    {
+      "source_pk": "CMS-CR-13286",
+      "label": "MANDATES_POLICY",
+      "target_pk": "CMS-MCD-A59508",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "directive.policy_article_references",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6520",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6520']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6521",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6521']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6522",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6522']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6523",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6523']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6524",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6524']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6525",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6525']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6526",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6526']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6527",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6527']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6528",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6528']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6529",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6529']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6530",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6530']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6533",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6533']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6534",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6534']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6535",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6535']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6536",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6536']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6537",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6537']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6538",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6538']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6539",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6539']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6540",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6540']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6541",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6541']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6552",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6552']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6553",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6553']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6554",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6554']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6555",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6555']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6556",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6556']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6557",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6557']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6558",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6558']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6562",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6562']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6563",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6563']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6564",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6564']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6565",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6565']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6566",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6566']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6567",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6567']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6568",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6568']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6569",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6569']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6570",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6570']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6571",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6571']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6572",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6572']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6573",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6573']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6574",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6574']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6575",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6575']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6576",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6576']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6577",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6577']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6578",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6578']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6579",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6579']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6580",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6580']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6581",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6581']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6582",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6582']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6583",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6583']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6585",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6585']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6586",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6586']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6587",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6587']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6588",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6588']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6589",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6589']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6594",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6594']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6595",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6595']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6596",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6596']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6597",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6597']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6598",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6598']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6599",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6599']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6600",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6600']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6601",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6601']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6602",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6602']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6603",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6603']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6604",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6604']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6605",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6605']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6606",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6606']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6607",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6607']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6608",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6608']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6610",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6610']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-CR-13286",
+      "label": "APPLIES_TO_JURISDICTION",
+      "target_pk": "JURIS-DME-A",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "CMS MAC Region Allocation Table: Jurisdiction A",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-NY",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6520",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6520-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6520']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6520-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6521",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6521-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6521']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6521-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6522",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6522-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6522']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6522-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6523",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6523-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6523']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6523-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6524",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6524-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6524']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6524-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6525",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6525-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6525']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6525-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6526",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6526-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6526']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6526-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6527",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6527-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6527']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6527-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6528",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6528-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6528']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6528-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6529",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6529-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6529']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6529-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6530",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6530-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6530']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6530-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6533",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6533-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6533']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6533-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6534",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6534-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6534']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6534-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6535",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6535-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6535']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6535-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6536",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6536-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6536']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6536-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6537",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6537-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6537']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6537-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6538",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6538-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6538']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6538-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6539",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6539-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6539']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6539-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6540",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6540-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6540']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6540-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6541",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6541-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6541']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6541-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6552",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6552-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6552']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6552-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6553",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6553-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6553']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6553-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6554",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6554-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6554']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6554-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6555",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6555-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6555']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6555-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6556",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6556-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6556']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6556-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6557",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6557-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6557']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6557-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6558",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6558-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6558']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6558-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6562",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6562-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6562']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6562-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6563",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6563-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6563']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6563-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6564",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6564-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6564']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6564-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6565",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6565-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6565']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6565-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6566",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6566-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6566']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6566-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6567",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6567-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6567']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6567-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6568",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6568-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6568']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6568-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6569",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6569-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6569']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6569-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6570",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6570-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6570']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6570-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6571",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6571-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6571']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6571-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6572",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6572-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6572']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6572-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6573",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6573-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6573']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6573-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6574",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6574-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6574']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6574-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6575",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6575-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6575']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6575-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6576",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6576-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6576']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6576-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6577",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6577-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6577']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6577-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6578",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6578-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6578']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6578-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6579",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6579-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6579']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6579-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6580",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6580-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6580']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6580-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6581",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6581-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6581']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6581-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6582",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6582-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6582']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6582-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6583",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6583-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6583']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6583-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6585",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6585-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6585']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6585-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6586",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6586-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6586']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6586-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6587",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6587-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6587']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6587-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6588",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6588-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6588']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6588-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6589",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6589-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6589']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6589-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6594",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6594-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6594']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6594-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6595",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6595-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6595']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6595-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6596",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6596-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6596']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6596-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6597",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6597-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6597']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6597-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6598",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6598-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6598']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6598-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6599",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6599-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6599']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6599-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6600",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6600-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6600']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6600-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6601",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6601-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6601']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6601-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6602",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6602-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6602']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6602-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6603",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6603-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6603']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6603-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6604",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6604-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6604']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6604-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6605",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6605-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6605']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6605-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6606",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6606-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6606']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6606-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6607",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6607-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6607']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6607-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6608",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6608-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6608']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6608-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6610",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6610-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6610']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6610-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['NY (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NY', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NY', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    }
+  ],
+  "active_node_pks": [
+    "CMS-CR-13286",
+    "CMS-MCD-A59508",
+    "FEE-A6520-NY-NR-2024",
+    "FEE-A6521-NY-NR-2024",
+    "FEE-A6522-NY-NR-2024",
+    "FEE-A6523-NY-NR-2024",
+    "FEE-A6524-NY-NR-2024",
+    "FEE-A6525-NY-NR-2024",
+    "FEE-A6526-NY-NR-2024",
+    "FEE-A6527-NY-NR-2024",
+    "FEE-A6528-NY-NR-2024",
+    "FEE-A6529-NY-NR-2024",
+    "FEE-A6530-NY-NR-2024",
+    "FEE-A6533-NY-NR-2024",
+    "FEE-A6534-NY-NR-2024",
+    "FEE-A6535-NY-NR-2024",
+    "FEE-A6536-NY-NR-2024",
+    "FEE-A6537-NY-NR-2024",
+    "FEE-A6538-NY-NR-2024",
+    "FEE-A6539-NY-NR-2024",
+    "FEE-A6540-NY-NR-2024",
+    "FEE-A6541-NY-NR-2024",
+    "FEE-A6552-NY-NR-2024",
+    "FEE-A6553-NY-NR-2024",
+    "FEE-A6554-NY-NR-2024",
+    "FEE-A6555-NY-NR-2024",
+    "FEE-A6556-NY-NR-2024",
+    "FEE-A6557-NY-NR-2024",
+    "FEE-A6558-NY-NR-2024",
+    "FEE-A6562-NY-NR-2024",
+    "FEE-A6563-NY-NR-2024",
+    "FEE-A6564-NY-NR-2024",
+    "FEE-A6565-NY-NR-2024",
+    "FEE-A6566-NY-NR-2024",
+    "FEE-A6567-NY-NR-2024",
+    "FEE-A6568-NY-NR-2024",
+    "FEE-A6569-NY-NR-2024",
+    "FEE-A6570-NY-NR-2024",
+    "FEE-A6571-NY-NR-2024",
+    "FEE-A6572-NY-NR-2024",
+    "FEE-A6573-NY-NR-2024",
+    "FEE-A6574-NY-NR-2024",
+    "FEE-A6575-NY-NR-2024",
+    "FEE-A6576-NY-NR-2024",
+    "FEE-A6577-NY-NR-2024",
+    "FEE-A6578-NY-NR-2024",
+    "FEE-A6579-NY-NR-2024",
+    "FEE-A6580-NY-NR-2024",
+    "FEE-A6581-NY-NR-2024",
+    "FEE-A6582-NY-NR-2024",
+    "FEE-A6583-NY-NR-2024",
+    "FEE-A6585-NY-NR-2024",
+    "FEE-A6586-NY-NR-2024",
+    "FEE-A6587-NY-NR-2024",
+    "FEE-A6588-NY-NR-2024",
+    "FEE-A6589-NY-NR-2024",
+    "FEE-A6594-NY-NR-2024",
+    "FEE-A6595-NY-NR-2024",
+    "FEE-A6596-NY-NR-2024",
+    "FEE-A6597-NY-NR-2024",
+    "FEE-A6598-NY-NR-2024",
+    "FEE-A6599-NY-NR-2024",
+    "FEE-A6600-NY-NR-2024",
+    "FEE-A6601-NY-NR-2024",
+    "FEE-A6602-NY-NR-2024",
+    "FEE-A6603-NY-NR-2024",
+    "FEE-A6604-NY-NR-2024",
+    "FEE-A6605-NY-NR-2024",
+    "FEE-A6606-NY-NR-2024",
+    "FEE-A6607-NY-NR-2024",
+    "FEE-A6608-NY-NR-2024",
+    "FEE-A6610-NY-NR-2024",
+    "FEE-Q2052-NY-NR-2024",
+    "HCPCS-A6520",
+    "HCPCS-A6521",
+    "HCPCS-A6522",
+    "HCPCS-A6523",
+    "HCPCS-A6524",
+    "HCPCS-A6525",
+    "HCPCS-A6526",
+    "HCPCS-A6527",
+    "HCPCS-A6528",
+    "HCPCS-A6529",
+    "HCPCS-A6530",
+    "HCPCS-A6533",
+    "HCPCS-A6534",
+    "HCPCS-A6535",
+    "HCPCS-A6536",
+    "HCPCS-A6537",
+    "HCPCS-A6538",
+    "HCPCS-A6539",
+    "HCPCS-A6540",
+    "HCPCS-A6541",
+    "HCPCS-A6552",
+    "HCPCS-A6553",
+    "HCPCS-A6554",
+    "HCPCS-A6555",
+    "HCPCS-A6556",
+    "HCPCS-A6557",
+    "HCPCS-A6558",
+    "HCPCS-A6562",
+    "HCPCS-A6563",
+    "HCPCS-A6564",
+    "HCPCS-A6565",
+    "HCPCS-A6566",
+    "HCPCS-A6567",
+    "HCPCS-A6568",
+    "HCPCS-A6569",
+    "HCPCS-A6570",
+    "HCPCS-A6571",
+    "HCPCS-A6572",
+    "HCPCS-A6573",
+    "HCPCS-A6574",
+    "HCPCS-A6575",
+    "HCPCS-A6576",
+    "HCPCS-A6577",
+    "HCPCS-A6578",
+    "HCPCS-A6579",
+    "HCPCS-A6580",
+    "HCPCS-A6581",
+    "HCPCS-A6582",
+    "HCPCS-A6583",
+    "HCPCS-A6585",
+    "HCPCS-A6586",
+    "HCPCS-A6587",
+    "HCPCS-A6588",
+    "HCPCS-A6589",
+    "HCPCS-A6594",
+    "HCPCS-A6595",
+    "HCPCS-A6596",
+    "HCPCS-A6597",
+    "HCPCS-A6598",
+    "HCPCS-A6599",
+    "HCPCS-A6600",
+    "HCPCS-A6601",
+    "HCPCS-A6602",
+    "HCPCS-A6603",
+    "HCPCS-A6604",
+    "HCPCS-A6605",
+    "HCPCS-A6606",
+    "HCPCS-A6607",
+    "HCPCS-A6608",
+    "HCPCS-A6610",
+    "HCPCS-Q2052",
+    "JURIS-DME-A",
+    "STATE-NY"
+  ]
+}

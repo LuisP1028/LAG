@@ -1,0 +1,168 @@
+[
+  {
+    "s": {
+      "state_name": "Wisconsin",
+      "state_code": "WI",
+      "primary_key": "STATE-WI"
+    },
+    "r1": [
+      {
+        "contractor_name": "CGS Administrators",
+        "code": "JURIS-DME-B",
+        "name": "JURIS-DME-B (CGS)",
+        "primary_key": "JURIS-DME-B"
+      },
+      "COVERS_STATE",
+      {
+        "state_name": "Wisconsin",
+        "state_code": "WI",
+        "primary_key": "STATE-WI"
+      }
+    ],
+    "j": {
+      "contractor_name": "CGS Administrators",
+      "code": "JURIS-DME-B",
+      "name": "JURIS-DME-B (CGS)",
+      "primary_key": "JURIS-DME-B"
+    },
+    "r2": [
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      },
+      "APPLIES_TO_JURISDICTION",
+      {
+        "contractor_name": "CGS Administrators",
+        "code": "JURIS-DME-B",
+        "name": "JURIS-DME-B (CGS)",
+        "primary_key": "JURIS-DME-B"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12349",
+      "cr_number": "13286",
+      "benefit_category": "LC",
+      "primary_key": "CMS-CR-13286"
+    },
+    "r3": [
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      },
+      "MANDATES_POLICY",
+      {
+        "article_id": "A59508",
+        "policy_type": "Joint DME MAC Policy Article",
+        "effective_date": "2024-01-01",
+        "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+        "primary_key": "CMS-MCD-A59508"
+      }
+    ],
+    "cp": {
+      "article_id": "A59508",
+      "policy_type": "Joint DME MAC Policy Article",
+      "effective_date": "2024-01-01",
+      "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+      "primary_key": "CMS-MCD-A59508"
+    },
+    "r4": [
+      {
+        "article_id": "A59508",
+        "policy_type": "Joint DME MAC Policy Article",
+        "effective_date": "2024-01-01",
+        "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+        "primary_key": "CMS-MCD-A59508"
+      },
+      "ALLOWS_DIAGNOSIS",
+      {
+        "code": "I97.2",
+        "description": "Postmastectomy lymphedema syndrome",
+        "primary_key": "ICD10-I97.2"
+      }
+    ],
+    "d": {
+      "code": "I97.2",
+      "description": "Postmastectomy lymphedema syndrome",
+      "primary_key": "ICD10-I97.2"
+    },
+    "r5": [
+      {
+        "article_id": "A59508",
+        "policy_type": "Joint DME MAC Policy Article",
+        "effective_date": "2024-01-01",
+        "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+        "primary_key": "CMS-MCD-A59508"
+      },
+      "GOVERNS",
+      {
+        "short_description": "G com garment arm nighttime",
+        "code": "A6522",
+        "category": "Lymphedema Compression Item",
+        "primary_key": "HCPCS-A6522"
+      }
+    ],
+    "h": {
+      "short_description": "G com garment arm nighttime",
+      "code": "A6522",
+      "category": "Lymphedema Compression Item",
+      "primary_key": "HCPCS-A6522"
+    },
+    "r6": [
+      {
+        "short_description": "G com garment arm nighttime",
+        "code": "A6522",
+        "category": "Lymphedema Compression Item",
+        "primary_key": "HCPCS-A6522"
+      },
+      "HAS_FEE_SCHEDULE",
+      {
+        "ceiling": 0.0,
+        "fee_amount": 290.47,
+        "is_rural": false,
+        "year": 2024,
+        "hcpcs_code": "A6522",
+        "name": "A6522 WI NR ($290.47)",
+        "state_code": "WI",
+        "floor": 0.0,
+        "primary_key": "FEE-A6522-WI-NR-2024"
+      }
+    ],
+    "f": {
+      "ceiling": 0.0,
+      "fee_amount": 290.47,
+      "is_rural": false,
+      "year": 2024,
+      "hcpcs_code": "A6522",
+      "name": "A6522 WI NR ($290.47)",
+      "state_code": "WI",
+      "floor": 0.0,
+      "primary_key": "FEE-A6522-WI-NR-2024"
+    },
+    "r7": [
+      {
+        "ceiling": 0.0,
+        "fee_amount": 290.47,
+        "is_rural": false,
+        "year": 2024,
+        "hcpcs_code": "A6522",
+        "name": "A6522 WI NR ($290.47)",
+        "state_code": "WI",
+        "floor": 0.0,
+        "primary_key": "FEE-A6522-WI-NR-2024"
+      },
+      "APPLIES_TO",
+      {
+        "state_name": "Wisconsin",
+        "state_code": "WI",
+        "primary_key": "STATE-WI"
+      }
+    ]
+  }
+]

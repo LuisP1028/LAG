@@ -1,0 +1,1778 @@
+[
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 2617,
+      "congress": 117,
+      "introduced_date": "2021-04-16",
+      "title": "Consolidated Appropriations Act, 2023",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-2617"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 3808,
+      "congress": 117,
+      "introduced_date": "2021-06-11",
+      "title": "Medicare IVIG Access Enhancement Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3808"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "Z"
+      ],
+      "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-Z"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12437",
+      "cr_number": "13217",
+      "benefit_category": "IVIG",
+      "primary_key": "CMS-CR-13217"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 2617,
+      "congress": 117,
+      "introduced_date": "2021-04-16",
+      "title": "Consolidated Appropriations Act, 2023",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-2617"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 3808,
+      "congress": 117,
+      "introduced_date": "2021-06-11",
+      "title": "Medicare IVIG Access Enhancement Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3808"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "Z"
+      ],
+      "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-Z"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12349",
+      "cr_number": "13286",
+      "benefit_category": "LC",
+      "primary_key": "CMS-CR-13286"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 2617,
+      "congress": 117,
+      "introduced_date": "2021-04-16",
+      "title": "Consolidated Appropriations Act, 2023",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-2617"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 3808,
+      "congress": 117,
+      "introduced_date": "2021-06-11",
+      "title": "Medicare IVIG Access Enhancement Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3808"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "JJ"
+      ],
+      "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-JJ"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12437",
+      "cr_number": "13217",
+      "benefit_category": "IVIG",
+      "primary_key": "CMS-CR-13217"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 2617,
+      "congress": 117,
+      "introduced_date": "2021-04-16",
+      "title": "Consolidated Appropriations Act, 2023",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-2617"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 3808,
+      "congress": 117,
+      "introduced_date": "2021-06-11",
+      "title": "Medicare IVIG Access Enhancement Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3808"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "JJ"
+      ],
+      "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-JJ"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12349",
+      "cr_number": "13286",
+      "benefit_category": "LC",
+      "primary_key": "CMS-CR-13286"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 3630,
+      "congress": 117,
+      "introduced_date": "2021-05-28",
+      "title": "Lymphedema Treatment Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3630"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 3808,
+      "congress": 117,
+      "introduced_date": "2021-06-11",
+      "title": "Medicare IVIG Access Enhancement Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3808"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "Z"
+      ],
+      "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-Z"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12437",
+      "cr_number": "13217",
+      "benefit_category": "IVIG",
+      "primary_key": "CMS-CR-13217"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 3630,
+      "congress": 117,
+      "introduced_date": "2021-05-28",
+      "title": "Lymphedema Treatment Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3630"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 3808,
+      "congress": 117,
+      "introduced_date": "2021-06-11",
+      "title": "Medicare IVIG Access Enhancement Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3808"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "Z"
+      ],
+      "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-Z"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12349",
+      "cr_number": "13286",
+      "benefit_category": "LC",
+      "primary_key": "CMS-CR-13286"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 3630,
+      "congress": 117,
+      "introduced_date": "2021-05-28",
+      "title": "Lymphedema Treatment Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3630"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 3808,
+      "congress": 117,
+      "introduced_date": "2021-06-11",
+      "title": "Medicare IVIG Access Enhancement Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3808"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "JJ"
+      ],
+      "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-JJ"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12437",
+      "cr_number": "13217",
+      "benefit_category": "IVIG",
+      "primary_key": "CMS-CR-13217"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 3630,
+      "congress": 117,
+      "introduced_date": "2021-05-28",
+      "title": "Lymphedema Treatment Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3630"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 3808,
+      "congress": 117,
+      "introduced_date": "2021-06-11",
+      "title": "Medicare IVIG Access Enhancement Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3808"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "JJ"
+      ],
+      "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-JJ"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12349",
+      "cr_number": "13286",
+      "benefit_category": "LC",
+      "primary_key": "CMS-CR-13286"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 3630,
+      "congress": 117,
+      "introduced_date": "2021-05-28",
+      "title": "Lymphedema Treatment Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3630"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 2617,
+      "congress": 117,
+      "introduced_date": "2021-04-16",
+      "title": "Consolidated Appropriations Act, 2023",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-2617"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "Z"
+      ],
+      "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-Z"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12437",
+      "cr_number": "13217",
+      "benefit_category": "IVIG",
+      "primary_key": "CMS-CR-13217"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 3630,
+      "congress": 117,
+      "introduced_date": "2021-05-28",
+      "title": "Lymphedema Treatment Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3630"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 2617,
+      "congress": 117,
+      "introduced_date": "2021-04-16",
+      "title": "Consolidated Appropriations Act, 2023",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-2617"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "Z"
+      ],
+      "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-Z"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "Z"
+        ],
+        "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-Z"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12349",
+      "cr_number": "13286",
+      "benefit_category": "LC",
+      "primary_key": "CMS-CR-13286"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 3630,
+      "congress": 117,
+      "introduced_date": "2021-05-28",
+      "title": "Lymphedema Treatment Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3630"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 2617,
+      "congress": 117,
+      "introduced_date": "2021-04-16",
+      "title": "Consolidated Appropriations Act, 2023",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-2617"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "JJ"
+      ],
+      "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-JJ"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12437",
+        "cr_number": "13217",
+        "benefit_category": "IVIG",
+        "primary_key": "CMS-CR-13217"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12437",
+      "cr_number": "13217",
+      "benefit_category": "IVIG",
+      "primary_key": "CMS-CR-13217"
+    }
+  },
+  {
+    "p1": {
+      "run_id": "export-run-001",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-13T01:08:41.300179+00:00"
+    },
+    "b1": {
+      "number": 3630,
+      "congress": 117,
+      "introduced_date": "2021-05-28",
+      "title": "Lymphedema Treatment Act",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-3630"
+    },
+    "pl": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "Consolidated Appropriations Act, 2023",
+      "primary_key": "PLAW-117-328"
+    },
+    "b2": {
+      "number": 2617,
+      "congress": 117,
+      "introduced_date": "2021-04-16",
+      "title": "Consolidated Appropriations Act, 2023",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-2617"
+    },
+    "p2": {
+      "run_id": "export-run-ivig-001",
+      "keyword": "IVIG",
+      "primary_key": "POLICY-IVIG",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    "r1": [
+      {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "Consolidated Appropriations Act, 2023",
+        "primary_key": "PLAW-117-328"
+      },
+      "MODIFIES_CODE",
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      }
+    ],
+    "sec": {
+      "subsections": [
+        "s",
+        "2",
+        "JJ"
+      ],
+      "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-JJ"
+    },
+    "r2": [
+      {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      },
+      "IMPLEMENTED_BY",
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      }
+    ],
+    "reg": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ],
+      "primary_key": "FR-2023-24455"
+    },
+    "r3": [
+      {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR 409",
+          "42 CFR 410",
+          "42 CFR 414",
+          "42 CFR 424",
+          "42 CFR 484",
+          "42 CFR 488",
+          "42 CFR 489"
+        ],
+        "primary_key": "FR-2023-24455"
+      },
+      "ISSUES_TRANSMITTAL",
+      {
+        "effective_date": "2024-01-01",
+        "transmittal_number": "12349",
+        "cr_number": "13286",
+        "benefit_category": "LC",
+        "primary_key": "CMS-CR-13286"
+      }
+    ],
+    "cr": {
+      "effective_date": "2024-01-01",
+      "transmittal_number": "12349",
+      "cr_number": "13286",
+      "benefit_category": "LC",
+      "primary_key": "CMS-CR-13286"
+    }
+  }
+]

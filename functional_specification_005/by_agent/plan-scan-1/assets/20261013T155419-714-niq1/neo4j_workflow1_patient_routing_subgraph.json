@@ -1,0 +1,144 @@
+{
+  "nodes": [
+    {
+      "primary_key": "CMS-CR-13286",
+      "label": "ChangeRequest",
+      "cr_number": "13286",
+      "transmittal_number": "12349",
+      "benefit_category": "LC",
+      "effective_date": "2024-01-01"
+    },
+    {
+      "primary_key": "CMS-MCD-A59508",
+      "label": "CoveragePolicy",
+      "article_id": "A59508",
+      "title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+      "effective_date": "2024-01-01",
+      "policy_type": "Joint DME MAC Policy Article"
+    },
+    {
+      "primary_key": "HCPCS-A6522",
+      "label": "HCPCSCode",
+      "code": "A6522",
+      "short_description": "G com garment arm nighttime",
+      "category": "Lymphedema Compression Item"
+    },
+    {
+      "primary_key": "ICD10-I97.2",
+      "label": "ICD10Code",
+      "code": "I97.2",
+      "description": "Postmastectomy lymphedema syndrome"
+    },
+    {
+      "primary_key": "JURIS-DME-B",
+      "label": "Jurisdiction",
+      "code": "JURIS-DME-B",
+      "contractor_name": "CGS Administrators"
+    },
+    {
+      "primary_key": "STATE-WI",
+      "label": "State",
+      "state_code": "WI",
+      "state_name": "Wisconsin"
+    },
+    {
+      "primary_key": "FEE-A6522-WI-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "A6522",
+      "state_code": "WI",
+      "is_rural": false,
+      "fee_amount": 290.47,
+      "ceiling": 0.0,
+      "floor": 0.0,
+      "year": 2024
+    }
+  ],
+  "edges": [
+    {
+      "source_pk": "CMS-CR-13286",
+      "label": "MANDATES_POLICY",
+      "target_pk": "CMS-MCD-A59508",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "directive.policy_article_references",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-A6522",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_hcpcs_codes//row[code='A6522']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59508",
+      "label": "ALLOWS_DIAGNOSIS",
+      "target_pk": "ICD10-I97.2",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "table#covered_icd10_codes//row[code='I97.2']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "CMS-CR-13286",
+      "label": "APPLIES_TO_JURISDICTION",
+      "target_pk": "JURIS-DME-B",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "CMS MAC Region Allocation Table: Jurisdiction B",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-B",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-WI",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-B -> STATE-WI",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-A6522",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-A6522-WI-NR-2024",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "row[HCPCS='A6522']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    },
+    {
+      "source_pk": "FEE-A6522-WI-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-WI",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "column['WI (NR)']",
+        "ingestion_timestamp": "2026-10-13T01:08:41.302658+00:00",
+        "run_id": "export-run-001"
+      }
+    }
+  ],
+  "active_node_pks": [
+    "CMS-CR-13286",
+    "CMS-MCD-A59508",
+    "FEE-A6522-WI-NR-2024",
+    "HCPCS-A6522",
+    "ICD10-I97.2",
+    "JURIS-DME-B",
+    "STATE-WI"
+  ]
+}

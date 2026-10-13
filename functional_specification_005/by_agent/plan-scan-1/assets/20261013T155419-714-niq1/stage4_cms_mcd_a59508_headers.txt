@@ -1,0 +1,20 @@
+HTTP/2 302 
+content-length: 0
+location: /medicare-coverage-database/search.aspx?error=Invalid Article Version
+content-security-policy: frame-ancestors 'self' https://www.google.com;default-src 'none';script-src 'self' 'nonce-EcMsgiKkcRJf4/7yvkJsgg==' https://ds-aksb-a.akamaihd.net https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net https://tealium-tags.cms.gov https://tags.tiqcdn.com/ https://cdn1.adoberesources.net https://dap.digitalgov.gov https://www.googletagmanager.com;font-src 'self';connect-src 'self' https://ds-aksb-a.akamaihd.net https://www.google.com https://adobedc.demdex.net https://adobe-ep.cms.gov https://dap.digitalgov.gov https://www.google-analytics.com;img-src 'self' data: https://ds-aksb-a.akamaihd.net https://www.cms.gov;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;frame-src 'self' https://www.google.com;
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+expires: Tue, 13 Oct 2026 15:59:23 GMT
+cache-control: max-age=0, no-cache, no-store
+pragma: no-cache
+date: Tue, 13 Oct 2026 15:59:23 GMT
+set-cookie: .AspNetCore.Session.Mcd=CfDJ8JTtCw4Pd1FFu2WDYugYDBOpztb47yTu%2BCFdffc8Skkt%2BJOUMdIyouB7MFxhmLN8A8iDjmIebP%2FQDtxc%2B%2F3oeiJKsM3FlVyqgr1eDGtbwjPTeQ%2F4CC1TPeZnhw5ESCQNmETKKlbYRwnMI9ZvejDEdpKywkPjzt2Bwz4GL7my8Pji; path=/medicare-coverage-database; secure; samesite=lax; httponly
+set-cookie: _ga=GA1.2.1248329291.1791907162; expires=Thu, 12-Oct-2028 15:59:23 GMT; path=/; domain=.cms.gov; secure
+set-cookie: cms_fpid=33d157d7-a616-4d6c-e326-801793956b28; expires=Thu, 12-Oct-2028 15:59:23 GMT; path=/; domain=.cms.gov; secure; SameSite=Lax
+strict-transport-security: max-age=31536000 ; includeSubDomains ; preload
+access-control-allow-origin: *
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+x-permitted-cross-domain-policies: master-only
+akamai-grn: 0.4494d817.1791907162.1bb63855
+
