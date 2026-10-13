@@ -93,6 +93,15 @@ class TopologicalTraversalEngine:
                 active_node_pks=active_node_pks,
                 active_edge_keys=active_edge_keys,
             )
+        elif anchor.slot == "jurisdiction" or anchor.label == "Jurisdiction":
+            self._execute_jurisdiction_traversal(
+                jurisdiction_pks=[anchor.primary_key],
+                session=session,
+                nodes_by_pk=nodes_by_pk,
+                edges_by_key=edges_by_key,
+                active_node_pks=active_node_pks,
+                active_edge_keys=active_edge_keys,
+            )
         elif anchor.slot in ("diagnosis", "icd10code", "hcpcs", "hcpcscode") or anchor.label in ("HCPCSCode", "ICD10Code"):
             self._execute_single_clinical_traversal(
                 anchor_pk=anchor.primary_key,
@@ -112,6 +121,62 @@ class TopologicalTraversalEngine:
                 active_edge_keys=active_edge_keys,
             )
 
+    def _execute_jurisdiction_traversal(
+        self,
+        jurisdiction_pks: List[str],
+        session: Session,
+        nodes_by_pk: Dict[str, TraversalNode],
+        edges_by_key: Dict[str, TraversalEdge],
+        active_node_pks: Set[str],
+        active_edge_keys: Set[str],
+    ) -> None:
+        """Traces regional DME MAC contractor jurisdiction(s), covered states, and governing operational/legislative lineage."""
+        query = """
+        MATCH (j:Jurisdiction)
+        WHERE j.primary_key IN $juris_pks
+        OPTIONAL MATCH (j)-[r1:COVERS_STATE]->(s:State)
+        OPTIONAL MATCH (cr:ChangeRequest)-[r2:APPLIES_TO_JURISDICTION]->(j)
+        OPTIONAL MATCH (cr)-[r3:MANDATES_POLICY]->(cp:CoveragePolicy)
+        OPTIONAL MATCH (reg:Regulation)-[r4:ISSUES_TRANSMITTAL]->(cr)
+        OPTIONAL MATCH (sec:StatutorySection)-[r5:IMPLEMENTED_BY]->(reg)
+        OPTIONAL MATCH (pl:PublicLaw)-[r6:MODIFIES_CODE]->(sec)
+        OPTIONAL MATCH (p:Policy)-[r7:TARGETS_BILL]->(b:Bill)-[r8:ENACTED_AS]->(pl)
+        RETURN j, r1, s, cr, r2, cp, r3, reg, r4, sec, r5, pl, r6, p, r7, b, r8
+        """
+        result = session.run(query, juris_pks=jurisdiction_pks)
+        for row in result:
+            j = row["j"]
+            s = row["s"]
+            cr = row["cr"]
+            cp = row["cp"]
+            reg = row["reg"]
+            sec = row["sec"]
+            pl = row["pl"]
+            p = row["p"]
+            b = row["b"]
+
+            for n in [j, s, cr, cp, reg, sec, pl, p, b]:
+                if n is not None:
+                    tn = self._convert_node(n)
+                    nodes_by_pk[tn.primary_key] = tn
+                    active_node_pks.add(tn.primary_key)
+
+            rel_pairs = [
+                (row["r1"], j, s),
+                (row["r2"], cr, j),
+                (row["r3"], cr, cp),
+                (row["r4"], reg, cr),
+                (row["r5"], sec, reg),
+                (row["r6"], pl, sec),
+                (row["r7"], p, b),
+                (row["r8"], b, pl),
+            ]
+            for r, src, tgt in rel_pairs:
+                if r is not None and src is not None and tgt is not None:
+                    te = self._convert_edge(r, src["primary_key"], tgt["primary_key"])
+                    edges_by_key[te.edge_key] = te
+                    active_edge_keys.add(te.edge_key)
+
     def _execute_single_state_traversal(
         self,
         state_pk: str,
@@ -120,6 +185,7 @@ class TopologicalTraversalEngine:
         edges_by_key: Dict[str, TraversalEdge],
         active_node_pks: Set[str],
         active_edge_keys: Set[str],
+        target_hcpcs_pks: Optional[List[str]] = None,
     ) -> None:
         """Traces administrative, contractor, policy, and fee lineage for a single State."""
         query = """
@@ -163,9 +229,11 @@ class TopologicalTraversalEngine:
             r5_list = row["r5_list"] or []
             r6_list = row["r6_list"] or []
 
+            row_hcpcs_pks = set()
             for h in hcpcs_list:
                 th = self._convert_node(h)
                 nodes_by_pk[th.primary_key] = th
+                row_hcpcs_pks.add(th.primary_key)
 
             for f in fee_list:
                 tf = self._convert_node(f)
@@ -190,26 +258,41 @@ class TopologicalTraversalEngine:
                 if te.source_pk:
                     edges_by_key[te.edge_key] = te
 
-            # Select representative active item (e.g. A6522 or first fee)
-            target_hcpcs = "HCPCS-A6522"
-            target_fee = None
-            for f in fee_list:
-                if f.get("hcpcs_code") == "A6522":
-                    target_fee = f.get("primary_key")
-                    break
-            if not target_fee and fee_list:
-                target_fee = fee_list[0].get("primary_key")
-                target_hcpcs = fee_list[0].get("hcpcs_code", target_hcpcs)
-                if not target_hcpcs.startswith("HCPCS-"):
-                    target_hcpcs = f"HCPCS-{target_hcpcs}"
+            if target_hcpcs_pks:
+                for req_h_pk in target_hcpcs_pks:
+                    if req_h_pk in row_hcpcs_pks:
+                        req_code = req_h_pk.replace("HCPCS-", "")
+                        active_node_pks.add(req_h_pk)
+                        active_edge_keys.add(f"{cp['primary_key']}->GOVERNS->{req_h_pk}")
+                        for f in fee_list:
+                            if f.get("hcpcs_code") == req_code:
+                                f_pk = f.get("primary_key")
+                                if f_pk and f_pk in nodes_by_pk:
+                                    active_node_pks.add(f_pk)
+                                    active_edge_keys.add(f"{req_h_pk}->HAS_FEE_SCHEDULE->{f_pk}")
+                                    active_edge_keys.add(f"{f_pk}->APPLIES_TO->{s['primary_key']}")
+                                break
+            else:
+                # Select representative active item (e.g. A6522 or first fee)
+                target_hcpcs = "HCPCS-A6522"
+                target_fee = None
+                for f in fee_list:
+                    if f.get("hcpcs_code") == "A6522":
+                        target_fee = f.get("primary_key")
+                        break
+                if not target_fee and fee_list:
+                    target_fee = fee_list[0].get("primary_key")
+                    target_hcpcs = fee_list[0].get("hcpcs_code", target_hcpcs)
+                    if not target_hcpcs.startswith("HCPCS-"):
+                        target_hcpcs = f"HCPCS-{target_hcpcs}"
 
-            if target_hcpcs in nodes_by_pk:
-                active_node_pks.add(target_hcpcs)
-                active_edge_keys.add(f"{cp['primary_key']}->GOVERNS->{target_hcpcs}")
-            if target_fee and target_fee in nodes_by_pk:
-                active_node_pks.add(target_fee)
-                active_edge_keys.add(f"{target_hcpcs}->HAS_FEE_SCHEDULE->{target_fee}")
-                active_edge_keys.add(f"{target_fee}->APPLIES_TO->{s['primary_key']}")
+                if target_hcpcs in nodes_by_pk:
+                    active_node_pks.add(target_hcpcs)
+                    active_edge_keys.add(f"{cp['primary_key']}->GOVERNS->{target_hcpcs}")
+                if target_fee and target_fee in nodes_by_pk:
+                    active_node_pks.add(target_fee)
+                    active_edge_keys.add(f"{target_hcpcs}->HAS_FEE_SCHEDULE->{target_fee}")
+                    active_edge_keys.add(f"{target_fee}->APPLIES_TO->{s['primary_key']}")
 
     def _execute_single_clinical_traversal(
         self,
@@ -310,19 +393,40 @@ class TopologicalTraversalEngine:
         active_edge_keys: Set[str],
     ) -> None:
         """Executes multi-entity connecting path traversal across anchors (N >= 2)."""
-        # 1. State + Diagnosis (Pattern A Patient Benefit Routing)
-        if anchors.state_anchor and anchors.diagnosis_anchor:
-            self._execute_pattern_a(
-                anchors=anchors,
-                session=session,
-                nodes_by_pk=nodes_by_pk,
-                edges_by_key=edges_by_key,
-                active_node_pks=active_node_pks,
-                active_edge_keys=active_edge_keys,
-            )
+        state_anchors = [a for a in anchors.all_anchors if a.slot == "state" or a.label == "State"]
+        juris_anchors = [a for a in anchors.all_anchors if a.slot == "jurisdiction" or a.label == "Jurisdiction"]
+        hcpcs_anchors = [a for a in anchors.all_anchors if a.slot in ("hcpcs", "hcpcscode") or a.label == "HCPCSCode"]
+
+        # 1. State(s) + Diagnosis (Pattern A Patient Benefit Routing)
+        if state_anchors and anchors.diagnosis_anchor:
+            for st_anchor in state_anchors:
+                self._execute_pattern_a(
+                    anchors=anchors,
+                    session=session,
+                    nodes_by_pk=nodes_by_pk,
+                    edges_by_key=edges_by_key,
+                    active_node_pks=active_node_pks,
+                    active_edge_keys=active_edge_keys,
+                    state_pk_override=st_anchor.primary_key,
+                )
             return
 
-        # 2. Multi-Policy Convergence (Pattern C)
+        # 2. Multi-State or State + HCPCS / Policy Comparative Traversal (without diagnosis)
+        if state_anchors and not anchors.diagnosis_anchor:
+            target_hcpcs_pks = [h.primary_key for h in hcpcs_anchors] if hcpcs_anchors else None
+            for st_anchor in state_anchors:
+                self._execute_single_state_traversal(
+                    state_pk=st_anchor.primary_key,
+                    session=session,
+                    nodes_by_pk=nodes_by_pk,
+                    edges_by_key=edges_by_key,
+                    active_node_pks=active_node_pks,
+                    active_edge_keys=active_edge_keys,
+                    target_hcpcs_pks=target_hcpcs_pks,
+                )
+            return
+
+        # 3. Multi-Policy Convergence (Pattern C)
         policy_anchors = [a for a in anchors.all_anchors if a.slot == "policy"]
         if len(policy_anchors) >= 2:
             self._execute_pattern_c(
@@ -335,8 +439,20 @@ class TopologicalTraversalEngine:
             )
             return
 
-        # 3. Clinical HCPCS + Diagnosis (Pattern B)
-        if (anchors.hcpcs_anchor or any(a.slot == "hcpcs" for a in anchors.all_anchors)) and anchors.diagnosis_anchor:
+        # 4. Regional Contractor / Jurisdiction Traversal (e.g. CGS -> JURIS-DME-B & JURIS-DME-C)
+        if juris_anchors and not state_anchors and not anchors.diagnosis_anchor:
+            self._execute_jurisdiction_traversal(
+                jurisdiction_pks=[j.primary_key for j in juris_anchors],
+                session=session,
+                nodes_by_pk=nodes_by_pk,
+                edges_by_key=edges_by_key,
+                active_node_pks=active_node_pks,
+                active_edge_keys=active_edge_keys,
+            )
+            return
+
+        # 5. Clinical HCPCS + Diagnosis (Pattern B)
+        if (anchors.hcpcs_anchor or hcpcs_anchors) and anchors.diagnosis_anchor:
             self._execute_pattern_b(
                 anchors=anchors,
                 session=session,
@@ -347,7 +463,7 @@ class TopologicalTraversalEngine:
             )
             return
 
-        # 4. Generalized Shortest-Path Discovery between anchor pairs
+        # 6. Generalized Shortest-Path Discovery between anchor pairs
         anchor_list = anchors.all_anchors
         for i in range(len(anchor_list)):
             for j in range(i + 1, len(anchor_list)):
@@ -382,9 +498,10 @@ class TopologicalTraversalEngine:
         edges_by_key: Dict[str, TraversalEdge],
         active_node_pks: Set[str],
         active_edge_keys: Set[str],
+        state_pk_override: Optional[str] = None,
     ) -> None:
         """Executes Pattern A: Patient Benefit Routing."""
-        state_pk = anchors.state_anchor.primary_key
+        state_pk = state_pk_override or anchors.state_anchor.primary_key
         diag_pk = anchors.diagnosis_anchor.primary_key
 
         query = """

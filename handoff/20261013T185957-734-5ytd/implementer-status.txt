@@ -1,0 +1,9 @@
+src/api/routes.py CHANGED ticket-001
+src/frontend/src/context/GraphSyncContext.tsx CHANGED ticket-002
+src/frontend/src/App.tsx CHANGED ticket-002
+src/frontend/src/components/FilterToolbar.tsx CHANGED ticket-003
+src/graphrag/models.py CHANGED ticket-004
+src/graphrag/entity_linker.py CHANGED ticket-004
+src/graphrag/traversal.py CHANGED ticket-005
+src/graphrag/context_assembler.py CHANGED ticket-005
+src/graphrag/pipeline.py CHANGED ticket-005

@@ -25,7 +25,8 @@ class EntityAnchorLinker:
         "oklahoma": "OK", "oregon": "OR", "pennsylvania": "PA", "puerto rico": "PR",
         "rhode island": "RI", "south carolina": "SC", "south dakota": "SD",
         "tennessee": "TN", "texas": "TX", "utah": "UT", "vermont": "VT",
-        "virginia": "VA", "virgin islands": "VI", "washington": "WA",
+        "virginia": "VA", "virgin islands": "VI", "u.s. virgin islands": "VI",
+        "us virgin islands": "VI", "washington": "WA",
         "west virginia": "WV", "wisconsin": "WI", "wyoming": "WY",
     }
 
@@ -99,10 +100,15 @@ class EntityAnchorLinker:
                     label=label,
                 )
 
-        # 2. Slot 1: Geographic State Anchor
-        state_anchor = self._extract_state_anchor(clean_text, session)
-        if state_anchor and state_anchor.primary_key not in anchors_by_pk:
-            anchors_by_pk[state_anchor.primary_key] = state_anchor
+        # Extract Jurisdiction Lexical Anchors early so fail-fast location check knows if a jurisdiction was referenced
+        juris_anchors = self._extract_jurisdiction_anchors(clean_text, session)
+        has_juris = bool(juris_anchors) or any(a.slot == "jurisdiction" for a in anchors_by_pk.values())
+
+        # 2. Slot 1: Geographic State Anchor(s) (supports multi-state comparative queries)
+        state_anchors = self._extract_state_anchors(clean_text, session, has_jurisdiction=has_juris)
+        for sa in state_anchors:
+            if sa.primary_key not in anchors_by_pk:
+                anchors_by_pk[sa.primary_key] = sa
 
         # 3. Slot 2: Clinical Indication Anchor
         diag_anchor = self._extract_diagnosis_anchor(clean_text, session)
@@ -122,7 +128,6 @@ class EntityAnchorLinker:
                 anchors_by_pk[ha.primary_key] = ha
 
         # 6. Jurisdiction Lexical Anchors
-        juris_anchors = self._extract_jurisdiction_anchors(clean_text, session)
         for ja in juris_anchors:
             if ja.primary_key not in anchors_by_pk:
                 anchors_by_pk[ja.primary_key] = ja
@@ -229,20 +234,22 @@ class EntityAnchorLinker:
         return resolved
 
     def _extract_jurisdiction_anchors(self, text: str, session: Session) -> List[AnchorEntity]:
-        """Matches Medicare Administrative Contractor names or jurisdiction codes."""
-        anchors = []
-        mappings = [
-            (re.compile(r"\b(?:noridian|jurisdiction\s*a)\b", re.IGNORECASE), "JURIS-DME-A"),
-            (re.compile(r"\b(?:cgs(?:\s+administrators)?|jurisdiction\s*b)\b", re.IGNORECASE), "JURIS-DME-B"),
-            (re.compile(r"\bjurisdiction\s*c\b", re.IGNORECASE), "JURIS-DME-C"),
-            (re.compile(r"\bjurisdiction\s*d\b", re.IGNORECASE), "JURIS-DME-D"),
+        """Matches Medicare Administrative Contractor names or DME MAC jurisdiction codes."""
+        anchors: List[AnchorEntity] = []
+        matched_pks = set()
+
+        explicit_mappings = [
+            (re.compile(r"\b(?:jurisdiction\s*a|dme\s*mac\s*(?:jurisdiction\s*)?a|mac\s*(?:jurisdiction\s*)?a|juris-dme-a)\b", re.IGNORECASE), "JURIS-DME-A"),
+            (re.compile(r"\b(?:jurisdiction\s*b|dme\s*mac\s*(?:jurisdiction\s*)?b|mac\s*(?:jurisdiction\s*)?b|juris-dme-b)\b", re.IGNORECASE), "JURIS-DME-B"),
+            (re.compile(r"\b(?:jurisdiction\s*c|dme\s*mac\s*(?:jurisdiction\s*)?c|mac\s*(?:jurisdiction\s*)?c|juris-dme-c)\b", re.IGNORECASE), "JURIS-DME-C"),
+            (re.compile(r"\b(?:jurisdiction\s*d|dme\s*mac\s*(?:jurisdiction\s*)?d|mac\s*(?:jurisdiction\s*)?d|juris-dme-d)\b", re.IGNORECASE), "JURIS-DME-D"),
         ]
-        for pattern, pk in mappings:
+        for pattern, pk in explicit_mappings:
             m = pattern.search(text)
             if m:
                 rec = session.run("MATCH (j:Jurisdiction {primary_key: $pk}) RETURN j", pk=pk).single()
                 if rec:
-                    node = rec["j"]
+                    matched_pks.add(pk)
                     anchors.append(
                         AnchorEntity(
                             slot="jurisdiction",
@@ -252,6 +259,40 @@ class EntityAnchorLinker:
                             label="Jurisdiction",
                         )
                     )
+
+        # Contractor name resolution when no explicit letter for that contractor was matched
+        cgs_match = re.search(r"\bcgs(?:\s+administrators)?\b", text, re.IGNORECASE)
+        if cgs_match and not ({"JURIS-DME-B", "JURIS-DME-C"} & matched_pks):
+            for pk in ("JURIS-DME-B", "JURIS-DME-C"):
+                rec = session.run("MATCH (j:Jurisdiction {primary_key: $pk}) RETURN j", pk=pk).single()
+                if rec:
+                    matched_pks.add(pk)
+                    anchors.append(
+                        AnchorEntity(
+                            slot="jurisdiction",
+                            primary_key=pk,
+                            matched_text=text[cgs_match.start():cgs_match.end()],
+                            entity_type="Jurisdiction",
+                            label="Jurisdiction",
+                        )
+                    )
+
+        noridian_match = re.search(r"\bnoridian(?:\s+healthcare(?:\s+solutions)?)?\b", text, re.IGNORECASE)
+        if noridian_match and not ({"JURIS-DME-A", "JURIS-DME-D"} & matched_pks):
+            for pk in ("JURIS-DME-A", "JURIS-DME-D"):
+                rec = session.run("MATCH (j:Jurisdiction {primary_key: $pk}) RETURN j", pk=pk).single()
+                if rec:
+                    matched_pks.add(pk)
+                    anchors.append(
+                        AnchorEntity(
+                            slot="jurisdiction",
+                            primary_key=pk,
+                            matched_text=text[noridian_match.start():noridian_match.end()],
+                            entity_type="Jurisdiction",
+                            label="Jurisdiction",
+                        )
+                    )
+
         return anchors
 
     def _extract_change_request_anchors(self, text: str, session: Session) -> List[AnchorEntity]:
@@ -348,59 +389,121 @@ class EntityAnchorLinker:
 
         return anchors
 
-    def _extract_state_anchor(self, text: str, session: Session) -> Optional[AnchorEntity]:
-        """Matches state name or 2-letter postal code and validates in Neo4j."""
+    def _extract_state_anchors(
+        self,
+        text: str,
+        session: Session,
+        has_jurisdiction: bool = False,
+    ) -> List[AnchorEntity]:
+        """Matches all state names or 2-letter postal codes in order of appearance and validates in Neo4j."""
         lower_text = text.lower()
+        matched_spans: List[Tuple[int, int]] = []
+        matched_anchors: List[Tuple[int, AnchorEntity]] = []
+        matched_codes = set()
 
-        # Check full state names first (sorted by length descending so "District of Columbia" matches before "Columbia")
+        def spans_overlap(start: int, end: int) -> bool:
+            for s, e in matched_spans:
+                if not (end <= s or start >= e):
+                    return True
+            return False
+
+        # Step A: Check full state names first (sorted by length descending so "West Virginia" matches before "Virginia")
         for state_name in sorted(self.STATE_NAME_TO_CODE.keys(), key=len, reverse=True):
             pattern = rf"\b{re.escape(state_name)}\b"
-            m = re.search(pattern, lower_text)
-            if m:
+            for m in re.finditer(pattern, lower_text):
+                if spans_overlap(m.start(), m.end()):
+                    continue
                 code = self.STATE_NAME_TO_CODE[state_name]
                 pk = f"STATE-{code}"
-                # Verify in Neo4j
                 record = session.run("MATCH (s:State {primary_key: $pk}) RETURN s", pk=pk).single()
                 if record:
-                    return AnchorEntity(
-                        slot="state",
-                        primary_key=pk,
-                        matched_text=text[m.start():m.end()],
-                        entity_type="State",
-                        label="State",
+                    matched_spans.append((m.start(), m.end()))
+                    matched_codes.add(code)
+                    matched_anchors.append(
+                        (
+                            m.start(),
+                            AnchorEntity(
+                                slot="state",
+                                primary_key=pk,
+                                matched_text=text[m.start():m.end()],
+                                entity_type="State",
+                                label="State",
+                            ),
+                        )
                     )
 
-        # Check 2-letter uppercase codes with boundaries
-        for code in self.STATE_NAME_TO_CODE.values():
+        # Step B: Check 2-letter uppercase codes with boundaries for codes not already matched
+        ambiguous_upper_words = {"IN", "OR", "ME", "HI", "OK"}
+        for code in sorted(set(self.STATE_NAME_TO_CODE.values())):
+            if code in matched_codes:
+                continue
             pattern = rf"\b{code}\b"
-            m = re.search(pattern, text)
-            if m:
+            for m in re.finditer(pattern, text):
+                if spans_overlap(m.start(), m.end()):
+                    continue
+                if code in ambiguous_upper_words:
+                    if text.isupper():
+                        continue
+                    # Skip "IN" or "OR" when used before another word as an uppercase preposition/conjunction
+                    after_text = text[m.end():].lstrip()
+                    if code in {"IN", "OR"} and after_text and after_text[0].isalpha():
+                        continue
                 pk = f"STATE-{code}"
                 record = session.run("MATCH (s:State {primary_key: $pk}) RETURN s", pk=pk).single()
                 if record:
-                    return AnchorEntity(
-                        slot="state",
-                        primary_key=pk,
-                        matched_text=m.group(0),
-                        entity_type="State",
-                        label="State",
+                    matched_spans.append((m.start(), m.end()))
+                    matched_codes.add(code)
+                    matched_anchors.append(
+                        (
+                            m.start(),
+                            AnchorEntity(
+                                slot="state",
+                                primary_key=pk,
+                                matched_text=m.group(0),
+                                entity_type="State",
+                                label="State",
+                            ),
+                        )
                     )
 
-        # Fail-fast check: Did the user say "from <Location>" where <Location> is unrecognized?
-        geo_match = self.GEO_LOCATION_INDICATORS.search(text)
-        if geo_match:
-            candidate = geo_match.group(1).strip()
-            # If candidate is not a common conversational word
-            stopwords = {"home", "yesterday", "scratch", "pain", "now", "today", "here", "there"}
-            if candidate.lower() not in stopwords and len(candidate) > 2:
-                # If it's not a valid state, fail fast!
-                if candidate.lower() not in self.STATE_NAME_TO_CODE:
-                    raise EntityResolutionError(
-                        f"Unrecognized geographic jurisdiction '{candidate}'.",
-                        details={"extracted_geo": candidate}
-                    )
+        # Sort by match position ascending and deduplicate by primary_key
+        matched_anchors.sort(key=lambda pair: pair[0])
+        result_anchors: List[AnchorEntity] = []
+        seen_pks = set()
+        for _, anchor in matched_anchors:
+            if anchor.primary_key not in seen_pks:
+                seen_pks.add(anchor.primary_key)
+                result_anchors.append(anchor)
 
-        return None
+        # Fail-fast check: Only trigger when zero State and zero Jurisdiction anchors were resolved
+        if not result_anchors and not has_jurisdiction:
+            geo_match = self.GEO_LOCATION_INDICATORS.search(text)
+            if geo_match:
+                candidate = geo_match.group(1).strip()
+                cand_lower = candidate.lower()
+                stopwords = {
+                    "home", "yesterday", "scratch", "pain", "now", "today", "here", "there",
+                    "medicare", "general", "part b", "jurisdiction a", "jurisdiction b",
+                    "jurisdiction c", "jurisdiction d", "dme mac", "cgs", "noridian",
+                }
+                non_geo_terms = ("jurisdiction", "mac", "cgs", "noridian", "medicare", "policy", "part b")
+                if (
+                    cand_lower not in stopwords
+                    and len(candidate) > 2
+                    and not any(term in cand_lower for term in non_geo_terms)
+                ):
+                    if cand_lower not in self.STATE_NAME_TO_CODE:
+                        raise EntityResolutionError(
+                            f"Unrecognized geographic jurisdiction '{candidate}'.",
+                            details={"extracted_geo": candidate},
+                        )
+
+        return result_anchors
+
+    def _extract_state_anchor(self, text: str, session: Session) -> Optional[AnchorEntity]:
+        """Matches first state name or 2-letter postal code and validates in Neo4j."""
+        anchors = self._extract_state_anchors(text, session)
+        return anchors[0] if anchors else None
 
     def _extract_diagnosis_anchor(self, text: str, session: Session) -> Optional[AnchorEntity]:
         """Matches clinical synonyms and validates against ICD10Code in Neo4j."""

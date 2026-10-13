@@ -54,7 +54,7 @@ class GraphRAGPipeline:
         )
 
         # Determine active state code for context assembly
-        state_code = "WI"
+        state_code: Optional[str] = None
         if anchors.state_anchor:
             state_code = anchors.state_anchor.primary_key.replace("STATE-", "")
         elif request.state_code:

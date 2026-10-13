@@ -14,6 +14,133 @@ export interface ChatMessage {
   timestamp: string;
 }
 
+export interface StateOption {
+  code: string;
+  name: string;
+  jurisdictionId: string;
+}
+
+export interface JurisdictionMetadata {
+  id: string;
+  label: string;
+  shortName: string;
+  contractor: string;
+  region: string;
+  states: { code: string; name: string }[];
+}
+
+export const DME_JURISDICTIONS: Record<string, JurisdictionMetadata> = {
+  'JURIS-DME-A': {
+    id: 'JURIS-DME-A',
+    label: 'Jurisdiction A (Northeast - Noridian)',
+    shortName: 'Jurisdiction A',
+    contractor: 'Noridian Healthcare Solutions',
+    region: 'Northeast',
+    states: [
+      { code: 'CT', name: 'Connecticut' },
+      { code: 'DC', name: 'District of Columbia' },
+      { code: 'DE', name: 'Delaware' },
+      { code: 'MA', name: 'Massachusetts' },
+      { code: 'MD', name: 'Maryland' },
+      { code: 'ME', name: 'Maine' },
+      { code: 'NH', name: 'New Hampshire' },
+      { code: 'NJ', name: 'New Jersey' },
+      { code: 'NY', name: 'New York' },
+      { code: 'PA', name: 'Pennsylvania' },
+      { code: 'RI', name: 'Rhode Island' },
+      { code: 'VT', name: 'Vermont' },
+    ],
+  },
+  'JURIS-DME-B': {
+    id: 'JURIS-DME-B',
+    label: 'Jurisdiction B (Midwest - CGS)',
+    shortName: 'Jurisdiction B',
+    contractor: 'CGS Administrators, LLC',
+    region: 'Midwest',
+    states: [
+      { code: 'IL', name: 'Illinois' },
+      { code: 'IN', name: 'Indiana' },
+      { code: 'KY', name: 'Kentucky' },
+      { code: 'MI', name: 'Michigan' },
+      { code: 'MN', name: 'Minnesota' },
+      { code: 'OH', name: 'Ohio' },
+      { code: 'WI', name: 'Wisconsin' },
+    ],
+  },
+  'JURIS-DME-C': {
+    id: 'JURIS-DME-C',
+    label: 'Jurisdiction C (South - CGS)',
+    shortName: 'Jurisdiction C',
+    contractor: 'CGS Administrators, LLC',
+    region: 'South',
+    states: [
+      { code: 'AL', name: 'Alabama' },
+      { code: 'AR', name: 'Arkansas' },
+      { code: 'CO', name: 'Colorado' },
+      { code: 'FL', name: 'Florida' },
+      { code: 'GA', name: 'Georgia' },
+      { code: 'LA', name: 'Louisiana' },
+      { code: 'MS', name: 'Mississippi' },
+      { code: 'NC', name: 'North Carolina' },
+      { code: 'NM', name: 'New Mexico' },
+      { code: 'OK', name: 'Oklahoma' },
+      { code: 'PR', name: 'Puerto Rico' },
+      { code: 'SC', name: 'South Carolina' },
+      { code: 'TN', name: 'Tennessee' },
+      { code: 'TX', name: 'Texas' },
+      { code: 'VA', name: 'Virginia' },
+      { code: 'VI', name: 'U.S. Virgin Islands' },
+      { code: 'WV', name: 'West Virginia' },
+    ],
+  },
+  'JURIS-DME-D': {
+    id: 'JURIS-DME-D',
+    label: 'Jurisdiction D (West - Noridian)',
+    shortName: 'Jurisdiction D',
+    contractor: 'Noridian Healthcare Solutions',
+    region: 'West',
+    states: [
+      { code: 'AK', name: 'Alaska' },
+      { code: 'AZ', name: 'Arizona' },
+      { code: 'CA', name: 'California' },
+      { code: 'HI', name: 'Hawaii' },
+      { code: 'IA', name: 'Iowa' },
+      { code: 'ID', name: 'Idaho' },
+      { code: 'KS', name: 'Kansas' },
+      { code: 'MO', name: 'Missouri' },
+      { code: 'MT', name: 'Montana' },
+      { code: 'ND', name: 'North Dakota' },
+      { code: 'NE', name: 'Nebraska' },
+      { code: 'NV', name: 'Nevada' },
+      { code: 'OR', name: 'Oregon' },
+      { code: 'SD', name: 'South Dakota' },
+      { code: 'UT', name: 'Utah' },
+      { code: 'WA', name: 'Washington' },
+      { code: 'WY', name: 'Wyoming' },
+    ],
+  },
+};
+
+export const STATE_TO_JURISDICTION: Record<string, string> = Object.values(DME_JURISDICTIONS).reduce(
+  (acc, juris) => {
+    juris.states.forEach((st) => {
+      acc[st.code] = juris.id;
+    });
+    return acc;
+  },
+  {} as Record<string, string>
+);
+
+export const ALL_STATES_SORTED: StateOption[] = Object.values(DME_JURISDICTIONS)
+  .flatMap((juris) =>
+    juris.states.map((st) => ({
+      code: st.code,
+      name: st.name,
+      jurisdictionId: juris.id,
+    }))
+  )
+  .sort((a, b) => a.name.localeCompare(b.name));
+
 interface GraphSyncContextType {
   activeNodePKs: Set<string>;
   activeEdgeKeys: Set<string>;
@@ -21,17 +148,20 @@ interface GraphSyncContextType {
   seededAnchor: AnchorEntity | null;
   isIlluminated: boolean;
   quickPrompts: string[];
+  filterJurisdiction: string;
   filterState: string;
+  availableStates: StateOption[];
   policyKeyword: string;
   isChatOpen: boolean;
   messages: ChatMessage[];
   isQueryLoading: boolean;
   errorMsg: string | null;
   focusTarget: { x: number; y: number; zoom?: number } | null;
-  
+
   selectNode: (node: GraphNode | null) => void;
   setIlluminatedPath: (response: GraphRAGQueryResponse) => void;
   clearIllumination: () => void;
+  setFilterJurisdiction: (jurisdiction: string) => void;
   setFilterState: (state: string) => void;
   setPolicyKeyword: (keyword: string) => void;
   setIsChatOpen: (open: boolean) => void;
@@ -64,10 +194,25 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     "What diagnoses are approved under CMS MCD A59508?",
     "What is the allowable Medicare reimbursement for A6522 in Wisconsin?",
   ]);
-  const [filterState, setFilterState] = useState<string>("WI");
+  const [filterJurisdiction, setFilterJurisdictionState] = useState<string>("");
+  const [jurisdictionScope, setJurisdictionScope] = useState<string>("");
+  const [filterState, setFilterStateState] = useState<string>("");
   const [policyKeyword, setPolicyKeyword] = useState<string>("LTA");
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
   const [focusTarget, setFocusTarget] = useState<{ x: number; y: number; zoom?: number } | null>(null);
+
+  const availableStates = useMemo<StateOption[]>(() => {
+    if (jurisdictionScope && DME_JURISDICTIONS[jurisdictionScope]) {
+      return DME_JURISDICTIONS[jurisdictionScope].states
+        .map((st) => ({
+          code: st.code,
+          name: st.name,
+          jurisdictionId: jurisdictionScope,
+        }))
+        .sort((a, b) => a.name.localeCompare(b.name));
+    }
+    return ALL_STATES_SORTED;
+  }, [jurisdictionScope]);
 
   const selectNode = useCallback((node: GraphNode | null) => {
     setSelectedNode(node);
@@ -133,6 +278,73 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     setIsIlluminated(false);
   }, []);
 
+  const setFilterJurisdiction = useCallback(
+    (jurisdictionId: string) => {
+      setFilterJurisdictionState(jurisdictionId);
+      setJurisdictionScope(jurisdictionId);
+      setFilterStateState("");
+
+      if (jurisdictionId && DME_JURISDICTIONS[jurisdictionId]) {
+        const juris = DME_JURISDICTIONS[jurisdictionId];
+        const nodes = new Set<string>([
+          jurisdictionId,
+          ...juris.states.map((st) => `STATE-${st.code}`),
+        ]);
+        const edges = new Set<string>(
+          juris.states.map((st) => `${jurisdictionId}->COVERS_STATE->STATE-${st.code}`)
+        );
+        setActiveNodePKs(nodes);
+        setActiveEdgeKeys(edges);
+        setIsIlluminated(true);
+      } else {
+        clearIllumination();
+      }
+    },
+    [clearIllumination]
+  );
+
+  const setFilterState = useCallback(
+    (stateCode: string) => {
+      setFilterStateState(stateCode);
+      if (stateCode) {
+        const parentJuris = STATE_TO_JURISDICTION[stateCode] || "";
+        if (parentJuris) {
+          setFilterJurisdictionState(parentJuris);
+        }
+        setJurisdictionScope((prev) => (prev && prev !== parentJuris ? "" : prev));
+
+        const nodes = new Set<string>([`STATE-${stateCode}`]);
+        const edges = new Set<string>();
+        if (parentJuris) {
+          nodes.add(parentJuris);
+          edges.add(`${parentJuris}->COVERS_STATE->STATE-${stateCode}`);
+        }
+        setActiveNodePKs(nodes);
+        setActiveEdgeKeys(edges);
+        setIsIlluminated(true);
+      } else {
+        if (filterJurisdiction && DME_JURISDICTIONS[filterJurisdiction]) {
+          const juris = DME_JURISDICTIONS[filterJurisdiction];
+          setActiveNodePKs(
+            new Set<string>([
+              filterJurisdiction,
+              ...juris.states.map((st) => `STATE-${st.code}`),
+            ])
+          );
+          setActiveEdgeKeys(
+            new Set<string>(
+              juris.states.map((st) => `${filterJurisdiction}->COVERS_STATE->STATE-${st.code}`)
+            )
+          );
+          setIsIlluminated(true);
+        } else {
+          clearIllumination();
+        }
+      }
+    },
+    [clearIllumination, filterJurisdiction]
+  );
+
   const submitInquiry = useCallback(
     async (queryText: string, anchorPk?: string, modelId?: string) => {
       const q = queryText.trim();
@@ -155,7 +367,8 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
           body: JSON.stringify({
             query: q,
             model_id: modelId || 'meta-llama/Meta-Llama-3-8B-Instruct',
-            state_code: filterState || 'WI',
+            state_code: filterState || undefined,
+            jurisdiction_code: filterJurisdiction || undefined,
             primary_key: anchorPk,
           }),
         });
@@ -190,7 +403,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         setIsQueryLoading(false);
       }
     },
-    [filterState, isQueryLoading, setIlluminatedPath]
+    [filterState, filterJurisdiction, isQueryLoading, setIlluminatedPath]
   );
 
   const inquireNode = useCallback(
@@ -210,7 +423,9 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       seededAnchor,
       isIlluminated,
       quickPrompts,
+      filterJurisdiction,
       filterState,
+      availableStates,
       policyKeyword,
       isChatOpen,
       messages,
@@ -220,6 +435,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       selectNode,
       setIlluminatedPath,
       clearIllumination,
+      setFilterJurisdiction,
       setFilterState,
       setPolicyKeyword,
       setIsChatOpen,
@@ -234,7 +450,9 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       seededAnchor,
       isIlluminated,
       quickPrompts,
+      filterJurisdiction,
       filterState,
+      availableStates,
       policyKeyword,
       isChatOpen,
       messages,
@@ -244,6 +462,8 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       selectNode,
       setIlluminatedPath,
       clearIllumination,
+      setFilterJurisdiction,
+      setFilterState,
       submitInquiry,
       inquireNode,
     ]

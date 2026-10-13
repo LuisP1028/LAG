@@ -85,12 +85,82 @@ def get_graph_summary():
 def get_graph_topology(
     policy_keyword: Optional[str] = Query("LTA", description="Policy filter (LTA, IVIG, or all)"),
     include_fee_schedules: bool = Query(False, description="Whether to include all 3,800+ fee schedule nodes"),
-    state_filter: Optional[str] = Query(None, description="2-letter state code (e.g. WI) to expand state-specific fees"),
+    jurisdiction_filter: Optional[str] = Query(None, description="CMS DME MAC Jurisdiction ID (e.g. JURIS-DME-B) to filter regional contractor and covered states"),
+    state_filter: Optional[str] = Query(None, description="2-letter state code (e.g. WI, OH, NY) to expand state-specific non-rural fees"),
     session: Session = Depends(get_neo4j_session),
 ):
     """Returns nodes and edges for visualization canvas with smart high-density node clustering."""
     nodes_by_pk: Dict[str, TopologyNode] = {}
     edges_by_key: Dict[str, TopologyEdge] = {}
+
+    # Normalize and validate jurisdiction_filter
+    clean_juris: Optional[str] = None
+    if jurisdiction_filter is not None:
+        raw_j = jurisdiction_filter.strip().upper()
+        if raw_j and raw_j != "ALL":
+            if raw_j in {"A", "B", "C", "D"}:
+                clean_juris = f"JURIS-DME-{raw_j}"
+            elif (raw_j.startswith("JURIS-") or raw_j.startswith("DME-")) and not raw_j.startswith("JURIS-DME-"):
+                letter = raw_j.replace("JURIS-", "").replace("DME-", "")
+                clean_juris = f"JURIS-DME-{letter}"
+            else:
+                clean_juris = raw_j
+
+            j_rec = session.run(
+                "MATCH (j:Jurisdiction {primary_key: $juris_pk}) RETURN j.primary_key AS pk",
+                juris_pk=clean_juris,
+            ).single()
+            if not j_rec:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail={
+                        "error_type": "EntityResolutionError",
+                        "message": f"Unrecognized DME MAC jurisdiction '{jurisdiction_filter}'.",
+                        "details": {"jurisdiction_filter": jurisdiction_filter},
+                    },
+                )
+
+    # Normalize and validate state_filter
+    clean_state: Optional[str] = None
+    parent_juris_pk: Optional[str] = None
+    if state_filter is not None:
+        raw_s = state_filter.strip().upper()
+        if raw_s and raw_s != "ALL":
+            if raw_s.startswith("STATE-"):
+                raw_s = raw_s[len("STATE-"):]
+            clean_state = raw_s
+
+            s_rec = session.run(
+                "MATCH (j:Jurisdiction)-[:COVERS_STATE]->(s:State {state_code: $state_code}) "
+                "RETURN s.primary_key AS s_pk, j.primary_key AS j_pk",
+                state_code=clean_state,
+            ).single()
+            if not s_rec:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail={
+                        "error_type": "EntityResolutionError",
+                        "message": f"Unrecognized state code '{state_filter}'.",
+                        "details": {"state_filter": state_filter},
+                    },
+                )
+            parent_juris_pk = s_rec["j_pk"]
+
+    # Determine allowed Jurisdiction and State primary keys for multi-tier topology filtering
+    allowed_juris_pks: Optional[Set[str]] = None
+    allowed_state_pks: Optional[Set[str]] = None
+    if clean_state is not None and parent_juris_pk is not None:
+        allowed_state_pks = {f"STATE-{clean_state}"}
+        allowed_juris_pks = {parent_juris_pk}
+    elif clean_juris is not None:
+        cov_rec = session.run(
+            "MATCH (:Jurisdiction {primary_key: $juris_pk})-[:COVERS_STATE]->(s:State) "
+            "RETURN collect(s.primary_key) AS state_pks",
+            juris_pk=clean_juris,
+        ).single()
+        state_pks = cov_rec["state_pks"] if cov_rec and cov_rec["state_pks"] else []
+        allowed_juris_pks = {clean_juris}
+        allowed_state_pks = set(state_pks)
 
     def convert_node(rec_node: Any) -> TopologyNode:
         props = dict(rec_node)
@@ -142,6 +212,13 @@ def get_graph_topology(
             properties=props,
         )
 
+    def is_node_allowed(tn: TopologyNode) -> bool:
+        if tn.label == "Jurisdiction" and allowed_juris_pks is not None:
+            return tn.primary_key in allowed_juris_pks
+        if tn.label == "State" and allowed_state_pks is not None:
+            return tn.primary_key in allowed_state_pks
+        return True
+
     def convert_edge(rel: Any, spk: str, tpk: str) -> TopologyEdge:
         lbl = rel.type if hasattr(rel, "type") else getattr(rel, "label", "RELATED_TO")
         props = dict(rel) if hasattr(rel, "items") else {}
@@ -170,24 +247,28 @@ def get_graph_topology(
     """
     for row in session.run(base_query):
         n = row.get("n")
+        tn = None
         if n:
             tn = convert_node(n)
-            nodes_by_pk[tn.primary_key] = tn
+            if is_node_allowed(tn):
+                nodes_by_pk[tn.primary_key] = tn
 
         m = row.get("m")
         r = row.get("r")
+        tm = None
         if m:
             tm = convert_node(m)
-            nodes_by_pk[tm.primary_key] = tm
-        if n and m and r:
-            te = convert_edge(r, n["primary_key"], m["primary_key"])
+            if is_node_allowed(tm):
+                nodes_by_pk[tm.primary_key] = tm
+        if tn and tm and r and is_node_allowed(tn) and is_node_allowed(tm):
+            te = convert_edge(r, tn.primary_key, tm.primary_key)
             edges_by_key[te.edge_key] = te
 
-    # 2. If state_filter is specified, expand that state's fee schedule nodes (~70 nodes)
-    if state_filter:
-        clean_state = state_filter.strip().upper()
+    # 2. If state_filter is specified, expand that state's non-rural fee schedule nodes (~71 nodes)
+    if clean_state:
         fee_query = """
         MATCH (f:FeeScheduleEntry)-[r1:APPLIES_TO]->(s:State {state_code: $state_code})
+        WHERE f.is_rural = false OR f.is_rural IS NULL
         MATCH (h:HCPCSCode)-[r2:HAS_FEE_SCHEDULE]->(f)
         RETURN f, r1, s, h, r2
         """
@@ -217,12 +298,23 @@ def get_graph_topology(
 
     # 3. If include_fee_schedules is true and no state_filter, include all (with safety limit 4000)
     elif include_fee_schedules:
-        all_fees_query = """
-        MATCH (h:HCPCSCode)-[r2:HAS_FEE_SCHEDULE]->(f:FeeScheduleEntry)-[r1:APPLIES_TO]->(s:State)
-        RETURN f, r1, s, h, r2
-        LIMIT 4000
-        """
-        for row in session.run(all_fees_query):
+        if allowed_state_pks is not None:
+            all_fees_query = """
+            MATCH (h:HCPCSCode)-[r2:HAS_FEE_SCHEDULE]->(f:FeeScheduleEntry)-[r1:APPLIES_TO]->(s:State)
+            WHERE s.primary_key IN $state_pks AND (f.is_rural = false OR f.is_rural IS NULL)
+            RETURN f, r1, s, h, r2
+            LIMIT 4000
+            """
+            fee_rows = session.run(all_fees_query, state_pks=list(allowed_state_pks))
+        else:
+            all_fees_query = """
+            MATCH (h:HCPCSCode)-[r2:HAS_FEE_SCHEDULE]->(f:FeeScheduleEntry)-[r1:APPLIES_TO]->(s:State)
+            RETURN f, r1, s, h, r2
+            LIMIT 4000
+            """
+            fee_rows = session.run(all_fees_query)
+
+        for row in fee_rows:
             f = row.get("f")
             s = row.get("s")
             h = row.get("h")

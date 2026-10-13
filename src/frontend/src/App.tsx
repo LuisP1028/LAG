@@ -13,13 +13,20 @@ const MainVisualizer: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
 
-  const fetchTopology = useCallback(async (stateFilter = 'WI', policy = 'LTA') => {
+  const fetchTopology = useCallback(async (stateFilter = '', policy = 'LTA', jurisdictionFilter = '') => {
     setLoading(true);
     setFetchError(null);
     try {
       const params = new URLSearchParams();
-      if (stateFilter) params.append('state_filter', stateFilter);
-      if (policy && policy !== 'ALL') params.append('policy_keyword', policy);
+      if (jurisdictionFilter && jurisdictionFilter !== 'ALL') {
+        params.append('jurisdiction_filter', jurisdictionFilter);
+      }
+      if (stateFilter && stateFilter !== 'ALL') {
+        params.append('state_filter', stateFilter);
+      }
+      if (policy && policy !== 'ALL') {
+        params.append('policy_keyword', policy);
+      }
 
       const res = await fetch(`/api/graph/topology?${params.toString()}`);
       if (!res.ok) {
@@ -65,7 +72,7 @@ const MainVisualizer: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    fetchTopology('WI', 'LTA');
+    fetchTopology('', 'LTA', '');
   }, [fetchTopology]);
 
   return (
@@ -93,7 +100,7 @@ const MainVisualizer: React.FC = () => {
         >
           {fetchError}
           <button
-            onClick={() => fetchTopology('WI', 'LTA')}
+            onClick={() => fetchTopology('', 'LTA', '')}
             style={{
               marginLeft: 12,
               background: '#fff',

@@ -72,19 +72,59 @@ class GraphContextAssembler:
         # ---------------------------------------------------------
         lines.append("### 2. Contractor & Region")
 
+        node_by_pk = {n.primary_key: n for n in nodes}
+        juris_to_states: Dict[str, List[Any]] = {}
+        state_to_juris: Dict[str, Any] = {}
+        for e in edges:
+            if e.label == "COVERS_STATE":
+                j_node = node_by_pk.get(e.source_pk)
+                s_node = node_by_pk.get(e.target_pk)
+                if j_node and s_node:
+                    if all(existing.primary_key != s_node.primary_key for existing in juris_to_states.get(j_node.primary_key, [])):
+                        juris_to_states.setdefault(j_node.primary_key, []).append(s_node)
+                    state_to_juris[s_node.primary_key] = j_node
+
         jurisdictions = [n for n in nodes if n.label == "Jurisdiction"]
         for j in jurisdictions:
             name = j.name
-            contractor = j.properties.get("contractor_name") or ("Noridian Healthcare Solutions" if "JURIS-DME-A" in j.primary_key else "CGS Administrators, LLC")
-            states = j.properties.get("states", "")
+            contractor = j.properties.get("contractor_name") or (
+                "Noridian Healthcare Solutions" if j.primary_key in ("JURIS-DME-A", "JURIS-DME-D") else "CGS Administrators, LLC"
+            )
+            if "CGS" in contractor and "LLC" not in contractor:
+                contractor = "CGS Administrators, LLC"
             lines.append(f"- Regional Claims Contractor: [{j.primary_key}] {name} - {contractor}")
-            if states:
-                lines.append(f"- Covered States / Territory: {states}")
+
+            covered_states = sorted(
+                juris_to_states.get(j.primary_key, []),
+                key=lambda s: s.properties.get("state_code") or s.primary_key,
+            )
+            if covered_states:
+                cov_str = ", ".join(
+                    f"[{s.primary_key}] {s.properties.get('state_name') or s.name} ({s.properties.get('state_code') or s.primary_key.replace('STATE-', '')})"
+                    for s in covered_states
+                )
+                lines.append(f"- Covered States / Territories ({len(covered_states)}): {cov_str}")
+            else:
+                states_prop = j.properties.get("states", "")
+                if states_prop:
+                    lines.append(f"- Covered States / Territory: {states_prop}")
 
         state_nodes = [n for n in nodes if n.label == "State"]
         for s in state_nodes:
             s_name = s.properties.get("state_name") or s.name
-            lines.append(f"- Beneficiary State: [{s.primary_key}] {s_name}")
+            s_code = s.properties.get("state_code") or s.primary_key.replace("STATE-", "")
+            parent_j = state_to_juris.get(s.primary_key)
+            if parent_j:
+                p_contractor = parent_j.properties.get("contractor_name") or (
+                    "Noridian Healthcare Solutions" if parent_j.primary_key in ("JURIS-DME-A", "JURIS-DME-D") else "CGS Administrators, LLC"
+                )
+                if "CGS" in p_contractor and "LLC" not in p_contractor:
+                    p_contractor = "CGS Administrators, LLC"
+                lines.append(
+                    f"- Beneficiary State: [{s.primary_key}] {s_name} (Code: {s_code}, Governing Jurisdiction: [{parent_j.primary_key}] {p_contractor})"
+                )
+            else:
+                lines.append(f"- Beneficiary State: [{s.primary_key}] {s_name}")
 
         lines.append("")
 
@@ -123,38 +163,66 @@ class GraphContextAssembler:
         # ---------------------------------------------------------
         # Section 4: Fees and Patient Costs
         # ---------------------------------------------------------
-        target_state = "State"
-        if state_nodes:
-            target_state = state_nodes[0].properties.get("state_name") or state_nodes[0].name
+        if 1 <= len(state_nodes) <= 4:
+            target_state = ", ".join(s.properties.get("state_name") or s.name for s in state_nodes)
+        elif len(state_nodes) > 4:
+            target_state = "Regional Overview"
         elif state_code:
             target_state = state_code
+        else:
+            target_state = "Overview"
 
         lines.append(f"### 4. Fees and Patient Costs ({target_state}, 2024)")
 
         fees = [n for n in nodes if n.label == "FeeScheduleEntry"]
         if fees:
-            # Prioritize non-rural fees for this state
+            # Prioritize non-rural fees for traversed state(s)
             non_rural_fees = [f for f in fees if not f.properties.get("is_rural")]
             candidate_fees = non_rural_fees if non_rural_fees else fees
 
-            # Check for A6522 first
-            a6522_fee = next((f for f in candidate_fees if f.properties.get("hcpcs_code") == "A6522"), None)
-            if a6522_fee:
+            emitted_fee_pks = set()
+            # Include all A6522 fee entries across all traversed states
+            a6522_fees = sorted(
+                [f for f in candidate_fees if f.properties.get("hcpcs_code") == "A6522"],
+                key=lambda x: x.properties.get("state_code", ""),
+            )
+            for a6522_fee in a6522_fees:
+                emitted_fee_pks.add(a6522_fee.primary_key)
+                st_c = a6522_fee.properties.get("state_code", "")
+                state_tag = f" (State: [STATE-{st_c}])" if st_c else ""
                 amt = float(a6522_fee.properties.get("fee_amount", 0.0))
                 coinsurance = round(amt * 0.20, 2)
                 lines.append(
-                    f"- [{a6522_fee.primary_key}] HCPCS A6522: Allowable Reimbursement = ${amt:.2f} "
+                    f"- [{a6522_fee.primary_key}]{state_tag} HCPCS A6522: Allowable Reimbursement = ${amt:.2f} "
                     f"(Calculated 20% patient coinsurance = ${coinsurance:.2f})"
                 )
 
-            count = 0
-            for f in candidate_fees:
-                h_code = f.properties.get("hcpcs_code")
-                if h_code != "A6522" and count < 6:
+            # Next include any actively illuminated non-A6522 fee entries
+            active_set = set(traversal_result.active_node_pks or [])
+            for f in sorted(candidate_fees, key=lambda x: (x.properties.get("hcpcs_code", ""), x.properties.get("state_code", ""))):
+                if f.primary_key in active_set and f.primary_key not in emitted_fee_pks:
+                    emitted_fee_pks.add(f.primary_key)
+                    h_code = f.properties.get("hcpcs_code")
+                    st_c = f.properties.get("state_code", "")
+                    state_tag = f" (State: [STATE-{st_c}])" if st_c else ""
                     amt = float(f.properties.get("fee_amount", 0.0))
                     coinsurance = round(amt * 0.20, 2)
                     lines.append(
-                        f"- [{f.primary_key}] HCPCS {h_code}: Allowable Reimbursement = ${amt:.2f} "
+                        f"- [{f.primary_key}]{state_tag} HCPCS {h_code}: Allowable Reimbursement = ${amt:.2f} "
+                        f"(Calculated 20% patient coinsurance = ${coinsurance:.2f})"
+                    )
+
+            count = 0
+            for f in candidate_fees:
+                if f.primary_key not in emitted_fee_pks and count < 6:
+                    emitted_fee_pks.add(f.primary_key)
+                    h_code = f.properties.get("hcpcs_code")
+                    st_c = f.properties.get("state_code", "")
+                    state_tag = f" (State: [STATE-{st_c}])" if st_c else ""
+                    amt = float(f.properties.get("fee_amount", 0.0))
+                    coinsurance = round(amt * 0.20, 2)
+                    lines.append(
+                        f"- [{f.primary_key}]{state_tag} HCPCS {h_code}: Allowable Reimbursement = ${amt:.2f} "
                         f"(Calculated 20% patient coinsurance = ${coinsurance:.2f})"
                     )
                     count += 1
