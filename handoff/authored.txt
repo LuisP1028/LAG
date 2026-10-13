@@ -1,3 +1,1 @@
-functional_specification_006.md
-functional_specification_007.md
 functional_specification_008.md
