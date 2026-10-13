@@ -1,0 +1,163 @@
+{
+  "probe_1_omnibus_convergence_11_nodes": {
+    "answer": "Based on the provided GRAPH CONTEXT, IVIG (Intravenous Immunoglobulin) and LTA (Lymphedema Treatment Act) converge under federal law as follows:\n\nThe Consolidated Appropriations Act, 2023, enacted as Public Law 117-328 ([PLAW-117-328]), includes provisions related to IVIG and LTA. Specifically, Section 1395x ([USC-42-1395x-s-2-Z]) and Section 1395x ([USC-42-1395x-s-2-JJ]) of the Social Security Act are the statutory authorities that govern Medicare coverage for IVIG and LTA.\n\nThe Federal Register Rule ([FR-2023-24455]) 88 FR 77676, CMS-1784-F, outlines the operational changes for IVIG and LTA. The Operational Change Requests ([CMS-CR-13217]) and ([CMS-CR-13286]) Transmittals 12437 and 12349, respectively, provide further details on the benefit categories for IVIG and Lymphedema Treatment.\n\nThe Introduced Bills ([BILL-117-hr-2617]) and ([BILL-117-hr-3808]) Consolidated Appropriations Act, 2023, and Medicare IVIG Access Enhancement Act, respectively, demonstrate the legislative efforts to enhance coverage for IVIG and LTA.\n\nHowever, I must note that the GRAPH CONTEXT does not provide explicit fee schedule entries for IVIG or LTA. Therefore, I am unable to quote the exact dollar allowable reimbursement rate and the 20% patient coinsurance for these procedures.",
+    "active_node_pks": [
+      "BILL-117-hr-2617",
+      "BILL-117-hr-3630",
+      "BILL-117-hr-3808",
+      "CMS-CR-13217",
+      "CMS-CR-13286",
+      "FR-2023-24455",
+      "PLAW-117-328",
+      "POLICY-IVIG",
+      "POLICY-LTA",
+      "USC-42-1395x-s-2-JJ",
+      "USC-42-1395x-s-2-Z"
+    ],
+    "active_edge_keys": [
+      "BILL-117-hr-2617->ENACTED_AS->PLAW-117-328",
+      "BILL-117-hr-3630->ENACTED_AS->PLAW-117-328",
+      "BILL-117-hr-3808->ENACTED_AS->PLAW-117-328",
+      "FR-2023-24455->RELATED_TO->CMS-CR-13217",
+      "FR-2023-24455->RELATED_TO->CMS-CR-13286",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-JJ",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-Z",
+      "POLICY-IVIG->TARGETS_BILL->BILL-117-hr-2617",
+      "POLICY-IVIG->TARGETS_BILL->BILL-117-hr-3808",
+      "POLICY-LTA->TARGETS_BILL->BILL-117-hr-2617",
+      "POLICY-LTA->TARGETS_BILL->BILL-117-hr-3630",
+      "USC-42-1395x-s-2-JJ->RELATED_TO->FR-2023-24455",
+      "USC-42-1395x-s-2-Z->RELATED_TO->FR-2023-24455"
+    ],
+    "anchors": [
+      {
+        "slot": "policy",
+        "primary_key": "POLICY-LTA",
+        "matched_text": "LTA",
+        "entity_type": "Policy",
+        "label": "Policy"
+      },
+      {
+        "slot": "policy",
+        "primary_key": "POLICY-IVIG",
+        "matched_text": "IVIG",
+        "entity_type": "Policy",
+        "label": "Policy"
+      }
+    ],
+    "provenance_sources": [
+      {
+        "source_uri": "verified://federal-statute",
+        "selector": "direct",
+        "ingestion_timestamp": "2026-10-13T01:23:54Z",
+        "run_id": "export-run-001"
+      }
+    ],
+    "duration_ms": 9367.25
+  },
+  "probe_2_wisconsin_patient_routing": {
+    "answer": "Based on the GRAPH CONTEXT, I can provide the following information:\n\nAs a Medicare beneficiary from Wisconsin, you have been diagnosed with [ICD10-I97.2] ICD-10 I97.2 - Postmastectomy lymphedema syndrome, which is a permitted diagnosis for lymphedema compression treatment items.\n\nAccording to the Operational Change Request [CMS-CR-13286] Transmittal 12349 (Benefit Category: LC), you are eligible for coverage under the lymphedema compression treatment items benefit category.\n\nThe Authorizing Coverage Policy [CMS-MCD-A59508] Standard Documentation Requirements for Lymphedema Compression Treatment Items specifies the requirements for coverage, including the use of the permitted diagnosis code [ICD10-I97.2].\n\nThe Covered Procedure Codes for lymphedema compression treatment items include:\n\n* [HCPCS-A6522] HCPCS-A6522\n* [HCPCS-A6520] HCPCS-A6520\n* [HCPCS-A6521] HCPCS-A6521\n* [HCPCS-A6523] HCPCS-A6523\n* [HCPCS-A6524] HCPCS-A6524\n\nThe fees and patient costs for these procedure codes in Wisconsin for 2024 are as follows:\n\n* [HCPCS-A6522] HCPCS A6522: Allowable Reimbursement = $290.47 (Calculated 20% patient coinsurance = $58.09)\n* [HCPCS-A6520] HCPCS A6520: Allowable Reimbursement = $119.54 (Calculated 20% patient coinsurance = $23.91)\n* [HCPCS-A6521] HCPCS A6521: Allowable Reimbursement = $474.33 (Calculated 20% patient coinsurance = $94.87)\n* [HCPCS-A6523] HCPCS A6523: Allowable Reimbursement = $689.17 (Calculated 20% patient coinsurance = $137.83)\n* [HCPCS-A6524] HCPCS A6524: Allowable Reimbursement = $362.39 (Calculated 20% patient coinsurance = $72.48)\n\nYou can refer to the fee schedule entries in Section 4 for the exact dollar allowable reimbursement rates and patient coinsurance amounts for each procedure code.",
+    "active_node_pks": [
+      "CMS-CR-13286",
+      "CMS-MCD-A59508",
+      "FEE-A6522-WI-NR-2024",
+      "HCPCS-A6522",
+      "ICD10-I97.2",
+      "JURIS-DME-B",
+      "STATE-WI"
+    ],
+    "active_edge_keys": [
+      "CMS-CR-13286->APPLIES_TO_JURISDICTION->JURIS-DME-B",
+      "CMS-CR-13286->MANDATES_POLICY->CMS-MCD-A59508",
+      "CMS-MCD-A59508->ALLOWS_DIAGNOSIS->ICD10-I97.2",
+      "CMS-MCD-A59508->GOVERNS->HCPCS-A6522",
+      "FEE-A6522-WI-NR-2024->APPLIES_TO->STATE-WI",
+      "HCPCS-A6522->HAS_FEE_SCHEDULE->FEE-A6522-WI-NR-2024",
+      "JURIS-DME-B->COVERS_STATE->STATE-WI"
+    ],
+    "anchors": [
+      {
+        "slot": "state",
+        "primary_key": "STATE-WI",
+        "matched_text": "Wisconsin",
+        "entity_type": "State",
+        "label": "State"
+      },
+      {
+        "slot": "diagnosis",
+        "primary_key": "ICD10-I97.2",
+        "matched_text": "breast cancer, need lymphedema",
+        "entity_type": "ICD10Code",
+        "label": "ICD10Code"
+      },
+      {
+        "slot": "policy",
+        "primary_key": "POLICY-LTA",
+        "matched_text": "lymphedema supplies",
+        "entity_type": "Policy",
+        "label": "Policy"
+      }
+    ],
+    "provenance_sources": [
+      {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-B -> STATE-WI",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      },
+      {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+        "selector": "directive.policy_article_references",
+        "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+        "run_id": "export-run-001"
+      }
+    ],
+    "duration_ms": 13714.59
+  },
+  "probe_3_one_click_inquire_plaw_117_328": {
+    "answer": "Based on the provided GRAPH CONTEXT, I can explain the statutory authority and enacted healthcare provisions of [PLAW-117-328] (Consolidated Appropriations Act, 2023).\n\nThe statutory authority for the enacted healthcare provisions of [PLAW-117-328] is found in [USC-42-1395x-s-2-Z] and [USC-42-1395x-s-2-JJ], which are sections of the Social Security Act that govern Medicare's payment policies.\n\nThe Consolidated Appropriations Act, 2023, was enacted as [PLAW-117-328] and is the result of the introduced bill [BILL-117-hr-2617]. This act includes provisions related to Medicare, such as the Medicare IVIG Access Enhancement Act ([BILL-117-hr-3808]) and the Lymphedema Treatment Act ([BILL-117-hr-3630]).\n\nHowever, I must note that the GRAPH CONTEXT does not provide specific information on the fee schedule entries for 2024, so I will not be able to provide the dollar allowable reimbursement rate and patient coinsurance for any procedure codes.\n\nIn terms of the statutory authority, the Social Security Act, specifically Section 1395x, is the governing authority for Medicare's payment policies.",
+    "active_node_pks": [
+      "BILL-117-hr-2617",
+      "BILL-117-hr-3630",
+      "BILL-117-hr-3808",
+      "PLAW-117-328",
+      "USC-42-1395x-s-2-JJ",
+      "USC-42-1395x-s-2-Z"
+    ],
+    "active_edge_keys": [
+      "BILL-117-hr-2617->RELATED_TO->PLAW-117-328",
+      "BILL-117-hr-3630->RELATED_TO->PLAW-117-328",
+      "BILL-117-hr-3808->RELATED_TO->PLAW-117-328",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-JJ",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-Z"
+    ],
+    "anchors": [
+      {
+        "slot": "publiclaw",
+        "primary_key": "PLAW-117-328",
+        "matched_text": "Consolidated Appropriations Act, 2023",
+        "entity_type": "PublicLaw",
+        "label": "PublicLaw"
+      }
+    ],
+    "provenance_sources": [
+      {
+        "source_uri": "verified://federal-statute",
+        "selector": "direct",
+        "ingestion_timestamp": "2026-10-13T01:23:54Z",
+        "run_id": "export-run-001"
+      }
+    ],
+    "duration_ms": 6834.62
+  },
+  "probe_4_empty_subgraph": {
+    "nodes": [],
+    "edges": [],
+    "active_node_pks": [],
+    "active_edge_keys": [],
+    "retrieval_ms": 0.0
+  },
+  "probe_5_empty_entity_resolve": {
+    "anchors": []
+  }
+}

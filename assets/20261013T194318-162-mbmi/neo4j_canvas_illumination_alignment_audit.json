@@ -1,0 +1,194 @@
+{
+  "omnibus_convergence": {
+    "active_node_count": 11,
+    "active_edge_count": 13,
+    "active_node_pks": [
+      "BILL-117-hr-2617",
+      "BILL-117-hr-3630",
+      "BILL-117-hr-3808",
+      "CMS-CR-13217",
+      "CMS-CR-13286",
+      "FR-2023-24455",
+      "PLAW-117-328",
+      "POLICY-IVIG",
+      "POLICY-LTA",
+      "USC-42-1395x-s-2-JJ",
+      "USC-42-1395x-s-2-Z"
+    ],
+    "active_edge_keys": [
+      "BILL-117-hr-2617->ENACTED_AS->PLAW-117-328",
+      "BILL-117-hr-3630->ENACTED_AS->PLAW-117-328",
+      "BILL-117-hr-3808->ENACTED_AS->PLAW-117-328",
+      "FR-2023-24455->RELATED_TO->CMS-CR-13217",
+      "FR-2023-24455->RELATED_TO->CMS-CR-13286",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-JJ",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-Z",
+      "POLICY-IVIG->TARGETS_BILL->BILL-117-hr-2617",
+      "POLICY-IVIG->TARGETS_BILL->BILL-117-hr-3808",
+      "POLICY-LTA->TARGETS_BILL->BILL-117-hr-2617",
+      "POLICY-LTA->TARGETS_BILL->BILL-117-hr-3630",
+      "USC-42-1395x-s-2-JJ->RELATED_TO->FR-2023-24455",
+      "USC-42-1395x-s-2-Z->RELATED_TO->FR-2023-24455"
+    ],
+    "nodes_present_in_baseline_topology": [
+      "BILL-117-hr-2617",
+      "BILL-117-hr-3630",
+      "BILL-117-hr-3808",
+      "CMS-CR-13217",
+      "CMS-CR-13286",
+      "FR-2023-24455",
+      "PLAW-117-328",
+      "POLICY-IVIG",
+      "POLICY-LTA",
+      "USC-42-1395x-s-2-JJ",
+      "USC-42-1395x-s-2-Z"
+    ],
+    "nodes_missing_in_baseline_topology": [],
+    "edges_present_in_baseline_topology": [
+      "BILL-117-hr-2617->ENACTED_AS->PLAW-117-328",
+      "BILL-117-hr-3630->ENACTED_AS->PLAW-117-328",
+      "BILL-117-hr-3808->ENACTED_AS->PLAW-117-328",
+      "POLICY-IVIG->TARGETS_BILL->BILL-117-hr-2617",
+      "POLICY-IVIG->TARGETS_BILL->BILL-117-hr-3808",
+      "POLICY-LTA->TARGETS_BILL->BILL-117-hr-2617",
+      "POLICY-LTA->TARGETS_BILL->BILL-117-hr-3630"
+    ],
+    "edges_missing_in_baseline_topology": [
+      "FR-2023-24455->RELATED_TO->CMS-CR-13217",
+      "FR-2023-24455->RELATED_TO->CMS-CR-13286",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-JJ",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-Z",
+      "USC-42-1395x-s-2-JJ->RELATED_TO->FR-2023-24455",
+      "USC-42-1395x-s-2-Z->RELATED_TO->FR-2023-24455"
+    ],
+    "nodes_present_in_wi_topology": [
+      "BILL-117-hr-2617",
+      "BILL-117-hr-3630",
+      "BILL-117-hr-3808",
+      "CMS-CR-13217",
+      "CMS-CR-13286",
+      "FR-2023-24455",
+      "PLAW-117-328",
+      "POLICY-IVIG",
+      "POLICY-LTA",
+      "USC-42-1395x-s-2-JJ",
+      "USC-42-1395x-s-2-Z"
+    ],
+    "edges_present_in_wi_topology": [
+      "BILL-117-hr-2617->ENACTED_AS->PLAW-117-328",
+      "BILL-117-hr-3630->ENACTED_AS->PLAW-117-328",
+      "BILL-117-hr-3808->ENACTED_AS->PLAW-117-328",
+      "POLICY-IVIG->TARGETS_BILL->BILL-117-hr-2617",
+      "POLICY-IVIG->TARGETS_BILL->BILL-117-hr-3808",
+      "POLICY-LTA->TARGETS_BILL->BILL-117-hr-2617",
+      "POLICY-LTA->TARGETS_BILL->BILL-117-hr-3630"
+    ]
+  },
+  "wisconsin_patient": {
+    "active_node_count": 7,
+    "active_edge_count": 7,
+    "active_node_pks": [
+      "CMS-CR-13286",
+      "CMS-MCD-A59508",
+      "FEE-A6522-WI-NR-2024",
+      "HCPCS-A6522",
+      "ICD10-I97.2",
+      "JURIS-DME-B",
+      "STATE-WI"
+    ],
+    "active_edge_keys": [
+      "CMS-CR-13286->APPLIES_TO_JURISDICTION->JURIS-DME-B",
+      "CMS-CR-13286->MANDATES_POLICY->CMS-MCD-A59508",
+      "CMS-MCD-A59508->ALLOWS_DIAGNOSIS->ICD10-I97.2",
+      "CMS-MCD-A59508->GOVERNS->HCPCS-A6522",
+      "FEE-A6522-WI-NR-2024->APPLIES_TO->STATE-WI",
+      "HCPCS-A6522->HAS_FEE_SCHEDULE->FEE-A6522-WI-NR-2024",
+      "JURIS-DME-B->COVERS_STATE->STATE-WI"
+    ],
+    "nodes_present_in_baseline_topology": [
+      "CMS-CR-13286",
+      "CMS-MCD-A59508",
+      "HCPCS-A6522",
+      "ICD10-I97.2",
+      "JURIS-DME-B",
+      "STATE-WI"
+    ],
+    "nodes_missing_in_baseline_topology": [
+      "FEE-A6522-WI-NR-2024"
+    ],
+    "edges_present_in_baseline_topology": [
+      "CMS-CR-13286->APPLIES_TO_JURISDICTION->JURIS-DME-B",
+      "CMS-CR-13286->MANDATES_POLICY->CMS-MCD-A59508",
+      "CMS-MCD-A59508->ALLOWS_DIAGNOSIS->ICD10-I97.2",
+      "CMS-MCD-A59508->GOVERNS->HCPCS-A6522",
+      "JURIS-DME-B->COVERS_STATE->STATE-WI"
+    ],
+    "edges_missing_in_baseline_topology": [
+      "FEE-A6522-WI-NR-2024->APPLIES_TO->STATE-WI",
+      "HCPCS-A6522->HAS_FEE_SCHEDULE->FEE-A6522-WI-NR-2024"
+    ],
+    "nodes_present_in_wi_topology": [
+      "CMS-CR-13286",
+      "CMS-MCD-A59508",
+      "FEE-A6522-WI-NR-2024",
+      "HCPCS-A6522",
+      "ICD10-I97.2",
+      "JURIS-DME-B",
+      "STATE-WI"
+    ],
+    "edges_present_in_wi_topology": [
+      "CMS-CR-13286->APPLIES_TO_JURISDICTION->JURIS-DME-B",
+      "CMS-CR-13286->MANDATES_POLICY->CMS-MCD-A59508",
+      "CMS-MCD-A59508->ALLOWS_DIAGNOSIS->ICD10-I97.2",
+      "CMS-MCD-A59508->GOVERNS->HCPCS-A6522",
+      "FEE-A6522-WI-NR-2024->APPLIES_TO->STATE-WI",
+      "HCPCS-A6522->HAS_FEE_SCHEDULE->FEE-A6522-WI-NR-2024",
+      "JURIS-DME-B->COVERS_STATE->STATE-WI"
+    ]
+  },
+  "one_click_plaw": {
+    "active_node_count": 6,
+    "active_edge_count": 5,
+    "active_node_pks": [
+      "BILL-117-hr-2617",
+      "BILL-117-hr-3630",
+      "BILL-117-hr-3808",
+      "PLAW-117-328",
+      "USC-42-1395x-s-2-JJ",
+      "USC-42-1395x-s-2-Z"
+    ],
+    "active_edge_keys": [
+      "BILL-117-hr-2617->RELATED_TO->PLAW-117-328",
+      "BILL-117-hr-3630->RELATED_TO->PLAW-117-328",
+      "BILL-117-hr-3808->RELATED_TO->PLAW-117-328",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-JJ",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-Z"
+    ],
+    "nodes_present_in_baseline_topology": [
+      "BILL-117-hr-2617",
+      "BILL-117-hr-3630",
+      "BILL-117-hr-3808",
+      "PLAW-117-328",
+      "USC-42-1395x-s-2-JJ",
+      "USC-42-1395x-s-2-Z"
+    ],
+    "nodes_missing_in_baseline_topology": [],
+    "edges_present_in_baseline_topology": [],
+    "edges_missing_in_baseline_topology": [
+      "BILL-117-hr-2617->RELATED_TO->PLAW-117-328",
+      "BILL-117-hr-3630->RELATED_TO->PLAW-117-328",
+      "BILL-117-hr-3808->RELATED_TO->PLAW-117-328",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-JJ",
+      "PLAW-117-328->RELATED_TO->USC-42-1395x-s-2-Z"
+    ],
+    "nodes_present_in_wi_topology": [
+      "BILL-117-hr-2617",
+      "BILL-117-hr-3630",
+      "BILL-117-hr-3808",
+      "PLAW-117-328",
+      "USC-42-1395x-s-2-JJ",
+      "USC-42-1395x-s-2-Z"
+    ],
+    "edges_present_in_wi_topology": []
+  }
+}
