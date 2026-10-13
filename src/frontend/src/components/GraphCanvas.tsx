@@ -86,13 +86,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     }
   }, [nodes]);
 
-  // Main canvas rendering loop
-  const render = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
+  const syncCanvasDimensions = useCallback((canvas: HTMLCanvasElement) => {
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
     if (rect.width > 0 && rect.height > 0) {
@@ -103,7 +97,17 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
         canvas.height = targetH;
       }
     }
+    return { dpr, rect };
+  }, []);
 
+  // Main canvas rendering loop
+  const render = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const { dpr, rect } = syncCanvasDimensions(canvas);
     const width = (canvas.width / dpr) || rect.width || canvas.clientWidth || 900;
     const height = (canvas.height / dpr) || rect.height || canvas.clientHeight || 650;
 
@@ -307,7 +311,13 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
       }
 
       // Border ring
-      ctx.strokeStyle = isHovered ? '#ffffff' : isActive ? '#fde68a' : 'rgba(255, 255, 255, 0.35)';
+      let borderStroke = 'rgba(255, 255, 255, 0.35)';
+      if (isHovered) {
+        borderStroke = '#ffffff';
+      } else if (isActive) {
+        borderStroke = '#fde68a';
+      }
+      ctx.strokeStyle = borderStroke;
       ctx.lineWidth = (isActive || isHovered ? 1.8 : 1.2) / transform.k;
       ctx.stroke();
 
@@ -321,7 +331,6 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
 
       if (shouldShowLabel) {
         ctx.font = `${isActive ? '700 ' : ''}${Math.max(9, Math.min(12, 11 / transform.k))}px "SF Mono", "Fira Code", monospace`;
-        ctx.fillStyle = isActive ? CANVAS_PALETTE.accentAmber : CANVAS_PALETTE.textPrimary;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
 
@@ -354,7 +363,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     });
 
     ctx.restore();
-  }, [nodes, links, isIlluminated, activeNodePKs, activeEdgeKeys, selectedNode, hoveredNode]);
+  }, [nodes, links, isIlluminated, activeNodePKs, activeEdgeKeys, selectedNode, hoveredNode, syncCanvasDimensions]);
 
   // Synchronously update renderRef on every render pass so D3 listeners never invoke a stale closure
   renderRef.current = render;
@@ -378,7 +387,9 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
       .force(
         'link',
         d3
-          .forceLink<GraphNode, d3.SimulationLinkDatum<GraphNode>>(links as any)
+          .forceLink<GraphNode, d3.SimulationLinkDatum<GraphNode>>(
+            links as unknown as d3.SimulationLinkDatum<GraphNode>[]
+          )
           .id((d) => d.primary_key)
           .distance(45)
       )
@@ -423,31 +434,16 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     zoomBehaviorRef.current = zoom;
     d3.select(canvas).call(zoom);
 
-    const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
-    if (rect.width > 0 && rect.height > 0) {
-      canvas.width = Math.round(rect.width * dpr);
-      canvas.height = Math.round(rect.height * dpr);
-    }
-
+    syncCanvasDimensions(canvas);
     renderRef.current();
-  }, []);
+  }, [syncCanvasDimensions]);
 
   // Handle window and container Resize while preserving illuminated state
   useEffect(() => {
     const handleResize = () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
-      const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.getBoundingClientRect();
-      if (rect.width > 0 && rect.height > 0) {
-        const targetW = Math.round(rect.width * dpr);
-        const targetH = Math.round(rect.height * dpr);
-        if (canvas.width !== targetW || canvas.height !== targetH) {
-          canvas.width = targetW;
-          canvas.height = targetH;
-        }
-      }
+      syncCanvasDimensions(canvas);
       renderRef.current();
     };
 
@@ -466,7 +462,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
         observer.disconnect();
       }
     };
-  }, []);
+  }, [syncCanvasDimensions]);
 
   // Dedicated immediate reactive redraw on state transitions (including settled simulation state)
   useEffect(() => {
@@ -490,18 +486,15 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
   }, [isIlluminated, activeNodePKs, frameActiveSubgraph]);
 
   // Mouse click and hover detection
-  const handlePointerDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (e.defaultPrevented) return;
+  const findNodeAtEvent = (e: React.MouseEvent<HTMLCanvasElement>): GraphNode | null => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) return null;
     const rect = canvas.getBoundingClientRect();
     const transform = transformRef.current;
 
     const mouseX = (e.clientX - rect.left - transform.x) / transform.k;
     const mouseY = (e.clientY - rect.top - transform.y) / transform.k;
 
-    // Hit test against nodes
-    let clicked: GraphNode | null = null;
     for (let i = nodes.length - 1; i >= 0; i--) {
       const node = nodes[i];
       if (node.x === undefined || node.y === undefined) continue;
@@ -510,43 +503,32 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
       const hitRadius = ((isActive ? baseRadius * 1.3 : baseRadius) / Math.max(0.7, Math.min(1.4, transform.k))) + 4 / transform.k;
       const dist = Math.hypot(node.x - mouseX, node.y - mouseY);
       if (dist <= hitRadius) {
-        clicked = node;
-        break;
+        return node;
       }
     }
+    return null;
+  };
 
-    selectNode(clicked);
+  const handlePointerDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (e.defaultPrevented) return;
+    if (!canvasRef.current) return;
+    selectNode(findNodeAtEvent(e));
   };
 
   const handlePointerMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const transform = transformRef.current;
-
-    const mouseX = (e.clientX - rect.left - transform.x) / transform.k;
-    const mouseY = (e.clientY - rect.top - transform.y) / transform.k;
-
-    let hovered: GraphNode | null = null;
-    for (let i = nodes.length - 1; i >= 0; i--) {
-      const node = nodes[i];
-      if (node.x === undefined || node.y === undefined) continue;
-      const isActive = isIlluminated && activeNodePKs.has(node.primary_key);
-      const baseRadius = node.radius || 10;
-      const hitRadius = ((isActive ? baseRadius * 1.3 : baseRadius) / Math.max(0.7, Math.min(1.4, transform.k))) + 4 / transform.k;
-      const dist = Math.hypot(node.x - mouseX, node.y - mouseY);
-      if (dist <= hitRadius) {
-        hovered = node;
-        break;
-      }
-    }
+    const hovered = findNodeAtEvent(e);
 
     if (hovered !== hoveredNode) {
       setHoveredNode(hovered);
       canvas.style.cursor = hovered ? 'pointer' : 'crosshair';
-      // Redraw is handled reactively by React rendering loop; simulation alpha is unaffected.
     }
   };
+
+  const isHoveredNodeActive = Boolean(
+    hoveredNode && isIlluminated && activeNodePKs.has(hoveredNode.primary_key)
+  );
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
@@ -632,9 +614,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
             left: 14,
             backgroundColor: 'rgba(10, 17, 40, 0.92)',
             border: `1px solid ${
-              isIlluminated && activeNodePKs.has(hoveredNode.primary_key)
-                ? CANVAS_PALETTE.accentAmber
-                : CANVAS_PALETTE.panelBorder
+              isHoveredNodeActive ? CANVAS_PALETTE.accentAmber : CANVAS_PALETTE.panelBorder
             }`,
             borderRadius: 6,
             padding: '8px 12px',
@@ -650,14 +630,10 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 3 }}>
             <span
               style={{
-                backgroundColor:
-                  isIlluminated && activeNodePKs.has(hoveredNode.primary_key)
-                    ? CANVAS_PALETTE.accentAmber
-                    : getNodeVisual(hoveredNode.label).badgeColor,
-                color:
-                  isIlluminated && activeNodePKs.has(hoveredNode.primary_key)
-                    ? '#0a1128'
-                    : '#ffffff',
+                backgroundColor: isHoveredNodeActive
+                  ? CANVAS_PALETTE.accentAmber
+                  : getNodeVisual(hoveredNode.label).badgeColor,
+                color: isHoveredNodeActive ? '#0a1128' : '#ffffff',
                 fontSize: 10,
                 fontWeight: 700,
                 padding: '1px 6px',
