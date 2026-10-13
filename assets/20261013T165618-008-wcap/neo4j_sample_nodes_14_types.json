@@ -1,0 +1,113 @@
+{
+  "Bill": {
+    "number": 3808,
+    "congress": 117,
+    "introduced_date": "2021-06-11",
+    "title": "Medicare IVIG Access Enhancement Act",
+    "type": "hr",
+    "primary_key": "BILL-117-hr-3808"
+  },
+  "ChangeRequest": {
+    "effective_date": "2024-01-01",
+    "transmittal_number": "12437",
+    "cr_number": "13217",
+    "benefit_category": "IVIG",
+    "primary_key": "CMS-CR-13217"
+  },
+  "CoveragePolicy": {
+    "article_id": "A59588",
+    "policy_type": "Joint DME MAC Policy Article",
+    "effective_date": "2024-01-01",
+    "title": "Billing and Coding: In-Home Administration of Intravenous Immune Globulin (IVIG)",
+    "primary_key": "CMS-MCD-A59588"
+  },
+  "FeeScheduleEntry": {
+    "ceiling": 409.84,
+    "fee_amount": 409.84,
+    "is_rural": false,
+    "year": 2024,
+    "hcpcs_code": "Q2052",
+    "name": "Q2052 CT NR ($409.84)",
+    "state_code": "CT",
+    "floor": 409.84,
+    "primary_key": "FEE-Q2052-CT-NR-2024"
+  },
+  "HCPCSCode": {
+    "short_description": "Intravenous immune globulin, items and services in home",
+    "code": "Q2052",
+    "category": "In-Home IVIG Services",
+    "primary_key": "HCPCS-Q2052"
+  },
+  "ICD10Code": {
+    "code": "D80.0",
+    "description": "Hereditary hypogammaglobulinemia",
+    "primary_key": "ICD10-D80.0"
+  },
+  "Jurisdiction": {
+    "contractor_name": "Noridian Healthcare Solutions",
+    "code": "JURIS-DME-A",
+    "name": "JURIS-DME-A (Noridian)",
+    "primary_key": "JURIS-DME-A"
+  },
+  "LiteratureStudy": {
+    "journal": "Pan Afr Med J",
+    "pub_year": 2014,
+    "title": "[Psychosocial impact of sickle cell disease in the parents of children living in Kinshasa, Democratic Republic of Congo: a qualitative study].",
+    "pmid": 25574334,
+    "primary_key": "PUBMED-25574334",
+    "doi": "10.11604/pamj.2014.19.5.2830"
+  },
+  "LobbyingFiling": {
+    "amount": 0.0,
+    "year": 2015,
+    "registrant_name": "Immune Deficiency Foundation Advocacy",
+    "filing_uuid": "c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+    "primary_key": "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+    "client_name": "Immune Deficiency Foundation"
+  },
+  "Policy": {
+    "run_id": "export-run-ivig-001",
+    "keyword": "IVIG",
+    "primary_key": "POLICY-IVIG",
+    "timestamp": "2026-10-13T01:23:54.891942+00:00"
+  },
+  "PublicLaw": {
+    "number": 328,
+    "enacted_date": "2022-12-29",
+    "congress": 117,
+    "title": "Consolidated Appropriations Act, 2023",
+    "primary_key": "PLAW-117-328"
+  },
+  "Regulation": {
+    "document_number": "2023-24455",
+    "citation": "88 FR 77676",
+    "effective_date": "2024-01-01",
+    "cfr_parts": [
+      "42 CFR 409",
+      "42 CFR 410",
+      "42 CFR 414",
+      "42 CFR 424",
+      "42 CFR 484",
+      "42 CFR 488",
+      "42 CFR 489"
+    ],
+    "primary_key": "FR-2023-24455"
+  },
+  "State": {
+    "state_name": "Connecticut",
+    "state_code": "CT",
+    "primary_key": "STATE-CT"
+  },
+  "StatutorySection": {
+    "subsections": [
+      "s",
+      "2",
+      "Z"
+    ],
+    "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+    "section": "1395x",
+    "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+    "title": 42,
+    "primary_key": "USC-42-1395x-s-2-Z"
+  }
+}
