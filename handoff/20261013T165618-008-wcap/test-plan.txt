@@ -1,0 +1,3 @@
+wayfinder/20261013T165618-008-wcap/tickets/ticket-005.md
+wayfinder/20261013T165618-008-wcap/test-matrix.md
+wayfinder/20261013T165618-008-wcap/map.md

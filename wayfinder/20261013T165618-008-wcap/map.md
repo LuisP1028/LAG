@@ -37,6 +37,7 @@ Deconstruct and resolve all architectural, behavioral, and component decisions r
 | [`ticket-002.md`](tickets/ticket-002.md) | Collapsible Blueprint HUD Accordion Component Architecture & State Management | Visualizer Telemetry HUD | RESOLVED | None (Independent UI) |
 | [`ticket-003.md`](tickets/ticket-003.md) | Canvas Node Hover Interaction Stability & Reactive Dependency Isolation | Canvas Event Bus & Lifecycle | RESOLVED | `ticket-001.md` |
 | [`ticket-004.md`](tickets/ticket-004.md) | Systematic External Government Link Routing & Dynamic Parameter Resolution | Node Detail Drawer Provenance | RESOLVED | None (Independent Component) |
+| [`ticket-005.md`](tickets/ticket-005.md) | Integration Test Decision Mapping, Payload Admissibility Governance, and Verification Architecture | Integration Testing & Verification | RESOLVED | `ticket-001.md`, `ticket-002.md`, `ticket-003.md`, `ticket-004.md` |
 
 ---
 
@@ -49,9 +50,12 @@ flowchart TD
     T003["ticket-003.md: Hover Interaction Stability\n(Decouple Simulation Lifecycle from UI State)"]
     T004["ticket-004.md: External Government Link Routing\n(Dynamic URLs for All 10 Entity Types)"]
     MATRIX["matrix.md: Master Component-to-Edit Matrix\n(Unified File Diffs & Transformation Specs)"]
+    T005["ticket-005.md: Integration Test Decisions & Verification Planning\n(Zero-Mock Grounding & Oracles)"]
+    TEST_MATRIX["test-matrix.md: Authoritative Integration Test Matrix\n(Component-by-Component Specifications)"]
 
     T001 --> T003
     T001 & T002 & T003 & T004 --> MATRIX
+    MATRIX --> T005 --> TEST_MATRIX
 ```
 
 ---
