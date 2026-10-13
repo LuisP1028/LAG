@@ -1,0 +1,177 @@
+{
+  "endpoints_probed": [
+    "POST /api/entities/resolve",
+    "POST /api/graphrag/subgraph",
+    "GraphContextAssembler.assemble_context"
+  ],
+  "probes": [
+    {
+      "query": "What states does Jurisdiction B cover?",
+      "entity_resolve_status": 200,
+      "entity_resolve_response": {
+        "anchors": [
+          {
+            "slot": "jurisdiction",
+            "primary_key": "JURIS-DME-B",
+            "matched_text": "Jurisdiction B",
+            "entity_type": "Jurisdiction",
+            "label": "Jurisdiction"
+          }
+        ]
+      },
+      "subgraph_status": 200,
+      "subgraph_summary": {
+        "active_node_pks": [
+          "CMS-CR-13217",
+          "CMS-CR-13286",
+          "JURIS-DME-B",
+          "STATE-IL",
+          "STATE-IN",
+          "STATE-KY",
+          "STATE-MI",
+          "STATE-MN",
+          "STATE-OH",
+          "STATE-WI"
+        ],
+        "active_edge_keys": [
+          "CMS-CR-13217->RELATED_TO->JURIS-DME-B",
+          "CMS-CR-13286->RELATED_TO->JURIS-DME-B",
+          "JURIS-DME-B->RELATED_TO->STATE-IL",
+          "JURIS-DME-B->RELATED_TO->STATE-IN",
+          "JURIS-DME-B->RELATED_TO->STATE-KY",
+          "JURIS-DME-B->RELATED_TO->STATE-MI",
+          "JURIS-DME-B->RELATED_TO->STATE-MN",
+          "JURIS-DME-B->RELATED_TO->STATE-OH",
+          "JURIS-DME-B->RELATED_TO->STATE-WI"
+        ],
+        "node_count": 10,
+        "edge_count": 9,
+        "error": null
+      },
+      "assembled_context_markdown": "### 1. Program & Legal Authority\n- Operational Change Request: [CMS-CR-13217] Transmittal 12437 (Benefit Category: IVIG)\n- Operational Change Request: [CMS-CR-13286] Transmittal 12349 (Benefit Category: LC)\n\n### 2. Contractor & Region\n- Regional Claims Contractor: [JURIS-DME-B] JURIS-DME-B (CGS) - CGS Administrators\n- Beneficiary State: [STATE-IL] Illinois\n- Beneficiary State: [STATE-IN] Indiana\n- Beneficiary State: [STATE-KY] Kentucky\n- Beneficiary State: [STATE-MI] Michigan\n- Beneficiary State: [STATE-MN] Minnesota\n- Beneficiary State: [STATE-OH] Ohio\n- Beneficiary State: [STATE-WI] Wisconsin\n\n### 3. Clinical Criteria\n\n### 4. Fees and Patient Costs (Illinois, 2024)\n\n### 5. Data Sources & Provenance\n- Authority Source: verified://federal-statute (Selector: direct, Ingested: 2026-10-13T01:23:54Z, Run ID: export-run-001)"
+    },
+    {
+      "query": "What policies does CGS administer?",
+      "entity_resolve_status": 200,
+      "entity_resolve_response": {
+        "anchors": [
+          {
+            "slot": "jurisdiction",
+            "primary_key": "JURIS-DME-B",
+            "matched_text": "CGS",
+            "entity_type": "Jurisdiction",
+            "label": "Jurisdiction"
+          }
+        ]
+      },
+      "subgraph_status": 200,
+      "subgraph_summary": {
+        "active_node_pks": [
+          "CMS-CR-13217",
+          "CMS-CR-13286",
+          "JURIS-DME-B",
+          "STATE-IL",
+          "STATE-IN",
+          "STATE-KY",
+          "STATE-MI",
+          "STATE-MN",
+          "STATE-OH",
+          "STATE-WI"
+        ],
+        "active_edge_keys": [
+          "CMS-CR-13217->RELATED_TO->JURIS-DME-B",
+          "CMS-CR-13286->RELATED_TO->JURIS-DME-B",
+          "JURIS-DME-B->RELATED_TO->STATE-IL",
+          "JURIS-DME-B->RELATED_TO->STATE-IN",
+          "JURIS-DME-B->RELATED_TO->STATE-KY",
+          "JURIS-DME-B->RELATED_TO->STATE-MI",
+          "JURIS-DME-B->RELATED_TO->STATE-MN",
+          "JURIS-DME-B->RELATED_TO->STATE-OH",
+          "JURIS-DME-B->RELATED_TO->STATE-WI"
+        ],
+        "node_count": 10,
+        "edge_count": 9,
+        "error": null
+      },
+      "assembled_context_markdown": "### 1. Program & Legal Authority\n- Operational Change Request: [CMS-CR-13217] Transmittal 12437 (Benefit Category: IVIG)\n- Operational Change Request: [CMS-CR-13286] Transmittal 12349 (Benefit Category: LC)\n\n### 2. Contractor & Region\n- Regional Claims Contractor: [JURIS-DME-B] JURIS-DME-B (CGS) - CGS Administrators\n- Beneficiary State: [STATE-IL] Illinois\n- Beneficiary State: [STATE-IN] Indiana\n- Beneficiary State: [STATE-KY] Kentucky\n- Beneficiary State: [STATE-MI] Michigan\n- Beneficiary State: [STATE-MN] Minnesota\n- Beneficiary State: [STATE-OH] Ohio\n- Beneficiary State: [STATE-WI] Wisconsin\n\n### 3. Clinical Criteria\n\n### 4. Fees and Patient Costs (Illinois, 2024)\n\n### 5. Data Sources & Provenance\n- Authority Source: verified://federal-statute (Selector: direct, Ingested: 2026-10-13T01:23:54Z, Run ID: export-run-001)"
+    },
+    {
+      "query": "Who administers Medicare Part B DME claims in Texas?",
+      "entity_resolve_status": 200,
+      "entity_resolve_response": {
+        "anchors": [
+          {
+            "slot": "state",
+            "primary_key": "STATE-TX",
+            "matched_text": "Texas",
+            "entity_type": "State",
+            "label": "State"
+          }
+        ]
+      },
+      "subgraph_status": 200,
+      "subgraph_summary": {
+        "active_node_pks": [
+          "CMS-CR-13217",
+          "CMS-CR-13286",
+          "CMS-MCD-A59508",
+          "CMS-MCD-A59588",
+          "FEE-A6522-TX-NR-2024",
+          "FEE-Q2052-TX-NR-2024",
+          "HCPCS-A6522",
+          "HCPCS-Q2052",
+          "JURIS-DME-C",
+          "STATE-TX"
+        ],
+        "active_edge_keys": [
+          "CMS-CR-13217->APPLIES_TO_JURISDICTION->JURIS-DME-C",
+          "CMS-CR-13217->MANDATES_POLICY->CMS-MCD-A59588",
+          "CMS-CR-13286->APPLIES_TO_JURISDICTION->JURIS-DME-C",
+          "CMS-CR-13286->MANDATES_POLICY->CMS-MCD-A59508",
+          "CMS-MCD-A59508->GOVERNS->HCPCS-A6522",
+          "CMS-MCD-A59588->GOVERNS->HCPCS-Q2052",
+          "FEE-A6522-TX-NR-2024->APPLIES_TO->STATE-TX",
+          "FEE-Q2052-TX-NR-2024->APPLIES_TO->STATE-TX",
+          "HCPCS-A6522->HAS_FEE_SCHEDULE->FEE-A6522-TX-NR-2024",
+          "HCPCS-Q2052->HAS_FEE_SCHEDULE->FEE-Q2052-TX-NR-2024",
+          "JURIS-DME-C->COVERS_STATE->STATE-TX"
+        ],
+        "node_count": 148,
+        "edge_count": 218,
+        "error": null
+      },
+      "assembled_context_markdown": "### 1. Program & Legal Authority\n- Operational Change Request: [CMS-CR-13217] Transmittal 12437 (Benefit Category: IVIG)\n- Operational Change Request: [CMS-CR-13286] Transmittal 12349 (Benefit Category: LC)\n- Authorizing Coverage Policy: [CMS-MCD-A59588] Billing and Coding: In-Home Administration of Intravenous Immune Globulin (IVIG)\n- Authorizing Coverage Policy: [CMS-MCD-A59508] Standard Documentation Requirements for Lymphedema Compression Treatment Items\n\n### 2. Contractor & Region\n- Regional Claims Contractor: [JURIS-DME-C] JURIS-DME-C (CGS) - CGS Administrators\n- Beneficiary State: [STATE-TX] Texas\n\n### 3. Clinical Criteria\n- Covered Procedure Codes:\n  - [HCPCS-A6522] HCPCS-A6522 (Description: HCPCS-A6522)\n  - [HCPCS-Q2052] HCPCS-Q2052 (Description: HCPCS-Q2052)\n  - [HCPCS-A6520] HCPCS-A6520 (Description: HCPCS-A6520)\n  - [HCPCS-A6521] HCPCS-A6521 (Description: HCPCS-A6521)\n  - [HCPCS-A6523] HCPCS-A6523 (Description: HCPCS-A6523)\n\n### 4. Fees and Patient Costs (Texas, 2024)\n- [FEE-A6522-TX-NR-2024] HCPCS A6522: Allowable Reimbursement = $290.47 (Calculated 20% patient coinsurance = $58.09)\n- [FEE-Q2052-TX-NR-2024] HCPCS Q2052: Allowable Reimbursement = $409.84 (Calculated 20% patient coinsurance = $81.97)\n- [FEE-A6520-TX-NR-2024] HCPCS A6520: Allowable Reimbursement = $119.54 (Calculated 20% patient coinsurance = $23.91)\n- [FEE-A6521-TX-NR-2024] HCPCS A6521: Allowable Reimbursement = $474.33 (Calculated 20% patient coinsurance = $94.87)\n- [FEE-A6523-TX-NR-2024] HCPCS A6523: Allowable Reimbursement = $689.17 (Calculated 20% patient coinsurance = $137.83)\n- [FEE-A6524-TX-NR-2024] HCPCS A6524: Allowable Reimbursement = $362.39 (Calculated 20% patient coinsurance = $72.48)\n- [FEE-A6525-TX-NR-2024] HCPCS A6525: Allowable Reimbursement = $731.60 (Calculated 20% patient coinsurance = $146.32)\n\n### 5. Data Sources & Provenance\n- Authority Source: CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv (Selector: DME MAC Map: JURIS-C -> STATE-TX, Ingested: 2026-10-13T01:23:54.893370+00:00, Run ID: export-run-ivig-001)\n- Authority Source: https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588 (Selector: directive.policy_article_references, Ingested: 2026-10-13T01:23:54.893296+00:00, Run ID: export-run-ivig-001)\n- Authority Source: CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule (Selector: schedule[code='Q2052', state='TX', rural=False], Ingested: 2026-10-13T01:23:54.893370+00:00, Run ID: export-run-ivig-001)\n- Authority Source: CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html (Selector: directive.policy_article_references, Ingested: 2026-10-13T01:08:41.301650+00:00, Run ID: export-run-001)"
+    },
+    {
+      "query": "Compare allowable rates for A6522 between California and New York.",
+      "entity_resolve_status": 200,
+      "entity_resolve_response": {
+        "anchors": [
+          {
+            "slot": "state",
+            "primary_key": "STATE-CA",
+            "matched_text": "California",
+            "entity_type": "State",
+            "label": "State"
+          },
+          {
+            "slot": "hcpcs",
+            "primary_key": "HCPCS-A6522",
+            "matched_text": "A6522",
+            "entity_type": "HCPCSCode",
+            "label": "HCPCSCode"
+          }
+        ]
+      },
+      "subgraph_status": 500,
+      "subgraph_summary": {
+        "active_node_pks": null,
+        "active_edge_keys": null,
+        "node_count": 0,
+        "edge_count": 0,
+        "error": "Internal Server Error"
+      },
+      "assembled_context_markdown": null
+    }
+  ]
+}
