@@ -1,0 +1,4862 @@
+{
+  "node_count": 183,
+  "edge_count": 289,
+  "nodes": [
+    {
+      "primary_key": "POLICY-IVIG",
+      "label": "Policy",
+      "keyword": "IVIG",
+      "run_id": "export-run-ivig-001",
+      "timestamp": "2026-10-13T01:23:54.891942+00:00"
+    },
+    {
+      "primary_key": "BILL-117-hr-3808",
+      "label": "Bill",
+      "congress": 117,
+      "type": "hr",
+      "number": 3808,
+      "title": "Medicare IVIG Access Enhancement Act",
+      "introduced_date": "2021-06-11"
+    },
+    {
+      "primary_key": "BILL-117-hr-2617",
+      "label": "Bill",
+      "congress": 117,
+      "type": "hr",
+      "number": 2617,
+      "title": "Consolidated Appropriations Act, 2023",
+      "introduced_date": "2021-04-16"
+    },
+    {
+      "primary_key": "PLAW-117-328",
+      "label": "PublicLaw",
+      "congress": 117,
+      "number": 328,
+      "title": "Consolidated Appropriations Act, 2023",
+      "enacted_date": "2022-12-29"
+    },
+    {
+      "primary_key": "USC-42-1395x-s-2-Z",
+      "label": "StatutorySection",
+      "title": 42,
+      "section": "1395x",
+      "subsections": [
+        "s",
+        "2",
+        "Z"
+      ],
+      "heading": "PERMANENT IN-HOME BENEFIT FOR IVIG SERVICES",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919\n(ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and\n(iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression "
+    },
+    {
+      "primary_key": "FR-2023-24455",
+      "label": "Regulation",
+      "citation": "88 FR 77676",
+      "document_number": "2023-24455",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR 409",
+        "42 CFR 410",
+        "42 CFR 414",
+        "42 CFR 424",
+        "42 CFR 484",
+        "42 CFR 488",
+        "42 CFR 489"
+      ]
+    },
+    {
+      "primary_key": "CMS-CR-13217",
+      "label": "ChangeRequest",
+      "cr_number": "13217",
+      "transmittal_number": "12437",
+      "benefit_category": "IVIG",
+      "effective_date": "2024-01-01"
+    },
+    {
+      "primary_key": "CMS-MCD-A59588",
+      "label": "CoveragePolicy",
+      "article_id": "A59588",
+      "title": "Billing and Coding: In-Home Administration of Intravenous Immune Globulin (IVIG)",
+      "effective_date": "2024-01-01",
+      "policy_type": "Joint DME MAC Policy Article"
+    },
+    {
+      "primary_key": "HCPCS-Q2052",
+      "label": "HCPCSCode",
+      "code": "Q2052",
+      "short_description": "Intravenous immune globulin, items and services in home",
+      "category": "In-Home IVIG Services"
+    },
+    {
+      "primary_key": "HCPCS-J1459",
+      "label": "HCPCSCode",
+      "code": "J1459",
+      "short_description": "Injection, immune globulin (privigen), intravenous",
+      "category": "IVIG Drug Product"
+    },
+    {
+      "primary_key": "HCPCS-J1561",
+      "label": "HCPCSCode",
+      "code": "J1561",
+      "short_description": "Injection, immune globulin (gamunex-c/gammaked)",
+      "category": "IVIG Drug Product"
+    },
+    {
+      "primary_key": "HCPCS-J1568",
+      "label": "HCPCSCode",
+      "code": "J1568",
+      "short_description": "Injection, immune globulin (octagam), intravenous",
+      "category": "IVIG Drug Product"
+    },
+    {
+      "primary_key": "HCPCS-J1569",
+      "label": "HCPCSCode",
+      "code": "J1569",
+      "short_description": "Injection, immune globulin (gammagard liquid)",
+      "category": "IVIG Drug Product"
+    },
+    {
+      "primary_key": "ICD10-D80.0",
+      "label": "ICD10Code",
+      "code": "D80.0",
+      "description": "Hereditary hypogammaglobulinemia"
+    },
+    {
+      "primary_key": "ICD10-D81.9",
+      "label": "ICD10Code",
+      "code": "D81.9",
+      "description": "Severe combined immunodeficiency, unspecified"
+    },
+    {
+      "primary_key": "ICD10-D83.9",
+      "label": "ICD10Code",
+      "code": "D83.9",
+      "description": "Common variable immunodeficiency, unspecified"
+    },
+    {
+      "primary_key": "JURIS-DME-A",
+      "label": "Jurisdiction",
+      "code": "JURIS-DME-A",
+      "contractor_name": "Noridian Healthcare Solutions"
+    },
+    {
+      "primary_key": "JURIS-DME-B",
+      "label": "Jurisdiction",
+      "code": "JURIS-DME-B",
+      "contractor_name": "CGS Administrators"
+    },
+    {
+      "primary_key": "JURIS-DME-C",
+      "label": "Jurisdiction",
+      "code": "JURIS-DME-C",
+      "contractor_name": "CGS Administrators"
+    },
+    {
+      "primary_key": "JURIS-DME-D",
+      "label": "Jurisdiction",
+      "code": "JURIS-DME-D",
+      "contractor_name": "Noridian Healthcare Solutions"
+    },
+    {
+      "primary_key": "STATE-CT",
+      "label": "State",
+      "state_code": "CT",
+      "state_name": "Connecticut"
+    },
+    {
+      "primary_key": "STATE-DE",
+      "label": "State",
+      "state_code": "DE",
+      "state_name": "Delaware"
+    },
+    {
+      "primary_key": "STATE-DC",
+      "label": "State",
+      "state_code": "DC",
+      "state_name": "District of Columbia"
+    },
+    {
+      "primary_key": "STATE-ME",
+      "label": "State",
+      "state_code": "ME",
+      "state_name": "Maine"
+    },
+    {
+      "primary_key": "STATE-MD",
+      "label": "State",
+      "state_code": "MD",
+      "state_name": "Maryland"
+    },
+    {
+      "primary_key": "STATE-MA",
+      "label": "State",
+      "state_code": "MA",
+      "state_name": "Massachusetts"
+    },
+    {
+      "primary_key": "STATE-NH",
+      "label": "State",
+      "state_code": "NH",
+      "state_name": "New Hampshire"
+    },
+    {
+      "primary_key": "STATE-NJ",
+      "label": "State",
+      "state_code": "NJ",
+      "state_name": "New Jersey"
+    },
+    {
+      "primary_key": "STATE-NY",
+      "label": "State",
+      "state_code": "NY",
+      "state_name": "New York"
+    },
+    {
+      "primary_key": "STATE-PA",
+      "label": "State",
+      "state_code": "PA",
+      "state_name": "Pennsylvania"
+    },
+    {
+      "primary_key": "STATE-RI",
+      "label": "State",
+      "state_code": "RI",
+      "state_name": "Rhode Island"
+    },
+    {
+      "primary_key": "STATE-VT",
+      "label": "State",
+      "state_code": "VT",
+      "state_name": "Vermont"
+    },
+    {
+      "primary_key": "STATE-IL",
+      "label": "State",
+      "state_code": "IL",
+      "state_name": "Illinois"
+    },
+    {
+      "primary_key": "STATE-IN",
+      "label": "State",
+      "state_code": "IN",
+      "state_name": "Indiana"
+    },
+    {
+      "primary_key": "STATE-KY",
+      "label": "State",
+      "state_code": "KY",
+      "state_name": "Kentucky"
+    },
+    {
+      "primary_key": "STATE-MI",
+      "label": "State",
+      "state_code": "MI",
+      "state_name": "Michigan"
+    },
+    {
+      "primary_key": "STATE-MN",
+      "label": "State",
+      "state_code": "MN",
+      "state_name": "Minnesota"
+    },
+    {
+      "primary_key": "STATE-OH",
+      "label": "State",
+      "state_code": "OH",
+      "state_name": "Ohio"
+    },
+    {
+      "primary_key": "STATE-WI",
+      "label": "State",
+      "state_code": "WI",
+      "state_name": "Wisconsin"
+    },
+    {
+      "primary_key": "STATE-AL",
+      "label": "State",
+      "state_code": "AL",
+      "state_name": "Alabama"
+    },
+    {
+      "primary_key": "STATE-AR",
+      "label": "State",
+      "state_code": "AR",
+      "state_name": "Arkansas"
+    },
+    {
+      "primary_key": "STATE-CO",
+      "label": "State",
+      "state_code": "CO",
+      "state_name": "Colorado"
+    },
+    {
+      "primary_key": "STATE-FL",
+      "label": "State",
+      "state_code": "FL",
+      "state_name": "Florida"
+    },
+    {
+      "primary_key": "STATE-GA",
+      "label": "State",
+      "state_code": "GA",
+      "state_name": "Georgia"
+    },
+    {
+      "primary_key": "STATE-LA",
+      "label": "State",
+      "state_code": "LA",
+      "state_name": "Louisiana"
+    },
+    {
+      "primary_key": "STATE-MS",
+      "label": "State",
+      "state_code": "MS",
+      "state_name": "Mississippi"
+    },
+    {
+      "primary_key": "STATE-NM",
+      "label": "State",
+      "state_code": "NM",
+      "state_name": "New Mexico"
+    },
+    {
+      "primary_key": "STATE-NC",
+      "label": "State",
+      "state_code": "NC",
+      "state_name": "North Carolina"
+    },
+    {
+      "primary_key": "STATE-OK",
+      "label": "State",
+      "state_code": "OK",
+      "state_name": "Oklahoma"
+    },
+    {
+      "primary_key": "STATE-SC",
+      "label": "State",
+      "state_code": "SC",
+      "state_name": "South Carolina"
+    },
+    {
+      "primary_key": "STATE-TN",
+      "label": "State",
+      "state_code": "TN",
+      "state_name": "Tennessee"
+    },
+    {
+      "primary_key": "STATE-TX",
+      "label": "State",
+      "state_code": "TX",
+      "state_name": "Texas"
+    },
+    {
+      "primary_key": "STATE-VA",
+      "label": "State",
+      "state_code": "VA",
+      "state_name": "Virginia"
+    },
+    {
+      "primary_key": "STATE-WV",
+      "label": "State",
+      "state_code": "WV",
+      "state_name": "West Virginia"
+    },
+    {
+      "primary_key": "STATE-PR",
+      "label": "State",
+      "state_code": "PR",
+      "state_name": "Puerto Rico"
+    },
+    {
+      "primary_key": "STATE-VI",
+      "label": "State",
+      "state_code": "VI",
+      "state_name": "Virgin Islands"
+    },
+    {
+      "primary_key": "STATE-AK",
+      "label": "State",
+      "state_code": "AK",
+      "state_name": "Alaska"
+    },
+    {
+      "primary_key": "STATE-AZ",
+      "label": "State",
+      "state_code": "AZ",
+      "state_name": "Arizona"
+    },
+    {
+      "primary_key": "STATE-CA",
+      "label": "State",
+      "state_code": "CA",
+      "state_name": "California"
+    },
+    {
+      "primary_key": "STATE-HI",
+      "label": "State",
+      "state_code": "HI",
+      "state_name": "Hawaii"
+    },
+    {
+      "primary_key": "STATE-ID",
+      "label": "State",
+      "state_code": "ID",
+      "state_name": "Idaho"
+    },
+    {
+      "primary_key": "STATE-IA",
+      "label": "State",
+      "state_code": "IA",
+      "state_name": "Iowa"
+    },
+    {
+      "primary_key": "STATE-KS",
+      "label": "State",
+      "state_code": "KS",
+      "state_name": "Kansas"
+    },
+    {
+      "primary_key": "STATE-MO",
+      "label": "State",
+      "state_code": "MO",
+      "state_name": "Missouri"
+    },
+    {
+      "primary_key": "STATE-MT",
+      "label": "State",
+      "state_code": "MT",
+      "state_name": "Montana"
+    },
+    {
+      "primary_key": "STATE-NE",
+      "label": "State",
+      "state_code": "NE",
+      "state_name": "Nebraska"
+    },
+    {
+      "primary_key": "STATE-NV",
+      "label": "State",
+      "state_code": "NV",
+      "state_name": "Nevada"
+    },
+    {
+      "primary_key": "STATE-ND",
+      "label": "State",
+      "state_code": "ND",
+      "state_name": "North Dakota"
+    },
+    {
+      "primary_key": "STATE-OR",
+      "label": "State",
+      "state_code": "OR",
+      "state_name": "Oregon"
+    },
+    {
+      "primary_key": "STATE-SD",
+      "label": "State",
+      "state_code": "SD",
+      "state_name": "South Dakota"
+    },
+    {
+      "primary_key": "STATE-UT",
+      "label": "State",
+      "state_code": "UT",
+      "state_name": "Utah"
+    },
+    {
+      "primary_key": "STATE-WA",
+      "label": "State",
+      "state_code": "WA",
+      "state_name": "Washington"
+    },
+    {
+      "primary_key": "STATE-WY",
+      "label": "State",
+      "state_code": "WY",
+      "state_name": "Wyoming"
+    },
+    {
+      "primary_key": "FEE-Q2052-CT-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "CT",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-CT-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "CT",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-DE-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "DE",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-DE-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "DE",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-DC-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "DC",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-DC-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "DC",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-ME-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "ME",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-ME-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "ME",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MD-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MD",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MD-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MD",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MA-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MA",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MA-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MA",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NH-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NH",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NH-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NH",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NJ-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NJ",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NJ-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NJ",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NY",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NY-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NY",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-PA-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "PA",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-PA-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "PA",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-RI-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "RI",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-RI-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "RI",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-VT-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "VT",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-VT-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "VT",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-IL-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "IL",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-IL-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "IL",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-IN-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "IN",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-IN-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "IN",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-KY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "KY",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-KY-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "KY",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MI-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MI",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MI-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MI",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MN-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MN",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MN-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MN",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-OH-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "OH",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-OH-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "OH",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-WI-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "WI",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-WI-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "WI",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-AL-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "AL",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-AL-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "AL",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-AR-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "AR",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-AR-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "AR",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-CO-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "CO",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-CO-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "CO",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-FL-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "FL",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-FL-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "FL",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-GA-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "GA",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-GA-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "GA",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-LA-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "LA",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-LA-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "LA",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MS-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MS",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MS-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MS",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NM-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NM",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NM-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NM",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NC-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NC",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NC-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NC",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-OK-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "OK",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-OK-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "OK",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-SC-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "SC",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-SC-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "SC",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-TN-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "TN",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-TN-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "TN",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-TX-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "TX",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-TX-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "TX",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-VA-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "VA",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-VA-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "VA",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-WV-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "WV",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-WV-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "WV",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-PR-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "PR",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-PR-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "PR",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-VI-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "VI",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-VI-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "VI",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-AK-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "AK",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-AK-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "AK",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-AZ-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "AZ",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-AZ-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "AZ",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-CA-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "CA",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-CA-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "CA",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-HI-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "HI",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-HI-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "HI",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-ID-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "ID",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-ID-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "ID",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-IA-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "IA",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-IA-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "IA",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-KS-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "KS",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-KS-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "KS",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MO-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MO",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MO-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MO",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MT-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MT",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-MT-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "MT",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NE-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NE",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NE-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NE",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NV-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NV",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-NV-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "NV",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-ND-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "ND",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-ND-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "ND",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-OR-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "OR",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-OR-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "OR",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-SD-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "SD",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-SD-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "SD",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-UT-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "UT",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-UT-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "UT",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-WA-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "WA",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-WA-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "WA",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-WY-NR-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "WY",
+      "is_rural": false,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "FEE-Q2052-WY-R-2024",
+      "label": "FeeScheduleEntry",
+      "hcpcs_code": "Q2052",
+      "state_code": "WY",
+      "is_rural": true,
+      "fee_amount": 409.84,
+      "ceiling": 409.84,
+      "floor": 409.84,
+      "year": 2024
+    },
+    {
+      "primary_key": "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+      "label": "LobbyingFiling",
+      "filing_uuid": "c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+      "registrant_name": "Immune Deficiency Foundation Advocacy",
+      "client_name": "Immune Deficiency Foundation",
+      "amount": 0.0,
+      "year": 2015
+    },
+    {
+      "primary_key": "LDA-1821a229-8264-40c2-9b04-49169d917adf",
+      "label": "LobbyingFiling",
+      "filing_uuid": "1821a229-8264-40c2-9b04-49169d917adf",
+      "registrant_name": "Immune Deficiency Foundation Advocacy",
+      "client_name": "Immune Deficiency Foundation",
+      "amount": 20000.0,
+      "year": 2015
+    },
+    {
+      "primary_key": "PUBMED-25574334",
+      "label": "LiteratureStudy",
+      "pmid": 25574334,
+      "doi": "10.11604/pamj.2014.19.5.2830",
+      "title": "[Psychosocial impact of sickle cell disease in the parents of children living in Kinshasa, Democratic Republic of Congo: a qualitative study].",
+      "journal": "Pan Afr Med J",
+      "pub_year": 2014
+    },
+    {
+      "primary_key": "PUBMED-31298495",
+      "label": "LiteratureStudy",
+      "pmid": 31298495,
+      "doi": "10.1002/pbc.27919",
+      "title": "Association of perioperative red blood cell transfusion with postoperative venous thromboembolism in pediatric patients: A propensity score matched analysis.",
+      "journal": "Pediatr Blood Cancer",
+      "pub_year": 2019
+    }
+  ],
+  "edges": [
+    {
+      "source_pk": "POLICY-IVIG",
+      "label": "TARGETS_BILL",
+      "target_pk": "BILL-117-hr-3808",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage1_congress_bill_hr3630_sample.json",
+        "selector": "$.bill",
+        "ingestion_timestamp": "2026-10-13T01:23:54.891942+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "POLICY-IVIG",
+      "label": "TARGETS_BILL",
+      "target_pk": "BILL-117-hr-2617",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage1_congress_bill_hr3630_sample.json",
+        "selector": "$.bill",
+        "ingestion_timestamp": "2026-10-13T01:23:54.891942+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "BILL-117-hr-2617",
+      "label": "ENACTED_AS",
+      "target_pk": "PLAW-117-328",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage2_govinfo_plaw_117publ328_summary.json",
+        "selector": "$.bill.laws",
+        "ingestion_timestamp": "2026-10-13T01:23:54.891942+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "BILL-117-hr-3808",
+      "label": "ENACTED_AS",
+      "target_pk": "PLAW-117-328",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage2_govinfo_plaw_117publ328_summary.json",
+        "selector": "$.bill.laws",
+        "ingestion_timestamp": "2026-10-13T01:23:54.891942+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "PLAW-117-328",
+      "label": "MODIFIES_CODE",
+      "target_pk": "USC-42-1395x-s-2-Z",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage2_uslm_plaw_117_328_sec4133.xml",
+        "selector": "//division[@id='FF']/title[@id='IV']/section[@id='4134']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.892364+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "USC-42-1395x-s-2-Z",
+      "label": "IMPLEMENTED_BY",
+      "target_pk": "FR-2023-24455",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage3_federal_register_rule_2023_24455.json",
+        "selector": "$.citation",
+        "ingestion_timestamp": "2026-10-13T01:23:54.892720+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FR-2023-24455",
+      "label": "ISSUES_TRANSMITTAL",
+      "target_pk": "CMS-CR-13217",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage3_federal_register_rule_2023_24455.json",
+        "selector": "preamble.directives",
+        "ingestion_timestamp": "2026-10-13T01:23:54.892720+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-CR-13217",
+      "label": "MANDATES_POLICY",
+      "target_pk": "CMS-MCD-A59588",
+      "provenance": {
+        "source_uri": "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588",
+        "selector": "directive.policy_article_references",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893296+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59588",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-Q2052",
+      "provenance": {
+        "source_uri": "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588",
+        "selector": "table#covered_hcpcs_codes//row[code='Q2052']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893296+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59588",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-J1459",
+      "provenance": {
+        "source_uri": "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588",
+        "selector": "table#covered_hcpcs_codes//row[code='J1459']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893296+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59588",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-J1561",
+      "provenance": {
+        "source_uri": "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588",
+        "selector": "table#covered_hcpcs_codes//row[code='J1561']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893296+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59588",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-J1568",
+      "provenance": {
+        "source_uri": "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588",
+        "selector": "table#covered_hcpcs_codes//row[code='J1568']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893296+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59588",
+      "label": "GOVERNS",
+      "target_pk": "HCPCS-J1569",
+      "provenance": {
+        "source_uri": "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588",
+        "selector": "table#covered_hcpcs_codes//row[code='J1569']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893296+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59588",
+      "label": "ALLOWS_DIAGNOSIS",
+      "target_pk": "ICD10-D80.0",
+      "provenance": {
+        "source_uri": "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588",
+        "selector": "table#covered_icd10_codes//row[code='D80.0']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893296+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59588",
+      "label": "ALLOWS_DIAGNOSIS",
+      "target_pk": "ICD10-D81.9",
+      "provenance": {
+        "source_uri": "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588",
+        "selector": "table#covered_icd10_codes//row[code='D81.9']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893296+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-MCD-A59588",
+      "label": "ALLOWS_DIAGNOSIS",
+      "target_pk": "ICD10-D83.9",
+      "provenance": {
+        "source_uri": "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59588",
+        "selector": "table#covered_icd10_codes//row[code='D83.9']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893296+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-CR-13217",
+      "label": "APPLIES_TO_JURISDICTION",
+      "target_pk": "JURIS-DME-A",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "CMS MAC Region Allocation Table: Jurisdiction A",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-CT",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-CT",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-DE",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-DE",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-DC",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-DC",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-ME",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-ME",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-MD",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-MD",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-MA",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-MA",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-NH",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-NH",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-NJ",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-NJ",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-NY",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-PA",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-PA",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-RI",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-RI",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-A",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-VT",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-A -> STATE-VT",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-CR-13217",
+      "label": "APPLIES_TO_JURISDICTION",
+      "target_pk": "JURIS-DME-B",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "CMS MAC Region Allocation Table: Jurisdiction B",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-B",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-IL",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-B -> STATE-IL",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-B",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-IN",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-B -> STATE-IN",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-B",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-KY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-B -> STATE-KY",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-B",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-MI",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-B -> STATE-MI",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-B",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-MN",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-B -> STATE-MN",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-B",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-OH",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-B -> STATE-OH",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-B",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-WI",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-B -> STATE-WI",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-CR-13217",
+      "label": "APPLIES_TO_JURISDICTION",
+      "target_pk": "JURIS-DME-C",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "CMS MAC Region Allocation Table: Jurisdiction C",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-AL",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-AL",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-AR",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-AR",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-CO",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-CO",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-FL",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-FL",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-GA",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-GA",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-LA",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-LA",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-MS",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-MS",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-NM",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-NM",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-NC",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-NC",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-OK",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-OK",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-SC",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-SC",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-TN",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-TN",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-TX",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-TX",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-VA",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-VA",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-WV",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-WV",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-PR",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-PR",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-C",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-VI",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-C -> STATE-VI",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "CMS-CR-13217",
+      "label": "APPLIES_TO_JURISDICTION",
+      "target_pk": "JURIS-DME-D",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "CMS MAC Region Allocation Table: Jurisdiction D",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-AK",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-AK",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-AZ",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-AZ",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-CA",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-CA",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-HI",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-HI",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-ID",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-ID",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-IA",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-IA",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-KS",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-KS",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-MO",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-MO",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-MT",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-MT",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-NE",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-NE",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-NV",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-NV",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-ND",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-ND",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-OR",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-OR",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-SD",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-SD",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-UT",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-UT",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-WA",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-WA",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "label": "COVERS_STATE",
+      "target_pk": "STATE-WY",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-WY",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-CT-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CT', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-CT-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-CT",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CT', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-CT-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CT', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-CT-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-CT",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CT', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-DE-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='DE', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-DE-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-DE",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='DE', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-DE-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='DE', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-DE-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-DE",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='DE', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-DC-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='DC', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-DC-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-DC",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='DC', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-DC-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='DC', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-DC-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-DC",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='DC', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-ME-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ME', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-ME-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-ME",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ME', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-ME-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ME', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-ME-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-ME",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ME', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MD-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MD', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MD-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MD",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MD', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MD-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MD', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MD-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MD",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MD', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MA-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MA-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MA-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MA-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NH-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NH', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NH-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NH",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NH', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NH-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NH', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NH-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NH",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NH', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NJ-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NJ', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NJ-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NJ",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NJ', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NJ-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NJ', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NJ-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NJ",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NJ', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NY-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NY', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NY', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NY-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NY', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NY-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NY",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NY', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-PA-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='PA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-PA-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-PA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='PA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-PA-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='PA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-PA-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-PA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='PA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-RI-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='RI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-RI-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-RI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='RI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-RI-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='RI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-RI-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-RI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='RI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-VT-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VT', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-VT-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-VT",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VT', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-VT-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VT', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-VT-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-VT",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VT', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-IL-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IL', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-IL-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-IL",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IL', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-IL-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IL', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-IL-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-IL",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IL', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-IN-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IN', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-IN-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-IN",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IN', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-IN-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IN', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-IN-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-IN",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IN', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-KY-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='KY', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-KY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-KY",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='KY', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-KY-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='KY', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-KY-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-KY",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='KY', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MI-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MI-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MI-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MI-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MN-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MN', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MN-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MN",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MN', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MN-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MN', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MN-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MN",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MN', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-OH-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OH', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-OH-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-OH",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OH', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-OH-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OH', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-OH-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-OH",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OH', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-WI-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-WI-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-WI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-WI-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-WI-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-WI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-AL-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AL', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-AL-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-AL",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AL', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-AL-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AL', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-AL-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-AL",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AL', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-AR-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AR', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-AR-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-AR",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AR', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-AR-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AR', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-AR-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-AR",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AR', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-CO-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CO', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-CO-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-CO",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CO', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-CO-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CO', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-CO-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-CO",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CO', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-FL-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='FL', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-FL-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-FL",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='FL', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-FL-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='FL', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-FL-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-FL",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='FL', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-GA-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='GA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-GA-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-GA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='GA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-GA-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='GA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-GA-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-GA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='GA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-LA-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='LA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-LA-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-LA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='LA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-LA-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='LA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-LA-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-LA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='LA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MS-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MS', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MS-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MS",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MS', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MS-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MS', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MS-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MS",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MS', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NM-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NM', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NM-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NM",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NM', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NM-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NM', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NM-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NM",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NM', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NC-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NC', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NC-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NC",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NC', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NC-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NC', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NC-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NC",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NC', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-OK-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OK', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-OK-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-OK",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OK', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-OK-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OK', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-OK-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-OK",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OK', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-SC-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='SC', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-SC-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-SC",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='SC', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-SC-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='SC', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-SC-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-SC",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='SC', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-TN-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='TN', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-TN-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-TN",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='TN', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-TN-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='TN', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-TN-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-TN",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='TN', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-TX-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='TX', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-TX-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-TX",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='TX', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-TX-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='TX', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-TX-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-TX",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='TX', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-VA-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-VA-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-VA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-VA-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-VA-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-VA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-WV-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WV', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-WV-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-WV",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WV', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-WV-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WV', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-WV-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-WV",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WV', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-PR-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='PR', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-PR-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-PR",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='PR', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-PR-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='PR', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-PR-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-PR",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='PR', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-VI-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-VI-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-VI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-VI-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-VI-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-VI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='VI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-AK-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AK', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-AK-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-AK",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AK', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-AK-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AK', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-AK-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-AK",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AK', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-AZ-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AZ', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-AZ-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-AZ",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AZ', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-AZ-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AZ', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-AZ-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-AZ",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='AZ', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-CA-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-CA-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-CA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-CA-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-CA-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-CA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='CA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-HI-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='HI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-HI-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-HI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='HI', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-HI-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='HI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-HI-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-HI",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='HI', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-ID-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ID', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-ID-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-ID",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ID', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-ID-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ID', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-ID-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-ID",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ID', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-IA-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-IA-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-IA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-IA-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-IA-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-IA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='IA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-KS-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='KS', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-KS-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-KS",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='KS', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-KS-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='KS', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-KS-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-KS",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='KS', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MO-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MO', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MO-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MO",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MO', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MO-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MO', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MO-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MO",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MO', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MT-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MT', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MT-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MT",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MT', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-MT-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MT', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-MT-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-MT",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='MT', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NE-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NE', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NE-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NE",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NE', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NE-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NE', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NE-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NE",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NE', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NV-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NV', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NV-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NV",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NV', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-NV-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NV', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-NV-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-NV",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='NV', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-ND-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ND', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-ND-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-ND",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ND', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-ND-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ND', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-ND-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-ND",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='ND', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-OR-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OR', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-OR-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-OR",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OR', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-OR-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OR', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-OR-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-OR",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='OR', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-SD-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='SD', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-SD-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-SD",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='SD', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-SD-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='SD', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-SD-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-SD",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='SD', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-UT-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='UT', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-UT-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-UT",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='UT', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-UT-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='UT', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-UT-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-UT",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='UT', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-WA-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-WA-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-WA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WA', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-WA-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-WA-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-WA",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WA', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-WY-NR-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WY', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-WY-NR-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-WY",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WY', rural=False]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "HCPCS-Q2052",
+      "label": "HAS_FEE_SCHEDULE",
+      "target_pk": "FEE-Q2052-WY-R-2024",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WY', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FEE-Q2052-WY-R-2024",
+      "label": "APPLIES_TO",
+      "target_pk": "STATE-WY",
+      "provenance": {
+        "source_uri": "CMS Transmittal 12437 (CR 13217): Home IVIG Fee Schedule",
+        "selector": "schedule[code='Q2052', state='WY', rural=True]",
+        "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "BILL-117-hr-3808",
+      "label": "HAS_ADVOCACY_RECORD",
+      "target_pk": "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage5_lda_lobbying_filings_sample.json",
+        "selector": "results[filing_uuid='c8697fc5-7f3b-4861-8a49-d9e6357ad287']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.894497+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "BILL-117-hr-3808",
+      "label": "HAS_ADVOCACY_RECORD",
+      "target_pk": "LDA-1821a229-8264-40c2-9b04-49169d917adf",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage5_lda_lobbying_filings_sample.json",
+        "selector": "results[filing_uuid='1821a229-8264-40c2-9b04-49169d917adf']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.894497+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FR-2023-24455",
+      "label": "SUPPORTED_BY_EVIDENCE",
+      "target_pk": "PUBMED-25574334",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage5_ncbi_pubmed_esummary.json",
+        "selector": "result['25574334']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.894497+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    },
+    {
+      "source_pk": "FR-2023-24455",
+      "label": "SUPPORTED_BY_EVIDENCE",
+      "target_pk": "PUBMED-31298495",
+      "provenance": {
+        "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage5_ncbi_pubmed_esummary.json",
+        "selector": "result['31298495']",
+        "ingestion_timestamp": "2026-10-13T01:23:54.894497+00:00",
+        "run_id": "export-run-ivig-001"
+      }
+    }
+  ]
+}

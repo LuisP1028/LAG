@@ -1,0 +1,10 @@
+functional_specification_003.md
+wayfinder/20261012T231057-024-zqga/tickets/ticket-001.md
+wayfinder/20261012T231057-024-zqga/tickets/ticket-002.md
+wayfinder/20261012T231057-024-zqga/tickets/ticket-003.md
+wayfinder/20261012T231057-024-zqga/tickets/ticket-004.md
+wayfinder/20261012T231057-024-zqga/tickets/ticket-005.md
+wayfinder/20261012T231057-024-zqga/tickets/ticket-006.md
+wayfinder/20261012T231057-024-zqga/tickets/ticket-007.md
+wayfinder/20261012T231057-024-zqga/map.md
+wayfinder/20261012T231057-024-zqga/matrix.md
