@@ -26,8 +26,10 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     isIlluminated,
     selectedNode,
     selectNode,
-    physicsFrozen,
   } = useGraphSync();
+
+  const [isHudOpen, setIsHudOpen] = useState<boolean>(true);
+  const renderRef = useRef<() => void>(() => {});
 
   const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
   const [fps, setFps] = useState<number>(60);
@@ -309,6 +311,10 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     ctx.restore();
   }, [nodes, links, isIlluminated, activeNodePKs, activeEdgeKeys, selectedNode, hoveredNode]);
 
+  useEffect(() => {
+    renderRef.current = render;
+  }, [render]);
+
   // Set up d3 force simulation
   useEffect(() => {
     if (!nodes.length) return;
@@ -334,10 +340,11 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
         d3.forceCollide<GraphNode>().radius((d) => (d.radius || 10) + 6)
       )
       .force('center', d3.forceCenter(width / 2, height / 2).strength(0.08))
-      .alphaDecay(0.028);
+      .alphaDecay(0.028)
+      .velocityDecay(0.4);
 
     simulation.on('tick', () => {
-      render();
+      renderRef.current();
     });
 
     simulationRef.current = simulation;
@@ -345,18 +352,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     return () => {
       simulation.stop();
     };
-  }, [nodes, links, render]);
-
-  // Manage physics freeze toggle
-  useEffect(() => {
-    if (!simulationRef.current) return;
-    if (physicsFrozen) {
-      simulationRef.current.alpha(0);
-      simulationRef.current.stop();
-    } else {
-      simulationRef.current.alpha(0.3).restart();
-    }
-  }, [physicsFrozen]);
+  }, [nodes, links]);
 
   // Zoom and Drag Behavior
   useEffect(() => {
@@ -447,7 +443,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     if (hovered !== hoveredNode) {
       setHoveredNode(hovered);
       canvas.style.cursor = hovered ? 'pointer' : 'crosshair';
-      render();
+      // Redraw is handled reactively by React rendering loop; simulation alpha is unaffected.
     }
   };
 
@@ -467,33 +463,63 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
 
       {/* Blueprint HUD Telemetry Overlay */}
       <div
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsHudOpen((prev) => !prev);
+        }}
         style={{
           position: 'absolute',
           top: 14,
           left: 14,
           backgroundColor: 'rgba(10, 17, 40, 0.88)',
           border: '1px solid rgba(255, 183, 3, 0.35)',
-          padding: '8px 14px',
           borderRadius: 4,
           fontFamily: '"SF Mono", "Fira Code", monospace',
           fontSize: 11,
           color: '#e2e8f0',
           boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
-          pointerEvents: 'none',
+          pointerEvents: 'auto',
+          cursor: 'pointer',
           userSelect: 'none',
+          zIndex: 10,
+          transition: 'all 0.2s ease',
         }}
+        title="Click to expand/collapse Blueprint HUD"
       >
-        <div style={{ color: CANVAS_PALETTE.accentAmber, fontWeight: 700, marginBottom: 4, letterSpacing: '0.05em' }}>
-          ◈ LAG KNOWLEDGE BLUEPRINT HUD
-        </div>
-        <div style={{ display: 'flex', gap: 14 }}>
-          <span>NODES: <strong style={{ color: '#38bdf8' }}>{nodes.length}</strong></span>
-          <span>EDGES: <strong style={{ color: '#38bdf8' }}>{links.length}</strong></span>
-          <span>FPS: <strong style={{ color: fps >= 55 ? '#4ade80' : '#f87171' }}>{fps}</strong></span>
-          <span>STATUS: <strong style={{ color: isIlluminated ? CANVAS_PALETTE.accentAmber : '#94a3b8' }}>
-            {isIlluminated ? 'PATH ILLUMINATED' : 'EXPLORATION MODE'}
-          </strong></span>
-        </div>
+        {!isHudOpen ? (
+          <div style={{ padding: '6px 12px', display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ color: CANVAS_PALETTE.accentAmber, fontWeight: 700, letterSpacing: '0.05em' }}>
+              ◈ BLUEPRINT HUD
+            </span>
+            <span style={{ fontSize: 9, color: '#94a3b8' }}>▼</span>
+          </div>
+        ) : (
+          <>
+            <div
+              style={{
+                padding: '8px 14px 6px 14px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                borderBottom: '1px solid rgba(255, 183, 3, 0.2)',
+                color: CANVAS_PALETTE.accentAmber,
+                fontWeight: 700,
+                letterSpacing: '0.05em',
+              }}
+            >
+              <span>◈ LAG KNOWLEDGE BLUEPRINT HUD</span>
+              <span style={{ fontSize: 9, color: '#94a3b8', marginLeft: 8 }}>▲</span>
+            </div>
+            <div style={{ padding: '8px 14px', display: 'flex', gap: 14 }}>
+              <span>NODES: <strong style={{ color: '#38bdf8' }}>{nodes.length}</strong></span>
+              <span>EDGES: <strong style={{ color: '#38bdf8' }}>{links.length}</strong></span>
+              <span>FPS: <strong style={{ color: fps >= 55 ? '#4ade80' : '#f87171' }}>{fps}</strong></span>
+              <span>STATUS: <strong style={{ color: isIlluminated ? CANVAS_PALETTE.accentAmber : '#94a3b8' }}>
+                {isIlluminated ? 'PATH ILLUMINATED' : 'EXPLORATION MODE'}
+              </strong></span>
+            </div>
+          </>
+        )}
       </div>
 
       {loading && (

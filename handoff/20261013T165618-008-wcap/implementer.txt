@@ -1,0 +1,4 @@
+src/frontend/src/components/FilterToolbar.tsx
+src/frontend/src/context/GraphSyncContext.tsx
+src/frontend/src/components/GraphCanvas.tsx
+src/frontend/src/components/NodeDetailDrawer.tsx

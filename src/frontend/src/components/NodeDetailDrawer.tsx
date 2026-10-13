@@ -45,42 +45,112 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
 
   // Construct official government external links
   const getGovernmentSourceLink = () => {
+    const getOrdinal = (n: number): string => {
+      const s = ['th', 'st', 'nd', 'rd'];
+      const v = n % 100;
+      return n + (s[(v - 20) % 10] || s[v] || s[0]);
+    };
+
+    const getBillTypeSlug = (type: string): string => {
+      const clean = (type || '').toLowerCase().replace(/[^a-z]/g, '');
+      switch (clean) {
+        case 'hr': return 'house-bill';
+        case 's': return 'senate-bill';
+        case 'hjres': return 'house-joint-resolution';
+        case 'sjres': return 'senate-joint-resolution';
+        case 'hconres': return 'house-concurrent-resolution';
+        case 'sconres': return 'senate-concurrent-resolution';
+        case 'hres': return 'house-resolution';
+        case 'sres': return 'senate-resolution';
+        default: return 'house-bill';
+      }
+    };
+
     switch (selectedNode.label) {
-      case 'Bill':
+      case 'CoveragePolicy': {
+        const articleId = props.article_id || selectedNode.primary_key.replace(/^CMS-MCD-/, '');
         return {
-          title: 'Congress.gov Legislative Record',
-          url: 'https://www.congress.gov/bill/117th-congress/house-bill/3630',
+          title: `CMS Medicare Coverage Database (${articleId})`,
+          url: `https://www.cms.gov/medicare-coverage-database/search-results.aspx?keyword=${encodeURIComponent(articleId)}`,
         };
-      case 'PublicLaw':
+      }
+      case 'PublicLaw': {
+        const congress = props.congress || selectedNode.primary_key.match(/PLAW-(\d+)-/)?.[1] || '117';
+        const num = props.number || selectedNode.primary_key.match(/PLAW-\d+-(\d+)/)?.[1] || '328';
         return {
-          title: 'GPO GovInfo Public Law 117-328 (Statutes at Large)',
-          url: 'https://www.govinfo.gov/app/details/PLAW-117publ328',
+          title: `GPO GovInfo Public Law ${congress}-${num}`,
+          url: `https://www.govinfo.gov/app/details/PLAW-${congress}publ${num}`,
         };
-      case 'StatutorySection':
+      }
+      case 'Bill': {
+        const congress = Number(props.congress || selectedNode.primary_key.match(/BILL-(\d+)-/)?.[1] || 117);
+        const type = (props.type || selectedNode.primary_key.match(/BILL-\d+-([a-z]+)-/)?.[1] || 'hr').toLowerCase();
+        const num = props.number || selectedNode.primary_key.match(/BILL-\d+-[a-z]+-(\d+)/)?.[1] || '3630';
         return {
-          title: 'US Code GPO Title 42 § 1395x(s)(2)(JJ)',
-          url: 'https://www.govinfo.gov/app/details/USCODE-2022-title42/USCODE-2022-title42-chap7-subchapXVIII-partE-sec1395x',
+          title: `Congress.gov ${type.toUpperCase()} ${num} (${getOrdinal(congress)} Congress)`,
+          url: `https://www.congress.gov/bill/${getOrdinal(congress)}-congress/${getBillTypeSlug(type)}/${num}`,
         };
-      case 'Regulation':
+      }
+      case 'Regulation': {
+        const docNum = props.document_number || selectedNode.primary_key.replace(/^FR-/, '');
         return {
-          title: 'Federal Register Final Rule (88 FR 77676, CMS-1784-F)',
-          url: 'https://www.federalregister.gov/documents/2023/11/16/2023-24455/medicare-and-medicaid-programs-cy-2024-payment-policies-under-the-physician-fee-schedule-and-other',
+          title: `Federal Register Final Rule (${props.citation || docNum})`,
+          url: `https://www.federalregister.gov/d/${encodeURIComponent(docNum)}`,
         };
-      case 'CoveragePolicy':
+      }
+      case 'StatutorySection': {
+        const title = props.title || '42';
+        const rawSec = props.section || selectedNode.primary_key.replace(/^USC-\d+-/, '') || '1395x';
+        const cleanSec = rawSec.split('-')[0];
         return {
-          title: 'CMS Medicare Coverage Database (Article A59508)',
-          url: 'https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleid=59508',
+          title: `US Code Title ${title} § ${cleanSec} (LII)`,
+          url: `https://www.law.cornell.edu/uscode/text/${encodeURIComponent(title)}/${encodeURIComponent(cleanSec)}`,
         };
-      case 'ChangeRequest':
+      }
+      case 'ChangeRequest': {
+        const crNum = props.cr_number || selectedNode.primary_key.replace(/^CMS-CR-/, '');
         return {
-          title: 'CMS Change Request 13286 Transmittal',
-          url: 'https://www.cms.gov/files/document/r13286cp.pdf',
+          title: `CMS Transmittals Index (CR ${crNum})`,
+          url: `https://www.cms.gov/medicare/regulations-guidance/transmittals?search=${encodeURIComponent(crNum)}`,
         };
-      case 'LobbyingFiling':
+      }
+      case 'Jurisdiction': {
+        const code = props.code || selectedNode.primary_key;
+        const isBC = code.includes('B') || code.includes('C');
+        return {
+          title: isBC
+            ? `CGS Administrators DME MAC Portal (${code})`
+            : `Noridian Healthcare Solutions DME MAC Portal (${code})`,
+          url: isBC ? 'https://www.cgsmedicare.com/' : 'https://med.noridianmedicare.com/',
+        };
+      }
+      case 'HCPCSCode': {
+        const code = props.code || selectedNode.primary_key.replace(/^HCPCS-/, '');
+        return {
+          title: `CMS DMEPOS Fee Schedule & Coding Reference (${code})`,
+          url: 'https://www.cms.gov/medicare/payment/fee-schedules/dmepos/dmepos-fee-schedule',
+        };
+      }
+      case 'ICD10Code': {
+        const code = props.code || selectedNode.primary_key.replace(/^ICD10-/, '');
+        return {
+          title: `CDC ICD-10-CM Clinical Browser (${code})`,
+          url: `https://icd10cmtool.cdc.gov/?prop=${encodeURIComponent(code)}`,
+        };
+      }
+      case 'LobbyingFiling': {
         return {
           title: 'Senate LDA Lobbying Disclosure Search',
           url: 'https://lda.senate.gov/system/public/',
         };
+      }
+      case 'LiteratureStudy': {
+        const pmid = props.pmid || selectedNode.primary_key.replace(/^PUBMED-/, '');
+        return {
+          title: `PubMed National Library of Medicine (${pmid})`,
+          url: `https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(pmid)}/`,
+        };
+      }
       default:
         return null;
     }

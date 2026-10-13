@@ -20,8 +20,6 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
     clearIllumination,
     isChatOpen,
     setIsChatOpen,
-    physicsFrozen,
-    togglePhysicsFrozen,
   } = useGraphSync();
 
   const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -102,24 +100,6 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
           <option value="ALL">All (Omnibus Lineage)</option>
         </select>
       </div>
-
-      {/* Physics Toggle */}
-      <button
-        onClick={togglePhysicsFrozen}
-        style={{
-          backgroundColor: physicsFrozen ? 'rgba(234, 179, 8, 0.2)' : 'rgba(30, 41, 59, 0.8)',
-          color: physicsFrozen ? '#facc15' : '#e2e8f0',
-          border: `1px solid ${physicsFrozen ? '#facc15' : CANVAS_PALETTE.panelBorder}`,
-          borderRadius: 4,
-          padding: '4px 10px',
-          cursor: 'pointer',
-          fontSize: 11,
-          fontWeight: 600,
-        }}
-        title="Toggle force physics simulation"
-      >
-        {physicsFrozen ? '▶ RESUME PHYSICS' : '⏸ FREEZE PHYSICS'}
-      </button>
 
       {/* Clear Illumination Button */}
       {isIlluminated && (

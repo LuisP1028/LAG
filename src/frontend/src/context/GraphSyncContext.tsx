@@ -14,7 +14,6 @@ interface GraphSyncContextType {
   quickPrompts: string[];
   filterState: string;
   policyKeyword: string;
-  physicsFrozen: boolean;
   isChatOpen: boolean;
   focusTarget: { x: number; y: number; zoom?: number } | null;
   
@@ -23,7 +22,6 @@ interface GraphSyncContextType {
   clearIllumination: () => void;
   setFilterState: (state: string) => void;
   setPolicyKeyword: (keyword: string) => void;
-  togglePhysicsFrozen: () => void;
   setIsChatOpen: (open: boolean) => void;
   setFocusTarget: (target: { x: number; y: number; zoom?: number } | null) => void;
 }
@@ -44,7 +42,6 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   ]);
   const [filterState, setFilterState] = useState<string>("WI");
   const [policyKeyword, setPolicyKeyword] = useState<string>("LTA");
-  const [physicsFrozen, setPhysicsFrozen] = useState<boolean>(false);
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
   const [focusTarget, setFocusTarget] = useState<{ x: number; y: number; zoom?: number } | null>(null);
 
@@ -112,10 +109,6 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     setIsIlluminated(false);
   }, []);
 
-  const togglePhysicsFrozen = useCallback(() => {
-    setPhysicsFrozen((prev) => !prev);
-  }, []);
-
   const value = useMemo(
     () => ({
       activeNodePKs,
@@ -126,7 +119,6 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       quickPrompts,
       filterState,
       policyKeyword,
-      physicsFrozen,
       isChatOpen,
       focusTarget,
       selectNode,
@@ -134,7 +126,6 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       clearIllumination,
       setFilterState,
       setPolicyKeyword,
-      togglePhysicsFrozen,
       setIsChatOpen,
       setFocusTarget,
     }),
@@ -147,13 +138,11 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       quickPrompts,
       filterState,
       policyKeyword,
-      physicsFrozen,
       isChatOpen,
       focusTarget,
       selectNode,
       setIlluminatedPath,
       clearIllumination,
-      togglePhysicsFrozen,
     ]
   );
 
