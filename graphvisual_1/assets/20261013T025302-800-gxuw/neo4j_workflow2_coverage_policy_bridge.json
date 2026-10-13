@@ -1,0 +1,302 @@
+[
+  {
+    "policy_article": "CMS-MCD-A59508",
+    "policy_title": "Standard Documentation Requirements for Lymphedema Compression Treatment Items",
+    "governed_hcpcs": [
+      {
+        "code": "HCPCS-A6520",
+        "desc": "G com garmnt glove nghttime"
+      },
+      {
+        "code": "HCPCS-A6521",
+        "desc": "G com garmnt glove nght cust"
+      },
+      {
+        "code": "HCPCS-A6522",
+        "desc": "G com garment arm nighttime"
+      },
+      {
+        "code": "HCPCS-A6523",
+        "desc": "G com garment arm nght custm"
+      },
+      {
+        "code": "HCPCS-A6524",
+        "desc": "G com garmnt lwr leg/ft nght"
+      },
+      {
+        "code": "HCPCS-A6525",
+        "desc": "G com garm lwrleg/ft ngt cus"
+      },
+      {
+        "code": "HCPCS-A6526",
+        "desc": "G com garmt full leg/ft nght"
+      },
+      {
+        "code": "HCPCS-A6527",
+        "desc": "G garmt full leg/ft nght cus"
+      },
+      {
+        "code": "HCPCS-A6528",
+        "desc": "G com garment bra nighttime"
+      },
+      {
+        "code": "HCPCS-A6529",
+        "desc": "G com garmt bra night custm"
+      },
+      {
+        "code": "HCPCS-A6530",
+        "desc": "Compression stocking bk18-30"
+      },
+      {
+        "code": "HCPCS-A6533",
+        "desc": "Gc stocking thighlngth 18-30"
+      },
+      {
+        "code": "HCPCS-A6534",
+        "desc": "Gc stocking thighlngth 30-40"
+      },
+      {
+        "code": "HCPCS-A6535",
+        "desc": "Gc stocking thighlngth 40+"
+      },
+      {
+        "code": "HCPCS-A6536",
+        "desc": "Gc stocking full lngth 18-30"
+      },
+      {
+        "code": "HCPCS-A6537",
+        "desc": "Gc stocking full lngth 30-40"
+      },
+      {
+        "code": "HCPCS-A6538",
+        "desc": "Gc stocking full lngth 40+"
+      },
+      {
+        "code": "HCPCS-A6539",
+        "desc": "Gc stocking waistlngth 18-30"
+      },
+      {
+        "code": "HCPCS-A6540",
+        "desc": "Gc stocking waistlngth 30-40"
+      },
+      {
+        "code": "HCPCS-A6541",
+        "desc": "Gc stocking waistlngth 40+"
+      },
+      {
+        "code": "HCPCS-A6552",
+        "desc": "Grad com stocking bk 30-40"
+      },
+      {
+        "code": "HCPCS-A6553",
+        "desc": "G com stcking bk 30-40 custm"
+      },
+      {
+        "code": "HCPCS-A6554",
+        "desc": "Grad com stocking bk 40+"
+      },
+      {
+        "code": "HCPCS-A6555",
+        "desc": "G com stcking bk 40+ custm"
+      },
+      {
+        "code": "HCPCS-A6556",
+        "desc": "G com stcking thgh18-30 cust"
+      },
+      {
+        "code": "HCPCS-A6557",
+        "desc": "G com stcking thgh30-40 cust"
+      },
+      {
+        "code": "HCPCS-A6558",
+        "desc": "G com stcking thgh 40+ cust"
+      },
+      {
+        "code": "HCPCS-A6562",
+        "desc": "G com stckng waist18-30 cust"
+      },
+      {
+        "code": "HCPCS-A6563",
+        "desc": "G com stckng waist30-40 cust"
+      },
+      {
+        "code": "HCPCS-A6564",
+        "desc": "G com stckng waist 40+ cust"
+      },
+      {
+        "code": "HCPCS-A6565",
+        "desc": "Grad comp gauntlet custom"
+      },
+      {
+        "code": "HCPCS-A6566",
+        "desc": "Grad com garment neck/head"
+      },
+      {
+        "code": "HCPCS-A6567",
+        "desc": "G com garment neck/head cust"
+      },
+      {
+        "code": "HCPCS-A6568",
+        "desc": "G com garment torso/shldr"
+      },
+      {
+        "code": "HCPCS-A6569",
+        "desc": "G com garmnt torso/shdr cust"
+      },
+      {
+        "code": "HCPCS-A6570",
+        "desc": "Grad com garment genital"
+      },
+      {
+        "code": "HCPCS-A6571",
+        "desc": "G com garment genital custm"
+      },
+      {
+        "code": "HCPCS-A6572",
+        "desc": "Grad com garment toe caps"
+      },
+      {
+        "code": "HCPCS-A6573",
+        "desc": "Grad com garmnt toe cap cust"
+      },
+      {
+        "code": "HCPCS-A6574",
+        "desc": "Custom gradient sleev/glov"
+      },
+      {
+        "code": "HCPCS-A6575",
+        "desc": "Gradient comp sleev/glov"
+      },
+      {
+        "code": "HCPCS-A6576",
+        "desc": "Custom grad com sleeve med"
+      },
+      {
+        "code": "HCPCS-A6577",
+        "desc": "Custom grad cm sleeve heavy"
+      },
+      {
+        "code": "HCPCS-A6578",
+        "desc": "Gradient comp sleeve"
+      },
+      {
+        "code": "HCPCS-A6579",
+        "desc": "Custom grad com glove med"
+      },
+      {
+        "code": "HCPCS-A6580",
+        "desc": "Custom grad com glove heavy"
+      },
+      {
+        "code": "HCPCS-A6581",
+        "desc": "Gradient comp glove"
+      },
+      {
+        "code": "HCPCS-A6582",
+        "desc": "Gradient comp gauntlet"
+      },
+      {
+        "code": "HCPCS-A6583",
+        "desc": "Grad com wrap w straps bk"
+      },
+      {
+        "code": "HCPCS-A6585",
+        "desc": "Grad com wrap w straps ak"
+      },
+      {
+        "code": "HCPCS-A6586",
+        "desc": "Grad com wrap w straps leg"
+      },
+      {
+        "code": "HCPCS-A6587",
+        "desc": "Grad com wrap w straps foot"
+      },
+      {
+        "code": "HCPCS-A6588",
+        "desc": "Grad com wrap w straps arm"
+      },
+      {
+        "code": "HCPCS-A6589",
+        "desc": "Grad com wrap w straps bra"
+      },
+      {
+        "code": "HCPCS-A6594",
+        "desc": "G comp bandge liner lwr extr"
+      },
+      {
+        "code": "HCPCS-A6595",
+        "desc": "G comp bandge liner upr extr"
+      },
+      {
+        "code": "HCPCS-A6596",
+        "desc": "G comp bandge conform gauze"
+      },
+      {
+        "code": "HCPCS-A6597",
+        "desc": "G comp bandage long stretch"
+      },
+      {
+        "code": "HCPCS-A6598",
+        "desc": "G comp bandage med stretch"
+      },
+      {
+        "code": "HCPCS-A6599",
+        "desc": "G comp bandage short stretch"
+      },
+      {
+        "code": "HCPCS-A6600",
+        "desc": "G com bandge hgh dn foam sht"
+      },
+      {
+        "code": "HCPCS-A6601",
+        "desc": "G com bandge hgh dn foam pad"
+      },
+      {
+        "code": "HCPCS-A6602",
+        "desc": "G com bandge hgh dn foamroll"
+      },
+      {
+        "code": "HCPCS-A6603",
+        "desc": "G com bandge low dn foamchnl"
+      },
+      {
+        "code": "HCPCS-A6604",
+        "desc": "G com bandge low dn foam flt"
+      },
+      {
+        "code": "HCPCS-A6605",
+        "desc": "G com bandage padded foam"
+      },
+      {
+        "code": "HCPCS-A6606",
+        "desc": "G com bandage padded textile"
+      },
+      {
+        "code": "HCPCS-A6607",
+        "desc": "G com bandage tub protct lyr"
+      },
+      {
+        "code": "HCPCS-A6608",
+        "desc": "G com bandage tub protct pad"
+      },
+      {
+        "code": "HCPCS-A6610",
+        "desc": "G com stcking bk 18-30 custm"
+      }
+    ],
+    "allowed_diagnoses": [
+      {
+        "code": "ICD10-I89.0",
+        "desc": "Lymphedema, not elsewhere classified"
+      },
+      {
+        "code": "ICD10-I97.2",
+        "desc": "Postmastectomy lymphedema syndrome"
+      },
+      {
+        "code": "ICD10-Q82.0",
+        "desc": "Hereditary lymphedema"
+      }
+    ]
+  }
+]

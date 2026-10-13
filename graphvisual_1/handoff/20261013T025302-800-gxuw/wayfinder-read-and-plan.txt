@@ -1,0 +1,10 @@
+functional_specification_004.md
+wayfinder/20261013T025302-800-gxuw/tickets/ticket-001.md
+wayfinder/20261013T025302-800-gxuw/tickets/ticket-002.md
+wayfinder/20261013T025302-800-gxuw/tickets/ticket-003.md
+wayfinder/20261013T025302-800-gxuw/tickets/ticket-004.md
+wayfinder/20261013T025302-800-gxuw/tickets/ticket-005.md
+wayfinder/20261013T025302-800-gxuw/tickets/ticket-006.md
+wayfinder/20261013T025302-800-gxuw/tickets/ticket-007.md
+wayfinder/20261013T025302-800-gxuw/map.md
+wayfinder/20261013T025302-800-gxuw/matrix.md

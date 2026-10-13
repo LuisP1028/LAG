@@ -1,4 +1,12 @@
 {
+  "name": "lag-graphrag-visualizer",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:backend": "PYTHONPATH=. /Users/diesel/Desktop/POLYMARKET/Alpha/.venv/bin/python src/api/server.py",
+    "dev:frontend": "cd src/frontend && npm run dev",
+    "test": "PYTHONPATH=. /Users/diesel/Desktop/POLYMARKET/Alpha/.venv/bin/pytest tests/ -v",
+    "build:frontend": "cd src/frontend && npm run build"
+  },
   "devDependencies": {
     "@ai-hero/sandcastle": "^0.12.0"
   }

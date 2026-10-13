@@ -1,0 +1,388 @@
+{
+  "constraints": [
+    {
+      "id": 6,
+      "name": "constraint_2423f728",
+      "type": "NODE_PROPERTY_UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Strategy"
+      ],
+      "properties": [
+        "id"
+      ],
+      "enforcedLabel": null,
+      "ownedIndex": "constraint_2423f728",
+      "propertyType": null
+    },
+    {
+      "id": 3,
+      "name": "policy_node_pk",
+      "type": "NODE_PROPERTY_UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "PolicyNode"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "enforcedLabel": null,
+      "ownedIndex": "policy_node_pk",
+      "propertyType": null
+    }
+  ],
+  "indexes": [
+    {
+      "id": 4,
+      "name": "bill_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Bill"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 5,
+      "name": "constraint_2423f728",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Strategy"
+      ],
+      "properties": [
+        "id"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": "constraint_2423f728",
+      "lastRead": "2026-10-13T01:42:54.166000000+00:00",
+      "readCount": 14
+    },
+    {
+      "id": 21,
+      "name": "idx_cboscore_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "CBOScore"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 12,
+      "name": "idx_changerequest_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "ChangeRequest"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 13,
+      "name": "idx_coveragepolicy_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "CoveragePolicy"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": "2026-10-13T02:58:23.624000000+00:00",
+      "readCount": 3
+    },
+    {
+      "id": 18,
+      "name": "idx_feescheduleentry_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "FeeScheduleEntry"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 14,
+      "name": "idx_hcpcscode_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "HCPCSCode"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 15,
+      "name": "idx_icd10code_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "ICD10Code"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": "2026-10-13T02:58:23.529000000+00:00",
+      "readCount": 5
+    },
+    {
+      "id": 16,
+      "name": "idx_jurisdiction_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Jurisdiction"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 20,
+      "name": "idx_literaturestudy_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "LiteratureStudy"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 19,
+      "name": "idx_lobbyingfiling_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "LobbyingFiling"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 8,
+      "name": "idx_policy_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Policy"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": "2026-10-13T02:58:23.734000000+00:00",
+      "readCount": 5
+    },
+    {
+      "id": 9,
+      "name": "idx_publiclaw_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "PublicLaw"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 11,
+      "name": "idx_regulation_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Regulation"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 17,
+      "name": "idx_state_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "State"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": "2026-10-13T02:55:37.369000000+00:00",
+      "readCount": 1
+    },
+    {
+      "id": 10,
+      "name": "idx_statutorysection_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "StatutorySection"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 1,
+      "name": "index_1b9dcc97",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "LOOKUP",
+      "entityType": "RELATIONSHIP",
+      "labelsOrTypes": null,
+      "properties": null,
+      "indexProvider": "token-lookup-1.0",
+      "owningConstraint": null,
+      "lastRead": "2026-10-13T02:58:06.181000000+00:00",
+      "readCount": 29
+    },
+    {
+      "id": 0,
+      "name": "index_460996c0",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "LOOKUP",
+      "entityType": "NODE",
+      "labelsOrTypes": null,
+      "properties": null,
+      "indexProvider": "token-lookup-1.0",
+      "owningConstraint": null,
+      "lastRead": "2026-10-13T02:58:23.738000000+00:00",
+      "readCount": 153
+    },
+    {
+      "id": 7,
+      "name": "index_f0c2114c",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Strategy"
+      ],
+      "properties": [
+        "name"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": null,
+      "lastRead": null,
+      "readCount": 0
+    },
+    {
+      "id": 2,
+      "name": "policy_node_pk",
+      "state": "ONLINE",
+      "populationPercent": 100.0,
+      "type": "RANGE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "PolicyNode"
+      ],
+      "properties": [
+        "primary_key"
+      ],
+      "indexProvider": "range-1.0",
+      "owningConstraint": "policy_node_pk",
+      "lastRead": "2026-10-13T02:57:51.579000000+00:00",
+      "readCount": 29215
+    }
+  ]
+}

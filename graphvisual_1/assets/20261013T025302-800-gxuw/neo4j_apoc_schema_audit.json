@@ -1,0 +1,2511 @@
+{
+  "Policy": {
+    "count": 2,
+    "relationships": {
+      "TARGETS_BILL": {
+        "count": 4,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "Bill"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "keyword": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "CoveragePolicy": {
+    "count": 2,
+    "relationships": {
+      "GOVERNS": {
+        "count": 75,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "HCPCSCode"
+        ]
+      },
+      "ALLOWS_DIAGNOSIS": {
+        "count": 6,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "ICD10Code"
+        ]
+      },
+      "MANDATES_POLICY": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "ChangeRequest"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "effective_date": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "article_id": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "policy_type": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "title": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "COVERS_STATE": {
+    "type": "relationship",
+    "count": 53,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "ISSUES_TRANSMITTAL": {
+    "type": "relationship",
+    "count": 2,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "LobbyingFiling": {
+    "count": 2,
+    "relationships": {
+      "HAS_ADVOCACY_RECORD": {
+        "count": 4,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Bill"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "registrant_name": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "amount": {
+        "existence": false,
+        "type": "FLOAT",
+        "indexed": false,
+        "unique": false
+      },
+      "filing_uuid": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "year": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      },
+      "client_name": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "ChangeRequest": {
+    "count": 2,
+    "relationships": {
+      "APPLIES_TO_JURISDICTION": {
+        "count": 8,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "Jurisdiction"
+        ]
+      },
+      "ISSUES_TRANSMITTAL": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Regulation"
+        ]
+      },
+      "MANDATES_POLICY": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "CoveragePolicy"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "effective_date": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "transmittal_number": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "cr_number": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "benefit_category": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "HAS_FEE_SCHEDULE": {
+    "type": "relationship",
+    "count": 3816,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "TARGETS_BILL": {
+    "type": "relationship",
+    "count": 4,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "HCPCSCode": {
+    "count": 75,
+    "relationships": {
+      "HAS_FEE_SCHEDULE": {
+        "count": 3816,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "FeeScheduleEntry"
+        ]
+      },
+      "GOVERNS": {
+        "count": 75,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "CoveragePolicy"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "short_description": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "code": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "category": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "MODIFIES_CODE": {
+    "type": "relationship",
+    "count": 2,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "LiteratureStudy": {
+    "count": 2,
+    "relationships": {
+      "SUPPORTED_BY_EVIDENCE": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Regulation"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "journal": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "title": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "pmid": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "pub_year": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      },
+      "doi": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "ENACTED_AS": {
+    "type": "relationship",
+    "count": 3,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "IMPLEMENTED_BY": {
+    "type": "relationship",
+    "count": 2,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "HAS_ADVOCACY_RECORD": {
+    "type": "relationship",
+    "count": 4,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "GOVERNS": {
+    "type": "relationship",
+    "count": 75,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "SUPPORTED_BY_EVIDENCE": {
+    "type": "relationship",
+    "count": 2,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "PublicLaw": {
+    "count": 1,
+    "relationships": {
+      "MODIFIES_CODE": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "StatutorySection"
+        ]
+      },
+      "ENACTED_AS": {
+        "count": 3,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Bill"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "number": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      },
+      "title": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "enacted_date": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "congress": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "ICD10Code": {
+    "count": 6,
+    "relationships": {
+      "ALLOWS_DIAGNOSIS": {
+        "count": 6,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "CoveragePolicy"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "description": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "code": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "APPLIES_TO": {
+    "type": "relationship",
+    "count": 3816,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "Jurisdiction": {
+    "count": 4,
+    "relationships": {
+      "COVERS_STATE": {
+        "count": 53,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "State"
+        ]
+      },
+      "APPLIES_TO_JURISDICTION": {
+        "count": 8,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "ChangeRequest"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "name": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "contractor_name": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "code": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "State": {
+    "count": 53,
+    "relationships": {
+      "COVERS_STATE": {
+        "count": 53,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Jurisdiction"
+        ]
+      },
+      "APPLIES_TO": {
+        "count": 98,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "PolicyNode",
+          "FeeScheduleEntry"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "state_code": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "state_name": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "FeeScheduleEntry": {
+    "count": 3816,
+    "relationships": {
+      "HAS_FEE_SCHEDULE": {
+        "count": 106,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "PolicyNode",
+          "HCPCSCode"
+        ]
+      },
+      "APPLIES_TO": {
+        "count": 97,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "State"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "ceiling": {
+        "existence": false,
+        "type": "FLOAT",
+        "indexed": false,
+        "unique": false
+      },
+      "fee_amount": {
+        "existence": false,
+        "type": "FLOAT",
+        "indexed": false,
+        "unique": false
+      },
+      "is_rural": {
+        "existence": false,
+        "type": "BOOLEAN",
+        "indexed": false,
+        "unique": false
+      },
+      "year": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      },
+      "hcpcs_code": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "name": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "state_code": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "floor": {
+        "existence": false,
+        "type": "FLOAT",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "ALLOWS_DIAGNOSIS": {
+    "type": "relationship",
+    "count": 6,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "Bill": {
+    "count": 3,
+    "relationships": {
+      "HAS_ADVOCACY_RECORD": {
+        "count": 4,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "LobbyingFiling"
+        ]
+      },
+      "TARGETS_BILL": {
+        "count": 4,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Policy"
+        ]
+      },
+      "ENACTED_AS": {
+        "count": 3,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "PublicLaw"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "number": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      },
+      "title": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "type": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "congress": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      },
+      "introduced_date": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "Strategy": {
+    "count": 7,
+    "relationships": {},
+    "type": "node",
+    "properties": {
+      "name": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "last_synced_at": {
+        "existence": false,
+        "type": "DATE_TIME",
+        "indexed": false,
+        "unique": false
+      },
+      "id": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": true
+      },
+      "is_active": {
+        "existence": false,
+        "type": "BOOLEAN",
+        "indexed": false,
+        "unique": false
+      },
+      "action_type": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "filters_json": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "APPLIES_TO_JURISDICTION": {
+    "type": "relationship",
+    "count": 8,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  },
+  "StatutorySection": {
+    "count": 2,
+    "relationships": {
+      "MODIFIES_CODE": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "PublicLaw"
+        ]
+      },
+      "IMPLEMENTED_BY": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "Regulation"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "subsections": {
+        "existence": false,
+        "type": "LIST",
+        "indexed": false,
+        "unique": false
+      },
+      "section": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "text": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "title": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "heading": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "Regulation": {
+    "count": 1,
+    "relationships": {
+      "ISSUES_TRANSMITTAL": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "ChangeRequest"
+        ]
+      },
+      "SUPPORTED_BY_EVIDENCE": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "LiteratureStudy"
+        ]
+      },
+      "IMPLEMENTED_BY": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "StatutorySection"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "effective_date": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "cfr_parts": {
+        "existence": false,
+        "type": "LIST",
+        "indexed": false,
+        "unique": false
+      },
+      "document_number": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": false
+      },
+      "citation": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": []
+  },
+  "PolicyNode": {
+    "count": 3971,
+    "relationships": {
+      "HAS_ADVOCACY_RECORD": {
+        "count": 4,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Bill"
+        ]
+      },
+      "COVERS_STATE": {
+        "count": 53,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Jurisdiction"
+        ]
+      },
+      "SUPPORTED_BY_EVIDENCE": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Regulation"
+        ]
+      },
+      "GOVERNS": {
+        "count": 75,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "CoveragePolicy"
+        ]
+      },
+      "ISSUES_TRANSMITTAL": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Regulation"
+        ]
+      },
+      "APPLIES_TO": {
+        "count": 98,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "State"
+        ]
+      },
+      "HAS_FEE_SCHEDULE": {
+        "count": 106,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "out",
+        "labels": [
+          "PolicyNode",
+          "FeeScheduleEntry"
+        ]
+      },
+      "TARGETS_BILL": {
+        "count": 4,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Policy"
+        ]
+      },
+      "MODIFIES_CODE": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "PublicLaw"
+        ]
+      },
+      "ALLOWS_DIAGNOSIS": {
+        "count": 6,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "CoveragePolicy"
+        ]
+      },
+      "APPLIES_TO_JURISDICTION": {
+        "count": 8,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "ChangeRequest"
+        ]
+      },
+      "ENACTED_AS": {
+        "count": 3,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "Bill"
+        ]
+      },
+      "IMPLEMENTED_BY": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "StatutorySection"
+        ]
+      },
+      "MANDATES_POLICY": {
+        "count": 2,
+        "properties": {
+          "ingestion_timestamp": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "selector": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "run_id": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          },
+          "source_uri": {
+            "existence": false,
+            "type": "STRING",
+            "array": false,
+            "indexed": false
+          }
+        },
+        "direction": "in",
+        "labels": [
+          "ChangeRequest"
+        ]
+      }
+    },
+    "type": "node",
+    "properties": {
+      "ceiling": {
+        "existence": false,
+        "type": "FLOAT",
+        "indexed": false,
+        "unique": false
+      },
+      "short_description": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "code": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "is_rural": {
+        "existence": false,
+        "type": "BOOLEAN",
+        "indexed": false,
+        "unique": false
+      },
+      "year": {
+        "existence": false,
+        "type": "INTEGER",
+        "indexed": false,
+        "unique": false
+      },
+      "hcpcs_code": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "primary_key": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": true,
+        "unique": true
+      },
+      "fee_amount": {
+        "existence": false,
+        "type": "FLOAT",
+        "indexed": false,
+        "unique": false
+      },
+      "state_name": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "name": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "state_code": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      },
+      "floor": {
+        "existence": false,
+        "type": "FLOAT",
+        "indexed": false,
+        "unique": false
+      },
+      "category": {
+        "existence": false,
+        "type": "STRING",
+        "indexed": false,
+        "unique": false
+      }
+    },
+    "labels": [
+      "State"
+    ]
+  },
+  "MANDATES_POLICY": {
+    "type": "relationship",
+    "count": 2,
+    "properties": {
+      "ingestion_timestamp": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "selector": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "run_id": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      },
+      "source_uri": {
+        "existence": false,
+        "type": "STRING",
+        "array": false,
+        "indexed": false
+      }
+    }
+  }
+}

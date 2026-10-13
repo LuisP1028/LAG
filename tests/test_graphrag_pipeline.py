@@ -1,0 +1,213 @@
+"""Verification suite validating the 5-stage GraphRAG pipeline against all 6 authoritative oracles."""
+
+import time
+import pytest
+from src.graph.neo4j_sync import Neo4jSyncEngine
+from src.graphrag.entity_linker import EntityAnchorLinker
+from src.graphrag.exceptions import EntityResolutionError
+from src.graphrag.models import GraphRAGQueryRequest
+from src.graphrag.pipeline import GraphRAGPipeline
+from src.graphrag.traversal import TopologicalTraversalEngine
+
+
+@pytest.fixture(scope="module")
+def neo4j_engine():
+    engine = Neo4jSyncEngine()
+    engine.init_schema()
+    yield engine
+    engine.close()
+
+
+def test_oracle_1_patient_benefit_routing(neo4j_engine):
+    """Oracle 1: Natural Language Patient Benefit Routing (Workflow 1)."""
+    linker = EntityAnchorLinker()
+    traverser = TopologicalTraversalEngine()
+    pipeline = GraphRAGPipeline(linker=linker, traverser=traverser)
+
+    query = "I am from Wisconsin, survived breast cancer, need lymphedema supplies, I'm on Medicare, can you help?"
+
+    with neo4j_engine.get_driver().session(database=neo4j_engine.database) as session:
+        # 1. Anchor resolution validation
+        anchors = linker.resolve_anchors(query, session)
+        assert anchors.state_anchor is not None
+        assert anchors.state_anchor.primary_key == "STATE-WI"
+        assert anchors.diagnosis_anchor is not None
+        assert anchors.diagnosis_anchor.primary_key == "ICD10-I97.2"
+        assert anchors.policy_anchor is not None
+        assert anchors.policy_anchor.primary_key == "POLICY-LTA"
+
+        # 2. Subgraph extraction returns mandatory 7-node path
+        t0 = time.perf_counter()
+        traversal = traverser.extract_connecting_subgraph(anchors, session)
+        retrieval_ms = (time.perf_counter() - t0) * 1000.0
+
+        expected_chain = {
+            "STATE-WI",
+            "JURIS-DME-B",
+            "CMS-CR-13286",
+            "CMS-MCD-A59508",
+            "ICD10-I97.2",
+            "HCPCS-A6522",
+            "FEE-A6522-WI-NR-2024",
+        }
+        for pk in expected_chain:
+            assert pk in traversal.active_node_pks, f"Mandatory node {pk} missing from active chain"
+
+        # 3. Allowable fee rate for A6522 in Wisconsin equals $290.47, coinsurance equals $58.09
+        fee_node = next((n for n in traversal.nodes if n.primary_key == "FEE-A6522-WI-NR-2024"), None)
+        assert fee_node is not None
+        assert fee_node.properties["fee_amount"] == 290.47
+        coinsurance = fee_node.properties["fee_amount"] * 0.20
+        assert round(coinsurance, 2) == 58.09
+
+        # 4. Regional claims contractor identified as CGS Administrators (Jurisdiction B)
+        juris_node = next((n for n in traversal.nodes if n.primary_key == "JURIS-DME-B"), None)
+        assert juris_node is not None
+        assert "CGS" in juris_node.name or "CGS" in juris_node.properties.get("contractor_name", "")
+
+        # 5. Full pipeline synthesis check
+        req = GraphRAGQueryRequest(query=query)
+        resp = pipeline.execute_query(req, session)
+        assert "290.47" in resp.answer
+        assert "58.09" in resp.answer
+        assert "CMS-MCD-A59508" in resp.answer
+        assert len(resp.active_node_pks) >= 7
+        assert len(resp.active_edge_keys) >= 7
+
+
+def test_oracle_2_no_keyword_bridging(neo4j_engine):
+    """Oracle 2: Clinical Coverage & Diagnosis Bridging (INV-NO-KEYWORD-BRIDGING)."""
+    with neo4j_engine.get_driver().session(database=neo4j_engine.database) as session:
+        # Direct HCPCS -> ICD10 edges are strictly forbidden across 100% of the graph
+        bad_edges = session.run("MATCH (:HCPCSCode)-[r]->(:ICD10Code) RETURN count(r) AS cnt").single()["cnt"]
+        assert bad_edges == 0, f"Violated INV-NO-KEYWORD-BRIDGING: Found {bad_edges} direct HCPCS->ICD10 edges"
+
+        # Procedure code A6583 must route through CoveragePolicy CMS-MCD-A59508
+        path_check = session.run("""
+            MATCH (h:HCPCSCode {primary_key: 'HCPCS-A6583'})<-[:GOVERNS]-(cp:CoveragePolicy)-[:ALLOWS_DIAGNOSIS]->(d:ICD10Code)
+            RETURN cp.primary_key AS cp_pk, count(d) AS diag_count
+        """).single()
+        assert path_check is not None
+        assert path_check["cp_pk"] == "CMS-MCD-A59508"
+        assert path_check["diag_count"] > 0
+
+
+def test_oracle_3_cross_policy_convergence(neo4j_engine):
+    """Oracle 3: Cross-Policy Comparative Lineage (Workflow 3)."""
+    pipeline = GraphRAGPipeline()
+    query = "How do IVIG and LTA converge under federal law?"
+
+    with neo4j_engine.get_driver().session(database=neo4j_engine.database) as session:
+        req = GraphRAGQueryRequest(query=query)
+        resp = pipeline.execute_query(req, session)
+
+        # Both policy keywords anchored
+        anchor_pks = {a.primary_key for a in resp.anchors}
+        assert "POLICY-LTA" in anchor_pks
+        assert "POLICY-IVIG" in anchor_pks
+
+        # Convergence nodes in active path
+        assert "PLAW-117-328" in resp.active_node_pks
+        assert "FR-2023-24455" in resp.active_node_pks
+
+        # Synthesized answer cites Public Law 117-328 and Federal Register rule
+        assert "117-328" in resp.answer
+        assert "88 FR 77676" in resp.answer or "FR-2023-24455" in resp.answer
+
+
+def test_oracle_4_zero_orphan_invariant(neo4j_engine):
+    """Oracle 4: Zero Orphan Invariant (INV-UNBROKEN-ANCESTRY)."""
+    from collections import deque
+
+    with neo4j_engine.get_driver().session(database=neo4j_engine.database) as session:
+        # Load all relationships between PolicyNodes to verify full connectivity to root Policy nodes
+        records = session.run("MATCH (a:PolicyNode)-[r]->(b:PolicyNode) RETURN a.primary_key AS src, b.primary_key AS tgt").data()
+        adj = {}
+        for r in records:
+            adj.setdefault(r["src"], []).append(r["tgt"])
+            adj.setdefault(r["tgt"], []).append(r["src"])
+
+        all_nodes = {r["pk"] for r in session.run("MATCH (n:PolicyNode) RETURN n.primary_key AS pk").data()}
+        root_nodes = [r["pk"] for r in session.run("MATCH (p:Policy) RETURN p.primary_key AS pk").data()]
+
+        visited = set(root_nodes)
+        queue = deque(root_nodes)
+
+        while queue:
+            curr = queue.popleft()
+            for nxt in adj.get(curr, []):
+                if nxt not in visited:
+                    visited.add(nxt)
+                    queue.append(nxt)
+
+        unreachable = all_nodes - visited
+        assert len(unreachable) == 0, f"Violated INV-UNBROKEN-ANCESTRY: Found {len(unreachable)} orphaned nodes: {list(unreachable)[:5]}"
+
+
+def test_oracle_5_edge_provenance_completeness(neo4j_engine):
+    """Oracle 5: Edge Provenance Completeness (INV-PROVENANCE-COMPLETENESS)."""
+    traverser = TopologicalTraversalEngine()
+    linker = EntityAnchorLinker()
+
+    query = "I am from Wisconsin, survived breast cancer, need lymphedema supplies, I'm on Medicare, can you help?"
+
+    with neo4j_engine.get_driver().session(database=neo4j_engine.database) as session:
+        anchors = linker.resolve_anchors(query, session)
+        result = traverser.extract_connecting_subgraph(anchors, session)
+
+        assert len(result.edges) > 0
+        for edge in result.edges:
+            prov = edge.provenance
+            assert prov.get("source_uri"), f"Missing source_uri on edge {edge.edge_key}"
+            assert prov.get("selector"), f"Missing selector on edge {edge.edge_key}"
+            assert prov.get("ingestion_timestamp"), f"Missing ingestion_timestamp on edge {edge.edge_key}"
+            assert prov.get("run_id"), f"Missing run_id on edge {edge.edge_key}"
+
+
+def test_oracle_6_fail_fast_error_boundaries(neo4j_engine):
+    """Oracle 6: Fail-Fast Error Boundaries (INV-FAIL-FAST)."""
+    linker = EntityAnchorLinker()
+
+    with neo4j_engine.get_driver().session(database=neo4j_engine.database) as session:
+        # 1. Unindexed geographic jurisdiction
+        with pytest.raises(EntityResolutionError) as exc_info:
+            linker.resolve_anchors("I am from Atlantis and need supplies", session)
+        assert "Atlantis" in str(exc_info.value)
+
+        # 2. Unindexed medical condition
+        with pytest.raises(EntityResolutionError) as exc_info2:
+            linker.resolve_anchors("I have diabetes and need Medicare coverage", session)
+        assert "diabetes" in str(exc_info2.value)
+
+
+def test_latency_benchmark_harness(neo4j_engine):
+    """Latency Benchmark Harness: verifies Neo4j traversal latency (<20ms) and end-to-end SLA (<1500ms)."""
+    pipeline = GraphRAGPipeline()
+    req = GraphRAGQueryRequest(query="I am from Wisconsin, survived breast cancer, need lymphedema supplies, I'm on Medicare, can you help?")
+
+    with neo4j_engine.get_driver().session(database=neo4j_engine.database) as session:
+        # Warmup
+        pipeline.execute_query(req, session)
+        anchors = pipeline.linker.resolve_anchors(req.query, session)
+
+        traversal_times = []
+        pipeline_times = []
+
+        for _ in range(10):
+            # Measure pure Neo4j topological traversal latency (<20ms SLA)
+            traversal_res = pipeline.traverser.extract_connecting_subgraph(anchors, session)
+            traversal_times.append(traversal_res.retrieval_ms)
+
+            # Measure end-to-end pipeline execution time (<1500ms SLA)
+            t0 = time.perf_counter()
+            resp = pipeline.execute_query(req, session)
+            t_total = (time.perf_counter() - t0) * 1000.0
+            pipeline_times.append(t_total)
+
+        avg_traversal = sum(traversal_times) / len(traversal_times)
+        avg_total = sum(pipeline_times) / len(pipeline_times)
+
+        # Asserts Neo4j traversal executes well within sub-second SLA (<20ms average)
+        assert avg_traversal < 20.0, f"Neo4j traversal average {avg_traversal}ms exceeded SLA"
+        # Asserts total pipeline execution executes under 1500ms
+        assert avg_total < 1500.0, f"Total pipeline average {avg_total}ms exceeded SLA"

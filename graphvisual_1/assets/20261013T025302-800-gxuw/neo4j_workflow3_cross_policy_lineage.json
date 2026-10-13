@@ -1,0 +1,68 @@
+[
+  {
+    "policy_1": "POLICY-IVIG",
+    "bill_1": "BILL-117-hr-3808",
+    "omnibus_law": "PLAW-117-328",
+    "plaw_title": "Consolidated Appropriations Act, 2023",
+    "bill_2": "BILL-117-hr-2617",
+    "policy_2": "POLICY-LTA",
+    "statutory_section": "USC-42-1395x-s-2-Z",
+    "regulation": "FR-2023-24455",
+    "fr_citation": "88 FR 77676"
+  },
+  {
+    "policy_1": "POLICY-IVIG",
+    "bill_1": "BILL-117-hr-3808",
+    "omnibus_law": "PLAW-117-328",
+    "plaw_title": "Consolidated Appropriations Act, 2023",
+    "bill_2": "BILL-117-hr-2617",
+    "policy_2": "POLICY-LTA",
+    "statutory_section": "USC-42-1395x-s-2-JJ",
+    "regulation": "FR-2023-24455",
+    "fr_citation": "88 FR 77676"
+  },
+  {
+    "policy_1": "POLICY-IVIG",
+    "bill_1": "BILL-117-hr-3808",
+    "omnibus_law": "PLAW-117-328",
+    "plaw_title": "Consolidated Appropriations Act, 2023",
+    "bill_2": "BILL-117-hr-3630",
+    "policy_2": "POLICY-LTA",
+    "statutory_section": "USC-42-1395x-s-2-Z",
+    "regulation": "FR-2023-24455",
+    "fr_citation": "88 FR 77676"
+  },
+  {
+    "policy_1": "POLICY-IVIG",
+    "bill_1": "BILL-117-hr-3808",
+    "omnibus_law": "PLAW-117-328",
+    "plaw_title": "Consolidated Appropriations Act, 2023",
+    "bill_2": "BILL-117-hr-3630",
+    "policy_2": "POLICY-LTA",
+    "statutory_section": "USC-42-1395x-s-2-JJ",
+    "regulation": "FR-2023-24455",
+    "fr_citation": "88 FR 77676"
+  },
+  {
+    "policy_1": "POLICY-IVIG",
+    "bill_1": "BILL-117-hr-2617",
+    "omnibus_law": "PLAW-117-328",
+    "plaw_title": "Consolidated Appropriations Act, 2023",
+    "bill_2": "BILL-117-hr-3630",
+    "policy_2": "POLICY-LTA",
+    "statutory_section": "USC-42-1395x-s-2-Z",
+    "regulation": "FR-2023-24455",
+    "fr_citation": "88 FR 77676"
+  },
+  {
+    "policy_1": "POLICY-IVIG",
+    "bill_1": "BILL-117-hr-2617",
+    "omnibus_law": "PLAW-117-328",
+    "plaw_title": "Consolidated Appropriations Act, 2023",
+    "bill_2": "BILL-117-hr-3630",
+    "policy_2": "POLICY-LTA",
+    "statutory_section": "USC-42-1395x-s-2-JJ",
+    "regulation": "FR-2023-24455",
+    "fr_citation": "88 FR 77676"
+  }
+]
