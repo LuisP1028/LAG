@@ -1,0 +1,8 @@
+cae82c9 wayfinder-test-plan(20261013T194318-162-mbmi): chart ticket-005.md, test-matrix.md, map.md, and handoff/20261013T194318-162-mbmi/test-plan.txt
+7941368 Review and refine src/frontend/src/components/GraphCanvas.tsx and write handoff/20261013T194318-162-mbmi/reviewer.txt
+67f75ce Implement synchronous visualizer illumination and zero-latency canvas state sync (spec 009)
+ef25597 Merge branch 'agent/plan-scan-2-20261013T194318-162-mbmi' into agent/plan-20261013T194318-162-mbmi
+8787ca7 Merge branch 'agent/plan-scan-1-20261013T194318-162-mbmi' into agent/plan-20261013T194318-162-mbmi
+c6ce983 Add plan-scan-2 report scan_reports/scan_report_009_plan_scan_2.md, handoff/20261013T194318-162-mbmi/plan-scan-2.txt, and assets/20261013T194318-162-mbmi payloads
+1ab7a5e Plan functional_specification_009.md: add wayfinder/20261013T194318-162-mbmi/map.md, ticket-001.md, ticket-002.md, ticket-003.md, ticket-004.md, matrix.md, and handoff/20261013T194318-162-mbmi/wayfinder-read-and-plan.txt
+bab061f Add scan_reports/scan_report_009_plan_scan_1.md, handoff/20261013T194318-162-mbmi/plan-scan-1.txt, and assets/20261013T194318-162-mbmi/ ground-truth payloads

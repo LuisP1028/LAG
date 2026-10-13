@@ -1,0 +1,684 @@
+{
+  "datasource": "bolt://localhost:7687 (database: neo4j)",
+  "jurisdictions_count": 4,
+  "states_count": 53,
+  "jurisdictions": [
+    {
+      "contractor_name": "Noridian Healthcare Solutions",
+      "code": "JURIS-DME-A",
+      "name": "JURIS-DME-A (Noridian)",
+      "primary_key": "JURIS-DME-A"
+    },
+    {
+      "contractor_name": "CGS Administrators",
+      "code": "JURIS-DME-B",
+      "name": "JURIS-DME-B (CGS)",
+      "primary_key": "JURIS-DME-B"
+    },
+    {
+      "contractor_name": "CGS Administrators",
+      "code": "JURIS-DME-C",
+      "name": "JURIS-DME-C (CGS)",
+      "primary_key": "JURIS-DME-C"
+    },
+    {
+      "contractor_name": "Noridian Healthcare Solutions",
+      "code": "JURIS-DME-D",
+      "name": "JURIS-DME-D (Noridian)",
+      "primary_key": "JURIS-DME-D"
+    }
+  ],
+  "change_request_to_jurisdiction_edges": [
+    {
+      "cr_pk": "CMS-CR-13217",
+      "rel": "APPLIES_TO_JURISDICTION",
+      "j_pk": "JURIS-DME-A"
+    },
+    {
+      "cr_pk": "CMS-CR-13217",
+      "rel": "APPLIES_TO_JURISDICTION",
+      "j_pk": "JURIS-DME-B"
+    },
+    {
+      "cr_pk": "CMS-CR-13217",
+      "rel": "APPLIES_TO_JURISDICTION",
+      "j_pk": "JURIS-DME-C"
+    },
+    {
+      "cr_pk": "CMS-CR-13217",
+      "rel": "APPLIES_TO_JURISDICTION",
+      "j_pk": "JURIS-DME-D"
+    },
+    {
+      "cr_pk": "CMS-CR-13286",
+      "rel": "APPLIES_TO_JURISDICTION",
+      "j_pk": "JURIS-DME-A"
+    },
+    {
+      "cr_pk": "CMS-CR-13286",
+      "rel": "APPLIES_TO_JURISDICTION",
+      "j_pk": "JURIS-DME-B"
+    },
+    {
+      "cr_pk": "CMS-CR-13286",
+      "rel": "APPLIES_TO_JURISDICTION",
+      "j_pk": "JURIS-DME-C"
+    },
+    {
+      "cr_pk": "CMS-CR-13286",
+      "rel": "APPLIES_TO_JURISDICTION",
+      "j_pk": "JURIS-DME-D"
+    }
+  ],
+  "jurisdiction_to_states": [
+    {
+      "jurisdiction_pk": "JURIS-DME-A",
+      "contractor_name": "Noridian Healthcare Solutions",
+      "states": [
+        {
+          "primary_key": "STATE-CT",
+          "state_code": "CT",
+          "state_name": "Connecticut"
+        },
+        {
+          "primary_key": "STATE-DE",
+          "state_code": "DE",
+          "state_name": "Delaware"
+        },
+        {
+          "primary_key": "STATE-DC",
+          "state_code": "DC",
+          "state_name": "District of Columbia"
+        },
+        {
+          "primary_key": "STATE-ME",
+          "state_code": "ME",
+          "state_name": "Maine"
+        },
+        {
+          "primary_key": "STATE-MD",
+          "state_code": "MD",
+          "state_name": "Maryland"
+        },
+        {
+          "primary_key": "STATE-MA",
+          "state_code": "MA",
+          "state_name": "Massachusetts"
+        },
+        {
+          "primary_key": "STATE-NH",
+          "state_code": "NH",
+          "state_name": "New Hampshire"
+        },
+        {
+          "primary_key": "STATE-NJ",
+          "state_code": "NJ",
+          "state_name": "New Jersey"
+        },
+        {
+          "primary_key": "STATE-NY",
+          "state_code": "NY",
+          "state_name": "New York"
+        },
+        {
+          "primary_key": "STATE-PA",
+          "state_code": "PA",
+          "state_name": "Pennsylvania"
+        },
+        {
+          "primary_key": "STATE-RI",
+          "state_code": "RI",
+          "state_name": "Rhode Island"
+        },
+        {
+          "primary_key": "STATE-VT",
+          "state_code": "VT",
+          "state_name": "Vermont"
+        }
+      ]
+    },
+    {
+      "jurisdiction_pk": "JURIS-DME-B",
+      "contractor_name": "CGS Administrators",
+      "states": [
+        {
+          "primary_key": "STATE-IL",
+          "state_code": "IL",
+          "state_name": "Illinois"
+        },
+        {
+          "primary_key": "STATE-IN",
+          "state_code": "IN",
+          "state_name": "Indiana"
+        },
+        {
+          "primary_key": "STATE-KY",
+          "state_code": "KY",
+          "state_name": "Kentucky"
+        },
+        {
+          "primary_key": "STATE-MI",
+          "state_code": "MI",
+          "state_name": "Michigan"
+        },
+        {
+          "primary_key": "STATE-MN",
+          "state_code": "MN",
+          "state_name": "Minnesota"
+        },
+        {
+          "primary_key": "STATE-OH",
+          "state_code": "OH",
+          "state_name": "Ohio"
+        },
+        {
+          "primary_key": "STATE-WI",
+          "state_code": "WI",
+          "state_name": "Wisconsin"
+        }
+      ]
+    },
+    {
+      "jurisdiction_pk": "JURIS-DME-C",
+      "contractor_name": "CGS Administrators",
+      "states": [
+        {
+          "primary_key": "STATE-AL",
+          "state_code": "AL",
+          "state_name": "Alabama"
+        },
+        {
+          "primary_key": "STATE-AR",
+          "state_code": "AR",
+          "state_name": "Arkansas"
+        },
+        {
+          "primary_key": "STATE-CO",
+          "state_code": "CO",
+          "state_name": "Colorado"
+        },
+        {
+          "primary_key": "STATE-FL",
+          "state_code": "FL",
+          "state_name": "Florida"
+        },
+        {
+          "primary_key": "STATE-GA",
+          "state_code": "GA",
+          "state_name": "Georgia"
+        },
+        {
+          "primary_key": "STATE-LA",
+          "state_code": "LA",
+          "state_name": "Louisiana"
+        },
+        {
+          "primary_key": "STATE-MS",
+          "state_code": "MS",
+          "state_name": "Mississippi"
+        },
+        {
+          "primary_key": "STATE-NM",
+          "state_code": "NM",
+          "state_name": "New Mexico"
+        },
+        {
+          "primary_key": "STATE-NC",
+          "state_code": "NC",
+          "state_name": "North Carolina"
+        },
+        {
+          "primary_key": "STATE-OK",
+          "state_code": "OK",
+          "state_name": "Oklahoma"
+        },
+        {
+          "primary_key": "STATE-SC",
+          "state_code": "SC",
+          "state_name": "South Carolina"
+        },
+        {
+          "primary_key": "STATE-TN",
+          "state_code": "TN",
+          "state_name": "Tennessee"
+        },
+        {
+          "primary_key": "STATE-TX",
+          "state_code": "TX",
+          "state_name": "Texas"
+        },
+        {
+          "primary_key": "STATE-VA",
+          "state_code": "VA",
+          "state_name": "Virginia"
+        },
+        {
+          "primary_key": "STATE-WV",
+          "state_code": "WV",
+          "state_name": "West Virginia"
+        },
+        {
+          "primary_key": "STATE-PR",
+          "state_code": "PR",
+          "state_name": "Puerto Rico"
+        },
+        {
+          "primary_key": "STATE-VI",
+          "state_code": "VI",
+          "state_name": "Virgin Islands"
+        }
+      ]
+    },
+    {
+      "jurisdiction_pk": "JURIS-DME-D",
+      "contractor_name": "Noridian Healthcare Solutions",
+      "states": [
+        {
+          "primary_key": "STATE-AK",
+          "state_code": "AK",
+          "state_name": "Alaska"
+        },
+        {
+          "primary_key": "STATE-AZ",
+          "state_code": "AZ",
+          "state_name": "Arizona"
+        },
+        {
+          "primary_key": "STATE-CA",
+          "state_code": "CA",
+          "state_name": "California"
+        },
+        {
+          "primary_key": "STATE-HI",
+          "state_code": "HI",
+          "state_name": "Hawaii"
+        },
+        {
+          "primary_key": "STATE-ID",
+          "state_code": "ID",
+          "state_name": "Idaho"
+        },
+        {
+          "primary_key": "STATE-IA",
+          "state_code": "IA",
+          "state_name": "Iowa"
+        },
+        {
+          "primary_key": "STATE-KS",
+          "state_code": "KS",
+          "state_name": "Kansas"
+        },
+        {
+          "primary_key": "STATE-MO",
+          "state_code": "MO",
+          "state_name": "Missouri"
+        },
+        {
+          "primary_key": "STATE-MT",
+          "state_code": "MT",
+          "state_name": "Montana"
+        },
+        {
+          "primary_key": "STATE-NE",
+          "state_code": "NE",
+          "state_name": "Nebraska"
+        },
+        {
+          "primary_key": "STATE-NV",
+          "state_code": "NV",
+          "state_name": "Nevada"
+        },
+        {
+          "primary_key": "STATE-ND",
+          "state_code": "ND",
+          "state_name": "North Dakota"
+        },
+        {
+          "primary_key": "STATE-OR",
+          "state_code": "OR",
+          "state_name": "Oregon"
+        },
+        {
+          "primary_key": "STATE-SD",
+          "state_code": "SD",
+          "state_name": "South Dakota"
+        },
+        {
+          "primary_key": "STATE-UT",
+          "state_code": "UT",
+          "state_name": "Utah"
+        },
+        {
+          "primary_key": "STATE-WA",
+          "state_code": "WA",
+          "state_name": "Washington"
+        },
+        {
+          "primary_key": "STATE-WY",
+          "state_code": "WY",
+          "state_name": "Wyoming"
+        }
+      ]
+    }
+  ],
+  "states_and_fee_counts": [
+    {
+      "primary_key": "STATE-AK",
+      "state_code": "AK",
+      "state_name": "Alaska",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-AL",
+      "state_code": "AL",
+      "state_name": "Alabama",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-AR",
+      "state_code": "AR",
+      "state_name": "Arkansas",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-AZ",
+      "state_code": "AZ",
+      "state_name": "Arizona",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-CA",
+      "state_code": "CA",
+      "state_name": "California",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-CO",
+      "state_code": "CO",
+      "state_name": "Colorado",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-CT",
+      "state_code": "CT",
+      "state_name": "Connecticut",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-DC",
+      "state_code": "DC",
+      "state_name": "District of Columbia",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-DE",
+      "state_code": "DE",
+      "state_name": "Delaware",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-FL",
+      "state_code": "FL",
+      "state_name": "Florida",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-GA",
+      "state_code": "GA",
+      "state_name": "Georgia",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-HI",
+      "state_code": "HI",
+      "state_name": "Hawaii",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-IA",
+      "state_code": "IA",
+      "state_name": "Iowa",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-ID",
+      "state_code": "ID",
+      "state_name": "Idaho",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-IL",
+      "state_code": "IL",
+      "state_name": "Illinois",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-IN",
+      "state_code": "IN",
+      "state_name": "Indiana",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-KS",
+      "state_code": "KS",
+      "state_name": "Kansas",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-KY",
+      "state_code": "KY",
+      "state_name": "Kentucky",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-LA",
+      "state_code": "LA",
+      "state_name": "Louisiana",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-MA",
+      "state_code": "MA",
+      "state_name": "Massachusetts",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-MD",
+      "state_code": "MD",
+      "state_name": "Maryland",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-ME",
+      "state_code": "ME",
+      "state_name": "Maine",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-MI",
+      "state_code": "MI",
+      "state_name": "Michigan",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-MN",
+      "state_code": "MN",
+      "state_name": "Minnesota",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-MO",
+      "state_code": "MO",
+      "state_name": "Missouri",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-MS",
+      "state_code": "MS",
+      "state_name": "Mississippi",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-MT",
+      "state_code": "MT",
+      "state_name": "Montana",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-NC",
+      "state_code": "NC",
+      "state_name": "North Carolina",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-ND",
+      "state_code": "ND",
+      "state_name": "North Dakota",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-NE",
+      "state_code": "NE",
+      "state_name": "Nebraska",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-NH",
+      "state_code": "NH",
+      "state_name": "New Hampshire",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-NJ",
+      "state_code": "NJ",
+      "state_name": "New Jersey",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-NM",
+      "state_code": "NM",
+      "state_name": "New Mexico",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-NV",
+      "state_code": "NV",
+      "state_name": "Nevada",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-NY",
+      "state_code": "NY",
+      "state_name": "New York",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-OH",
+      "state_code": "OH",
+      "state_name": "Ohio",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-OK",
+      "state_code": "OK",
+      "state_name": "Oklahoma",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-OR",
+      "state_code": "OR",
+      "state_name": "Oregon",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-PA",
+      "state_code": "PA",
+      "state_name": "Pennsylvania",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-PR",
+      "state_code": "PR",
+      "state_name": "Puerto Rico",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-RI",
+      "state_code": "RI",
+      "state_name": "Rhode Island",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-SC",
+      "state_code": "SC",
+      "state_name": "South Carolina",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-SD",
+      "state_code": "SD",
+      "state_name": "South Dakota",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-TN",
+      "state_code": "TN",
+      "state_name": "Tennessee",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-TX",
+      "state_code": "TX",
+      "state_name": "Texas",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-UT",
+      "state_code": "UT",
+      "state_name": "Utah",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-VA",
+      "state_code": "VA",
+      "state_name": "Virginia",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-VI",
+      "state_code": "VI",
+      "state_name": "Virgin Islands",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-VT",
+      "state_code": "VT",
+      "state_name": "Vermont",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-WA",
+      "state_code": "WA",
+      "state_name": "Washington",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-WI",
+      "state_code": "WI",
+      "state_name": "Wisconsin",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-WV",
+      "state_code": "WV",
+      "state_name": "West Virginia",
+      "fee_schedule_count": 72
+    },
+    {
+      "primary_key": "STATE-WY",
+      "state_code": "WY",
+      "state_name": "Wyoming",
+      "fee_schedule_count": 72
+    }
+  ]
+}

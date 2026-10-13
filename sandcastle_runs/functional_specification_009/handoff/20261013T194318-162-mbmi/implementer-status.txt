@@ -1,0 +1,8 @@
+src/frontend/src/components/GraphCanvas.tsx CHANGED ticket-001,ticket-002,ticket-003
+src/frontend/src/context/GraphSyncContext.tsx CHANGED ticket-004
+src/frontend/src/components/AgentChatDrawer.tsx CHANGED ticket-004
+src/frontend/src/components/FilterToolbar.tsx UNCHANGED ticket-004
+src/frontend/src/components/NodeDetailDrawer.tsx UNCHANGED ticket-004
+src/frontend/src/styles/graph_theme.ts UNCHANGED ticket-002
+src/frontend/src/types/graph.ts UNCHANGED ticket-002,ticket-004
+src/frontend/src/App.tsx UNCHANGED ticket-003

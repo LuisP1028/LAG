@@ -1,0 +1,3 @@
+wayfinder/20261013T194318-162-mbmi/map.md
+wayfinder/20261013T194318-162-mbmi/tickets/ticket-005.md
+wayfinder/20261013T194318-162-mbmi/test-matrix.md

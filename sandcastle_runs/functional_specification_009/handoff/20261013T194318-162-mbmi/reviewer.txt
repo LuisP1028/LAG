@@ -1,0 +1,3 @@
+src/frontend/src/components/GraphCanvas.tsx
+src/frontend/src/context/GraphSyncContext.tsx
+src/frontend/src/components/AgentChatDrawer.tsx

@@ -1,0 +1,268 @@
+{
+  "endpoint": "GET /api/graph/topology",
+  "default_no_params": {
+    "total_nodes": 155,
+    "total_edges": 163,
+    "node_counts_by_label": {
+      "Bill": 3,
+      "ChangeRequest": 2,
+      "CoveragePolicy": 2,
+      "HCPCSCode": 75,
+      "ICD10Code": 6,
+      "Jurisdiction": 4,
+      "LiteratureStudy": 2,
+      "LobbyingFiling": 2,
+      "Policy": 2,
+      "PublicLaw": 1,
+      "Regulation": 1,
+      "State": 53,
+      "StatutorySection": 2
+    },
+    "sample_jurisdiction_nodes": [
+      {
+        "primary_key": "JURIS-DME-A",
+        "label": "Jurisdiction",
+        "name": "JURIS-DME-A (Noridian)",
+        "properties": {
+          "contractor_name": "Noridian Healthcare Solutions",
+          "code": "JURIS-DME-A",
+          "name": "JURIS-DME-A (Noridian)",
+          "primary_key": "JURIS-DME-A"
+        }
+      },
+      {
+        "primary_key": "JURIS-DME-B",
+        "label": "Jurisdiction",
+        "name": "JURIS-DME-B (CGS)",
+        "properties": {
+          "contractor_name": "CGS Administrators",
+          "code": "JURIS-DME-B",
+          "name": "JURIS-DME-B (CGS)",
+          "primary_key": "JURIS-DME-B"
+        }
+      },
+      {
+        "primary_key": "JURIS-DME-C",
+        "label": "Jurisdiction",
+        "name": "JURIS-DME-C (CGS)",
+        "properties": {
+          "contractor_name": "CGS Administrators",
+          "code": "JURIS-DME-C",
+          "name": "JURIS-DME-C (CGS)",
+          "primary_key": "JURIS-DME-C"
+        }
+      },
+      {
+        "primary_key": "JURIS-DME-D",
+        "label": "Jurisdiction",
+        "name": "JURIS-DME-D (Noridian)",
+        "properties": {
+          "contractor_name": "Noridian Healthcare Solutions",
+          "code": "JURIS-DME-D",
+          "name": "JURIS-DME-D (Noridian)",
+          "primary_key": "JURIS-DME-D"
+        }
+      }
+    ],
+    "sample_state_nodes": [
+      {
+        "primary_key": "STATE-CT",
+        "label": "State",
+        "name": "Connecticut",
+        "properties": {
+          "state_name": "Connecticut",
+          "state_code": "CT",
+          "primary_key": "STATE-CT"
+        }
+      },
+      {
+        "primary_key": "STATE-DE",
+        "label": "State",
+        "name": "Delaware",
+        "properties": {
+          "state_name": "Delaware",
+          "state_code": "DE",
+          "primary_key": "STATE-DE"
+        }
+      },
+      {
+        "primary_key": "STATE-DC",
+        "label": "State",
+        "name": "District of Columbia",
+        "properties": {
+          "state_name": "District of Columbia",
+          "state_code": "DC",
+          "primary_key": "STATE-DC"
+        }
+      },
+      {
+        "primary_key": "STATE-ME",
+        "label": "State",
+        "name": "Maine",
+        "properties": {
+          "state_name": "Maine",
+          "state_code": "ME",
+          "primary_key": "STATE-ME"
+        }
+      },
+      {
+        "primary_key": "STATE-MD",
+        "label": "State",
+        "name": "Maryland",
+        "properties": {
+          "state_name": "Maryland",
+          "state_code": "MD",
+          "primary_key": "STATE-MD"
+        }
+      },
+      {
+        "primary_key": "STATE-MA",
+        "label": "State",
+        "name": "Massachusetts",
+        "properties": {
+          "state_name": "Massachusetts",
+          "state_code": "MA",
+          "primary_key": "STATE-MA"
+        }
+      },
+      {
+        "primary_key": "STATE-NH",
+        "label": "State",
+        "name": "New Hampshire",
+        "properties": {
+          "state_name": "New Hampshire",
+          "state_code": "NH",
+          "primary_key": "STATE-NH"
+        }
+      },
+      {
+        "primary_key": "STATE-NJ",
+        "label": "State",
+        "name": "New Jersey",
+        "properties": {
+          "state_name": "New Jersey",
+          "state_code": "NJ",
+          "primary_key": "STATE-NJ"
+        }
+      },
+      {
+        "primary_key": "STATE-NY",
+        "label": "State",
+        "name": "New York",
+        "properties": {
+          "state_name": "New York",
+          "state_code": "NY",
+          "primary_key": "STATE-NY"
+        }
+      },
+      {
+        "primary_key": "STATE-PA",
+        "label": "State",
+        "name": "Pennsylvania",
+        "properties": {
+          "state_name": "Pennsylvania",
+          "state_code": "PA",
+          "primary_key": "STATE-PA"
+        }
+      }
+    ]
+  },
+  "jurisdiction_filter_JURIS_DME_B_probe": {
+    "query_string": "?jurisdiction_filter=JURIS-DME-B",
+    "total_nodes": 155,
+    "total_edges": 163,
+    "states_returned_count": 53,
+    "observation": "jurisdiction_filter is currently unimplemented and ignored; all 53 states and all 4 jurisdictions are returned."
+  },
+  "state_filter_OH_probe": {
+    "query_string": "?state_filter=OH",
+    "total_nodes": 227,
+    "total_edges": 307,
+    "states_returned_count": 53,
+    "fee_entries_returned_count": 72,
+    "rural_fee_entries_returned_count": 1,
+    "non_rural_fee_entries_returned_count": 71,
+    "sample_oh_fee_nodes": [
+      {
+        "primary_key": "FEE-Q2052-OH-NR-2024",
+        "label": "FeeScheduleEntry",
+        "name": "Q2052 OH NR ($409.84)",
+        "properties": {
+          "ceiling": 409.84,
+          "fee_amount": 409.84,
+          "is_rural": false,
+          "year": 2024,
+          "hcpcs_code": "Q2052",
+          "name": "Q2052 OH NR ($409.84)",
+          "state_code": "OH",
+          "floor": 409.84,
+          "primary_key": "FEE-Q2052-OH-NR-2024"
+        }
+      },
+      {
+        "primary_key": "FEE-Q2052-OH-R-2024",
+        "label": "FeeScheduleEntry",
+        "name": "Q2052 OH R ($409.84)",
+        "properties": {
+          "ceiling": 409.84,
+          "fee_amount": 409.84,
+          "is_rural": true,
+          "year": 2024,
+          "hcpcs_code": "Q2052",
+          "name": "Q2052 OH R ($409.84)",
+          "state_code": "OH",
+          "floor": 409.84,
+          "primary_key": "FEE-Q2052-OH-R-2024"
+        }
+      },
+      {
+        "primary_key": "FEE-A6520-OH-NR-2024",
+        "label": "FeeScheduleEntry",
+        "name": "A6520 OH NR ($119.54)",
+        "properties": {
+          "ceiling": 0.0,
+          "fee_amount": 119.54,
+          "is_rural": false,
+          "year": 2024,
+          "hcpcs_code": "A6520",
+          "name": "A6520 OH NR ($119.54)",
+          "state_code": "OH",
+          "floor": 0.0,
+          "primary_key": "FEE-A6520-OH-NR-2024"
+        }
+      },
+      {
+        "primary_key": "FEE-A6521-OH-NR-2024",
+        "label": "FeeScheduleEntry",
+        "name": "A6521 OH NR ($474.33)",
+        "properties": {
+          "ceiling": 0.0,
+          "fee_amount": 474.33,
+          "is_rural": false,
+          "year": 2024,
+          "hcpcs_code": "A6521",
+          "name": "A6521 OH NR ($474.33)",
+          "state_code": "OH",
+          "floor": 0.0,
+          "primary_key": "FEE-A6521-OH-NR-2024"
+        }
+      },
+      {
+        "primary_key": "FEE-A6522-OH-NR-2024",
+        "label": "FeeScheduleEntry",
+        "name": "A6522 OH NR ($290.47)",
+        "properties": {
+          "ceiling": 0.0,
+          "fee_amount": 290.47,
+          "is_rural": false,
+          "year": 2024,
+          "hcpcs_code": "A6522",
+          "name": "A6522 OH NR ($290.47)",
+          "state_code": "OH",
+          "floor": 0.0,
+          "primary_key": "FEE-A6522-OH-NR-2024"
+        }
+      }
+    ]
+  }
+}

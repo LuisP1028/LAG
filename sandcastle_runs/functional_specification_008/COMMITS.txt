@@ -1,0 +1,8 @@
+a08355b Chart integration test plan in wayfinder/20261013T185957-734-5ytd/map.md, wayfinder/20261013T185957-734-5ytd/tickets/ticket-006.md, wayfinder/20261013T185957-734-5ytd/test_matrix.md, and handoff/20261013T185957-734-5ytd/test-plan.txt
+490113d Review clarity edits for src/frontend/src/App.tsx, src/frontend/src/context/GraphSyncContext.tsx, src/graphrag/context_assembler.py and write handoff/20261013T185957-734-5ytd/reviewer.txt
+a35d43a Implement Dual Jurisdiction and State Governance Architecture (functional_specification_008.md, tickets 001-005)
+fd83044 Merge branch 'agent/plan-scan-2-20261013T185957-734-5ytd' into agent/plan-20261013T185957-734-5ytd
+e6f35e2 Merge branch 'agent/plan-scan-1-20261013T185957-734-5ytd' into agent/plan-20261013T185957-734-5ytd
+b41d4fb Plan functional_specification_008.md: add wayfinder/20261013T185957-734-5ytd/map.md, ticket-001.md..ticket-005.md, master_edit_matrix.md, and handoff/20261013T185957-734-5ytd/wayfinder-read-and-plan.txt
+0f98b8a plan-scan-2: add scan_reports/scan_report_008_plan_scan_2.md, assets/20261013T185957-734-5ytd payloads, and handoff/20261013T185957-734-5ytd/plan-scan-2.txt
+c058daf plan-scan-1: add scan_reports/scan_report_008_plan_scan_1.md, handoff/20261013T185957-734-5ytd/plan-scan-1.txt, and assets/20261013T185957-734-5ytd/ payloads
