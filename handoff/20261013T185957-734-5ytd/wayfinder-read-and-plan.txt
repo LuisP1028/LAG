@@ -1,0 +1,8 @@
+functional_specification_008.md
+wayfinder/20261013T185957-734-5ytd/map.md
+wayfinder/20261013T185957-734-5ytd/tickets/ticket-001.md
+wayfinder/20261013T185957-734-5ytd/tickets/ticket-002.md
+wayfinder/20261013T185957-734-5ytd/tickets/ticket-003.md
+wayfinder/20261013T185957-734-5ytd/tickets/ticket-004.md
+wayfinder/20261013T185957-734-5ytd/tickets/ticket-005.md
+wayfinder/20261013T185957-734-5ytd/master_edit_matrix.md
