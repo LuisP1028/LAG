@@ -1,0 +1,32 @@
+{
+    "pagination": {
+        "count": 1
+    },
+    "relatedBills": [
+        {
+            "congress": 117,
+            "latestAction": {
+                "actionDate": "2022-11-17",
+                "text": "Received in the Senate and Read twice and referred to the Committee on Finance."
+            },
+            "number": 3630,
+            "relationshipDetails": [
+                {
+                    "identifiedBy": "CRS",
+                    "type": "Identical bill"
+                }
+            ],
+            "title": "Lymphedema Treatment Act",
+            "type": "HR",
+            "url": "https://api.congress.gov/v3/bill/117/hr/3630?format=json"
+        }
+    ],
+    "request": {
+        "billNumber": "1315",
+        "billType": "s",
+        "billUrl": "https://api.congress.gov/v3/bill/117/s/1315?format=json",
+        "congress": "117",
+        "contentType": "application/json",
+        "format": "json"
+    }
+}

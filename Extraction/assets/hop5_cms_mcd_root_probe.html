@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+
+	<title>MCD Search</title>
+
+	<link rel="stylesheet" href="/medicare-coverage-database/_content/Mcim.SharedPages/css/cms-newsroom.css?v=ZJvIIyKI5MAha-3pk4I9UOdFfzgoSJa_r2opzwGw1u0" media="all" />
+
+	<!-- Bootstrap is used with permission under the MIT license: https://github.com/twbs/bootstrap/blob/master/LICENSE -->
+	<!-- jQuery is used with permission under the MIT license: https://jquery.org/license/ -->
+	
+	
+		<link rel="stylesheet" href="/medicare-coverage-database/_content/Mcim.SharedPages/lib/bootstrap/dist/css/bootstrap.min.css?v=YvdLHPgkqJ8DVUxjjnGVlMMJtNimJ6dYkowFFvp4kKs" media="all" />
+
+		<script src="/medicare-coverage-database/_content/Mcim.SharedPages/lib/jquery/dist/js/jquery.min.js?v=SUQpQe3MDvxu00e9i8KdSY0iiaS4uPhu4klDi5yGDvU" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+	
+
+	
+
+	<script type="text/javascript" nonce="uLimGkUyqvCO7HuL1ACA3Q==">
+	
+		$(document).ready(function () {
+			localStorage.setItem("mcdSearchTour_end", "yes");
+
+			localStorage.setItem("mcdReportTour_end", "yes");
+		});
+	</script>
+
+
+	<link rel="shortcut icon" href="/medicare-coverage-database/favicon.ico" type="image/vnd.microsoft.icon">
+	<link rel="stylesheet" href="/medicare-coverage-database/_content/Mcim.SharedPages/css/mcd.css?v=uGI6D8lycOQ3yMrt7oWOIU0upIa0iM1MAe2glXdsNsI" />
+	<script src="/medicare-coverage-database/js/basket-shared-functions.js?v=aOetTnA4jVP1iLho5C3yvWnIPh2jjq39POcRMofIAJM" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+	<script src="/medicare-coverage-database/js/mcd-template.js?v=Te-Wm4qEPsqsViU3zSTWZuS6RJwRvQof9GxNyem4l0A" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+
+	
+<script type="text/javascript" nonce="uLimGkUyqvCO7HuL1ACA3Q==">
+	let articleLink = '/medicare-coverage-database/view/article.aspx?articleid=';
+	let lcdLink = '/medicare-coverage-database/view/lcd.aspx?lcdid=';
+	let ncdLink = '/medicare-coverage-database/view/ncd.aspx?ncdid=';
+	let ncaLink = '/medicare-coverage-database/view/nca.aspx?ncaid=';
+	let calLink = '/medicare-coverage-database/view/cal.aspx?calid=';
+	let medCacLink = '/medicare-coverage-database/view/medcac-meeting.aspx?medcacid=';
+	let taLink = '/medicare-coverage-database/view/technology-assessments.aspx?taid=';
+	let mcDocLink = '/medicare-coverage-database/view/medicare-coverage-document.aspx?mcdid=';
+	let ncaCalPublicCommentLink = '/medicare-coverage-database/view/national-submit-public-comment.aspx?DocID=';
+	let mcDoclPublicCommentLink = '/medicare-coverage-database/view/national-submit-public-comment.aspx?DocID=';
+
+	let queryLcdLatestUpdate = '20261012000000';
+	let queryArticleLatestUpdate = '20261012000000';
+	let queryNcdLatestUpdate = '20261008112348';
+	let queryNcaCalLatestUpdate = '20260924074406';
+	let queryMedCacLatestUpdate = '20260924085030';
+	let queryTaLatestUpdate = '20260924140855';
+	let queryMcDocLatestUpdate = '20260924135037';
+	let queryCptHcpcsLatestUpdate = '20260910000000';
+	let queryIcd10LatestUpdate = '20260806000000';
+</script>
+
+
+	
+	<meta name="description" content="The Redesigned MCD Search Page lets you search on a keyword, code, or document ID" />
+
+	<script src="/medicare-coverage-database/js/cpt-license.js?v=dNSq_cMotvfUEblFv3HjJ5oFEK7EB8LLh8dTv3Wg-_4" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+
+	
+	
+		<script src="/medicare-coverage-database/js/jszip-utils.min.js" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+		<script src="/medicare-coverage-database/js/jszip.min.js" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+	
+
+	<script src="/medicare-coverage-database/js/mcd-json-data.js?v=wjKwoggnwPaUXM50pw7xygi9zt6SzFJclW_aEaGr-U8" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+	<script src="/medicare-coverage-database/js/smart-search.js?v=IgHP2NJt1eK8Vsa1tRfrnk1mmGE45IT0jnMyRFnNVNI" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+	<script src="/medicare-coverage-database/js/mcd-search.js?v=L6EO4_G4AmeWgiudsI5YThBf57euLRLdQxhdPW6tTvo" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+	<script src="/medicare-coverage-database/js/hint-box.js?v=AKrKZWi8oZ-uBUkc4VLbU7n73E1UkyhL3kuxHGysSkI" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+	<script src="/medicare-coverage-database/js/mcd-tour.js?v=S95OLtbl8BvU6mqkBFFpcb1VMbp2Xt67qWUoJbHG69Q" nonce="uLimGkUyqvCO7HuL1ACA3Q=="></script>
+
+	<script type="text/javascript" nonce="uLimGkUyqvCO7HuL1ACA3Q==">
+
+
+		$(document).ready(function () {
+		});
+
+		function DoSubmitSearch() {
+			var theForm = document.getElementById('frmMainForm');
+			var theAction = theForm.action.substring(0, theForm.action.indexOf("&handler="));
+
+			if (theAction == "") {
+				theAction = "https://www.cms.gov/medicare-coverage-database/search.aspx";
+			}
+
+			theAction += theAction.indexOf("?") > 0 ? "&handler=SubmitSearch" : "?handler=SubmitSearch";
+
+			theForm.action = theAction;
+
+			document.getElementById('frmMainForm').submit();
+
+			return false;
+		}
+
+	</script>
+
+	
+<script type="text/javascript" nonce="uLimGkUyqvCO7HuL1ACA3Q==">
+	breadCrumb = 0
+</script>
+
+
+</head>
+<body class="layout-no-sidebars has-featured-top path-node page-node-type-page">
+	<noscript>
+		<p>
+			The page could not be loaded. The CMS.gov Web site currently does not fully support browsers with
+			"JavaScript" disabled. Please enable "JavaScript" and revisit this page or proceed with browsing CMS.gov with
+			"JavaScript" disabled.
+
+			<a href="https://www.medicare.gov/mbp/error_nojavascript.aspx">Instructions for enabling "JavaScript" can be found here.</a>
+			Please note that if you choose to continue without enabling "JavaScript" certain functionalities on this website may not be available.
+		</p>
+	</noscript>
+
+	<div class='ds-u-visibility--screen-reader' id='liveText' aria-live='assertive'></div>
+
+	<div class="dialog-off-canvas-main-canvas d-print-none" data-off-canvas-main-canvas="">
+		<div id="page-wrapper">
+			<div id="page">
+				<header id="header" class="header" aria-label="Site header">
+
+					<a href="#skipNavTarget" class="visually-hidden focusable skip-link visually-hidden" title="Skip to main content" aria-label="Skip to main content">Skip to main content</a>
+
+					<div class="usa-banner">
+						<div class="usa-accordion">
+							<div class="usa-banner__header">
+								<div class="usa-banner__inner">
+									<div class="grid-col-auto">
+										<img class="usa-banner__header-flag" src="/medicare-coverage-database/_content/Mcim.SharedPages/img/usa-banner/us_flag_small.png" alt="U.S. flag" />
+									</div>
+									<div class="grid-col-fill tablet:grid-col-auto">
+										<p class="usa-banner__header-text">An official website of the United States government</p>
+										<p class="usa-banner__header-action" aria-hidden="true">Here's how you know</p>
+									</div>
+									<button class="usa-accordion__button usa-banner__button" aria-expanded="false" aria-controls="gov-banner">
+										<span class="usa-banner__button-text">Here's how you know</span>
+									</button>
+								</div>
+							</div>
+							<div class="usa-banner__content usa-accordion__content" id="gov-banner" hidden="">
+								<div class="grid-row grid-gap-lg">
+									<div class="usa-banner__guidance tablet:grid-col-6">
+										<img class="usa-banner__icon usa-media-block__img" src="/medicare-coverage-database/_content/Mcim.SharedPages/img/usa-banner/icon-dot-gov.svg" alt="Dot gov" />
+										<div class="usa-media-block__body">
+											<p>
+												<strong>Official websites use .gov</strong><br>A
+												<strong>.gov</strong> website belongs to an official government
+												organization in the United States.
+											</p>
+										</div>
+									</div>
+									<div class="usa-banner__guidance tablet:grid-col-6">
+										<img class="usa-banner__icon usa-media-block__img" src="/medicare-coverage-database/_content/Mcim.SharedPages/img/usa-banner/icon-https.svg" alt="Https" />
+										<div class="usa-media-block__body">
+											<p>
+												<strong>Secure .gov websites use HTTPS</strong><br>A
+												<strong>lock</strong> (
+												<span class="icon-lock">
+													<svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-description-default" focusable="false">
+														<title id="banner-lock-title-default">Lock</title>
+														<desc id="banner-lock-description-default">Locked padlock icon</desc>
+														<path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"></path>
+													</svg>
+												</span>) or <strong>https://</strong> means you’ve safely connected to
+												the .gov website. Share sensitive information only on official,
+												secure websites.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="search-modal" style="display: none">
+						<div class="ds-c-dialog-wrap" aria-label="search" role="dialog">
+							<div>
+								<button id="close-search" aria-label="Close search"></button>
+							</div>
+						</div>
+					</div>
+					<div class="mobile-header-container">
+						<button id="toggle-mobile-nav" class="open-close-toggle" aria-expanded="false" aria-controls="mobile-mainnav" aria-haspopup="true">
+							<span class="ds-u-visibility--screen-reader">Resource Navigation</span>
+						</button>
+						<div class="mobile-header-navigation">
+							<nav role="navigation" aria-label="main navigation" id="mobile-mainnav">
+								<ul id="mobile-secondary-nav" role="menu" aria-labelledby="toggle-mobile-nav">
+									<li class="menu-item"><a id="hpkFlyoutSearch" class="log-click" data-page-action="Clicked the fly-out Search link." href="/medicare-coverage-database">Search</a></li>
+									<li class="menu-item"><a class="log-click" data-page-action="Clicked the fly-out Reports link." href="/medicare-coverage-database/reports/reports.aspx">Reports</a></li>
+									<li class="menu-item"><a class="log-click" data-page-action="Clicked the fly-out Downloads link." href="/medicare-coverage-database/downloads/downloads.aspx">Downloads</a></li>
+									<li class="menu-item"><a href="#" class="log-click mcd-archive-link-template" data-page-action="Clicked the fly-out Archive link.">Archive <sup><small><i class="fas fa-external-link-alt" title="Opens in a new window"></i></small></sup></a></li>
+									<li class="menu-item"><a href="#" class="log-click mcd-api-link-template" data-page-action="Clicked the fly-out API link.">API <sup><small><i class="fas fa-external-link-alt" title="Opens in a new window"></i></small></sup></a></li>
+								</ul>
+								<div class="mobile-divider"></div>
+								<ul id="mobile-primary-nav" role="menu" aria-labelledby="toggle-mobile-nav"></ul>
+							</nav>
+						</div>
+						<div class="cms-link-container-mobile">
+							<a href="https://www.cms.gov" target="_blank" rel="noopener noreferrer" title="CMS.gov Centers for Medicare &amp; Medicaid Services">
+								<img id="imgCMSTopLogoWhite" src="/medicare-coverage-database/img/CMSgov@2x-white-O.png" class="header-logo-white" alt="CMS.gov Centers for Medicare &amp; Medicaid Services" />
+								<img id="imgCMSTopLogo" src="/medicare-coverage-database/img/CMSGovLogo-O.png" class="header-logo-color" alt="CMS.gov Centers for Medicare &amp; Medicaid Services" />
+								<span class="ds-u-visibility--screen-reader">opens in new window</span>
+							</a>
+						</div>
+						<!--<button id="toggle-mobile-search" class="mobile-search-btn" aria-expanded="false">
+							<span class="ds-u-visibility--screen-reader">Toggle Mobile Search</span>
+						</button>-->
+					</div>
+					<div class="mobile-search-block">
+						<button id="btn-close-search" class="button-close">
+							<span class="ds-u-visibility--screen-reader">Close Search</span>
+							<div class="close-leg"></div>
+							<div class="close-leg close-leg-cross"></div>
+						</button>
+					</div>
+
+					<div class="header-content-container">
+						<div class="" style="margin-left: 40px; margin-right: 40px">
+							<div class="ds-l-row">
+								<div class="ds-l-sm-col--12 ds-l-lg-col--7">
+									<div class="cms-link-container">
+										<a href="https://www.cms.gov" rel="noopener noreferrer" title="CMS.gov Centers for Medicare & Medicaid Services">
+											<img id="imgCMSNavbarLogo" src="/medicare-coverage-database/img/CMSGovLogo-O.png" alt="CMS.gov Centers for Medicare & Medicaid Services" />
+										</a>
+									</div>
+									<div>
+										<span class="cms-text-container">Centers for Medicare & Medicaid Services</span>
+									</div>
+								</div>
+								<div class="ds-l-sm-col--12 ds-l-lg-col--5">
+									<div class="clearfix region region-header">
+										<nav aria-labelledby="block-newsroom-header-menu" id="block-newsroom-header" data-block-plugin-id="system_menu_block:newsroom-header" class="block block-menu navigation menu--newsroom-header">
+											<div class="inner inner-width">
+
+												<h2 class="visually-hidden" id="block-newsroom-header-menu">Main header</h2>
+
+
+
+												<ul class="clearfix menu">
+													<li class="menu-item">
+														<a href="https://www.cms.gov/About-CMS/About-CMS.html" rel="noopener noreferrer">About Us</a>
+													</li>
+													<li class="menu-item">
+														<a href="https://www.cms.gov/about-cms/contact/newsroom" rel="noopener noreferrer">Newsroom</a>
+													</li>
+													<li class="menu-item">
+														<a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Research-Statistics-Data-and-Systems.html" rel="noopener noreferrer">Data &amp; Research</a>
+													</li>
+												</ul>
+
+
+													
+											</div>
+										</nav>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</header>
+			</div>
+		</div>
+	</div>
+
+	<main>
+		<form method="post" id="frmMainForm" class="form-floating">
+			<div class="newsroom-search-container d-print-none">
+				<div class="ds-l-container">
+					<div class="region region-secondary-menu">
+						
+<div id="block-mcdheaderlink" class="block block-block-content block-block-content">
+
+
+	<div class="content">
+		<div class="mcd-header">
+			<a class="logo nav-header-icon menu-item log-click" data-page-action="Clicked the MCD Logo." href="/medicare-coverage-database">
+				<span class="logo-font">MCD</span>
+				<div style="margin-top: -10px;"></div>
+				<span class="menu-item logo-font-small">Medicare Coverage Database</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+<nav class="navbar-expand-lg navbar-collapse" aria-label="main navigation banner">
+	<div class="inner inner-width">
+		<ul class="menu">
+			<li class="menu-item">
+				<a id="hpkSearch" class="log-click current-link" data-page-action="Clicked the Sea

@@ -1,9 +1,0 @@
-{
-  "error": true,
-  "error_type": "EntityResolutionError",
-  "message": "Unrecognized geographic jurisdiction 'the statutory authority'.",
-  "details": {
-    "extracted_geo": "the statutory authority"
-  },
-  "timestamp": "2026-10-13T17:29:11.324563+00:00"
-}

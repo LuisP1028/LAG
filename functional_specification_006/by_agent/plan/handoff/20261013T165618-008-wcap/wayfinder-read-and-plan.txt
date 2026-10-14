@@ -1,7 +1,0 @@
-functional_specification_006.md
-wayfinder/20261013T165618-008-wcap/tickets/ticket-001.md
-wayfinder/20261013T165618-008-wcap/tickets/ticket-002.md
-wayfinder/20261013T165618-008-wcap/tickets/ticket-003.md
-wayfinder/20261013T165618-008-wcap/tickets/ticket-004.md
-wayfinder/20261013T165618-008-wcap/map.md
-wayfinder/20261013T165618-008-wcap/matrix.md

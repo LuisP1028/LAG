@@ -1,0 +1,30 @@
+{
+    "relationships": [
+        {
+            "relationshipLink": "https://api.govinfo.gov/related/BILLS-117hr3630eh/BILLSTATUS",
+            "collection": "BILLSTATUS",
+            "relationship": "Bill Status"
+        },
+        {
+            "relationshipLink": "https://api.govinfo.gov/related/BILLS-117hr3630eh/BILLS",
+            "collection": "BILLS",
+            "relationship": "Bill versions"
+        },
+        {
+            "relationshipLink": "https://api.govinfo.gov/related/BILLS-117hr3630eh/HOB",
+            "collection": "HOB",
+            "relationship": "Bill History"
+        },
+        {
+            "relationshipLink": "https://api.govinfo.gov/related/BILLS-117hr3630eh/CREC",
+            "collection": "CREC",
+            "relationship": "Congressional Record"
+        },
+        {
+            "relationshipLink": "https://api.govinfo.gov/related/BILLS-117hr3630eh/CRPT",
+            "collection": "CRPT",
+            "relationship": "Congressional Reports"
+        }
+    ],
+    "relatedId": "BILLS-117hr3630eh"
+}

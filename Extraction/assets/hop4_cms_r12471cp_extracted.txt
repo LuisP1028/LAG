@@ -1,0 +1,125 @@
+CMS Manual System Department of Health & Human Services (DHHS)
+Pub 100-04 Medicare Claims Processing Centers for Medicare & Medicaid Services (CMS)
+Transmittal 12471 Date: January 24, 2024
+Change Request 13286
+
+Transmittal 12379 issued November 22, 2023, is being rescinded and replaced by Transmittal 12471, dated January 24, 2024, to revise Business Requirement (BR) 13286.5.1. All other information remains the same.
+
+SUBJECT: Implementation of New Benefit Category for Lymphedema Compression Treatment Items
+I. SUMMARY OF CHANGES: The purpose of this Change Request (CR) is to implement a new benefit category for lymphedema compression treatment items.
+EFFECTIVE DATE: January 1, 2024
+*Unless otherwise specified, the effective date is the date of service.
+IMPLEMENTATION DATE: January 2, 2024
+
+II. CHANGES IN MANUAL INSTRUCTIONS:
+R/N/D | CHAPTER / SECTION / SUBSECTION / TITLE
+N | 20/181/Lymphedema Compression Treatment Benefit
+
+Attachment - Business Requirements
+Pub. 100-04 | Transmittal: 12471 | Date: January 24, 2024 | Change Request: 13286
+
+I. GENERAL INFORMATION
+A. Background: Section 4133 of the Consolidated Appropriations Act (CAA), 2023, establishes a new Medicare Durable Medical Equipment, Prosthetics, Orthotics, and Supplies (DMEPOS) benefit category for standard and custom fitted compression garments and additional lymphedema compression treatment items that are primarily and customarily used to serve a medical purpose, are for the treatment of lymphedema, and are prescribed by an authorized practitioner effective for items furnished on or after January 1, 2024.
+Note that the HCPCS codes included under the new benefit category are established through the calendar year 2024 rulemaking (https://www.federalregister.gov/public-inspection/2023-24455/medicare-program-calendar-year-2024-home-health-prospective-payment-system-rate-update-quality). The list of the HCPCS codes included under the new benefit category are available in the attachment and are effective January 1, 2024.
+
+B. Policy: Two new indicators will be added to the Alpha-Numeric HCPCS file to recognize lymphedema compression treatment items. A HCPCS pricing indicator of '40' and a HCPCS Berenson-Eggers Type of Service (BETOS) Code of 'O1L' will identify lymphedema compression treatment items on the HCPCS file. TOS indicator 'S' will apply to the new codes for lymphedema compression treatment items. The January 2024 Alpha-Numeric HCPCS file will include these pricing indicators and will be available on the CMS website at:
+https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system/quarterly-update
+
+Additionally, the field on the DMEPOS fee schedule file for the payment category indicator for lymphedema compression treatment items codes will include the following indicator where the national payment amounts are calculated in accordance with the statute under section 1834(z):
+LC = lymphedema compression treatment items
+
+Frequency limitations:
+(1) Payment for three gradient compression garments or wraps with adjustable straps per each affected extremity or part of the body can be made once every 6 months.
+(2) Payment for two nighttime garments per each affected extremity or part of the body once every two years.
+
+II. BUSINESS REQUIREMENTS TABLE
+13286.1: CWF shall create a new category for Lymphedema Compression Treatment Items.
+13286.1.1: CWF shall remove A6530, A6533, A6534, A6535, A6536, A6537, A6538, A6539, A6540, A6541, A6549 from existing CWF category 21.
+13286.1.2: With the exception of the HCPCS codes listed in BR 13286.1.1, CWF shall add the HCPCS codes listed in the attachment to CWF category 60.
+13286.2: The contractors shall accept a HCPCS pricing indicator of '40' and a HCPCS Berenson-Eggers Type of Service (BETOS) Code of 'O1L' will identify lymphedema compression treatment items on the HCPCS file. TOS indicator 'S' will apply to the new codes for lymphedema compression treatment items.
+13286.3: Place of Service values 31 and 32 shall be valid for the new lymphedema HCPCS codes.
+13286.4: Contractors shall pay lymphedema compression treatment items established in accordance with newly added section 1834(z) of the Act. As such contractors shall make payment based on the DMEPOS fee schedule file when available.
+13286.4.1: Absent a rate on the DMEPOS fee schedule, contractors shall develop local pricing in accordance with section 1834(z) of the Act and pay the lesser of the local price or the supplier submitted charge.
+13286.4.2: The contractors shall accept the new DMEPOS fee schedule payment category indicator for lymphedema compression treatment codes: LC = lymphedema compression treatment items.
+13286.5: The DME MACs shall implement editing to limit payment for lymphedema compression treatment to claims with a corresponding International Statistical Classification of Diseases Tenth Edition (ICD-10) code of lymphedema. If a lymphedema ICD-10 code is not submitted, the contractors shall deny the claim.
+13286.5.1: Group Code: PR; CARC: 96 - Non-covered charge(s); RARC: N425 - Statutorily excluded; MSN: 16.10 - Medicare does not pay for this item or service.
+
+HCPCS attachment for Lymphedema Benefit CR 13286
+HCPCS Code | Long Descriptor
+A6520 | Gradient compression garment, glove, padded, for nighttime use, each
+A6521 | Gradient compression garment, glove, padded, for nighttime use, custom, each
+A6522 | Gradient compression garment, arm, padded, for nighttime use, each
+A6523 | Gradient compression garment, arm, padded, for nighttime use, custom, each
+A6524 | Gradient compression garment, lower leg and foot, padded, for nighttime use, each
+A6525 | Gradient compression garment, lower leg and foot, padded, for nighttime use, custom, each
+A6526 | Gradient compression garment, full leg and foot, padded, for nighttime use, each
+A6527 | Gradient compression garment, full leg and foot, padded, for nighttime use, custom, each
+A6528 | Gradient compression garment, bra, for nighttime use, each
+A6529 | Gradient compression garment, bra, for nighttime use, custom, each
+A6530 | Gradient compression stocking, below knee, 18-30 mmhg, each
+A6533 | Gradient compression stocking, thigh length, 18-30 mmhg, each
+A6534 | Gradient compression stocking, thigh length, 30-40 mmhg, each
+A6535 | Gradient compression stocking, thigh length, 40 mmhg or greater, each
+A6536 | Gradient compression stocking, full length/chap style, 18-30 mmhg, each
+A6537 | Gradient compression stocking, full length/chap style, 30-40 mmhg, each
+A6538 | Gradient compression stocking, full length/chap style, 40 mmhg or greater, each
+A6539 | Gradient compression stocking, waist length, 18-30 mmhg, each
+A6540 | Gradient compression stocking, waist length, 30-40 mmhg, each
+A6541 | Gradient compression stocking, waist length, 40 mmhg or greater, each
+A6549 | Gradient compression garment, not otherwise specified
+A6552 | Gradient compression stocking, below knee, 30-40 mmhg, each
+A6553 | Gradient compression stocking, below knee, 30-40 mmhg, custom, each
+A6554 | Gradient compression stocking, below knee, 40 mmhg or greater, each
+A6555 | Gradient compression stocking, below knee, 40 mmhg or greater, custom, each
+A6556 | Gradient compression stocking, thigh length, 18-30 mmhg, custom, each
+A6557 | Gradient compression stocking, thigh length, 30-40 mmhg, custom, each
+A6558 | Gradient compression stocking, thigh length, 40 mmhg or greater, custom, each
+A6559 | Gradient compression stocking, full length/chap style, 18-30 mmhg, custom, each
+A6560 | Gradient compression stocking, full length/chap style, 30-40 mmhg, custom, each
+A6561 | Gradient compression stocking, full length/chap style, 40 mmhg or greater, custom, each
+A6562 | Gradient compression stocking, waist length, 18-30 mmhg, custom, each
+A6563 | Gradient compression stocking, waist length, 30-40 mmhg, custom, each
+A6564 | Gradient compression stocking, waist length, 40 mmhg or greater, custom, each
+A6565 | Gradient compression gauntlet, custom, each
+A6566 | Gradient compression garment, neck/head, each
+A6567 | Gradient compression garment, neck/head, custom, each
+A6568 | Gradient compression garment, torso and shoulder, each
+A6569 | Gradient compression garment, torso/shoulder, custom, each
+A6570 | Gradient compression garment, genital region, each
+A6571 | Gradient compression garment, genital region, custom, each
+A6572 | Gradient compression garment, toe caps, each
+A6573 | Gradient compression garment, toe caps, custom, each
+A6574 | Gradient compression arm sleeve and glove combination, custom, each
+A6575 | Gradient compression arm sleeve and glove combination, each
+A6576 | Gradient compression arm sleeve, custom, medium weight, each
+A6577 | Gradient compression arm sleeve, custom, heavy weight, each
+A6578 | Gradient compression arm sleeve, each
+A6579 | Gradient compression glove, custom, medium weight, each
+A6580 | Gradient compression glove, custom, heavy weight, each
+A6581 | Gradient compression glove, each
+A6582 | Gradient compression gauntlet, each
+A6583 | Gradient compression wrap with adjustable straps, below knee, 30-50 mmhg, each
+A6584 | Gradient compression wrap with adjustable straps, not otherwise specified
+A6585 | Gradient pressure wrap with adjustable straps, above knee, each
+A6586 | Gradient pressure wrap with adjustable straps, full leg, each
+A6587 | Gradient pressure wrap with adjustable straps, foot, each
+A6588 | Gradient pressure wrap with adjustable straps, arm, each
+A6589 | Gradient pressure wrap with adjustable straps, bra, each
+A6593 | Accessory for gradient compression garment or wrap with adjustable straps, not-otherwise specified
+A6594 | Gradient compression bandaging supply, bandage liner, lower extremity, any size or length, each
+A6595 | Gradient compression bandaging supply, bandage liner, upper extremity, any size or length, each
+A6596 | Gradient compression bandaging supply, conforming gauze, per linear yard, any width, each
+A6597 | Gradient compression bandage roll, elastic long stretch, per linear yard, any width, each
+A6598 | Gradient compression bandage roll, elastic medium stretch, per linear yard, any width, each
+A6599 | Gradient compression bandage roll, inelastic short stretch, per linear yard, any width, each
+A6600 | Gradient compression bandaging supply, high density foam sheet, per 250 square centimeters, each
+A6601 | Gradient compression bandaging supply, high density foam pad, any size or shape, each
+A6602 | Gradient compression bandaging supply, high density foam roll for bandage, per linear yard, any width, each
+A6603 | Gradient compression bandaging supply, low density channel foam sheet, per 250 square centimeters, each
+A6604 | Gradient compression bandaging supply, low density flat foam sheet, per 250 square centimeters, each
+A6605 | Gradient compression bandaging supply, padded foam, per linear yard, any width, each
+A6606 | Gradient compression bandaging supply, padded textile, per linear yard, any width, each
+A6607 | Gradient compression bandaging supply, tubular protective absorption layer, per linear yard, any width, each
+A6608 | Gradient compression bandaging supply, tubular protective absorption padded layer, per linear yard, any width, each
+A6609 | Gradient compression bandaging supply, not otherwise specified
+A6610 | Gradient compression stocking, below knee, 18-30 mmhg, custom, each

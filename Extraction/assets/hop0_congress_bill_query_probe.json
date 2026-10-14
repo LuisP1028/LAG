@@ -1,0 +1,333 @@
+{
+    "bills": [
+        {
+            "congress": 107,
+            "introducedDate": "2001-01-03",
+            "latestAction": {
+                "actionDate": "2002-05-15",
+                "text": "Became Public Law No: 107-174."
+            },
+            "number": "169",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "Notification and Federal Employee Antidiscrimination and Retaliation Act of 2002",
+            "type": "HR",
+            "updateDate": "2025-04-07",
+            "updateDateIncludingText": "2025-04-07",
+            "url": "https://api.congress.gov/v3/bill/107/hr/169?format=json"
+        },
+        {
+            "congress": 108,
+            "introducedDate": "2003-03-13",
+            "latestAction": {
+                "actionDate": "2003-03-13",
+                "text": "Referred to the House Committee on International Relations."
+            },
+            "number": "93",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "Expressing the sense of Congress that the President should renegotiate the extradition treaty with Mexico so that the possibility of capital punishment or life imprisonment will not interfere with the timely extradition of criminal suspects from Mexico to the United States.",
+            "type": "HCONRES",
+            "updateDate": "2025-01-02",
+            "updateDateIncludingText": "2025-01-02",
+            "url": "https://api.congress.gov/v3/bill/108/hconres/93?format=json"
+        },
+        {
+            "congress": 98,
+            "introducedDate": "1983-04-12",
+            "latestAction": {
+                "actionDate": "1983-04-12",
+                "text": "Placed on Senate Legislative Calendar under Regular Orders. Calendar No. 87."
+            },
+            "number": "1024",
+            "originChamber": "Senate",
+            "originChamberCode": "S",
+            "title": "National Science Foundation Authorization Act for Fiscal Year 1984",
+            "type": "S",
+            "updateDate": "2026-09-08",
+            "updateDateIncludingText": "2026-09-08",
+            "url": "https://api.congress.gov/v3/bill/98/s/1024?format=json"
+        },
+        {
+            "congress": 98,
+            "introducedDate": "1983-02-28",
+            "latestAction": {
+                "actionDate": "1984-10-22",
+                "text": "Pocket Vetoed by President."
+            },
+            "number": "607",
+            "originChamber": "Senate",
+            "originChamberCode": "S",
+            "title": "Public Broadcasting Amendments Act of 1984",
+            "type": "S",
+            "updateDate": "2026-09-08",
+            "updateDateIncludingText": "2026-09-08",
+            "url": "https://api.congress.gov/v3/bill/98/s/607?format=json"
+        },
+        {
+            "congress": 28,
+            "introducedDate": "1844-03-27",
+            "latestAction": {
+                "actionDate": "1844-03-27",
+                "text": "Read, and committed to a Committee of the Whole House to-morrow. Mr. A. Stewart, from the Committee for the District of Columbia, reported the following bill: A Bill To amend the act entitled ''An act to incorporate the Alexandria Canal Company,'' approved on the twenty-sixth day of May, eighteen hundred and thirty."
+            },
+            "number": "262",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "A Bill To amend the act entitled ''An act to incorporate the Alexandria Canal Company,'' approved on the twenty-sixth day of May, eighteen hundred and thirty.",
+            "type": "HR",
+            "updateDate": "2024-02-07",
+            "updateDateIncludingText": "2024-02-07",
+            "url": "https://api.congress.gov/v3/bill/28/hr/262?format=json"
+        },
+        {
+            "congress": 108,
+            "introducedDate": "2004-06-23",
+            "latestAction": {
+                "actionDate": "2004-06-23",
+                "text": "Referred to the House Committee on Government Reform."
+            },
+            "number": "463",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "Expressing the sense of the Congress that a postage stamp should be issued to honor law enforcement officers killed in the line of duty.",
+            "type": "HCONRES",
+            "updateDate": "2025-02-04",
+            "updateDateIncludingText": "2025-02-04",
+            "url": "https://api.congress.gov/v3/bill/108/hconres/463?format=json"
+        },
+        {
+            "congress": 118,
+            "introducedDate": "2024-04-05",
+            "latestAction": {
+                "actionDate": "2024-07-30",
+                "text": "Placed on the Union Calendar, Calendar No. 515."
+            },
+            "number": "124",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Office of the Comptroller of the Currency relating to \"Principles for Climate-Related Financial Risk Management for Large Financial Institutions\".",
+            "type": "HJRES",
+            "updateDate": "2025-08-25",
+            "updateDateIncludingText": "2025-08-25",
+            "url": "https://api.congress.gov/v3/bill/118/hjres/124?format=json"
+        },
+        {
+            "congress": 107,
+            "introducedDate": "2001-01-22",
+            "latestAction": {
+                "actionDate": "2001-03-15",
+                "text": "Committee on Finance. Hearings held."
+            },
+            "number": "82",
+            "originChamber": "Senate",
+            "originChamberCode": "S",
+            "title": "Estate and Gift Tax Repeal Act of 2001",
+            "type": "S",
+            "updateDate": "2025-08-19",
+            "updateDateIncludingText": "2025-08-19",
+            "url": "https://api.congress.gov/v3/bill/107/s/82?format=json"
+        },
+        {
+            "congress": 111,
+            "introducedDate": "2009-06-18",
+            "latestAction": {
+                "actionDate": "2009-06-25",
+                "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent. (text: CR S7111-7112)"
+            },
+            "number": "190",
+            "originChamber": "Senate",
+            "originChamberCode": "S",
+            "title": "A resolution supporting National Men's Health Week.",
+            "type": "SRES",
+            "updateDate": "2025-12-05",
+            "updateDateIncludingText": "2025-12-05",
+            "url": "https://api.congress.gov/v3/bill/111/sres/190?format=json"
+        },
+        {
+            "congress": 112,
+            "introducedDate": "2012-03-28",
+            "latestAction": {
+                "actionDate": "2012-03-28",
+                "text": "Read twice and referred to the Committee on Energy and Natural Resources. (text of measure as introduced: CR S2167-2168)"
+            },
+            "number": "2248",
+            "originChamber": "Senate",
+            "originChamberCode": "S",
+            "title": "Fracturing Regulations are Effective in State Hands Act",
+            "type": "S",
+            "updateDate": "2026-09-08",
+            "updateDateIncludingText": "2026-09-08",
+            "url": "https://api.congress.gov/v3/bill/112/s/2248?format=json"
+        },
+        {
+            "congress": 108,
+            "introducedDate": "2004-05-20",
+            "latestAction": {
+                "actionDate": "2004-05-20",
+                "text": "Referred to the House Committee on International Relations."
+            },
+            "number": "433",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "Congratulating the Republic of India on the conduct of its recent democratic national elections.",
+            "type": "HCONRES",
+            "updateDate": "2025-01-02",
+            "updateDateIncludingText": "2025-01-02",
+            "url": "https://api.congress.gov/v3/bill/108/hconres/433?format=json"
+        },
+        {
+            "congress": 108,
+            "introducedDate": "2003-01-28",
+            "latestAction": {
+                "actionDate": "2003-01-28",
+                "actionTime": "12:03:08",
+                "text": "Motion to reconsider laid on the table Agreed to without objection."
+            },
+            "number": "33",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "Designating majority membership on certain standing committees of the House.",
+            "type": "HRES",
+            "updateDate": "2025-04-07",
+            "updateDateIncludingText": "2025-04-07",
+            "url": "https://api.congress.gov/v3/bill/108/hres/33?format=json"
+        },
+        {
+            "congress": 112,
+            "introducedDate": "2012-04-19",
+            "latestAction": {
+                "actionDate": "2012-06-27",
+                "text": "Committee on Energy and Natural Resources Subcommittee on National Parks. Hearings held. With printed Hearing: S.Hrg. 112-578."
+            },
+            "number": "2316",
+            "originChamber": "Senate",
+            "originChamberCode": "S",
+            "title": "A bill to designate the Salt Pond Visitor Center at the Cape Cod National Seashore as the \"Thomas P. O'Neill, Jr. Salt Pond Visitor Center\", and for other purposes.",
+            "type": "S",
+            "updateDate": "2026-09-08",
+            "updateDateIncludingText": "2026-09-08",
+            "url": "https://api.congress.gov/v3/bill/112/s/2316?format=json"
+        },
+        {
+            "congress": 112,
+            "introducedDate": "2012-02-13",
+            "latestAction": {
+                "actionDate": "2012-02-13",
+                "text": "Read twice and referred to the Committee on Energy and Natural Resources."
+            },
+            "number": "2100",
+            "originChamber": "Senate",
+            "originChamberCode": "S",
+            "title": "Strategic Petroleum Supplies Act",
+            "type": "S",
+            "updateDate": "2026-09-08",
+            "updateDateIncludingText": "2026-09-08",
+            "url": "https://api.congress.gov/v3/bill/112/s/2100?format=json"
+        },
+        {
+            "congress": 97,
+            "introducedDate": "1981-09-15",
+            "latestAction": {
+                "actionDate": "1981-09-15",
+                "text": "Referred to House Committee on Agriculture."
+            },
+            "number": "4479",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "A bill to provide that sales of agricultural commodities may not be made at prices which are less than 90 per centum of the parity prices therefor.",
+            "type": "HR",
+            "updateDate": "2024-02-05",
+            "updateDateIncludingText": "2024-02-05",
+            "url": "https://api.congress.gov/v3/bill/97/hr/4479?format=json"
+        },
+        {
+            "congress": 97,
+            "introducedDate": "1981-07-09",
+            "latestAction": {
+                "actionDate": "1981-07-09",
+                "text": "Referred to House Committee on Agriculture."
+            },
+            "number": "305",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "A joint resolution to establish a Farm Animal Husbandry Committee.",
+            "type": "HJRES",
+            "updateDate": "2024-02-05",
+            "updateDateIncludingText": "2024-02-05",
+            "url": "https://api.congress.gov/v3/bill/97/hjres/305?format=json"
+        },
+        {
+            "congress": 111,
+            "introducedDate": "2009-06-25",
+            "latestAction": {
+                "actionDate": "2009-06-25",
+                "text": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions."
+            },
+            "number": "1374",
+            "originChamber": "Senate",
+            "originChamberCode": "S",
+            "title": "Forewarn Act",
+            "type": "S",
+            "updateDate": "2025-12-05",
+            "updateDateIncludingText": "2025-12-05",
+            "url": "https://api.congress.gov/v3/bill/111/s/1374?format=json"
+        },
+        {
+            "congress": 108,
+            "introducedDate": "2003-11-07",
+            "latestAction": {
+                "actionDate": "2003-11-07",
+                "text": "Referred to the House Committee on Armed Services."
+            },
+            "number": "323",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "Urging the President to immediately request the resignation of Secretary of Defense Donald Rumsfeld.",
+            "type": "HCONRES",
+            "updateDate": "2025-06-06",
+            "updateDateIncludingText": "2025-06-06",
+            "url": "https://api.congress.gov/v3/bill/108/hconres/323?format=json"
+        },
+        {
+            "congress": 109,
+            "introducedDate": "2006-03-29",
+            "latestAction": {
+                "actionDate": "2006-03-29",
+                "text": "Read twice and referred to the Committee on Commerce, Science, and Transportation."
+            },
+            "number": "2480",
+            "originChamber": "Senate",
+            "originChamberCode": "S",
+            "title": "Contact Lens Consumer Protection Act",
+            "type": "S",
+            "updateDate": "2026-09-08",
+            "updateDateIncludingText": "2026-09-08",
+            "url": "https://api.congress.gov/v3/bill/109/s/2480?format=json"
+        },
+        {
+            "congress": 108,
+            "introducedDate": "2003-12-08",
+            "latestAction": {
+                "actionDate": "2004-01-15",
+                "text": "Referred to the Subcommittee on the Constitution."
+            },
+            "number": "3687",
+            "originChamber": "House",
+            "originChamberCode": "H",
+            "title": "To amend section 1464 of title 18, United States Code, to provide for the punishment of certain profane broadcasts, and for other purposes.",
+            "type": "HR",
+            "updateDate": "2025-01-02",
+            "updateDateIncludingText": "2025-01-02",
+            "url": "https://api.congress.gov/v3/bill/108/hr/3687?format=json"
+        }
+    ],
+    "pagination": {
+        "count": 430907,
+        "next": "https://api.congress.gov/v3/bill?query=LTA&sort=relevancy&offset=20&limit=20&format=json"
+    },
+    "request": {
+        "contentType": "application/json",
+        "format": "json"
+    }
+}

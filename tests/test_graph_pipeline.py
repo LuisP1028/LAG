@@ -1,31 +1,58 @@
 """
-Automated Verification Suite for Policy Knowledge Graph Pipeline.
+Automated Verification Suite for the Agnostic Zero-Seed Policy Traversal &
+Knowledge Graph Reconstruction Engine (functional_specification_014.md).
 
-Tests all acceptance criteria, system invariants, foreign-key handoffs,
-relational geographic unpivoting, and coverage policy bridge semantics.
+Tests all 8 pipeline hops (Hops 0–7), typed inter-hop handoff contracts,
+omnibus linear topology, supersession resolution, MCD-to-DME-MAC clinical
+routing, operational-key HCPCS filtering, 54-jurisdiction fee schedule unpivoting,
+and the 8 fail-fast exception classes.
 """
 
-import os
 import pytest
+from collections import deque
+
 from src.graph.models import (
     PolicyNode,
-    HCPCSCodeNode,
-    ICD10CodeNode,
+    BillNode,
+    PublicLawNode,
+    StatutorySectionNode,
+    USCSectionNode,
+    RegulationNode,
+    CFRSectionNode,
+    TransmittalNode,
+    CoveragePolicyNode,
+    ProcedureCodeNode,
+    DiagnosisCodeNode,
     JurisdictionNode,
     StateNode,
-    FeeScheduleEntryNode,
-    CoveragePolicyNode,
+    FeeScheduleRateNode,
     EdgeProvenance,
     GraphEdge,
+    PolicyTraversalError,
+    LegislativeResolutionError,
+    EnactedLawNotFoundError,
+    StatutorySectionNotFoundError,
+    RegulatoryRuleResolutionError,
+    OperationalDirectiveMissingError,
+    ClinicalCoverageMissingError,
+    CodingTableMismatchError,
+    FeeScheduleIngestionError,
+    LegislativeHandoff,
+    StatutoryHandoff,
+    RegulatoryHandoff,
+    OperationalHandoff,
+    CoverageHandoff,
+    CodingHandoff,
+    ReimbursementHandoff,
 )
-from src.graph.engine import PropertyGraphEngine, DirectedPropertyGraph, GraphValidationError
+from src.graph.engine import PropertyGraphEngine, GraphValidationError
 
-ASSET_DIR = "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga"
+ASSET_DIR = "Extraction/assets"
 
 
 @pytest.fixture(scope="module")
 def graph():
-    """Runs the pipeline once for the module and returns the constructed graph."""
+    """Executes the 8-hop agnostic pipeline from a runtime policy keyword."""
     engine = PropertyGraphEngine(asset_dir=ASSET_DIR)
     return engine.run_pipeline(keyword="LTA", run_id="test-run-verification")
 
@@ -40,40 +67,128 @@ def test_root_policy_anchor(graph):
     assert policy.timestamp != ""
 
 
-def test_statutory_and_regulatory_lineage(graph):
-    """Verifies statutory codification and regulatory rulemaking handoff chain."""
+def test_hop0_and_hop1_omnibus_lineage(graph):
+    """
+    Verifies Hop 0 legislative discovery and Hop 1 omnibus incorporation:
+    Policy -[:DISCOVERED_BILL]-> Bill (Introduced) -[:INCORPORATED_INTO]-> Bill (Omnibus) -[:ENACTED_AS]-> PublicLaw,
+    with zero direct shortcut edge from the introduced bill to the Public Law.
+    """
+    leg: LegislativeHandoff = graph.handoffs["legislative"]
+    assert isinstance(leg, LegislativeHandoff)
+    assert leg.introduced_bill_id == "BILL-117-hr-3630"
+    assert leg.enacting_bill_id == "BILL-117-hr-2617"
+    assert leg.public_law_id == "PLAW-117-328"
+    assert leg.congress == 117
+    assert leg.enacted_date == "2022-12-29"
+
+    assert "BILL-117-hr-3630" in graph.nodes
+    assert "BILL-117-hr-2617" in graph.nodes
     assert "PLAW-117-328" in graph.nodes
+
+    edge_keys = {(e.source_pk, e.label, e.target_pk) for e in graph.edges}
+    assert ("POLICY-LTA", "DISCOVERED_BILL", "BILL-117-hr-3630") in edge_keys
+    assert ("BILL-117-hr-3630", "INCORPORATED_INTO", "BILL-117-hr-2617") in edge_keys
+    assert ("BILL-117-hr-2617", "ENACTED_AS", "PLAW-117-328") in edge_keys
+    assert ("BILL-117-hr-3630", "ENACTED_AS", "PLAW-117-328") not in edge_keys
+
+
+def test_hop2_statutory_codification_and_uslm_extraction(graph):
+    """
+    Verifies Hop 2 USLM XML section extraction, U.S. Code citations, and effective date.
+    """
+    stat: StatutoryHandoff = graph.handoffs["statutory"]
+    assert isinstance(stat, StatutoryHandoff)
+    assert stat.public_law_id == "PLAW-117-328"
+    assert stat.uslm_section_path == "/us/pl/117/328/dFF/tIV/stD/s4133"
+    assert stat.statute_section_number == "4133"
+    assert "LYMPHEDEMA COMPRESSION TREATMENT ITEMS" in stat.statute_heading.upper()
+    assert "42 U.S.C. 1395x(s)(2)(JJ)" in stat.amended_usc_citations
+    assert "42 U.S.C. 1395m" in stat.amended_usc_citations
+    assert "42 U.S.C. 1395l(a)(1)" in stat.amended_usc_citations
+    assert stat.effective_date == "2024-01-01"
+
+    assert "STAT-117-328-SEC-4133" in graph.nodes
     assert "USC-42-1395x-s-2-JJ" in graph.nodes
-    assert "FR-2023-24455" in graph.nodes
-    assert "CMS-CR-13286" in graph.nodes
-
-    # Check edges
-    edge_keys = {(e.source_pk, e.label, e.target_pk) for e in graph.edges}
-    assert ("PLAW-117-328", "MODIFIES_CODE", "USC-42-1395x-s-2-JJ") in edge_keys
-    assert ("USC-42-1395x-s-2-JJ", "IMPLEMENTED_BY", "FR-2023-24455") in edge_keys
-    assert ("FR-2023-24455", "ISSUES_TRANSMITTAL", "CMS-CR-13286") in edge_keys
-
-
-def test_coverage_policy_bridge(graph):
-    """Verifies the mandatory CoveragePolicy bridge and prohibition of direct code-to-diagnosis links."""
-    assert "CMS-MCD-A59508" in graph.nodes
-    cov_node = graph.nodes["CMS-MCD-A59508"]
-    assert isinstance(cov_node, CoveragePolicyNode)
-    assert cov_node.article_id == "A59508"
+    assert "USC-42-1395m" in graph.nodes
+    assert "USC-42-1395l-a-1" in graph.nodes
 
     edge_keys = {(e.source_pk, e.label, e.target_pk) for e in graph.edges}
-    assert ("CMS-CR-13286", "MANDATES_POLICY", "CMS-MCD-A59508") in edge_keys
+    assert ("PLAW-117-328", "CONTAINS", "STAT-117-328-SEC-4133") in edge_keys
+    assert ("STAT-117-328-SEC-4133", "AMENDS", "USC-42-1395x-s-2-JJ") in edge_keys
 
-    # Policy governs procedure codes
-    assert ("CMS-MCD-A59508", "GOVERNS", "HCPCS-A6583") in edge_keys
-    assert ("CMS-MCD-A59508", "ALLOWS_DIAGNOSIS", "ICD10-I97.2") in edge_keys
-    assert ("CMS-MCD-A59508", "ALLOWS_DIAGNOSIS", "ICD10-I89.0") in edge_keys
+
+def test_hop3_and_hop4_regulatory_and_operational_handoffs(graph):
+    """
+    Verifies Hop 3 Federal Register Final Rule resolution and Hop 4 CMS Transmittal
+    supersession resolution and operational filter extraction.
+    """
+    reg: RegulatoryHandoff = graph.handoffs["regulatory"]
+    assert isinstance(reg, RegulatoryHandoff)
+    assert reg.fr_document_number == "2023-24455"
+    assert reg.fr_citation == "88 FR 77676"
+    assert reg.docket_id == "CMS-1780-F"
+    assert reg.rin == "0938-AV03"
+    assert "42 CFR Part 410" in reg.cfr_references
+    assert "42 CFR Part 414" in reg.cfr_references
+    assert reg.effective_date == "2024-01-01"
+
+    op: OperationalHandoff = graph.handoffs["operational"]
+    assert isinstance(op, OperationalHandoff)
+    assert op.change_request_number == "CR13286"
+    assert op.active_transmittal_number == "R12471CP"
+    assert "R12379CP" in op.superseded_transmittal_numbers
+    assert op.cms_manual_publication == "Pub 100-04"
+    assert op.benefit_category_code == "LC"
+    assert op.pricing_indicator_code == "40"
+    assert op.betos_code == "O1L"
+    assert op.effective_date == "2024-01-01"
+
+    assert "REG-FR-2023-24455" in graph.nodes
+    assert "CFR-42-410" in graph.nodes
+    assert "CFR-42-414" in graph.nodes
+    assert "TR-CR13286" in graph.nodes
+
+    edge_keys = {(e.source_pk, e.label, e.target_pk) for e in graph.edges}
+    assert ("USC-42-1395x-s-2-JJ", "AUTHORIZED_BY", "REG-FR-2023-24455") in edge_keys
+    assert ("REG-FR-2023-24455", "CODIFIED_IN", "CFR-42-410") in edge_keys
+    assert ("CFR-42-410", "IMPLEMENTED_BY", "TR-CR13286") in edge_keys
+
+
+def test_hop5_and_hop6_clinical_coverage_and_operational_hcpcs(graph):
+    """
+    Verifies Hop 5 MCD-to-DME-MAC clinical coverage routing (ICD-10-CM diagnosis table)
+    and Hop 6 operational-key-only HCPCS procedure code extraction (all 77 codes A6520-A6610).
+    """
+    cov: CoverageHandoff = graph.handoffs["coverage"]
+    assert isinstance(cov, CoverageHandoff)
+    assert cov.publisher_type == "DME_MAC_JOINT_PUBLICATION"
+    assert set(cov.qualifying_icd10_codes) == {"I89.0", "I97.2", "I97.89", "Q82.0"}
+    assert len(cov.clinical_prerequisites) >= 1
+
+    coding: CodingHandoff = graph.handoffs["coding"]
+    assert isinstance(coding, CodingHandoff)
+    assert coding.benefit_category_code == "LC"
+    assert coding.betos_code == "O1L"
+    assert len(coding.hcpcs_codes) == 77
+    assert coding.hcpcs_codes[0] == "A6520"
+    assert coding.hcpcs_codes[-1] == "A6610"
+    assert all(pi == "40" for pi in coding.code_pricing_indicators.values())
+
+    cov_pk = cov.coverage_guidance_id
+    assert cov_pk in graph.nodes
+    edge_keys = {(e.source_pk, e.label, e.target_pk) for e in graph.edges}
+    assert ("TR-CR13286", "MANDATES_POLICY", cov_pk) in edge_keys
+    assert (cov_pk, "REQUIRES_DIAGNOSIS", "ICD10-I89.0") in edge_keys
+    assert (cov_pk, "REQUIRES_DIAGNOSIS", "ICD10-I97.2") in edge_keys
+    assert (cov_pk, "REQUIRES_DIAGNOSIS", "ICD10-I97.89") in edge_keys
+    assert (cov_pk, "REQUIRES_DIAGNOSIS", "ICD10-Q82.0") in edge_keys
+    assert (cov_pk, "COVERS_PROCEDURE", "HCPCS-A6520") in edge_keys
+    assert (cov_pk, "COVERS_PROCEDURE", "HCPCS-A6583") in edge_keys
+    assert (cov_pk, "COVERS_PROCEDURE", "HCPCS-A6610") in edge_keys
 
     # Zero direct edges between any HCPCS and ICD10
     for e in graph.edges:
-        assert not (e.source_pk.startswith("HCPCS-") and e.target_pk.startswith("ICD10-")), (
-            f"Forbidden direct edge found: {e.source_pk} -> {e.target_pk}"
-        )
+        assert not (e.source_pk.startswith("HCPCS-") and e.target_pk.startswith("ICD10-"))
 
 
 def test_direct_hcpcs_to_icd10_prohibition_raises_error():
@@ -93,34 +208,34 @@ def test_direct_hcpcs_to_icd10_prohibition_raises_error():
         )
 
 
-def test_50_state_and_jurisdiction_completeness(graph):
-    """Verifies 4 DME MAC Jurisdictions, all states, and unpivoted fee schedule entries."""
+def test_hop7_54_jurisdiction_fee_schedule_and_custom_code_reconciliation(graph):
+    """
+    Verifies Hop 7 54-jurisdiction geographic unpivoting, rate extraction, and
+    reconciliation of the 70 national fee schedule codes vs. 7 local contractor pricing codes.
+    """
+    reimb: ReimbursementHandoff = graph.handoffs["reimbursement"]
+    assert isinstance(reimb, ReimbursementHandoff)
+    assert reimb.jurisdiction_count == 54
+    assert set(reimb.unpriced_custom_codes) == {
+        "A6549", "A6559", "A6560", "A6561", "A6584", "A6593", "A6609"
+    }
+
     jurisdictions = [n for n in graph.nodes.values() if isinstance(n, JurisdictionNode)]
     assert len(jurisdictions) == 4
-    juris_pks = {j.primary_key for j in jurisdictions}
-    assert juris_pks == {"JURIS-DME-A", "JURIS-DME-B", "JURIS-DME-C", "JURIS-DME-D"}
 
     states = [n for n in graph.nodes.values() if isinstance(n, StateNode)]
-    assert len(states) in (53, 54)
-    state_codes = {s.state_code for s in states}
-    assert "WY" in state_codes
-    assert "CA" in state_codes
-    assert "NY" in state_codes
-    assert "PR" in state_codes
-    assert "VI" in state_codes
+    assert len(states) == 54
 
-    fee_entries = [n for n in graph.nodes.values() if isinstance(n, FeeScheduleEntryNode)]
+    fee_entries = [n for n in graph.nodes.values() if isinstance(n, FeeScheduleRateNode)]
     assert len(fee_entries) > 3000
 
-    # Verify Wyoming fee entry for A6583
-    wy_fees = [f for f in fee_entries if f.hcpcs_code == "A6583" and f.state_code == "WY"]
-    assert len(wy_fees) >= 1
-    wy_nr = [f for f in wy_fees if not f.is_rural][0]
-    assert wy_nr.fee_amount == 151.38
+    wy_fees = [f for f in fee_entries if f.hcpcs_code == "A6583" and f.state_code == "WY" and not f.is_rural]
+    assert len(wy_fees) == 1
+    assert wy_fees[0].fee_amount == 151.38
 
 
-def test_edge_provenance_completeness(graph):
-    """Verifies that 100% of edges have non-empty provenance metadata."""
+def test_edge_provenance_and_unbroken_ancestry(graph):
+    """Verifies 100% edge provenance completeness and unbroken reachability from POLICY-LTA."""
     assert len(graph.edges) > 5000
     for edge in graph.edges:
         prov = edge.provenance
@@ -129,98 +244,48 @@ def test_edge_provenance_completeness(graph):
         assert prov.ingestion_timestamp != ""
         assert prov.run_id != ""
 
-
-def test_unbroken_ancestry_invariant(graph):
-    """Verifies that every single node in the graph is reachable from POLICY-LTA."""
     root_pk = "POLICY-LTA"
-    from collections import deque
-    visited = set()
+    visited = {root_pk}
     queue = deque([root_pk])
-    visited.add(root_pk)
-
     while queue:
         curr = queue.popleft()
         for edge in graph._adj.get(curr, []):
-            nxt = edge.target_pk
-            if nxt not in visited:
-                visited.add(nxt)
-                queue.append(nxt)
+            if edge.target_pk not in visited:
+                visited.add(edge.target_pk)
+                queue.append(edge.target_pk)
 
     unreachable = set(graph.nodes.keys()) - visited
-    assert len(unreachable) == 0, f"Unreachable orphan nodes: {unreachable}"
-
-
-def test_idempotent_upserts():
-    """Verifies that re-running ingestion or upserting identical nodes/edges is idempotent."""
-    engine = PropertyGraphEngine(asset_dir=ASSET_DIR)
-    g1 = engine.run_pipeline(keyword="LTA", run_id="run-idempotency-1")
-    count_nodes_1 = len(g1.nodes)
-    count_edges_1 = len(g1.edges)
-
-    # Upsert again into same graph
-    policy = g1.nodes["POLICY-LTA"]
-    g1.upsert_node(policy)
-    assert len(g1.nodes) == count_nodes_1
-
-    edge = g1.edges[0]
-    g1.upsert_edge(edge)
-    assert len(g1.edges) == count_edges_1
-
-
-def test_ivig_pipeline_execution_and_invariants():
-    """Verifies end-to-end pipeline execution and system invariants for IVIG policy keyword."""
-    from src.graph.tier1_legislative import Phase1DiscoveryError
-
-    engine = PropertyGraphEngine(asset_dir=ASSET_DIR)
-    g_ivig = engine.run_pipeline(keyword="IVIG", run_id="test-ivig-verification")
-
-    # Verify Root Policy Anchor
-    assert "POLICY-IVIG" in g_ivig.nodes
-    policy = g_ivig.nodes["POLICY-IVIG"]
-    assert policy.keyword == "IVIG"
-
-    # Verify Lineage Handoffs
-    assert "BILL-117-hr-3808" in g_ivig.nodes
-    assert "PLAW-117-328" in g_ivig.nodes
-    assert "USC-42-1395x-s-2-Z" in g_ivig.nodes
-    assert "FR-2023-24455" in g_ivig.nodes
-    assert "CMS-CR-13217" in g_ivig.nodes
-    assert "CMS-MCD-A59588" in g_ivig.nodes
-    assert "HCPCS-Q2052" in g_ivig.nodes
-    assert "ICD10-D80.0" in g_ivig.nodes
-
-    # Verify Geographic Completeness (INV-50-STATE-COMPLETENESS)
-    jurisdictions = [n for n in g_ivig.nodes.values() if isinstance(n, JurisdictionNode)]
-    assert len(jurisdictions) == 4
-    states = [n for n in g_ivig.nodes.values() if isinstance(n, StateNode)]
-    assert len(states) in (53, 54)
-    fee_entries = [n for n in g_ivig.nodes.values() if isinstance(n, FeeScheduleEntryNode)]
-    assert len(fee_entries) > 0
-    assert any(f.hcpcs_code == "Q2052" and f.state_code == "WY" for f in fee_entries)
-
-    # Verify No Direct HCPCS->ICD10 Edges (INV-NO-KEYWORD-BRIDGING)
-    for e in g_ivig.edges:
-        assert not (e.source_pk.startswith("HCPCS-") and e.target_pk.startswith("ICD10-"))
-
-    # Verify Unbroken Ancestry from POLICY-IVIG (INV-UNBROKEN-ANCESTRY)
-    from collections import deque
-    root_pk = "POLICY-IVIG"
-    visited = set()
-    queue = deque([root_pk])
-    visited.add(root_pk)
-    while queue:
-        curr = queue.popleft()
-        for edge in g_ivig._adj.get(curr, []):
-            nxt = edge.target_pk
-            if nxt not in visited:
-                visited.add(nxt)
-                queue.append(nxt)
-    unreachable = set(g_ivig.nodes.keys()) - visited
     assert len(unreachable) == 0
 
-    # Fail-fast on unsupported keyword (INV-FAIL-FAST)
-    with pytest.raises(Phase1DiscoveryError):
-        engine.run_pipeline(keyword="UNKNOWN_NONEXISTENT_KEYWORD")
+
+def test_full_phrase_keyword_resolution():
+    """Verifies that running with full natural language phrase resolves identical graph topology."""
+    engine = PropertyGraphEngine(asset_dir=ASSET_DIR)
+    g_full = engine.run_pipeline(keyword="Lymphedema Treatment Act", run_id="test-full-phrase")
+    assert "POLICY-LYMPHEDEMA TREATMENT ACT" in g_full.nodes
+    assert g_full.handoffs["legislative"].introduced_bill_id == "BILL-117-hr-3630"
+    assert g_full.handoffs["legislative"].enacting_bill_id == "BILL-117-hr-2617"
+    assert g_full.handoffs["statutory"].statute_section_number == "4133"
+    assert len(g_full.handoffs["coding"].hcpcs_codes) == 77
+
+
+def test_fail_fast_exception_hierarchy():
+    """Verifies that all 8 hop-specific exception classes inherit from PolicyTraversalError and fail fast."""
+    for exc_cls in (
+        LegislativeResolutionError,
+        EnactedLawNotFoundError,
+        StatutorySectionNotFoundError,
+        RegulatoryRuleResolutionError,
+        OperationalDirectiveMissingError,
+        ClinicalCoverageMissingError,
+        CodingTableMismatchError,
+        FeeScheduleIngestionError,
+    ):
+        assert issubclass(exc_cls, PolicyTraversalError)
+
+    engine = PropertyGraphEngine(asset_dir=ASSET_DIR)
+    with pytest.raises(LegislativeResolutionError):
+        engine.run_pipeline(keyword="NONEXISTENT_POLICY_XYZ_999")
 
 
 def test_neo4j_sync_and_mcp_invariants():
@@ -235,26 +300,21 @@ def test_neo4j_sync_and_mcp_invariants():
         pytest.skip(f"Neo4j instance not reachable: {e}")
 
     try:
-        # Sync IVIG graph
         ivig_stats = sync_engine.sync_file("exports/ivig_knowledge_graph.json")
         assert ivig_stats["nodes_synced"] == 183
         assert ivig_stats["edges_synced"] == 289
 
-        # Verify summary statistics and invariants in Neo4j
         summary = sync_engine.get_summary_statistics()
         assert summary["total_nodes"] >= 183
         assert summary["total_edges"] >= 289
 
         with sync_engine.get_driver().session(database=sync_engine.database) as session:
-            # Invariant: INV-NO-KEYWORD-BRIDGING (Zero direct HCPCS->ICD10 edges)
             illegal_res = session.run("MATCH (h:HCPCSCode)-[r]-(i:ICD10Code) RETURN count(r) AS illegal").single()
             assert illegal_res["illegal"] == 0
 
-            # Invariant: INV-50-STATE-COMPLETENESS (All 4 DME MAC Jurisdictions present)
             juris_res = session.run("MATCH (j:Jurisdiction) RETURN count(j) AS cnt").single()
             assert juris_res["cnt"] == 4
 
-            # Invariant: INV-PROVENANCE-COMPLETENESS (Zero edges missing provenance)
             prov_res = session.run(
                 "MATCH ()-[r]->() WHERE r.source_uri IS NULL OR r.selector IS NULL "
                 "OR r.ingestion_timestamp IS NULL OR r.run_id IS NULL RETURN count(r) AS cnt"
@@ -262,4 +322,3 @@ def test_neo4j_sync_and_mcp_invariants():
             assert prov_res["cnt"] == 0
     finally:
         sync_engine.close()
-

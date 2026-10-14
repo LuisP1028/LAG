@@ -1,0 +1,129 @@
+{
+    "bill": {
+        "actions": {
+            "count": 48,
+            "url": "https://api.congress.gov/v3/bill/117/hr/2617/actions?format=json"
+        },
+        "amendments": {
+            "count": 59,
+            "url": "https://api.congress.gov/v3/bill/117/hr/2617/amendments?format=json"
+        },
+        "cboCostEstimates": [
+            {
+                "description": "As ordered reported by the House Committee on Oversight and Reform on May 25, 2021\n",
+                "pubDate": "2021-07-23T21:14:00Z",
+                "title": "H.R. 2617, Performance Enhancement Reform Act",
+                "url": "https://www.cbo.gov/publication/57381"
+            },
+            {
+                "description": "As ordered reported by the Senate Committee on Homeland Security and Governmental Affairs on  November 3, 2021\n",
+                "pubDate": "2022-01-18T21:02:00Z",
+                "title": "H.R. 2617, Performance Enhancement Reform Act",
+                "url": "https://www.cbo.gov/publication/57764"
+            },
+            {
+                "description": "Divisions A through L of H.R. 2617 would provide appropriations and authorities for the remainder of fiscal year 2023 for the agencies covered by the 12 annual appropriation acts.",
+                "pubDate": "2022-12-21T16:55:00Z",
+                "title": "CBO Estimate for H.R. 2617 (amended), the Consolidated Appropriations Act, 2023",
+                "url": "https://www.cbo.gov/publication/58872"
+            },
+            {
+                "description": "[]",
+                "pubDate": "2022-12-21T16:55:00Z",
+                "title": "CBO Estimate for Divisions A through N of H.R. 2617 (as modified by S.A. 6552), the Consolidated Appropriations Act, 2023",
+                "url": "https://www.cbo.gov/publication/58872"
+            },
+            {
+                "description": "Public Law 117-328 as enacted on December 29, 2022\n",
+                "pubDate": "2023-01-12T22:06:00Z",
+                "title": "CBO Estimate for Divisions O Through MM of H.R. 2617, the Consolidated Appropriations Act, 2023, Enacted as Public Law 117-328 on December 29, 2022",
+                "url": "https://www.cbo.gov/publication/58901"
+            }
+        ],
+        "committeeReports": [
+            {
+                "citation": "S. Rept. 117-164",
+                "url": "https://api.congress.gov/v3/committee-report/117/SRPT/164?format=json"
+            }
+        ],
+        "committees": {
+            "count": 2,
+            "url": "https://api.congress.gov/v3/bill/117/hr/2617/committees?format=json"
+        },
+        "congress": 117,
+        "constitutionalAuthorityStatementText": "<pre>\n[Congressional Record Volume 167, Number 66 (Friday, April 16, 2021)]\n[House]\nFrom the Congressional Record Online through the Government Publishing Office [<a href=\"https://www.gpo.gov\">www.gpo.gov</a>]\nBy Mr. CONNOLLY:\nH.R. 2617.\nCongress has the power to enact this legislation pursuant\nto the following:\nArticle 1, Section 8 of the United States Constitution.\n[Page H1891]\n</pre>",
+        "cosponsors": {
+            "count": 2,
+            "countIncludingWithdrawnCosponsors": 2,
+            "url": "https://api.congress.gov/v3/bill/117/hr/2617/cosponsors?format=json"
+        },
+        "introducedDate": "2021-04-16",
+        "latestAction": {
+            "actionDate": "2022-12-29",
+            "text": "Became Public Law No: 117-328."
+        },
+        "laws": [
+            {
+                "number": "117-328",
+                "type": "Public Law"
+            }
+        ],
+        "legislationUrl": "https://www.congress.gov/bill/117th-congress/house-bill/2617",
+        "notes": [
+            {
+                "text": "The Joint Explanatory Statement and text to accompany Public Law 117-328 are found within <a href=\"https://www.congress.gov/117/cprt/HPRT50347/CPRT-117HPRT50347.pdf\"> Book 1 (Divisions A-F)</a>, <a href=\"https://www.congress.gov/117/cprt/HPRT50348/CPRT-117HPRT50348.pdf\">Book 2 (Divisions G-N)</a>"
+            }
+        ],
+        "number": "2617",
+        "originChamber": "House",
+        "originChamberCode": "H",
+        "policyArea": {
+            "name": "Economics and Public Finance"
+        },
+        "relatedBills": {
+            "count": 39,
+            "url": "https://api.congress.gov/v3/bill/117/hr/2617/relatedbills?format=json"
+        },
+        "sponsors": [
+            {
+                "bioguideId": "C001078",
+                "district": 11,
+                "firstName": "Gerald",
+                "fullName": "Rep. Connolly, Gerald E. [D-VA-11]",
+                "isByRequest": "N",
+                "lastName": "Connolly",
+                "middleName": "E.",
+                "party": "D",
+                "state": "VA",
+                "url": "https://api.congress.gov/v3/member/C001078?format=json"
+            }
+        ],
+        "subjects": {
+            "count": 7,
+            "url": "https://api.congress.gov/v3/bill/117/hr/2617/subjects?format=json"
+        },
+        "summaries": {
+            "count": 6,
+            "url": "https://api.congress.gov/v3/bill/117/hr/2617/summaries?format=json"
+        },
+        "textVersions": {
+            "count": 9,
+            "url": "https://api.congress.gov/v3/bill/117/hr/2617/text?format=json"
+        },
+        "title": "Consolidated Appropriations Act, 2023",
+        "titles": {
+            "count": 91,
+            "url": "https://api.congress.gov/v3/bill/117/hr/2617/titles?format=json"
+        },
+        "type": "HR",
+        "updateDate": "2026-04-22T17:28:44Z",
+        "updateDateIncludingText": "2026-04-22T17:28:44Z"
+    },
+    "request": {
+        "billNumber": "2617",
+        "billType": "hr",
+        "congress": "117",
+        "contentType": "application/json",
+        "format": "json"
+    }
+}

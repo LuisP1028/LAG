@@ -1,9 +1,0 @@
-functional_specification_005.md
-wayfinder/20261013T155419-714-niq1/tickets/ticket-001.md
-wayfinder/20261013T155419-714-niq1/tickets/ticket-002.md
-wayfinder/20261013T155419-714-niq1/tickets/ticket-003.md
-wayfinder/20261013T155419-714-niq1/tickets/ticket-004.md
-wayfinder/20261013T155419-714-niq1/tickets/ticket-005.md
-wayfinder/20261013T155419-714-niq1/tickets/ticket-006.md
-wayfinder/20261013T155419-714-niq1/map.md
-wayfinder/20261013T155419-714-niq1/matrix.md
