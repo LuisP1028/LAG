@@ -1,9 +1,9 @@
 /**
- * Hugging Face GraphRAG conversational assistant drawer with bidirectional path illumination.
+ * Medical Durable Goods Assistant drawer with DeepSeek micro-fact subtitle and bidirectional path illumination.
  */
 
 import React, { useState } from 'react';
-import { useGraphSync } from '../context/GraphSyncContext';
+import { useGraphSync, DEFAULT_GRAPHRAG_MODEL } from '../context/GraphSyncContext';
 import { CANVAS_PALETTE } from '../styles/graph_theme';
 
 export const AgentChatDrawer: React.FC = () => {
@@ -17,10 +17,10 @@ export const AgentChatDrawer: React.FC = () => {
     errorMsg,
     submitInquiry,
     seededAnchor,
+    microFact,
   } = useGraphSync();
 
   const [inputQuery, setInputQuery] = useState<string>('');
-  const [modelId, setModelId] = useState<string>('meta-llama/Meta-Llama-3-8B-Instruct');
 
   if (!isChatOpen) return null;
 
@@ -28,17 +28,20 @@ export const AgentChatDrawer: React.FC = () => {
     const q = (queryText || inputQuery).trim();
     if (!q || isQueryLoading) return;
     setInputQuery('');
-    await submitInquiry(q, seededAnchor?.primary_key, modelId);
+    await submitInquiry(q, seededAnchor?.primary_key, DEFAULT_GRAPHRAG_MODEL);
   };
 
   return (
     <div
+      data-testid="agent-chat-drawer"
       style={{
         position: 'absolute',
         top: 0,
         right: 0,
         width: 440,
+        maxWidth: '45vw',
         height: '100%',
+        boxSizing: 'border-box',
         backgroundColor: CANVAS_PALETTE.panelBg,
         backdropFilter: 'blur(16px)',
         borderLeft: `1px solid ${CANVAS_PALETTE.panelBorder}`,
@@ -61,15 +64,32 @@ export const AgentChatDrawer: React.FC = () => {
         }}
       >
         <div>
-          <div style={{ color: CANVAS_PALETTE.accentAmber, fontWeight: 700, fontSize: 14, letterSpacing: '0.05em' }}>
-            ◈ HUGGING FACE GRAPHRAG ASSISTANT
+          <div
+            data-testid="assistant-drawer-title"
+            style={{
+              color: CANVAS_PALETTE.accentAmber,
+              fontWeight: 700,
+              fontSize: 14,
+              letterSpacing: '0.05em',
+            }}
+          >
+            ◈ Medical Durable Goods Assistant
           </div>
-          <div style={{ fontSize: 11, color: CANVAS_PALETTE.textMuted, marginTop: 2 }}>
-            Zero-Hallucination Topological Synthesis
+          <div
+            data-testid="assistant-micro-fact-subtitle"
+            style={{
+              fontSize: 11,
+              color: CANVAS_PALETTE.textMuted,
+              marginTop: 2,
+              lineHeight: 1.35,
+            }}
+          >
+            {`Fun fact: ${microFact.replace(/^Fun fact:\s*/i, '')}`}
           </div>
         </div>
 
         <button
+          data-testid="close-chat-drawer-btn"
           onClick={() => {
             clearIllumination();
             setIsChatOpen(false);
@@ -84,40 +104,6 @@ export const AgentChatDrawer: React.FC = () => {
         >
           ✕
         </button>
-      </div>
-
-      {/* Model Selection Toolbar */}
-      <div
-        style={{
-          padding: '10px 20px',
-          backgroundColor: 'rgba(10, 17, 40, 0.65)',
-          borderBottom: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 8,
-          fontSize: 11,
-          fontFamily: '"SF Mono", monospace',
-        }}
-      >
-        <span style={{ color: CANVAS_PALETTE.textMuted }}>MODEL:</span>
-        <select
-          value={modelId}
-          onChange={(e) => setModelId(e.target.value)}
-          style={{
-            flex: 1,
-            backgroundColor: 'rgba(30, 41, 59, 0.8)',
-            color: '#f8fafc',
-            border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-            borderRadius: 4,
-            padding: '4px 6px',
-            fontSize: 11,
-            cursor: 'pointer',
-          }}
-        >
-          <option value="meta-llama/Meta-Llama-3-8B-Instruct">Llama-3-8B-Instruct</option>
-          <option value="mistralai/Mistral-7B-Instruct-v0.3">Mistral-7B-Instruct-v0.3</option>
-          <option value="Qwen/Qwen2.5-7B-Instruct">Qwen2.5-7B-Instruct</option>
-        </select>
       </div>
 
       {/* Quick Prompts Bar */}

@@ -51,7 +51,7 @@ def _verify_zero_hardcoded_secrets(root: Path, env_vars: Dict[str, Optional[str]
     """Fail-fast check guaranteeing neither Dockerfile nor docker-compose.yml contains secret values."""
     secret_values = [
         v for k, v in env_vars.items()
-        if k in {"HF_TOKEN", "HUGGINGFACE_API_KEY", "HF_DEPLOY_TOKEN", "CONGRESS_API_KEY", "NEO4J_PASSWORD"}
+        if k in {"HF_TOKEN", "HUGGINGFACE_API_KEY", "HF_DEPLOY_TOKEN", "HF_DEEPSEEK_TOKEN", "CONGRESS_API_KEY", "NEO4J_PASSWORD"}
         and v and len(v) >= 6
     ]
     for rel_file in ("Dockerfile", "docker-compose.yml"):
@@ -98,6 +98,7 @@ def deploy_local_container_with_https_ingress(
 
     env_vars = dotenv_values(env_path)
     hf_token = env_vars.get("HF_TOKEN") or env_vars.get("HUGGINGFACE_API_KEY") or os.getenv("HF_TOKEN")
+    hf_deepseek_token = env_vars.get("HF_DEEPSEEK_TOKEN") or os.getenv("HF_DEEPSEEK_TOKEN") or ""
     congress_key = env_vars.get("CONGRESS_API_KEY") or os.getenv("CONGRESS_API_KEY") or ""
     if not hf_token:
         raise RuntimeError("Missing HF_TOKEN / HUGGINGFACE_API_KEY in .env for GraphRAG LLM synthesis.")
@@ -125,6 +126,7 @@ def deploy_local_container_with_https_ingress(
             "-p", "127.0.0.1:7860:7860",
             "-e", f"HF_TOKEN={hf_token}",
             "-e", f"HUGGINGFACE_API_KEY={hf_token}",
+            "-e", f"HF_DEEPSEEK_TOKEN={hf_deepseek_token}",
             "-e", f"CONGRESS_API_KEY={congress_key}",
             "-e", "NEO4J_URI=embedded://exports/lta_knowledge_graph.json",
             "-e", "PORT=7860",

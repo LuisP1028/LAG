@@ -30,9 +30,11 @@ from src.graphrag.models import (
     AnchorEntity,
     GraphRAGQueryRequest,
     GraphRAGQueryResponse,
+    MicroFactResponse,
     ResolvedAnchors,
 )
 from src.graphrag.pipeline import GraphRAGPipeline
+from src.graphrag.synthesizer import DeepSeekMicroFactSynthesizer
 from src.graphrag.traversal import TopologicalTraversalEngine
 
 router = APIRouter(prefix="/api")
@@ -42,6 +44,8 @@ _SERVER_BOOT_MONOTONIC: float = time.monotonic()
 # Singleton dependencies managed during lifespan
 _sync_engine: Optional[Neo4jSyncEngine] = None
 _pipeline: Optional[GraphRAGPipeline] = None
+_micro_fact_synthesizer: DeepSeekMicroFactSynthesizer = DeepSeekMicroFactSynthesizer()
+_micro_fact_cache: Dict[str, MicroFactResponse] = {}
 
 
 def set_sync_engine(engine: Neo4jSyncEngine) -> None:
@@ -824,3 +828,98 @@ def execute_graphrag_query(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail={"error_type": "GraphValidationError", "message": exc.message, "details": exc.details},
         )
+
+
+def _assemble_graph_fact_context(
+    session: Session,
+    policy_keyword: Optional[str] = None,
+    state_code: Optional[str] = None,
+    primary_key: Optional[str] = None,
+) -> str:
+    """Extracts verified factual relationships from the active knowledge graph for micro-fact synthesis."""
+    facts: List[str] = []
+
+    if primary_key and primary_key.strip():
+        clean_pk = primary_key.strip()
+        rec = session.run(
+            "MATCH (n:PolicyNode) WHERE n.primary_key = $pk OR toUpper(n.primary_key) = toUpper($pk) RETURN n, labels(n) AS lbls",
+            pk=clean_pk,
+        ).single()
+        if rec:
+            node_props = dict(rec["n"])
+            lbl = resolve_label_from_pk_and_labels(clean_pk, list(rec["lbls"] or []))
+            name = derive_node_display_name(lbl, clean_pk, node_props)
+            facts.append(f"Entity [{clean_pk}] ({lbl}): {name}")
+            rel_rows = session.run(
+                """
+                MATCH (src:PolicyNode)-[r]->(tgt:PolicyNode)
+                WHERE src.primary_key = $pk OR tgt.primary_key = $pk
+                RETURN src.primary_key AS spk, tgt.primary_key AS tpk, r
+                LIMIT 250
+                """,
+                pk=clean_pk,
+            ).data()
+            for r in rel_rows[:5]:
+                rel_obj = r.get("r")
+                rel_type = rel_obj.type if hasattr(rel_obj, "type") else getattr(rel_obj, "label", "RELATED_TO")
+                facts.append(f"Relationship: [{r['spk']}] -> {rel_type} -> [{r['tpk']}]")
+
+    if state_code and state_code.strip():
+        clean_st = state_code.strip().upper().replace("STATE-", "")
+        st_rec = session.run(
+            "MATCH (j:Jurisdiction)-[:COVERS_STATE]->(s:State {state_code: $state_code}) "
+            "RETURN s.primary_key AS s_pk, j.primary_key AS j_pk",
+            state_code=clean_st,
+        ).single()
+        if st_rec:
+            facts.append(
+                f"DME MAC {st_rec['j_pk']} administers Medicare durable medical equipment claims for {st_rec['s_pk']} ({clean_st})."
+            )
+
+    if not facts:
+        pl_rows = session.run("MATCH (x:PublicLaw) RETURN properties(x) AS props").data()
+        st_rows = session.run("MATCH (x:StatutorySection) RETURN properties(x) AS props").data()
+        reg_rows = session.run("MATCH (x:Regulation) RETURN properties(x) AS props").data()
+        cp_rows = session.run("MATCH (x:CoveragePolicy) RETURN properties(x) AS props").data()
+
+        pl_pk = pl_rows[0]["props"].get("primary_key", "PLAW-117-328") if pl_rows else "PLAW-117-328"
+        sec_props = st_rows[0]["props"] if st_rows else {}
+        sec_num = sec_props.get("statute_section_number") or sec_props.get("section_number") or "4133"
+        sec_head = sec_props.get("heading") or "Medicare Part B coverage for lymphedema compression treatment items"
+        reg_cit = reg_rows[0]["props"].get("citation", "88 FR 77676") if reg_rows else "88 FR 77676"
+        cp_pk = cp_rows[0]["props"].get("primary_key", "DME-MAC-COPE147943") if cp_rows else "DME-MAC-COPE147943"
+
+        facts.append(
+            f"Public Law {str(pl_pk).replace('PLAW-', '')} Section {sec_num} ({sec_head}) "
+            f"is implemented by Federal Register Rule {reg_cit} and Coverage Policy {cp_pk}."
+        )
+
+    return "\n".join(facts)
+
+
+@router.get("/graphrag/microfact", response_model=MicroFactResponse)
+@router.get("/graphrag/micro-fact", response_model=MicroFactResponse)
+def get_graph_micro_fact(
+    policy_keyword: Optional[str] = Query(None, description="Optional policy keyword context"),
+    state_code: Optional[str] = Query(None, description="Optional state code context"),
+    primary_key: Optional[str] = Query(None, description="Optional selected node primary key context"),
+    refresh: bool = Query(False, description="Force fresh DeepSeek inference bypassing cache"),
+    session: Session = Depends(get_neo4j_session),
+) -> MicroFactResponse:
+    """Synthesizes a concise, verified graph micro-fact (< 15 words) via dedicated Hugging Face DeepSeek endpoint."""
+    token_present = bool(_micro_fact_synthesizer.token and _micro_fact_synthesizer.token.strip())
+    cache_key = f"{policy_keyword or 'LTA'}|{state_code or ''}|{primary_key or ''}|{token_present}"
+    if not refresh and cache_key in _micro_fact_cache:
+        return _micro_fact_cache[cache_key]
+
+    graph_context = _assemble_graph_fact_context(
+        session=session,
+        policy_keyword=policy_keyword,
+        state_code=state_code,
+        primary_key=primary_key,
+    )
+    result = _micro_fact_synthesizer.generate_micro_fact(graph_context=graph_context)
+    response_obj = MicroFactResponse(**result)
+    if response_obj.source == "deepseek":
+        _micro_fact_cache[cache_key] = response_obj
+    return response_obj

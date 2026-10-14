@@ -94,13 +94,15 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
         style={{
           position: 'absolute',
           top: 0,
-          right: 0,
+          left: 0,
           width: 390,
+          maxWidth: '45vw',
           height: '100%',
+          boxSizing: 'border-box',
           backgroundColor: CANVAS_PALETTE.panelBg,
           backdropFilter: 'blur(12px)',
-          borderLeft: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-          boxShadow: '-8px 0 24px rgba(0, 0, 0, 0.6)',
+          borderRight: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+          boxShadow: '8px 0 24px rgba(0, 0, 0, 0.6)',
           display: 'flex',
           flexDirection: 'column',
           zIndex: 20,
@@ -159,7 +161,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
           </button>
         </div>
 
-        <div style={{ flex: 1, overflowY: 'auto', padding: '16px 20px' }}>
+        <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', padding: '16px 20px' }}>
           {/* Directional Linkage Summary */}
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 8 }}>
@@ -575,13 +577,15 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
       style={{
         position: 'absolute',
         top: 0,
-        right: 0,
+        left: 0,
         width: 390,
+        maxWidth: '45vw',
         height: '100%',
+        boxSizing: 'border-box',
         backgroundColor: CANVAS_PALETTE.panelBg,
         backdropFilter: 'blur(12px)',
-        borderLeft: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-        boxShadow: '-8px 0 24px rgba(0, 0, 0, 0.6)',
+        borderRight: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+        boxShadow: '8px 0 24px rgba(0, 0, 0, 0.6)',
         display: 'flex',
         flexDirection: 'column',
         zIndex: 20,
@@ -645,7 +649,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
       </div>
 
       {/* Body Content */}
-      <div style={{ flex: 1, overflowY: 'auto', padding: '16px 20px' }}>
+      <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', padding: '16px 20px' }}>
         {/* Scope / Description */}
         <div style={{ marginBottom: 16 }}>
           <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 4 }}>
@@ -731,7 +735,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
             opacity: isQueryLoading ? 0.75 : 1.0,
           }}
         >
-          {isQueryLoading ? '◈ INQUIRING...' : '◈ INQUIRE IN GRAPHRAG CHAT'}
+          {isQueryLoading ? '◈ EXPLAINING...' : '◈ WHY IS THIS IMPORTANT?'}
         </button>
 
         {/* Government Authority Link */}

@@ -2,7 +2,7 @@
  * Bidirectional Canvas-Agent Synchronization Bus across all 17 8-hop entity categories and 54 US jurisdictions.
  */
 
-import React, { createContext, useContext, useState, useCallback, useMemo, useRef } from 'react';
+import React, { createContext, useContext, useState, useCallback, useMemo, useRef, useEffect } from 'react';
 import type {
   GraphNode,
   GraphLink,
@@ -11,9 +11,14 @@ import type {
   ExecutionStatus,
   BackendConnectionState,
   DataSourceMode,
+  MicroFactResponse,
 } from '../types/graph';
 import { constructInquiryPrompt } from '../utils/promptGenerator';
 import { getApiBaseUrl } from '../utils/apiConfig';
+
+export const DEFAULT_GRAPHRAG_MODEL = 'Qwen/Qwen2.5-7B-Instruct';
+export const DEFAULT_GRAPH_MICRO_FACT =
+  'Public Law 117-328 codifies Medicare compression garment benefits.';
 
 export interface ChatMessage {
   id: string;
@@ -181,6 +186,7 @@ interface GraphSyncContextType {
   isQueryLoading: boolean;
   errorMsg: string | null;
   focusTarget: { x: number; y: number; zoom?: number } | null;
+  microFact: string;
 
   selectNode: (node: GraphNode | null) => void;
   selectEdge: (edge: GraphLink | null) => void;
@@ -219,7 +225,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     {
       id: 'welcome-1',
       sender: 'assistant',
-      text: "Welcome to the LAG Policy GraphRAG Intelligence Terminal. You can ask natural language clinical, geographic, or macro legislative questions, or select any node on the blueprint canvas to seed a targeted inquiry.",
+      text: "Welcome to the Medical Durable Goods Assistant. You can ask natural language clinical, geographic, or macro legislative questions, or select any node on the blueprint canvas to seed a targeted inquiry.",
       timestamp: new Date().toLocaleTimeString(),
     },
   ]);
@@ -246,6 +252,53 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   ]);
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
   const [focusTarget, setFocusTarget] = useState<{ x: number; y: number; zoom?: number } | null>(null);
+  const [microFact, setMicroFact] = useState<string>(DEFAULT_GRAPH_MICRO_FACT);
+
+  useEffect(() => {
+    let cancelled = false;
+    const fetchMicroFact = async () => {
+      if (dataSourceMode !== 'live') {
+        setMicroFact(DEFAULT_GRAPH_MICRO_FACT);
+        return;
+      }
+      try {
+        const params = new URLSearchParams();
+        if (policyKeyword) params.append('policy_keyword', policyKeyword);
+        if (filterState) params.append('state_code', filterState);
+        if (selectedNode?.primary_key) params.append('primary_key', selectedNode.primary_key);
+
+        const res = await fetch(`${getApiBaseUrl()}/api/graphrag/micro-fact?${params.toString()}`);
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        const payload: MicroFactResponse = await res.json();
+        if (cancelled) return;
+        const factText = (payload?.micro_fact || '').trim();
+        const words = factText ? factText.split(/\s+/) : [];
+        if (words.length >= 1 && words.length < 15) {
+          setMicroFact(factText);
+        } else {
+          console.warn(
+            '[Telemetry Notice] Micro-fact exceeded 14-word boundary; using verified default graph micro-fact.'
+          );
+          setMicroFact(DEFAULT_GRAPH_MICRO_FACT);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          console.warn(
+            '[Telemetry Notice] DeepSeek micro-fact endpoint unavailable; displaying verified default graph micro-fact.',
+            err
+          );
+          setMicroFact(DEFAULT_GRAPH_MICRO_FACT);
+        }
+      }
+    };
+
+    fetchMicroFact();
+    return () => {
+      cancelled = true;
+    };
+  }, [dataSourceMode, policyKeyword, filterState, selectedNode]);
 
   const availableStates = useMemo<StateOption[]>(() => {
     if (jurisdictionScope && DME_JURISDICTIONS[jurisdictionScope]) {
@@ -287,61 +340,11 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     };
     setSeededAnchor(anchor);
 
-    const prompts: string[] = [];
-    switch (node.label) {
-      case 'CoveragePolicy':
-        prompts.push(`What diagnoses are approved under ${node.primary_key}?`);
-        prompts.push(`List all covered HCPCS procedure codes governed by ${node.primary_key}`);
-        prompts.push(`What is the governing statutory authority for ${node.primary_key}?`);
-        break;
-      case 'Transmittal':
-      case 'ChangeRequest':
-        prompts.push(`What operational instructions and benefit categories are mandated by ${node.primary_key}?`);
-        prompts.push(`Which DME MAC jurisdictions and coverage policies are governed by ${node.primary_key}?`);
-        break;
-      case 'Jurisdiction':
-        prompts.push(`What states does ${node.name} cover?`);
-        prompts.push(`Show active transmittals for ${node.primary_key}`);
-        break;
-      case 'ProcedureCode':
-      case 'HCPCSCode':
-        prompts.push(`What is the allowable Medicare reimbursement for ${node.primary_key} in Wisconsin?`);
-        prompts.push(`What clinical documentation and pricing methodology apply to ${node.primary_key}?`);
-        break;
-      case 'FeeScheduleRate':
-      case 'FeeScheduleEntry':
-        prompts.push(`What are the allowable reimbursement rate and 20% patient coinsurance for ${node.primary_key}?`);
-        prompts.push(`Explain the governing coverage policy for ${node.primary_key}`);
-        break;
-      case 'DiagnosisCode':
-      case 'ICD10Code':
-        prompts.push(`What coverage policies require diagnosis ${node.primary_key}?`);
-        prompts.push(`Can a patient in Wisconsin get compression garments for ${node.name}?`);
-        break;
-      case 'Policy':
-      case 'Bill':
-      case 'PublicLaw':
-      case 'StatutorySection':
-      case 'USCSection':
-      case 'Regulation':
-      case 'CFRSection':
-        prompts.push(`Explain the 8-hop legislative, statutory, and regulatory lineage of ${node.primary_key}`);
-        prompts.push(`How does ${node.primary_key} connect to CMS Transmittal TR-CR13286 and DME-MAC-COPE147943?`);
-        break;
-      case 'State':
-        prompts.push(`What DME MAC jurisdiction covers ${node.name}?`);
-        prompts.push(`What are the allowable compression rates in ${node.name}?`);
-        break;
-      case 'CBOScore':
-      case 'LobbyingFiling':
-      case 'LiteratureStudy':
-        prompts.push(`Explain the contextual evidence and policy relationship of ${node.primary_key}`);
-        prompts.push(`How does ${node.name} relate to the Lymphedema Treatment Act?`);
-        break;
-      default:
-        prompts.push(`Explain the legislative and operational lineage of ${node.primary_key}`);
-        prompts.push(`What policies connect to ${node.name}?`);
-    }
+    const prompts: string[] = [
+      constructInquiryPrompt(node),
+      `How does [${node.primary_key}] connect to patient coverage and reimbursement?`,
+      `What upstream laws and downstream policies are linked to [${node.primary_key}]?`,
+    ];
     setQuickPrompts(prompts);
   }, []);
 
@@ -451,7 +454,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             query: q,
-            model_id: modelId || 'meta-llama/Meta-Llama-3-8B-Instruct',
+            model_id: modelId || DEFAULT_GRAPHRAG_MODEL,
             state_code: filterState || undefined,
             jurisdiction_code: filterJurisdiction || undefined,
             primary_key: anchorPk,
@@ -506,7 +509,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     async (node: GraphNode) => {
       setIsChatOpen(true);
       const prompt = constructInquiryPrompt(node);
-      await submitInquiry(prompt, node.primary_key);
+      await submitInquiry(prompt, node.primary_key, DEFAULT_GRAPHRAG_MODEL);
     },
     [submitInquiry]
   );
@@ -537,6 +540,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       isQueryLoading,
       errorMsg,
       focusTarget,
+      microFact,
       selectNode,
       selectEdge,
       setIlluminatedPath,
@@ -582,6 +586,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       isQueryLoading,
       errorMsg,
       focusTarget,
+      microFact,
       selectNode,
       selectEdge,
       setIlluminatedPath,

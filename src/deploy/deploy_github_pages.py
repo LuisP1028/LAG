@@ -112,7 +112,7 @@ def deploy_to_github_pages(
     # 2. Scan dist bundle to guarantee zero secret leakage
     forbidden_tokens = [
         v for k, v in os.environ.items()
-        if k in {"HF_DEPLOY_TOKEN", "HF_TOKEN", "HUGGINGFACE_API_KEY", "CONGRESS_API_KEY", "NEO4J_PASSWORD"} and v and len(v) > 8
+        if k in {"HF_DEPLOY_TOKEN", "HF_TOKEN", "HUGGINGFACE_API_KEY", "HF_DEEPSEEK_TOKEN", "CONGRESS_API_KEY", "NEO4J_PASSWORD"} and v and len(v) > 8
     ]
     for asset_file in dist_dir.rglob("*"):
         if asset_file.is_file() and asset_file.suffix in {".js", ".html", ".css", ".json"}:

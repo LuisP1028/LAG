@@ -50,6 +50,8 @@ const MainVisualizer: React.FC = () => {
     setBackendState,
     backendMessage,
     setBackendMessage,
+    selectedNode,
+    selectedEdge,
   } = useGraphSync();
 
   const probeHealth = useCallback(async () => {
@@ -266,6 +268,9 @@ const MainVisualizer: React.FC = () => {
     return { visibleNodes: filteredNodes, visibleLinks: filteredLinks };
   }, [nodes, links, filterCategory, searchQuery]);
 
+  const isInspectionOpen = Boolean(selectedNode || selectedEdge);
+  const bannerLeftOffset = isInspectionOpen ? 'min(410px, calc(45vw + 20px))' : 20;
+
   return (
     <div style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' }}>
       <FilterToolbar onReloadTopology={fetchTopology} />
@@ -281,7 +286,7 @@ const MainVisualizer: React.FC = () => {
             style={{
               position: 'absolute',
               bottom: 20,
-              left: 20,
+              left: bannerLeftOffset,
               backgroundColor: 'rgba(15, 23, 42, 0.94)',
               border: '1px solid #38bdf8',
               color: '#e0f2fe',
@@ -304,7 +309,7 @@ const MainVisualizer: React.FC = () => {
           style={{
             position: 'absolute',
             bottom: 20,
-            left: 20,
+            left: bannerLeftOffset,
             backgroundColor: 'rgba(225, 29, 72, 0.94)',
             color: '#ffffff',
             padding: '12px 16px',

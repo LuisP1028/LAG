@@ -108,4 +108,12 @@ export interface EntityInspectionData {
   }[];
 }
 
+export interface MicroFactResponse {
+  micro_fact: string;
+  word_count: number;
+  model_id: string;
+  source: string;
+  telemetry_notice?: string | null;
+}
+
 

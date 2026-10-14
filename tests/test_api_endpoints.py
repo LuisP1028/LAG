@@ -297,3 +297,33 @@ def test_api_cors_preflight_github_pages(client):
     assert "GET" in allow_methods and "POST" in allow_methods and "OPTIONS" in allow_methods
 
 
+def test_qwen_default_model_and_deepseek_micro_fact(client, monkeypatch):
+    """Verifies Qwen/Qwen2.5-7B-Instruct default model enforcement and DeepSeek micro-fact (< 15 words) via HF_DEEPSEEK_TOKEN."""
+    from src.graphrag.models import GraphRAGQueryRequest
+    from src.graphrag.synthesizer import DeepSeekMicroFactSynthesizer, HuggingFaceSynthesizer
+
+    # 1. Default model enforcement: Qwen/Qwen2.5-7B-Instruct
+    req = GraphRAGQueryRequest(query="Test query")
+    assert req.model_id == "Qwen/Qwen2.5-7B-Instruct"
+    assert HuggingFaceSynthesizer.DEFAULT_MODEL == "Qwen/Qwen2.5-7B-Instruct"
+
+    # 2. Live DeepSeek micro-fact endpoint via HF_DEEPSEEK_TOKEN
+    res_fact = client.get("/api/graphrag/micro-fact?refresh=true")
+    assert res_fact.status_code == 200
+    fact_data = res_fact.json()
+    assert "deepseek-ai/" in fact_data["model_id"]
+    assert fact_data["source"] == "deepseek"
+    words = fact_data["micro_fact"].strip().split()
+    assert 1 <= len(words) < 15
+    assert fact_data["word_count"] == len(words)
+    assert fact_data["word_count"] < 15
+
+    # 3. Credential isolation & offline resilience when HF_DEEPSEEK_TOKEN is absent
+    monkeypatch.delenv("HF_DEEPSEEK_TOKEN", raising=False)
+    isolated_synth = DeepSeekMicroFactSynthesizer(token="")
+    fallback_res = isolated_synth.generate_micro_fact("Public Law 117-328 enacted Section 4133.")
+    assert fallback_res["source"] == "fallback"
+    assert 1 <= fallback_res["word_count"] < 15
+    assert fallback_res["telemetry_notice"] is not None
+
+

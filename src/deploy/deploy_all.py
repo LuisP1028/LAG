@@ -141,6 +141,14 @@ def verify_end_to_end_deployment(public_https_url: str, pages_url: str) -> Dict[
         if "290.47" not in answer_text or "58.09" not in answer_text:
             raise RuntimeError(f"GraphRAG answer missing required WI fee/coinsurance figures: {answer_text}")
 
+        # 7b. Verify Dynamic Micro-Fact Synthesis (<15 words via HF_DEEPSEEK_TOKEN)
+        mf_res = client.get(f"{base_url}/api/graphrag/microfact")
+        mf_res.raise_for_status()
+        mf_json = mf_res.json()
+        mf_wc = int(mf_json.get("word_count", 0))
+        if not (1 <= mf_wc < 15):
+            raise RuntimeError(f"Micro-fact word count out of bounds (expected 1..14, got {mf_wc}): {mf_json}")
+
         # 8. Verify GitHub Pages HTML and Bundled Pre-Computed Run Artifacts
         pages_res = client.get(pages_url)
         pages_res.raise_for_status()
@@ -168,6 +176,7 @@ def verify_end_to_end_deployment(public_https_url: str, pages_url: str) -> Dict[
         "inspected_entity_pk": ent_json.get("primary_key"),
         "graphrag_query_duration_ms": q_json.get("duration_ms"),
         "graphrag_illuminated_nodes": len(q_json.get("active_node_pks", [])),
+        "micro_fact": mf_json,
         "pages_lta_nodes": len(lta_json.get("nodes", [])),
         "pages_ivig_nodes": len(ivig_json.get("nodes", [])),
     }

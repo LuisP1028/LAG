@@ -59,7 +59,7 @@ class TraversalResult(BaseModel):
 class GraphRAGQueryRequest(BaseModel):
     """Request payload for conversational GraphRAG synthesis."""
     query: str
-    model_id: Optional[str] = "meta-llama/Meta-Llama-3-8B-Instruct"
+    model_id: Optional[str] = "Qwen/Qwen2.5-7B-Instruct"
     state_code: Optional[str] = None
     jurisdiction_code: Optional[str] = None
     primary_key: Optional[str] = None
@@ -74,6 +74,15 @@ class GraphRAGQueryResponse(BaseModel):
     anchors: List[AnchorEntity]
     provenance_sources: List[Dict[str, Any]]
     duration_ms: float
+
+
+class MicroFactResponse(BaseModel):
+    """Response payload for the DeepSeek-powered dynamic graph micro-fact (< 15 words)."""
+    micro_fact: str
+    word_count: int
+    model_id: str
+    source: str
+    telemetry_notice: Optional[str] = None
 
 
 def resolve_label_from_pk_and_labels(pk: str, raw_labels: List[str]) -> str:

@@ -49,6 +49,8 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
     clearIllumination,
     isChatOpen,
     setIsChatOpen,
+    selectedNode,
+    selectedEdge,
   } = useGraphSync();
 
   const handleApplyApiUrl = (e: React.FormEvent) => {
@@ -130,6 +132,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
   };
 
   const statusBadge = getStatusBadgeStyle();
+  const isInspectionOpen = Boolean(selectedNode || selectedEdge);
 
   return (
     <div
@@ -138,7 +141,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
         position: 'absolute',
         top: 14,
         right: 14,
-        left: 240,
+        left: isInspectionOpen ? 'min(404px, calc(45vw + 14px))' : 14,
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',

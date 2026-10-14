@@ -43,14 +43,10 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     selectEdge,
   } = useGraphSync();
 
-  const [isHudOpen, setIsHudOpen] = useState<boolean>(true);
   const renderRef = useRef<() => void>(() => {});
 
   const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
   const [hoveredEdge, setHoveredEdge] = useState<GraphLink | null>(null);
-  const [fps, setFps] = useState<number>(60);
-  const frameCountRef = useRef<number>(0);
-  const lastFpsTimeRef = useRef<number>(performance.now());
 
   // Smooth camera zoom-to-fit framing for active illuminated subgraph
   const frameActiveSubgraph = useCallback((targetPKs: Set<string>) => {
@@ -126,15 +122,6 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     const { dpr, rect } = syncCanvasDimensions(canvas);
     const width = (canvas.width / dpr) || rect.width || canvas.clientWidth || 900;
     const height = (canvas.height / dpr) || rect.height || canvas.clientHeight || 650;
-
-    // Measure FPS
-    frameCountRef.current += 1;
-    const now = performance.now();
-    if (now - lastFpsTimeRef.current >= 1000) {
-      setFps(Math.round((frameCountRef.current * 1000) / (now - lastFpsTimeRef.current)));
-      frameCountRef.current = 0;
-      lastFpsTimeRef.current = now;
-    }
 
     const nodeByPk = new Map<string, GraphNode>(nodes.map((n) => [n.primary_key, n]));
 
@@ -833,6 +820,14 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
   const isHoveredNodeActive = Boolean(
     hoveredNode && isIlluminated && activeNodePKs.has(hoveredNode.primary_key)
   );
+  const isInspectionOpen = Boolean(selectedNode || selectedEdge);
+  const tooltipLeftOffset = isInspectionOpen ? 'min(406px, calc(45vw + 16px))' : 14;
+
+  const handleMouseLeave = () => {
+    handleMouseUp();
+    setHoveredNode(null);
+    setHoveredEdge(null);
+  };
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
@@ -847,71 +842,10 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
         }}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
         onClick={handlePointerDown}
         onMouseMove={handlePointerMove}
       />
-
-      {/* Blueprint HUD Telemetry Overlay */}
-      <div
-        onClick={(e) => {
-          e.stopPropagation();
-          setIsHudOpen((prev) => !prev);
-        }}
-        style={{
-          position: 'absolute',
-          top: 14,
-          left: 14,
-          backgroundColor: 'rgba(10, 17, 40, 0.88)',
-          border: '1px solid rgba(255, 183, 3, 0.35)',
-          borderRadius: 4,
-          fontFamily: '"SF Mono", "Fira Code", monospace',
-          fontSize: 11,
-          color: '#e2e8f0',
-          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
-          pointerEvents: 'auto',
-          cursor: 'pointer',
-          userSelect: 'none',
-          zIndex: 10,
-          transition: 'all 0.2s ease',
-        }}
-        title="Click to expand/collapse Blueprint HUD"
-      >
-        {!isHudOpen ? (
-          <div style={{ padding: '6px 12px', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <span style={{ color: CANVAS_PALETTE.accentAmber, fontWeight: 700, letterSpacing: '0.05em' }}>
-              ◈ BLUEPRINT HUD
-            </span>
-            <span style={{ fontSize: 9, color: '#94a3b8' }}>▼</span>
-          </div>
-        ) : (
-          <>
-            <div
-              style={{
-                padding: '8px 14px 6px 14px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                borderBottom: '1px solid rgba(255, 183, 3, 0.2)',
-                color: CANVAS_PALETTE.accentAmber,
-                fontWeight: 700,
-                letterSpacing: '0.05em',
-              }}
-            >
-              <span>◈ LAG KNOWLEDGE BLUEPRINT HUD</span>
-              <span style={{ fontSize: 9, color: '#94a3b8', marginLeft: 8 }}>▲</span>
-            </div>
-            <div style={{ padding: '8px 14px', display: 'flex', gap: 14 }}>
-              <span>NODES: <strong style={{ color: '#38bdf8' }}>{nodes.length}</strong></span>
-              <span>EDGES: <strong style={{ color: '#38bdf8' }}>{links.length}</strong></span>
-              <span>FPS: <strong style={{ color: fps >= 55 ? '#4ade80' : '#f87171' }}>{fps}</strong></span>
-              <span>STATUS: <strong style={{ color: isIlluminated ? CANVAS_PALETTE.accentAmber : '#94a3b8' }}>
-                {isIlluminated ? 'PATH ILLUMINATED' : 'EXPLORATION MODE'}
-              </strong></span>
-            </div>
-          </>
-        )}
-      </div>
 
       {hoveredNode && (
         <div
@@ -919,7 +853,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
           style={{
             position: 'absolute',
             bottom: 16,
-            left: 14,
+            left: tooltipLeftOffset,
             backgroundColor: 'rgba(10, 17, 40, 0.92)',
             border: `1px solid ${
               isHoveredNodeActive ? CANVAS_PALETTE.accentAmber : CANVAS_PALETTE.panelBorder
@@ -964,7 +898,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
           style={{
             position: 'absolute',
             bottom: 16,
-            left: 14,
+            left: tooltipLeftOffset,
             backgroundColor: 'rgba(10, 17, 40, 0.92)',
             border: '1px solid #38bdf8',
             borderRadius: 6,

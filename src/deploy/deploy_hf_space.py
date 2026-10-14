@@ -74,6 +74,9 @@ def deploy_to_hf_space(
     # Use ACT-KG- (llm_token) for live LLM inference inside the Space
     api.add_space_secret(repo_id=repo_id, key="HF_TOKEN", value=llm_token)
     api.add_space_secret(repo_id=repo_id, key="HUGGINGFACE_API_KEY", value=llm_token)
+    deepseek_token = os.getenv("HF_DEEPSEEK_TOKEN")
+    if deepseek_token:
+        api.add_space_secret(repo_id=repo_id, key="HF_DEEPSEEK_TOKEN", value=deepseek_token)
     congress_key = os.getenv("CONGRESS_API_KEY")
     if congress_key:
         api.add_space_secret(repo_id=repo_id, key="CONGRESS_API_KEY", value=congress_key)
