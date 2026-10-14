@@ -14,18 +14,20 @@ class HealthResponse(BaseModel):
 
 
 class TopologyNode(BaseModel):
-    primary_key: str
-    label: str
-    name: str
-    properties: Dict[str, Any] = Field(default_factory=dict)
+    """Graph entity node across the 17 canonical 8-hop knowledge graph categories."""
+    primary_key: str = Field(..., description="Deterministic composite primary key")
+    label: str = Field(..., description="Canonical entity category label (1 of 17 8-hop categories)")
+    name: str = Field(..., description="Human-readable display name derived from persisted properties")
+    properties: Dict[str, Any] = Field(default_factory=dict, description="Full persisted attribute dictionary")
 
 
 class TopologyEdge(BaseModel):
-    source_pk: str
-    target_pk: str
-    label: str
-    edge_key: str
-    provenance: Dict[str, Any] = Field(default_factory=dict)
+    """Directed relationship across the 18 canonical 8-hop relationship types with provenance."""
+    source_pk: str = Field(..., description="Primary key of source entity")
+    target_pk: str = Field(..., description="Primary key of target entity")
+    label: str = Field(..., description="Canonical relationship type (1 of 18 8-hop relationship types)")
+    edge_key: str = Field(..., description="Composite edge identifier source_pk->label->target_pk")
+    provenance: Dict[str, Any] = Field(default_factory=dict, description="Persisted provenance metadata (source_uri, selector, ingestion_timestamp, run_id)")
 
 
 class TopologyResponse(BaseModel):

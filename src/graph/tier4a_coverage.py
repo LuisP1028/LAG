@@ -131,11 +131,15 @@ def _parse_clinical_coverage_html(
             "Hop 5 failed: Primary MCD probe returned 404/empty and no secondary Joint DME MAC publication with qualifying ICD-10-CM codes was found."
         )
 
-    # Extract publication title from <h1> or <title>
-    h1_match = re.search(r"<h1[^>]*>(.*?)</h1>", chosen_html, flags=re.IGNORECASE | re.DOTALL)
-    if h1_match:
-        pub_title = _strip_html_tags(h1_match.group(1))
-    else:
+    # Extract publication title from <h1> or <title>, skipping CPT license banner headings
+    pub_title = ""
+    for h1_raw in re.findall(r"<h1[^>]*>(.*?)</h1>", chosen_html, flags=re.IGNORECASE | re.DOTALL):
+        candidate_title = _strip_html_tags(h1_raw)
+        cand_upper = candidate_title.upper()
+        if candidate_title and "LICENSE FOR USE" not in cand_upper and "CURRENT PROCEDURAL TERMINOLOGY" not in cand_upper:
+            pub_title = candidate_title
+            break
+    if not pub_title:
         t_match = re.search(r"<title[^>]*>(.*?)</title>", chosen_html, flags=re.IGNORECASE | re.DOTALL)
         pub_title = _strip_html_tags(t_match.group(1)) if t_match else "Joint DME MAC Clinical Coverage Guidance"
 

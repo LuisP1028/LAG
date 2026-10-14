@@ -226,7 +226,115 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
       ctx.restore();
     });
 
-    // 4. Draw Nodes with Halftone Dot Shading
+    // Helper to trace node shape polygon path
+    const drawNodePolygon = (
+      context: CanvasRenderingContext2D,
+      cx: number,
+      cy: number,
+      r: number,
+      shape: string
+    ) => {
+      context.beginPath();
+      switch (shape) {
+        case 'square': {
+          const half = r * 0.88;
+          context.rect(cx - half, cy - half, half * 2, half * 2);
+          break;
+        }
+        case 'rounded_square': {
+          const half = r * 0.9;
+          const cr = r * 0.28;
+          context.moveTo(cx - half + cr, cy - half);
+          context.lineTo(cx + half - cr, cy - half);
+          context.quadraticCurveTo(cx + half, cy - half, cx + half, cy - half + cr);
+          context.lineTo(cx + half, cy + half - cr);
+          context.quadraticCurveTo(cx + half, cy + half, cx + half - cr, cy + half);
+          context.lineTo(cx - half + cr, cy + half);
+          context.quadraticCurveTo(cx - half, cy + half, cx - half, cy + half - cr);
+          context.lineTo(cx - half, cy - half + cr);
+          context.quadraticCurveTo(cx - half, cy - half, cx - half + cr, cy - half);
+          context.closePath();
+          break;
+        }
+        case 'diamond': {
+          context.moveTo(cx, cy - r * 1.15);
+          context.lineTo(cx + r * 1.15, cy);
+          context.lineTo(cx, cy + r * 1.15);
+          context.lineTo(cx - r * 1.15, cy);
+          context.closePath();
+          break;
+        }
+        case 'triangle': {
+          for (let i = 0; i < 3; i++) {
+            const angle = -Math.PI / 2 + (i * 2 * Math.PI) / 3;
+            const px = cx + r * 1.15 * Math.cos(angle);
+            const py = cy + r * 1.15 * Math.sin(angle);
+            if (i === 0) context.moveTo(px, py);
+            else context.lineTo(px, py);
+          }
+          context.closePath();
+          break;
+        }
+        case 'pentagon': {
+          for (let i = 0; i < 5; i++) {
+            const angle = -Math.PI / 2 + (i * 2 * Math.PI) / 5;
+            const px = cx + r * 1.05 * Math.cos(angle);
+            const py = cy + r * 1.05 * Math.sin(angle);
+            if (i === 0) context.moveTo(px, py);
+            else context.lineTo(px, py);
+          }
+          context.closePath();
+          break;
+        }
+        case 'hexagon': {
+          for (let i = 0; i < 6; i++) {
+            const angle = -Math.PI / 2 + (i * 2 * Math.PI) / 6;
+            const px = cx + r * 1.05 * Math.cos(angle);
+            const py = cy + r * 1.05 * Math.sin(angle);
+            if (i === 0) context.moveTo(px, py);
+            else context.lineTo(px, py);
+          }
+          context.closePath();
+          break;
+        }
+        case 'octagon': {
+          for (let i = 0; i < 8; i++) {
+            const angle = -Math.PI / 8 + (i * 2 * Math.PI) / 8;
+            const px = cx + r * 1.04 * Math.cos(angle);
+            const py = cy + r * 1.04 * Math.sin(angle);
+            if (i === 0) context.moveTo(px, py);
+            else context.lineTo(px, py);
+          }
+          context.closePath();
+          break;
+        }
+        case 'star': {
+          const spikes = 5;
+          const outerR = r * 1.18;
+          const innerR = r * 0.52;
+          for (let i = 0; i < spikes * 2; i++) {
+            const currR = i % 2 === 0 ? outerR : innerR;
+            const angle = -Math.PI / 2 + (i * Math.PI) / spikes;
+            const px = cx + currR * Math.cos(angle);
+            const py = cy + currR * Math.sin(angle);
+            if (i === 0) context.moveTo(px, py);
+            else context.lineTo(px, py);
+          }
+          context.closePath();
+          break;
+        }
+        case 'dot':
+        case 'ring':
+        case 'double_ring':
+        case 'circle':
+        default: {
+          context.arc(cx, cy, r, 0, Math.PI * 2);
+          break;
+        }
+      }
+    };
+
+    // 4. Draw Nodes with Halftone Dot Shading & Distinct Category Shapes
     nodes.forEach((node) => {
       if (node.x === undefined || node.y === undefined) return;
 
@@ -274,16 +382,14 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
       }
 
       // Base Node Fill: Gold/Amber (#ffb703) when active, entity badgeColor otherwise
-      ctx.beginPath();
-      ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
+      drawNodePolygon(ctx, node.x, node.y, radius, visual.shape);
       ctx.fillStyle = isActive ? CANVAS_PALETTE.accentAmber : visual.badgeColor;
       ctx.fill();
 
       // Screen-Space Halftone Screening Simulation (Concentric Micro-Dots Shading)
       if (radius > 7) {
         ctx.save();
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
+        drawNodePolygon(ctx, node.x, node.y, radius, visual.shape);
         ctx.clip();
 
         // High-illumination offset dot cluster
@@ -317,9 +423,25 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
       } else if (isActive) {
         borderStroke = '#fde68a';
       }
+      drawNodePolygon(ctx, node.x, node.y, radius, visual.shape);
       ctx.strokeStyle = borderStroke;
       ctx.lineWidth = (isActive || isHovered ? 1.8 : 1.2) / transform.k;
       ctx.stroke();
+
+      if (visual.shape === 'ring' || visual.shape === 'double_ring') {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, radius * 0.62, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.55)';
+        ctx.lineWidth = 1.0 / transform.k;
+        ctx.stroke();
+      }
+      if (visual.shape === 'double_ring') {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, radius * 0.36, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+        ctx.lineWidth = 0.9 / transform.k;
+        ctx.stroke();
+      }
 
       // 5. Node Captions (Human-readable name, non-occluding)
       const shouldShowLabel =
@@ -327,7 +449,17 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
         isSelected ||
         isHovered ||
         transform.k > 1.2 ||
-        ['Policy', 'PublicLaw', 'Jurisdiction', 'CoveragePolicy'].includes(node.label);
+        [
+          'Policy',
+          'PublicLaw',
+          'StatutorySection',
+          'USCSection',
+          'Regulation',
+          'CFRSection',
+          'Transmittal',
+          'CoveragePolicy',
+          'Jurisdiction',
+        ].includes(node.label);
 
       if (shouldShowLabel) {
         ctx.font = `${isActive ? '700 ' : ''}${Math.max(9, Math.min(12, 11 / transform.k))}px "SF Mono", "Fira Code", monospace`;

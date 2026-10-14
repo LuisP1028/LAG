@@ -1,5 +1,5 @@
 /**
- * Top navigation toolbar for state filtering, policy domain selection, and GraphRAG triggers.
+ * Top navigation toolbar for state filtering, dynamic policy domain selection, and GraphRAG triggers.
  */
 
 import React from 'react';
@@ -17,6 +17,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
     filterState,
     setFilterState,
     availableStates,
+    availablePolicies,
     policyKeyword,
     setPolicyKeyword,
     isIlluminated,
@@ -64,7 +65,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
         fontSize: 12,
       }}
     >
-      {/* Dedicated Jurisdiction Selector (Requirement 5.1.1) */}
+      {/* Dedicated Jurisdiction Selector */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
         <span style={{ color: CANVAS_PALETTE.textMuted }}>JURISDICTION:</span>
         <select
@@ -90,7 +91,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
         </select>
       </div>
 
-      {/* Dedicated State Selector (Requirement 5.1.2) */}
+      {/* Dedicated State Selector (54 US States & Territories) */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
         <span style={{ color: CANVAS_PALETTE.textMuted }}>STATE:</span>
         <select
@@ -117,10 +118,12 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
         </select>
       </div>
 
-      {/* Policy Selector */}
+      {/* Dynamic Policy Selector populated from persisted Policy nodes */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
         <span style={{ color: CANVAS_PALETTE.textMuted }}>POLICY:</span>
         <select
+          aria-label="POLICY"
+          data-testid="policy-select"
           value={policyKeyword}
           onChange={handlePolicyChange}
           style={{
@@ -133,9 +136,12 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
             cursor: 'pointer',
           }}
         >
-          <option value="LTA">LTA (Lymphedema)</option>
-          <option value="IVIG">IVIG (Immune Globulin)</option>
-          <option value="ALL">All (Omnibus Lineage)</option>
+          {availablePolicies.map((pol) => (
+            <option key={pol.keyword} value={pol.keyword}>
+              {pol.label}
+            </option>
+          ))}
+          <option value="ALL">All Ingested Policies</option>
         </select>
       </div>
 

@@ -1,0 +1,13 @@
+{
+  "account": "ChoppedCheese",
+  "account_id": "662eff76b10f82aa4fb0d8ce",
+  "account_type": "user",
+  "role": "fine_grained",
+  "status": "authenticated",
+  "permissions": [
+    "inference.serverless.write",
+    "inference.endpoints.infer.write",
+    "repo.read",
+    "repo.write"
+  ]
+}

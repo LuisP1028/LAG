@@ -266,7 +266,7 @@ class PropertyGraphEngine:
             raise GraphValidationError(f"Expected exactly 4 DME MAC Jurisdictions, found {len(jurisdictions)}")
 
         states = [n for n in graph.nodes.values() if isinstance(n, StateNode)]
-        if len(states) not in (53, 54):
+        if len(states) != 54:
             raise GraphValidationError(
                 f"INV-50-STATE-COMPLETENESS VIOLATION: Expected 54 jurisdictions (50 states + DC + PR + VI + GU), found {len(states)}"
             )

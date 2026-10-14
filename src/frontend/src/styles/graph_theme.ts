@@ -1,11 +1,25 @@
 /**
- * Authoritative color, shape, and size mappings conforming to Ticket 005 and visualization.md.
+ * Authoritative color, shape, and size mappings across all 17 8-hop entity categories.
  */
+
+export type NodeShape =
+  | 'ring'
+  | 'circle'
+  | 'hexagon'
+  | 'square'
+  | 'pentagon'
+  | 'diamond'
+  | 'octagon'
+  | 'double_REring'
+  | 'rounded_square'
+  | 'dot'
+  | 'triangle'
+  | 'star';
 
 export interface NodeVisualConfig {
   badgeColor: string;
   radius: number;
-  shape: 'ring' | 'circle' | 'hexagon' | 'square' | 'diamond' | 'double_ring' | 'rounded_square' | 'dot' | 'triangle' | 'star';
+  shape: NodeShape;
   description: string;
 }
 
@@ -20,55 +34,73 @@ export const NODE_THEME_REGISTRY: Record<string, NodeVisualConfig> = {
     badgeColor: '#2563eb', // Royal Blue
     radius: 13,
     shape: 'circle',
-    description: 'Congressional Enactment Bill',
+    description: 'Congressional Legislative Bill',
   },
   PublicLaw: {
     badgeColor: '#1e40af', // Navy
     radius: 15,
     shape: 'hexagon',
-    description: 'Codified Public Law Omnibus',
+    description: 'Enacted Public Law Statute',
   },
   StatutorySection: {
     badgeColor: '#4f46e5', // Indigo
-    radius: 11,
+    radius: 12,
     shape: 'square',
-    description: 'United States Code Statutory Section',
+    description: 'Public Law Statutory Section (USLM)',
+  },
+  USCSection: {
+    badgeColor: '#6366f1', // Periwinkle Indigo
+    radius: 12,
+    shape: 'pentagon',
+    description: 'Codified United States Code Section',
   },
   Regulation: {
     badgeColor: '#c2410c', // Rust Orange
     radius: 13,
     shape: 'diamond',
-    description: 'Federal Register Final Rule Regulation',
+    description: 'Federal Register Final Rule',
   },
-  ChangeRequest: {
+  CFRSection: {
+    badgeColor: '#ea580c', // Bright Orange
+    radius: 11,
+    shape: 'octagon',
+    description: 'Code of Federal Regulations Part/Section',
+  },
+  Transmittal: {
     badgeColor: '#d97706', // Amber
     radius: 12,
-    shape: 'circle',
-    description: 'CMS Operational Change Request Transmittal',
+    shape: 'rounded_square',
+    description: 'CMS Manual Change Request Transmittal',
   },
   CoveragePolicy: {
     badgeColor: '#059669', // Emerald
     radius: 15,
     shape: 'double_ring',
-    description: 'CMS Medicare Local Coverage Policy Article',
+    description: 'Medicare Coverage Policy / DME MAC Article',
   },
-  HCPCSCode: {
-    badgeColor: '#0891b2', // Cyan
-    radius: 10,
-    shape: 'circle',
-    description: 'Standardized Healthcare Procedure Code',
-  },
-  ICD10Code: {
+  DiagnosisCode: {
     badgeColor: '#e11d48', // Rose Red
     radius: 10,
-    shape: 'circle',
-    description: 'Clinical Indication Diagnosis Code',
+    shape: 'triangle',
+    description: 'ICD-10-CM Clinical Diagnosis Code',
+  },
+  ProcedureCode: {
+    badgeColor: '#0891b2', // Cyan
+    radius: 10,
+    shape: 'hexagon',
+    description: 'HCPCS Level II Procedure / Supply Code',
+  },
+  FeeScheduleRate: {
+    badgeColor: '#eab308', // Gold
+    radius: 6,
+    shape: 'dot',
+    description: 'DMEPOS State Fee Schedule Rate',
   },
   Jurisdiction: {
     badgeColor: '#16a34a', // Green
     radius: 13,
     shape: 'rounded_square',
-    description: 'DME MAC Regional Claims Contractor',
+    description: 'DME MAC Regional Administrative Contractor',
   },
   State: {
     badgeColor: '#64748b', // Slate
@@ -76,23 +108,48 @@ export const NODE_THEME_REGISTRY: Record<string, NodeVisualConfig> = {
     shape: 'circle',
     description: 'US State / Territorial Jurisdiction',
   },
-  FeeScheduleEntry: {
-    badgeColor: '#eab308', // Gold
-    radius: 6,
-    shape: 'dot',
-    description: 'Allowable Medicare Part B Fee Schedule Rate',
-  },
   LobbyingFiling: {
     badgeColor: '#9333ea', // Purple
     radius: 9,
     shape: 'triangle',
-    description: 'Senate LDA Advocacy Filing',
+    description: 'Senate LDA Lobbying Disclosure Filing',
+  },
+  CBOScore: {
+    badgeColor: '#0d9488', // Teal
+    radius: 10,
+    shape: 'diamond',
+    description: 'Congressional Budget Office Cost Estimate',
   },
   LiteratureStudy: {
     badgeColor: '#0284c7', // Sky Blue
     radius: 9,
     shape: 'star',
-    description: 'Preamble Scientific Evidentiary Citation',
+    description: 'PubMed Peer-Reviewed Clinical Study',
+  },
+  // Legacy aliases for backward compatibility
+  ChangeRequest: {
+    badgeColor: '#d97706',
+    radius: 12,
+    shape: 'rounded_square',
+    description: 'CMS Manual Change Request Transmittal',
+  },
+  HCPCSCode: {
+    badgeColor: '#0891b2',
+    radius: 10,
+    shape: 'hexagon',
+    description: 'HCPCS Level II Procedure / Supply Code',
+  },
+  ICD10Code: {
+    badgeColor: '#e11d48',
+    radius: 10,
+    shape: 'triangle',
+    description: 'ICD-10-CM Clinical Diagnosis Code',
+  },
+  FeeScheduleEntry: {
+    badgeColor: '#eab308',
+    radius: 6,
+    shape: 'dot',
+    description: 'DMEPOS State Fee Schedule Rate',
   },
 };
 

@@ -81,17 +81,194 @@ def get_graph_summary():
     return engine.get_summary_statistics()
 
 
+VALID_STATE_CODES: Set[str] = {
+    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
+    "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME",
+    "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
+    "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "PR",
+    "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "VI", "WA",
+    "WV", "WI", "WY", "GU",
+}
+
+VALID_JURISDICTION_CODES: Set[str] = {
+    "JURIS-DME-A",
+    "JURIS-DME-B",
+    "JURIS-DME-C",
+    "JURIS-DME-D",
+}
+
+
+def derive_node_display_name(
+    label: str,
+    pk_or_props: Any,
+    maybe_props: Optional[Dict[str, Any]] = None,
+) -> str:
+    """Deterministically derives a human-readable display name from persisted node properties across all 17 entity categories."""
+    if maybe_props is None and isinstance(pk_or_props, dict):
+        props = pk_or_props
+        pk = str(props.get("primary_key", ""))
+    else:
+        pk = str(pk_or_props or "")
+        props = maybe_props or {}
+
+    if label == "Policy":
+        kw = props.get("keyword") or props.get("policy_keyword")
+        return str(props.get("name") or (f"Policy: {kw}" if kw else pk))
+    if label == "Bill":
+        b_type = props.get("type") or props.get("bill_type")
+        b_num = props.get("number") or props.get("bill_number")
+        title = props.get("title")
+        if b_type and b_num and title:
+            return f"{str(b_type).upper()} {b_num}: {title}"
+        return str(title or pk)
+    if label == "PublicLaw":
+        cong = props.get("congress")
+        num = props.get("number") or props.get("public_law_number")
+        if cong and num:
+            num_str = str(num)
+            if f"{cong}-" in num_str:
+                return f"Public Law {num_str}"
+            return f"Public Law {cong}-{num_str}"
+        return str(props.get("title") or pk)
+    if label == "StatutorySection":
+        sec_num = props.get("statute_section_number") or props.get("section_number")
+        heading = props.get("heading") or props.get("section_heading")
+        if sec_num and heading:
+            return f"Sec. {sec_num}: {heading}"
+        return str(heading or pk)
+    if label == "USCSection":
+        return str(props.get("citation_string") or props.get("citation") or pk)
+    if label == "Regulation":
+        cit = props.get("citation")
+        docket = props.get("docket_id")
+        if cit and docket:
+            return f"{cit} ({docket})"
+        return str(cit or props.get("document_number") or pk)
+    if label == "CFRSection":
+        return str(props.get("cfr_reference") or props.get("citation") or pk)
+    if label in ("Transmittal", "ChangeRequest"):
+        cr = props.get("cr_number")
+        tr = props.get("transmittal_number")
+        if cr and tr:
+            return f"{cr} ({tr})"
+        return str(cr or tr or pk)
+    if label == "CoveragePolicy":
+        return str(props.get("title") or props.get("article_id") or pk)
+    if label in ("DiagnosisCode", "ICD10Code"):
+        code = props.get("code")
+        desc = props.get("description")
+        if code and desc:
+            return f"{code}: {desc}"
+        return str(code or pk)
+    if label in ("ProcedureCode", "HCPCSCode"):
+        code = props.get("code")
+        sdesc = props.get("short_description") or props.get("long_description")
+        if code and sdesc:
+            return f"{code}: {sdesc}"
+        return str(code or pk)
+    if label in ("FeeScheduleRate", "FeeScheduleEntry"):
+        hcpcs = props.get("hcpcs_code")
+        st = props.get("state_code")
+        fee = props.get("fee_amount")
+        if hcpcs and st and fee is not None:
+            r_tag = "R" if props.get("is_rural") else "NR"
+            return f"{hcpcs} ({st} {r_tag}): ${float(fee):.2f}"
+        return pk
+    if label == "Jurisdiction":
+        j_code = props.get("code") or props.get("jurisdiction_code")
+        cname = props.get("contractor_name")
+        if j_code and cname:
+            return f"{j_code} ({cname})"
+        return str(cname or pk)
+    if label == "State":
+        return str(props.get("state_name") or props.get("state_code") or pk)
+    if label == "LobbyingFiling":
+        cli = props.get("client_name")
+        reg = props.get("registrant_name")
+        yr = props.get("year") or props.get("filing_year")
+        if cli and reg:
+            return f"{cli} ({reg}, {yr})" if yr else f"{cli} ({reg})"
+        return str(cli or pk)
+    if label == "CBOScore":
+        return str(props.get("title") or pk)
+    if label == "LiteratureStudy":
+        return str(props.get("title") or pk)
+    return str(props.get("name") or props.get("title") or pk)
+
+
+def resolve_label_from_pk_and_labels(pk: str, raw_labels: List[str]) -> str:
+    """Resolves canonical 17-category label from Neo4j labels or primary_key prefix."""
+    labels = [lbl for lbl in raw_labels if lbl != "PolicyNode"]
+    if labels:
+        return labels[0]
+    if pk.startswith("FEE-"):
+        return "FeeScheduleRate"
+    if pk.startswith("HCPCS-"):
+        return "ProcedureCode"
+    if pk.startswith("STATE-"):
+        return "State"
+    if pk.startswith("ICD10-"):
+        return "DiagnosisCode"
+    if pk.startswith("JURIS-"):
+        return "Jurisdiction"
+    if pk.startswith("POLICY-"):
+        return "Policy"
+    if pk.startswith("BILL-"):
+        return "Bill"
+    if pk.startswith("PLAW-"):
+        return "PublicLaw"
+    if pk.startswith("STAT-"):
+        return "StatutorySection"
+    if pk.startswith("USC-"):
+        return "USCSection"
+    if pk.startswith("REG-FR-") or pk.startswith("FR-"):
+        return "Regulation"
+    if pk.startswith("CFR-"):
+        return "CFRSection"
+    if pk.startswith("TR-CR") or pk.startswith("CMS-CR-"):
+        return "Transmittal"
+    if pk.startswith("DME-MAC-") or pk.startswith("CMS-MCD-"):
+        return "CoveragePolicy"
+    if pk.startswith("LDA-"):
+        return "LobbyingFiling"
+    if pk.startswith("CBO-"):
+        return "CBOScore"
+    if pk.startswith("PUBMED-"):
+        return "LiteratureStudy"
+    return "PolicyNode"
+
+
 @router.get("/graph/topology", response_model=TopologyResponse)
 def get_graph_topology(
-    policy_keyword: Optional[str] = Query("LTA", description="Policy filter (LTA, IVIG, or all)"),
-    include_fee_schedules: bool = Query(False, description="Whether to include all 3,800+ fee schedule nodes"),
+    policy_keyword: Optional[str] = Query(None, description="Policy filter (e.g. LTA or ALL)"),
+    include_fee_schedules: bool = Query(False, description="Whether to include all 3,700+ fee schedule rate nodes"),
     jurisdiction_filter: Optional[str] = Query(None, description="CMS DME MAC Jurisdiction ID (e.g. JURIS-DME-B) to filter regional contractor and covered states"),
-    state_filter: Optional[str] = Query(None, description="2-letter state code (e.g. WI, OH, NY) to expand state-specific non-rural fees"),
+    state_filter: Optional[str] = Query(None, description="2-letter state/territory code (all 54 US jurisdictions including GU) to expand state-specific rates"),
     session: Session = Depends(get_neo4j_session),
 ):
     """Returns nodes and edges for visualization canvas with smart high-density node clustering."""
     nodes_by_pk: Dict[str, TopologyNode] = {}
     edges_by_key: Dict[str, TopologyEdge] = {}
+
+    # Normalize and validate policy_keyword if provided
+    if policy_keyword is not None:
+        raw_p = policy_keyword.strip().upper()
+        if raw_p and raw_p != "ALL":
+            kw = raw_p.replace("POLICY-", "")
+            p_rec = session.run(
+                "MATCH (p:Policy) WHERE p.primary_key = $pk OR toUpper(p.keyword) = $kw RETURN p.primary_key AS pk",
+                pk=f"POLICY-{kw}",
+                kw=kw,
+            ).single()
+            if not p_rec:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail={
+                        "error_type": "EntityResolutionError",
+                        "message": f"Unrecognized policy keyword '{policy_keyword}'.",
+                        "details": {"policy_keyword": policy_keyword},
+                    },
+                )
 
     # Normalize and validate jurisdiction_filter
     clean_juris: Optional[str] = None
@@ -105,6 +282,16 @@ def get_graph_topology(
                 clean_juris = f"JURIS-DME-{letter}"
             else:
                 clean_juris = raw_j
+
+            if clean_juris not in VALID_JURISDICTION_CODES:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail={
+                        "error_type": "EntityResolutionError",
+                        "message": f"Unrecognized DME MAC jurisdiction '{jurisdiction_filter}'.",
+                        "details": {"jurisdiction_filter": jurisdiction_filter},
+                    },
+                )
 
             j_rec = session.run(
                 "MATCH (j:Jurisdiction {primary_key: $juris_pk}) RETURN j.primary_key AS pk",
@@ -120,7 +307,7 @@ def get_graph_topology(
                     },
                 )
 
-    # Normalize and validate state_filter
+    # Normalize and validate state_filter across all 54 US states and territories (including GU)
     clean_state: Optional[str] = None
     parent_juris_pk: Optional[str] = None
     if state_filter is not None:
@@ -129,6 +316,16 @@ def get_graph_topology(
             if raw_s.startswith("STATE-"):
                 raw_s = raw_s[len("STATE-"):]
             clean_state = raw_s
+
+            if clean_state not in VALID_STATE_CODES:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail={
+                        "error_type": "EntityResolutionError",
+                        "message": f"Unrecognized state code '{state_filter}'.",
+                        "details": {"state_filter": state_filter},
+                    },
+                )
 
             s_rec = session.run(
                 "MATCH (j:Jurisdiction)-[:COVERS_STATE]->(s:State {state_code: $state_code}) "
@@ -165,50 +362,18 @@ def get_graph_topology(
     def convert_node(rec_node: Any) -> TopologyNode:
         props = dict(rec_node)
         pk = props.get("primary_key", "")
-        labels = []
+        raw_labels: List[str] = []
         if hasattr(rec_node, "labels"):
-            labels = [lbl for lbl in rec_node.labels if lbl != "PolicyNode"]
-        elif "labels" in props:
-            labels = [lbl for lbl in props["labels"] if lbl != "PolicyNode"]
+            raw_labels = list(rec_node.labels)
+        elif "labels" in props and isinstance(props["labels"], list):
+            raw_labels = list(props["labels"])
 
-        if labels:
-            label = labels[0]
-        elif pk.startswith("FEE-"):
-            label = "FeeScheduleEntry"
-        elif pk.startswith("HCPCS-"):
-            label = "HCPCSCode"
-        elif pk.startswith("STATE-"):
-            label = "State"
-        elif pk.startswith("ICD10-"):
-            label = "ICD10Code"
-        elif pk.startswith("JURIS-"):
-            label = "Jurisdiction"
-        elif pk.startswith("POLICY-"):
-            label = "Policy"
-        elif pk.startswith("BILL-"):
-            label = "Bill"
-        elif pk.startswith("PLAW-"):
-            label = "PublicLaw"
-        elif pk.startswith("USC-"):
-            label = "StatutorySection"
-        elif pk.startswith("FR-"):
-            label = "Regulation"
-        elif pk.startswith("CMS-CR-"):
-            label = "ChangeRequest"
-        elif pk.startswith("CMS-MCD-"):
-            label = "CoveragePolicy"
-        elif pk.startswith("LDA-"):
-            label = "LobbyingFiling"
-        elif pk.startswith("PUBMED-"):
-            label = "LiteratureStudy"
-        else:
-            label = "PolicyNode"
-
-        raw_name = props.get("name") or props.get("state_name") or props.get("section") or props.get("title") or pk
+        label = resolve_label_from_pk_and_labels(pk, raw_labels)
+        display_name = derive_node_display_name(label, pk, props)
         return TopologyNode(
             primary_key=pk,
             label=label,
-            name=str(raw_name),
+            name=display_name,
             properties=props,
         )
 
@@ -224,10 +389,10 @@ def get_graph_topology(
         props = dict(rel) if hasattr(rel, "items") else {}
         edge_key = f"{spk}->{lbl}->{tpk}"
         prov = {
-            "source_uri": props.get("source_uri", "verified://cms-policy"),
-            "selector": props.get("selector", "direct"),
-            "ingestion_timestamp": props.get("ingestion_timestamp", "2026-10-13T01:23:54Z"),
-            "run_id": props.get("run_id", "export-run-001"),
+            "source_uri": props.get("source_uri", ""),
+            "selector": props.get("selector", ""),
+            "ingestion_timestamp": props.get("ingestion_timestamp", ""),
+            "run_id": props.get("run_id", ""),
         }
         return TopologyEdge(
             source_pk=spk,
@@ -237,12 +402,12 @@ def get_graph_topology(
             provenance=prov,
         )
 
-    # 1. Fetch non-FeeScheduleEntry nodes and their edges
+    # 1. Fetch non-FeeScheduleRate nodes and their edges
     base_query = """
     MATCH (n:PolicyNode)
-    WHERE NOT n:FeeScheduleEntry
+    WHERE NOT n:FeeScheduleRate AND NOT n:FeeScheduleEntry
     OPTIONAL MATCH (n)-[r]->(m:PolicyNode)
-    WHERE NOT m:FeeScheduleEntry
+    WHERE NOT m:FeeScheduleRate AND NOT m:FeeScheduleEntry
     RETURN n, r, m
     """
     for row in session.run(base_query):
@@ -264,12 +429,10 @@ def get_graph_topology(
             te = convert_edge(r, tn.primary_key, tm.primary_key)
             edges_by_key[te.edge_key] = te
 
-    # 2. If state_filter is specified, expand that state's non-rural fee schedule nodes (~71 nodes)
+    # 2. If state_filter is specified, expand that state's FeeScheduleRate nodes and HAS_RATE / APPLIES_TO_STATE edges
     if clean_state:
         fee_query = """
-        MATCH (f:FeeScheduleEntry)-[r1:APPLIES_TO]->(s:State {state_code: $state_code})
-        WHERE f.is_rural = false OR f.is_rural IS NULL
-        MATCH (h:HCPCSCode)-[r2:HAS_FEE_SCHEDULE]->(f)
+        MATCH (h:ProcedureCode)-[r2:HAS_RATE]->(f:FeeScheduleRate)-[r1:APPLIES_TO_STATE]->(s:State {state_code: $state_code})
         RETURN f, r1, s, h, r2
         """
         for row in session.run(fee_query, state_code=clean_state):
@@ -298,21 +461,14 @@ def get_graph_topology(
 
     # 3. If include_fee_schedules is true and no state_filter, include all (with safety limit 4000)
     elif include_fee_schedules:
-        if allowed_state_pks is not None:
-            all_fees_query = """
-            MATCH (h:HCPCSCode)-[r2:HAS_FEE_SCHEDULE]->(f:FeeScheduleEntry)-[r1:APPLIES_TO]->(s:State)
-            WHERE s.primary_key IN $state_pks AND (f.is_rural = false OR f.is_rural IS NULL)
-            RETURN f, r1, s, h, r2
-            LIMIT 4000
-            """
-            fee_rows = session.run(all_fees_query, state_pks=list(allowed_state_pks))
-        else:
-            all_fees_query = """
-            MATCH (h:HCPCSCode)-[r2:HAS_FEE_SCHEDULE]->(f:FeeScheduleEntry)-[r1:APPLIES_TO]->(s:State)
-            RETURN f, r1, s, h, r2
-            LIMIT 4000
-            """
-            fee_rows = session.run(all_fees_query)
+        all_fees_query = """
+        MATCH (h:ProcedureCode)-[r2:HAS_RATE]->(f:FeeScheduleRate)-[r1:APPLIES_TO_STATE]->(s:State)
+        WHERE ($state_pks IS NULL OR s.primary_key IN $state_pks)
+        RETURN f, r1, s, h, r2
+        LIMIT 4000
+        """
+        state_pks_param = list(allowed_state_pks) if allowed_state_pks is not None else None
+        fee_rows = session.run(all_fees_query, state_pks=state_pks_param)
 
         for row in fee_rows:
             f = row.get("f")
@@ -364,12 +520,11 @@ def get_subgraph_by_anchors(
     req: SubgraphRequest,
     session: Session = Depends(get_neo4j_session),
 ):
-    """Extracts connecting subgraph between given primary key anchors across all 14 node types."""
+    """Extracts connecting subgraph between given primary key anchors across all 17 node types."""
     pipeline = get_pipeline()
     if not req.anchors:
         return SubgraphResponse(nodes=[], edges=[], active_node_pks=[], active_edge_keys=[], retrieval_ms=0.0)
 
-    # Reconstruct ResolvedAnchors from PK list across all 14 node types
     anchors_list: List[AnchorEntity] = []
     state_anchor = None
     diag_anchor = None
@@ -380,34 +535,37 @@ def get_subgraph_by_anchors(
     coverage_policy_anchor = None
 
     for pk in req.anchors:
-        # Check node in Neo4j across all 14 node types
         rec = session.run("MATCH (n:PolicyNode {primary_key: $pk}) RETURN n, labels(n) as lbls", pk=pk).single()
         if not rec:
             raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail={"error_type": "EntityNotFoundError", "message": f"Entity '{pk}' not found in database."},
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail={
+                    "error_type": "EntityResolutionError",
+                    "message": f"Unresolved primary key '{pk}' not found in knowledge graph.",
+                    "details": {"unresolved_token": pk},
+                },
             )
         node = rec["n"]
-        lbls = [l for l in rec["lbls"] if l != "PolicyNode"]
-        label = lbls[0] if lbls else "Node"
+        props = dict(node)
+        label = resolve_label_from_pk_and_labels(pk, list(rec["lbls"]))
 
         slot = label.lower()
         if label == "State":
             slot = "state"
-        elif label == "ICD10Code":
+        elif label in ("DiagnosisCode", "ICD10Code"):
             slot = "diagnosis"
         elif label == "Policy":
             slot = "policy"
-        elif label == "HCPCSCode":
+        elif label in ("ProcedureCode", "HCPCSCode"):
             slot = "hcpcs"
         elif label == "Jurisdiction":
             slot = "jurisdiction"
-        elif label == "ChangeRequest":
+        elif label in ("Transmittal", "ChangeRequest"):
             slot = "changerequest"
         elif label == "CoveragePolicy":
             slot = "coveragepolicy"
 
-        matched = node.get("name") or node.get("title") or pk
+        matched = derive_node_display_name(label, pk, props)
         anchor = AnchorEntity(
             slot=slot,
             primary_key=pk,
@@ -426,7 +584,7 @@ def get_subgraph_by_anchors(
             hcpcs_anchor = anchor
         elif slot == "jurisdiction" and not jurisdiction_anchor:
             jurisdiction_anchor = anchor
-        elif slot in ("changerequest", "change_request") and not change_request_anchor:
+        elif slot in ("changerequest", "change_request", "transmittal") and not change_request_anchor:
             change_request_anchor = anchor
         elif slot in ("coveragepolicy", "coverage_policy") and not coverage_policy_anchor:
             coverage_policy_anchor = anchor
@@ -439,6 +597,7 @@ def get_subgraph_by_anchors(
         hcpcs_anchor=hcpcs_anchor,
         jurisdiction_anchor=jurisdiction_anchor,
         change_request_anchor=change_request_anchor,
+        transmittal_anchor=change_request_anchor,
         coverage_policy_anchor=coverage_policy_anchor,
     )
 
@@ -464,6 +623,9 @@ def get_subgraph_by_anchors(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={"error_type": "TraversalError", "message": exc.message, "details": exc.details},
         )
+
+
+extract_subgraph = get_subgraph_by_anchors
 
 
 @router.post("/graphrag/query", response_model=GraphRAGQueryResponse)

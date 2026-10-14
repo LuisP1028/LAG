@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { GraphSyncProvider } from './context/GraphSyncContext';
+import { GraphSyncProvider, useGraphSync } from './context/GraphSyncContext';
 import { GraphCanvas } from './components/GraphCanvas';
 import { FilterToolbar } from './components/FilterToolbar';
 import { NodeDetailDrawer } from './components/NodeDetailDrawer';
@@ -32,6 +32,7 @@ const MainVisualizer: React.FC = () => {
   const [links, setLinks] = useState<GraphLink[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const { setAvailablePolicies } = useGraphSync();
 
   const fetchTopology = useCallback(async (stateFilter = '', policy = 'LTA', jurisdictionFilter = '') => {
     setLoading(true);
@@ -69,6 +70,19 @@ const MainVisualizer: React.FC = () => {
         };
       });
 
+      const policyNodes = transformedNodes.filter((n) => n.label === 'Policy');
+      if (policyNodes.length > 0) {
+        setAvailablePolicies(
+          policyNodes.map((pn) => {
+            const kw = String(pn.properties?.keyword || pn.properties?.policy_keyword || pn.primary_key.replace(/^POLICY-/, ''));
+            return {
+              keyword: kw,
+              label: pn.name && pn.name !== pn.primary_key ? `${kw} (${pn.name})` : kw,
+            };
+          })
+        );
+      }
+
       const nodePkSet = new Set(transformedNodes.map((n) => n.primary_key));
       const transformedLinks: GraphLink[] = (data.edges || [])
         .filter((e) => nodePkSet.has(e.source_pk) && nodePkSet.has(e.target_pk))
@@ -93,7 +107,7 @@ const MainVisualizer: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [setAvailablePolicies]);
 
   useEffect(() => {
     fetchTopology('', 'LTA', '');

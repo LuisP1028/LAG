@@ -1,4 +1,4 @@
-"""End-to-End System Verification and Demonstration Script."""
+"""End-to-End System Verification and Demonstration Script across the 8-Hop LTA Knowledge Graph."""
 
 import sys
 import time
@@ -23,13 +23,13 @@ def main():
 
     # 2. Summary stats
     stats = engine.get_summary_statistics()
-    print(f"✓ Total policy nodes in Neo4j: {stats['total_nodes']}")
-    print(f"✓ Total directed edges in Neo4j: {stats['total_edges']}")
+    print(f"✓ Total policy nodes in Neo4j: {stats['total_nodes']} across {len(stats['nodes_by_label'])} entity categories")
+    print(f"✓ Total directed edges in Neo4j: {stats['total_edges']} across {len(stats['edges_by_type'])} relationship types")
 
     # 3. GraphRAG Pipeline demonstration
     pipeline = GraphRAGPipeline()
 
-    print("\n--- Workflow 1: Natural Language Patient Benefit Routing ---")
+    print("\n--- Workflow 1: Natural Language Patient Benefit Routing (Wisconsin) ---")
     query_1 = "I am from Wisconsin, survived breast cancer, need lymphedema supplies, I'm on Medicare, can you help?"
     print(f"User Query: \"{query_1}\"")
 
@@ -49,8 +49,8 @@ def main():
         print(resp_1.answer)
         print("-" * 60)
 
-        print("\n--- Workflow 3: Cross-Policy Legislative Convergence ---")
-        query_2 = "How do IVIG and LTA converge under federal law?"
+        print("\n--- Workflow 2: 8-Hop Legislative Omnibus & Regulatory Lineage ---")
+        query_2 = "How was H.R. 3630 enacted into Public Law 117-328 and implemented in 88 FR 77676?"
         print(f"User Query: \"{query_2}\"")
 
         resp_2 = pipeline.execute_query(GraphRAGQueryRequest(query=query_2), session)
@@ -61,8 +61,8 @@ def main():
         print(resp_2.answer)
         print("-" * 60)
 
-        print("\n--- Workflow 4: Single-State Dynamic Inquiry (New York) ---")
-        query_3 = "What contractor covers New York and what are the allowable rates?"
+        print("\n--- Workflow 3: Single-State & Territorial Inquiry (New York & Guam) ---")
+        query_3 = "What contractor covers New York and Guam and what are the allowable rates?"
         print(f"User Query: \"{query_3}\"")
 
         resp_3 = pipeline.execute_query(GraphRAGQueryRequest(query=query_3), session)

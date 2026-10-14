@@ -1,0 +1,59 @@
+{
+  "answer": "Based on the GRAPH CONTEXT, I can provide the following information:\n\n**Eligibility for Lymphedema Supplies:**\n\nYou are a beneficiary from Wisconsin ([STATE-WI]) and have survived breast cancer, which is a permitted diagnosis for lymphedema supplies ([ICD10-I97.2]). You are on Medicare, and the GRAPH CONTEXT indicates that Wisconsin is a covered state ([STATE-WI]) under the jurisdiction of [JURIS-DME-B] CGS Administrators, LLC.\n\n**Covered Procedure Codes:**\n\nThe GRAPH CONTEXT lists the following procedure codes as covered for lymphedema compression treatment items:\n\n* [HCPCS-A6522] HCPCS-A6522\n* [HCPCS-A6520] HCPCS-A6520\n* [HCPCS-A6521] HCPCS-A6521\n* [HCPCS-A6523] HCPCS-A6523\n* [HCPCS-A6524] HCPCS-A6524\n\n**Fees and Patient Costs (Wisconsin, 2024):**\n\nThe GRAPH CONTEXT provides the following fee schedule entries for the covered procedure codes:\n\n* [FEE-A6522-WI-NR-2024] (State: [STATE-WI]) HCPCS A6522: Allowable Reimbursement = $290.47 (Calculated 20% patient coinsurance = $58.09)\n* [FEE-A6520-WI-NR-2024] (State: [STATE-WI]) HCPCS A6520: Allowable Reimbursement = $119.54 (Calculated 20% patient coinsurance = $23.91)\n* [FEE-A6521-WI-NR-2024] (State: [STATE-WI]) HCPCS A6521: Allowable Reimbursement = $474.33 (Calculated 20% patient coinsurance = $94.87)\n* [FEE-A6523-WI-NR-2024] (State: [STATE-WI]) HCPCS A6523: Allowable Reimbursement = $689.17 (Calculated 20% patient coinsurance = $137.83)\n* [FEE-A6524-WI-NR-2024] (State: [STATE-WI]) HCPCS A6524: Allowable Reimbursement = $362.39 (Calculated 20% patient coinsurance = $72.48)\n* [FEE-A6525-WI-NR-2024] (",
+  "active_node_pks": [
+    "CMS-CR-13286",
+    "CMS-MCD-A59508",
+    "FEE-A6522-WI-NR-2024",
+    "HCPCS-A6522",
+    "ICD10-I97.2",
+    "JURIS-DME-B",
+    "STATE-WI"
+  ],
+  "active_edge_keys": [
+    "CMS-CR-13286->APPLIES_TO_JURISDICTION->JURIS-DME-B",
+    "CMS-CR-13286->MANDATES_POLICY->CMS-MCD-A59508",
+    "CMS-MCD-A59508->ALLOWS_DIAGNOSIS->ICD10-I97.2",
+    "CMS-MCD-A59508->GOVERNS->HCPCS-A6522",
+    "FEE-A6522-WI-NR-2024->APPLIES_TO->STATE-WI",
+    "HCPCS-A6522->HAS_FEE_SCHEDULE->FEE-A6522-WI-NR-2024",
+    "JURIS-DME-B->COVERS_STATE->STATE-WI"
+  ],
+  "anchors": [
+    {
+      "slot": "state",
+      "primary_key": "STATE-WI",
+      "matched_text": "Wisconsin",
+      "entity_type": "State",
+      "label": "State"
+    },
+    {
+      "slot": "diagnosis",
+      "primary_key": "ICD10-I97.2",
+      "matched_text": "breast cancer, need lymphedema",
+      "entity_type": "ICD10Code",
+      "label": "ICD10Code"
+    },
+    {
+      "slot": "policy",
+      "primary_key": "POLICY-LTA",
+      "matched_text": "lymphedema supplies",
+      "entity_type": "Policy",
+      "label": "Policy"
+    }
+  ],
+  "provenance_sources": [
+    {
+      "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4b_cms_dmepos_lc_category.csv",
+      "selector": "DME MAC Map: JURIS-B -> STATE-WI",
+      "ingestion_timestamp": "2026-10-13T01:23:54.893370+00:00",
+      "run_id": "export-run-ivig-001"
+    },
+    {
+      "source_uri": "CoveragePolicies_and_Jurisdictions Addition/assets/20261012T231057-024-zqga/stage4a_cms_mcd_a59508_web_probe.html",
+      "selector": "directive.policy_article_references",
+      "ingestion_timestamp": "2026-10-13T01:08:41.301650+00:00",
+      "run_id": "export-run-001"
+    }
+  ],
+  "duration_ms": 14420.75
+}

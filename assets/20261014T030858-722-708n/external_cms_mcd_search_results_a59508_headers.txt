@@ -1,0 +1,22 @@
+HTTP Status: 200
+URL: https://www.cms.gov/medicare-coverage-database/search-results.aspx?keyword=A59508
+
+Headers:
+Access-Control-Allow-Origin: *
+Akamai-GRN: 0.5094d817.1791947781.36c63abf
+Cache-Control: max-age=0, no-cache, no-store
+Connection: close
+Content-Security-Policy: frame-ancestors 'self' https://www.google.com;default-src 'none';script-src 'self' 'nonce-6yOrDsr+Ec79F4fSCtoeRg==' https://ds-aksb-a.akamaihd.net https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net https://tealium-tags.cms.gov https://tags.tiqcdn.com/ https://cdn1.adoberesources.net https://dap.digitalgov.gov https://www.googletagmanager.com;font-src 'self';connect-src 'self' https://ds-aksb-a.akamaihd.net https://www.google.com https://adobedc.demdex.net https://adobe-ep.cms.gov https://dap.digitalgov.gov https://www.google-analytics.com;img-src 'self' data: https://ds-aksb-a.akamaihd.net https://www.cms.gov;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;frame-src 'self' https://www.google.com;
+Content-Type: text/html; charset=utf-8
+Date: Wed, 14 Oct 2026 03:16:21 GMT
+Expires: Wed, 14 Oct 2026 03:16:21 GMT
+Pragma: no-cache
+Referrer-Policy: strict-origin-when-cross-origin
+Set-Cookie: mcdSearchTourFinished=true; expires=Sat, 09 Oct 2027 09:10:44 GMT; path=/; secure; samesite=lax; httponly
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains ; preload
+Transfer-Encoding: chunked
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: master-only
+X-XSS-Protection: 1; mode=block

@@ -1,0 +1,9 @@
+functional_specification_015.md
+wayfinder/20261014T030858-722-708n/tickets/ticket-001.md
+wayfinder/20261014T030858-722-708n/tickets/ticket-002.md
+wayfinder/20261014T030858-722-708n/tickets/ticket-003.md
+wayfinder/20261014T030858-722-708n/tickets/ticket-004.md
+wayfinder/20261014T030858-722-708n/tickets/ticket-005.md
+wayfinder/20261014T030858-722-708n/tickets/ticket-006.md
+wayfinder/20261014T030858-722-708n/map.md
+wayfinder/20261014T030858-722-708n/matrix.md

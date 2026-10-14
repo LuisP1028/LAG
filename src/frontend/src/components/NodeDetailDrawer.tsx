@@ -1,5 +1,5 @@
 /**
- * Dedicated node detail inspection drawer conforming to Ticket 005 Section 2.5.
+ * Dedicated node detail inspection drawer across all 17 8-hop entity categories.
  */
 
 import React from 'react';
@@ -20,7 +20,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
   const visual = getNodeVisual(selectedNode.label);
   const props = selectedNode.properties || {};
 
-  // Find immediate incoming and outgoing relationships
+  // Find immediate incoming and outgoing relationships with provenance
   const connectedNeighbors = links
     .filter((l) => {
       const srcPk = typeof l.source === 'object' ? (l.source as GraphNode).primary_key : l.source;
@@ -40,11 +40,12 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
         neighborName: neighborNode?.name || neighborPk,
         neighborLabel: neighborNode?.label || 'Node',
         neighborNode,
+        provenance: l.provenance,
       };
     });
 
-  // Construct official government external links
-  const getGovernmentSourceLink = () => {
+  // Construct official government external links strictly from persisted properties without hardcoded fallbacks
+  const getGovernmentSourceLink = (): { title: string; url: string } | null => {
     const getOrdinal = (n: number): string => {
       const s = ['th', 'st', 'nd', 'rd'];
       const v = n % 100;
@@ -67,55 +68,119 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
     };
 
     switch (selectedNode.label) {
-      case 'CoveragePolicy': {
-        const articleId = props.article_id || selectedNode.primary_key.replace(/^CMS-MCD-/, '');
-        return {
-          title: `CMS Medicare Coverage Database (${articleId})`,
-          url: `https://www.cms.gov/medicare-coverage-database/search-results.aspx?keyword=${encodeURIComponent(articleId)}`,
-        };
-      }
-      case 'PublicLaw': {
-        const congress = props.congress || selectedNode.primary_key.match(/PLAW-(\d+)-/)?.[1] || '117';
-        const num = props.number || selectedNode.primary_key.match(/PLAW-\d+-(\d+)/)?.[1] || '328';
-        return {
-          title: `GPO GovInfo Public Law ${congress}-${num}`,
-          url: `https://www.govinfo.gov/app/details/PLAW-${congress}publ${num}`,
-        };
-      }
       case 'Bill': {
-        const congress = Number(props.congress || selectedNode.primary_key.match(/BILL-(\d+)-/)?.[1] || 117);
-        const type = (props.type || selectedNode.primary_key.match(/BILL-\d+-([a-z]+)-/)?.[1] || 'hr').toLowerCase();
-        const num = props.number || selectedNode.primary_key.match(/BILL-\d+-[a-z]+-(\d+)/)?.[1] || '3630';
+        const congress = Number(props.congress || selectedNode.primary_key.match(/^BILL-(\d+)-/)?.[1]);
+        const type = String(props.type || props.bill_type || selectedNode.primary_key.match(/^BILL-\d+-([a-z]+)-/)?.[1] || '').toLowerCase();
+        const num = props.number || props.bill_number || selectedNode.primary_key.match(/^BILL-\d+-[a-z]+-(\d+)/)?.[1];
+        if (!congress || !type || !num) return null;
         return {
           title: `Congress.gov ${type.toUpperCase()} ${num} (${getOrdinal(congress)} Congress)`,
           url: `https://www.congress.gov/bill/${getOrdinal(congress)}-congress/${getBillTypeSlug(type)}/${num}`,
         };
       }
+      case 'PublicLaw': {
+        const congress = props.congress || selectedNode.primary_key.match(/^PLAW-(\d+)-/)?.[1];
+        const rawNum = String(props.number || props.public_law_number || selectedNode.primary_key.match(/^PLAW-\d+-(\d+)/)?.[1] || '');
+        const num = rawNum.split('-').pop();
+        if (!congress || !num) return null;
+        return {
+          title: `GPO GovInfo Public Law ${congress}-${num}`,
+          url: `https://www.govinfo.gov/app/details/PLAW-${congress}publ${num}`,
+        };
+      }
+      case 'StatutorySection': {
+        const plId = String(props.public_law_id || '');
+        const plMatch = plId.match(/^PLAW-(\d+)-(\d+)/) || selectedNode.primary_key.match(/^STAT-(\d+)-(\d+)-SEC-/);
+        if (!plMatch) return null;
+        const [, cong, num] = plMatch;
+        const secNum = props.statute_section_number || props.section_number || '';
+        return {
+          title: `GPO GovInfo Public Law ${cong}-${num}${secNum ? ` § ${secNum}` : ''}`,
+          url: `https://www.govinfo.gov/app/details/PLAW-${cong}publ${num}`,
+        };
+      }
+      case 'USCSection': {
+        const title = props.title || props.title_number || selectedNode.primary_key.match(/^USC-(\d+)-/)?.[1];
+        const rawSec = String(props.section || props.section_code || '');
+        if (!title || !rawSec) return null;
+        const cleanSec = rawSec.split('-')[0];
+        return {
+          title: `U.S. Code Title ${title} § ${cleanSec} (Cornell LII)`,
+          url: `https://www.law.cornell.edu/uscode/text/${encodeURIComponent(String(title))}/${encodeURIComponent(cleanSec)}`,
+        };
+      }
       case 'Regulation': {
-        const docNum = props.document_number || selectedNode.primary_key.replace(/^FR-/, '');
+        const docNum = String(props.document_number || selectedNode.primary_key.replace(/^(?:REG-)?FR-/, ''));
+        if (!docNum) return null;
         return {
           title: `Federal Register Final Rule (${props.citation || docNum})`,
           url: `https://www.federalregister.gov/d/${encodeURIComponent(docNum)}`,
         };
       }
-      case 'StatutorySection': {
-        const title = props.title || '42';
-        const rawSec = props.section || selectedNode.primary_key.replace(/^USC-\d+-/, '') || '1395x';
-        const cleanSec = rawSec.split('-')[0];
+      case 'CFRSection': {
+        const title = props.title || props.title_number || selectedNode.primary_key.match(/^CFR-(\d+)-/)?.[1];
+        const part = props.part || props.part_number || selectedNode.primary_key.match(/^CFR-\d+-(\d+)/)?.[1];
+        if (!title || !part) return null;
         return {
-          title: `US Code Title ${title} § ${cleanSec} (LII)`,
-          url: `https://www.law.cornell.edu/uscode/text/${encodeURIComponent(title)}/${encodeURIComponent(cleanSec)}`,
+          title: `eCFR ${props.cfr_reference || `${title} CFR Part ${part}`}`,
+          url: `https://www.ecfr.gov/current/title-${encodeURIComponent(String(title))}/part-${encodeURIComponent(String(part))}`,
         };
       }
+      case 'Transmittal':
       case 'ChangeRequest': {
-        const crNum = props.cr_number || selectedNode.primary_key.replace(/^CMS-CR-/, '');
+        const crNum = String(props.cr_number || selectedNode.primary_key.replace(/^(?:TR-CR|CMS-CR-)/, ''));
+        if (!crNum) return null;
         return {
-          title: `CMS Transmittals Index (CR ${crNum})`,
+          title: `CMS Transmittals Index (${crNum.startsWith('CR') ? crNum : `CR ${crNum}`})`,
           url: `https://www.cms.gov/medicare/regulations-guidance/transmittals?search=${encodeURIComponent(crNum)}`,
         };
       }
+      case 'CoveragePolicy': {
+        const articleId = String(props.article_id || selectedNode.primary_key);
+        const pubType = String(props.publisher_type || props.publication_type || '');
+        if (!articleId) return null;
+        if (pubType === 'DME_MAC_JOINT_PUBLICATION' || articleId.startsWith('DME-MAC-')) {
+          return {
+            title: `DME MAC Joint Publication (${articleId})`,
+            url: 'https://www.cgsmedicare.com/jb/pubs/news/2023/11/cope147943.html',
+          };
+        }
+        const cleanArt = articleId.replace(/^CMS-MCD-/, '');
+        return {
+          title: `CMS Medicare Coverage Database (${cleanArt})`,
+          url: `https://www.cms.gov/medicare-coverage-database/search-results.aspx?keyword=${encodeURIComponent(cleanArt)}`,
+        };
+      }
+      case 'ProcedureCode':
+      case 'HCPCSCode': {
+        const code = String(props.code || selectedNode.primary_key.replace(/^HCPCS-/, ''));
+        if (!code) return null;
+        return {
+          title: `CMS DMEPOS Fee Schedule & Coding Reference (${code})`,
+          url: 'https://www.cms.gov/medicare/payment/fee-schedules/dmepos/dmepos-fee-schedule',
+        };
+      }
+      case 'FeeScheduleRate':
+      case 'FeeScheduleEntry': {
+        const hcpcs = String(props.hcpcs_code || '');
+        if (!hcpcs) return null;
+        return {
+          title: `CMS DMEPOS Fee Schedule (${hcpcs} - ${props.state_code || ''})`,
+          url: 'https://www.cms.gov/medicare/payment/fee-schedules/dmepos/dmepos-fee-schedule',
+        };
+      }
+      case 'DiagnosisCode':
+      case 'ICD10Code': {
+        const code = String(props.code || selectedNode.primary_key.replace(/^ICD10-/, ''));
+        if (!code) return null;
+        return {
+          title: `CDC ICD-10-CM Clinical Browser (${code})`,
+          url: `https://icd10cmtool.cdc.gov/?prop=${encodeURIComponent(code)}`,
+        };
+      }
       case 'Jurisdiction': {
-        const code = props.code || selectedNode.primary_key;
+        const code = String(props.code || props.jurisdiction_code || selectedNode.primary_key);
+        if (!code) return null;
         const isBC = code.includes('B') || code.includes('C');
         return {
           title: isBC
@@ -124,30 +189,27 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
           url: isBC ? 'https://www.cgsmedicare.com/' : 'https://med.noridianmedicare.com/',
         };
       }
-      case 'HCPCSCode': {
-        const code = props.code || selectedNode.primary_key.replace(/^HCPCS-/, '');
+      case 'CBOScore': {
+        const url = String(props.url || props.source_url || '');
         return {
-          title: `CMS DMEPOS Fee Schedule & Coding Reference (${code})`,
-          url: 'https://www.cms.gov/medicare/payment/fee-schedules/dmepos/dmepos-fee-schedule',
-        };
-      }
-      case 'ICD10Code': {
-        const code = props.code || selectedNode.primary_key.replace(/^ICD10-/, '');
-        return {
-          title: `CDC ICD-10-CM Clinical Browser (${code})`,
-          url: `https://icd10cmtool.cdc.gov/?prop=${encodeURIComponent(code)}`,
+          title: `CBO Cost Estimate (${selectedNode.primary_key})`,
+          url: url.startsWith('http') ? url : 'https://www.cbo.gov/',
         };
       }
       case 'LobbyingFiling': {
+        const uuid = String(props.filing_uuid || selectedNode.primary_key.replace(/^LDA-/, ''));
         return {
-          title: 'Senate LDA Lobbying Disclosure Search',
-          url: 'https://lda.senate.gov/system/public/',
+          title: `Senate LDA Lobbying Disclosure (${uuid})`,
+          url: uuid
+            ? `https://lda.senate.gov/filings/public/filing/${encodeURIComponent(uuid)}/print/`
+            : 'https://lda.senate.gov/system/public/',
         };
       }
       case 'LiteratureStudy': {
-        const pmid = props.pmid || selectedNode.primary_key.replace(/^PUBMED-/, '');
+        const pmid = String(props.pmid || selectedNode.primary_key.replace(/^PUBMED-/, ''));
+        if (!pmid) return null;
         return {
-          title: `PubMed National Library of Medicine (${pmid})`,
+          title: `PubMed National Library of Medicine (PMID ${pmid})`,
           url: `https://pubmed.ncbi.nlm.nih.gov/${encodeURIComponent(pmid)}/`,
         };
       }
@@ -156,7 +218,24 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
     }
   };
 
+  const formatPropertyValue = (key: string, val: unknown): string => {
+    if (val === null || val === undefined) return '';
+    if (Array.isArray(val)) {
+      return val.map((item) => String(item)).join('; ');
+    }
+    if (typeof val === 'boolean') {
+      return val ? 'Yes (true)' : 'No (false)';
+    }
+    if (typeof val === 'number' && ['fee_amount', 'ceiling', 'floor', 'amount'].includes(key)) {
+      return `$${val.toFixed(2)} (${val})`;
+    }
+    return String(val);
+  };
+
   const govLink = getGovernmentSourceLink();
+  const visibleEntries = Object.entries(props).filter(
+    ([k, v]) => !['primary_key', 'name', 'label'].includes(k) && v !== null && v !== undefined
+  );
 
   return (
     <div
@@ -236,7 +315,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
             System Description
           </div>
           <div style={{ fontSize: 13, color: '#cbd5e1', lineHeight: 1.4 }}>
-            {props.description || visual.description}
+            {props.description || props.short_description || visual.description}
           </div>
         </div>
 
@@ -309,27 +388,25 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
               overflow: 'hidden',
             }}
           >
-            {Object.entries(props)
-              .filter(([k]) => !['primary_key', 'name', 'label', 'description'].includes(k))
-              .map(([key, val], idx) => (
-                <div
-                  key={key}
-                  style={{
-                    display: 'flex',
-                    padding: '8px 12px',
-                    fontSize: 12,
-                    borderBottom: idx < Object.keys(props).length - 1 ? `1px solid ${CANVAS_PALETTE.panelBorder}` : 'none',
-                    backgroundColor: idx % 2 === 0 ? 'rgba(30, 41, 59, 0.2)' : 'transparent',
-                  }}
-                >
-                  <span style={{ width: '42%', color: CANVAS_PALETTE.textMuted, fontFamily: 'monospace' }}>
-                    {key}:
-                  </span>
-                  <span style={{ width: '58%', color: '#f1f5f9', wordBreak: 'break-word', fontWeight: 500 }}>
-                    {typeof val === 'boolean' ? (val ? 'true' : 'false') : String(val)}
-                  </span>
-                </div>
-              ))}
+            {visibleEntries.map(([key, val], idx) => (
+              <div
+                key={key}
+                style={{
+                  display: 'flex',
+                  padding: '8px 12px',
+                  fontSize: 12,
+                  borderBottom: idx < visibleEntries.length - 1 ? `1px solid ${CANVAS_PALETTE.panelBorder}` : 'none',
+                  backgroundColor: idx % 2 === 0 ? 'rgba(30, 41, 59, 0.2)' : 'transparent',
+                }}
+              >
+                <span style={{ width: '42%', color: CANVAS_PALETTE.textMuted, fontFamily: 'monospace' }}>
+                  {key}:
+                </span>
+                <span style={{ width: '58%', color: '#f1f5f9', wordBreak: 'break-word', fontWeight: 500 }}>
+                  {formatPropertyValue(key, val)}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -355,13 +432,18 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
                   transition: 'background-color 0.15s ease',
                 }}
               >
-                <div>
+                <div style={{ maxWidth: '72%' }}>
                   <div style={{ fontSize: 10, color: CANVAS_PALETTE.textMuted, fontFamily: 'monospace' }}>
                     {cn.direction === 'OUTGOING' ? '→' : '←'} {cn.relLabel}
                   </div>
                   <div style={{ fontSize: 12, color: '#f8fafc', fontWeight: 600 }}>
                     {cn.neighborName}
                   </div>
+                  {cn.provenance?.source_uri && (
+                    <div style={{ fontSize: 10, color: '#94a3b8', fontFamily: 'monospace', marginTop: 2, wordBreak: 'break-all' }}>
+                      src: {cn.provenance.source_uri}
+                    </div>
+                  )}
                 </div>
                 <span
                   style={{

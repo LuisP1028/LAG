@@ -1,0 +1,20 @@
+HTTP Status: 200
+URL: https://www.law.cornell.edu/uscode/text/42/1395x
+
+Headers:
+Accept-Ranges: bytes
+Cache-Control: max-age=86400
+Connection: close
+Content-Length: 1381125
+Content-Security-Policy: frame-src https: 'self'; frame-ancestors 'self';
+Content-Type: text/html; charset=utf-8
+Date: Wed, 14 Oct 2026 03:16:21 GMT
+ETag: "69e8af42-151305"
+Expires: Thu, 15 Oct 2026 03:16:21 GMT
+Last-Modified: Wed, 22 Apr 2026 11:21:38 GMT
+Server: nginx
+Strict-Transport-Security: max-age=31536000
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block

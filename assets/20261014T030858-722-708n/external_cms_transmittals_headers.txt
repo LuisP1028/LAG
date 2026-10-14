@@ -1,0 +1,28 @@
+HTTP Status: 200
+URL: https://www.cms.gov/medicare/regulations-guidance/transmittals
+
+Headers:
+Access-Control-Allow-Origin: *
+Akamai-GRN: 0.4494d817.1791947781.24630f3a
+Cache-Control: max-age=2764800, public
+Connection: close
+Content-Language: en
+Content-Type: text/html; charset=utf-8
+Date: Wed, 14 Oct 2026 03:16:21 GMT
+ETag: "1791944904-gzip"
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Last-Modified: Wed, 14 Oct 2026 02:28:24 GMT
+Set-Cookie: _ga=GA1.2.697475104.1791947781; expires=Fri, 13-Oct-2028 03:16:21 GMT; path=/; domain=.cms.gov; secure
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains ; preload
+Transfer-Encoding: chunked
+Vary: Accept-Encoding
+X-AH-Environment: prod
+X-Age: 2877
+X-Cache-Hits: 9
+X-Content-Type-Options: nosniff
+X-Drupal-Dynamic-Cache: UNCACHEABLE (poor cacheability)
+X-Frame-Options: SAMEORIGIN
+X-Generator: Drupal 11 (https://www.drupal.org)
+X-Permitted-Cross-Domain-Policies: master-only
+X-Request-ID: v-ee3a58d4-c776-11f1-83e5-439c05dea429
+X-XSS-Protection: 1; mode=block

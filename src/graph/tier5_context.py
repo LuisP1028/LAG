@@ -108,40 +108,60 @@ def enrich_context(
                         )
                     )
 
-            # 2. CBO Cost Estimates schema: {"costEstimates": [...]}
-            if primary_bill and isinstance(data.get("costEstimates"), list):
-                for est in data["costEstimates"]:
-                    if not isinstance(est, dict):
-                        continue
-                    cid = str(est.get("id") or est.get("url", "").rstrip("/").split("/")[-1] or "").strip()
-                    if not cid or cid in seen_cbo:
-                        continue
-                    seen_cbo.add(cid)
-                    title = str(est.get("title", "") or primary_bill.title).strip()
-                    url = str(est.get("url", "") or "").strip()
-                    pub_date = str(est.get("pubDate", "") or primary_bill.introduced_date).strip()
+            # 2. CBO Cost Estimates schema: {"costEstimates": [...]}, {"cboCostEstimates": [...]}, or {"bill": {"cboCostEstimates": [...]}}
+            bill_obj = data.get("bill") if isinstance(data.get("bill"), dict) else None
+            cbo_list = (
+                data.get("costEstimates")
+                or data.get("cboCostEstimates")
+                or (bill_obj.get("cboCostEstimates") if bill_obj else None)
+            )
+            if primary_bill and isinstance(cbo_list, list):
+                bill_matches = True
+                if bill_obj is not None:
+                    b_num = str(bill_obj.get("number", "")).strip()
+                    b_type = str(bill_obj.get("type", "")).strip().lower()
+                    b_cong = int(bill_obj.get("congress") or 0)
+                    bill_matches = (
+                        str(primary_bill.number) == b_num
+                        and primary_bill.type.strip().lower() == b_type
+                        and primary_bill.congress == b_cong
+                    )
+                if bill_matches:
+                    selector_prefix = "$.bill.cboCostEstimates" if (bill_obj and "cboCostEstimates" in bill_obj) else (
+                        "$.cboCostEstimates" if "cboCostEstimates" in data else "$.costEstimates"
+                    )
+                    for est in cbo_list:
+                        if not isinstance(est, dict):
+                            continue
+                        cid = str(est.get("id") or est.get("url", "").rstrip("/").split("/")[-1] or "").strip()
+                        if not cid or cid in seen_cbo:
+                            continue
+                        seen_cbo.add(cid)
+                        title = str(est.get("title", "") or primary_bill.title).strip()
+                        url = str(est.get("url", "") or "").strip()
+                        pub_date = str(est.get("pubDate", "") or primary_bill.introduced_date).strip()
 
-                    c_node = CBOScoreNode(
-                        id=cid,
-                        title=title,
-                        url=url,
-                        published_date=pub_date,
-                    )
-                    cbo_nodes.append(c_node)
-                    prov_cbo = EdgeProvenance(
-                        source_uri=fpath,
-                        selector=f"$.costEstimates[id='{cid}']",
-                        ingestion_timestamp=now_iso,
-                        run_id=run_id,
-                    )
-                    edges.append(
-                        GraphEdge(
-                            source_pk=primary_bill.primary_key,
-                            label="HAS_BUDGET_IMPACT",
-                            target_pk=c_node.primary_key,
-                            provenance=prov_cbo,
+                        c_node = CBOScoreNode(
+                            id=cid,
+                            title=title,
+                            url=url,
+                            published_date=pub_date,
                         )
-                    )
+                        cbo_nodes.append(c_node)
+                        prov_cbo = EdgeProvenance(
+                            source_uri=fpath,
+                            selector=f"{selector_prefix}[id='{cid}']",
+                            ingestion_timestamp=now_iso,
+                            run_id=run_id,
+                        )
+                        edges.append(
+                            GraphEdge(
+                                source_pk=primary_bill.primary_key,
+                                label="HAS_BUDGET_IMPACT",
+                                target_pk=c_node.primary_key,
+                                provenance=prov_cbo,
+                            )
+                        )
 
             # 3. NCBI PubMed ESummary schema: {"result": {"uids": [...], "<pmid>": {...}}}
             res_dict = data.get("result")
