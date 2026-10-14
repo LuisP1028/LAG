@@ -1,0 +1,17 @@
+HTTP 503
+Accept-Ranges: bytes
+Content-Type: text/html
+ETag: "24a710da5666dea88d2c2ea28c7f03ea:1648140419.977904"
+Last-Modified: Thu, 24 Mar 2022 16:47:00 GMT
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Date: Wed, 14 Oct 2026 04:57:09 GMT
+Connection: keep-alive
+Set-Cookie: _ga=GA1.2.630742501.1791953829; expires=Fri, 13-Oct-2028 04:57:09 GMT; path=/; domain=.cms.gov; secure, cms_fpid=3e2fe9b1-8a32-9f3a-cb50-6ff9d5bc5b44; expires=Fri, 13-Oct-2028 04:57:09 GMT; path=/; domain=.cms.gov; secure; SameSite=Lax
+Cache-Control: max-age=0, no-cache, no-store
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains ; preload
+Access-Control-Allow-Origin: *
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Permitted-Cross-Domain-Policies: master-only
+Akamai-GRN: 0.88a3cf17.1791953829.144d4d8b

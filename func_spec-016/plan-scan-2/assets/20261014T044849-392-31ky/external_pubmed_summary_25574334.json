@@ -1,0 +1,134 @@
+{
+  "header": {
+    "type": "esummary",
+    "version": "0.3"
+  },
+  "result": {
+    "uids": [
+      "25574334"
+    ],
+    "25574334": {
+      "uid": "25574334",
+      "pubdate": "2014",
+      "epubdate": "2014 Sep 2",
+      "source": "Pan Afr Med J",
+      "authors": [
+        {
+          "name": "Luboya E",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Tshilonda JC",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Ekila MB",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Aloni MN",
+          "authtype": "Author",
+          "clusterid": ""
+        }
+      ],
+      "lastauthor": "Aloni MN",
+      "title": "[Psychosocial impact of sickle cell disease in the parents of children living in Kinshasa, Democratic Republic of Congo: a qualitative study].",
+      "sorttitle": "psychosocial impact of sickle cell disease in the parents of children living in kinshasa democratic republic of congo a qualitative study",
+      "volume": "19",
+      "issue": "",
+      "pages": "5",
+      "lang": [
+        "fre"
+      ],
+      "nlmuniqueid": "101517926",
+      "issn": "",
+      "essn": "1937-8688",
+      "pubtype": [
+        "Journal Article"
+      ],
+      "recordstatus": "PubMed - indexed for MEDLINE",
+      "pubstatus": "258",
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "idtypen": 1,
+          "value": "25574334"
+        },
+        {
+          "idtype": "pmc",
+          "idtypen": 8,
+          "value": "PMC4282867"
+        },
+        {
+          "idtype": "pmcid",
+          "idtypen": 5,
+          "value": "pmc-id: PMC4282867;"
+        },
+        {
+          "idtype": "doi",
+          "idtypen": 3,
+          "value": "10.11604/pamj.2014.19.5.2830"
+        },
+        {
+          "idtype": "pii",
+          "idtypen": 4,
+          "value": "PAMJ-19-5"
+        }
+      ],
+      "history": [
+        {
+          "pubstatus": "received",
+          "date": "2013/05/12 00:00"
+        },
+        {
+          "pubstatus": "accepted",
+          "date": "2014/03/07 00:00"
+        },
+        {
+          "pubstatus": "entrez",
+          "date": "2015/01/10 06:00"
+        },
+        {
+          "pubstatus": "pubmed",
+          "date": "2015/01/13 06:00"
+        },
+        {
+          "pubstatus": "medline",
+          "date": "2015/09/04 06:00"
+        },
+        {
+          "pubstatus": "pmc-release",
+          "date": "2014/09/02 00:00"
+        }
+      ],
+      "references": [],
+      "attributes": [
+        "Has Abstract"
+      ],
+      "pmcrefcount": 34,
+      "fulljournalname": "The Pan African medical journal",
+      "elocationid": "doi: 10.11604/pamj.2014.19.5.2830",
+      "doctype": "citation",
+      "srccontriblist": [],
+      "booktitle": "",
+      "medium": "",
+      "edition": "",
+      "publisherlocation": "",
+      "publishername": "",
+      "srcdate": "",
+      "reportnumber": "",
+      "availablefromurl": "",
+      "locationlabel": "",
+      "doccontriblist": [],
+      "docdate": "",
+      "bookname": "",
+      "chapter": "",
+      "sortpubdate": "2014/09/02 00:00",
+      "sortfirstauthor": "Luboya E",
+      "vernaculartitle": "R\u00e9percussions psychosociales de la dr\u00e9panocytose sur les parents d'enfants vivant \u00e0 Kinshasa, R\u00e9publique D\u00e9mocratique du Congo: une \u00e9tude qualitative."
+    }
+  }
+}

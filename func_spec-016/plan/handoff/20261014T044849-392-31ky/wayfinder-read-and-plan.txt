@@ -1,0 +1,8 @@
+functional_specification_016.md
+wayfinder/20261014T044849-392-31ky/tickets/ticket-001.md
+wayfinder/20261014T044849-392-31ky/tickets/ticket-002.md
+wayfinder/20261014T044849-392-31ky/tickets/ticket-003.md
+wayfinder/20261014T044849-392-31ky/tickets/ticket-004.md
+wayfinder/20261014T044849-392-31ky/tickets/ticket-005.md
+wayfinder/20261014T044849-392-31ky/map.md
+wayfinder/20261014T044849-392-31ky/matrix.md

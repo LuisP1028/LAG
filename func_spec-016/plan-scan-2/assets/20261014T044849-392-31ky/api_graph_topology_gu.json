@@ -1,0 +1,3059 @@
+{
+  "nodes": [
+    {
+      "primary_key": "STAT-117-328-SEC-4133",
+      "label": "StatutorySection",
+      "name": "Sec. 4133: MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+      "properties": {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "uslm_section_path": "/us/pl/117/328/dFF/tIV/stD/s4133",
+        "statute_section_number": "4133",
+        "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+        "public_law_id": "PLAW-117-328",
+        "effective_date": "2024-01-01",
+        "section": "1395x",
+        "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919 (ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and (iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+        "title": 42,
+        "primary_key": "STAT-117-328-SEC-4133"
+      }
+    },
+    {
+      "primary_key": "USC-42-1395x-s-2-JJ",
+      "label": "USCSection",
+      "name": "42 U.S.C. 1395x(s)(2)(JJ)",
+      "properties": {
+        "subsections": [
+          "s",
+          "2",
+          "JJ"
+        ],
+        "section": "1395x",
+        "citation_string": "42 U.S.C. 1395x(s)(2)(JJ)",
+        "title": 42,
+        "primary_key": "USC-42-1395x-s-2-JJ"
+      }
+    },
+    {
+      "primary_key": "USC-42-1395l-a-1",
+      "label": "USCSection",
+      "name": "42 U.S.C. 1395l(a)(1)",
+      "properties": {
+        "subsections": [
+          "a",
+          "1"
+        ],
+        "section": "1395l",
+        "citation_string": "42 U.S.C. 1395l(a)(1)",
+        "title": 42,
+        "primary_key": "USC-42-1395l-a-1"
+      }
+    },
+    {
+      "primary_key": "USC-42-1395m",
+      "label": "USCSection",
+      "name": "42 U.S.C. 1395m",
+      "properties": {
+        "subsections": [],
+        "section": "1395m",
+        "citation_string": "42 U.S.C. 1395m",
+        "title": 42,
+        "primary_key": "USC-42-1395m"
+      }
+    },
+    {
+      "primary_key": "USC-42-1395w\u20133-a-2",
+      "label": "USCSection",
+      "name": "42 U.S.C. 1395w\u20133(a)(2)",
+      "properties": {
+        "subsections": [
+          "a",
+          "2"
+        ],
+        "section": "1395w\u20133",
+        "citation_string": "42 U.S.C. 1395w\u20133(a)(2)",
+        "title": 42,
+        "primary_key": "USC-42-1395w\u20133-a-2"
+      }
+    },
+    {
+      "primary_key": "REG-FR-2023-24455",
+      "label": "Regulation",
+      "name": "88 FR 77676 (CMS-1780-F)",
+      "properties": {
+        "document_number": "2023-24455",
+        "citation": "88 FR 77676",
+        "rin": "0938-AV03",
+        "effective_date": "2024-01-01",
+        "cfr_parts": [
+          "42 CFR Part 409",
+          "42 CFR Part 410",
+          "42 CFR Part 414",
+          "42 CFR Part 424",
+          "42 CFR Part 484",
+          "42 CFR Part 488",
+          "42 CFR Part 489"
+        ],
+        "docket_id": "CMS-1780-F",
+        "primary_key": "REG-FR-2023-24455"
+      }
+    },
+    {
+      "primary_key": "PUBMED-25574334",
+      "label": "LiteratureStudy",
+      "name": "[Psychosocial impact of sickle cell disease in the parents of children living in Kinshasa, Democratic Republic of Congo: a qualitative study].",
+      "properties": {
+        "journal": "Pan Afr Med J",
+        "pub_year": 2014,
+        "title": "[Psychosocial impact of sickle cell disease in the parents of children living in Kinshasa, Democratic Republic of Congo: a qualitative study].",
+        "pmid": 25574334,
+        "primary_key": "PUBMED-25574334",
+        "doi": "10.11604/pamj.2014.19.5.2830"
+      }
+    },
+    {
+      "primary_key": "PUBMED-31298495",
+      "label": "LiteratureStudy",
+      "name": "Association of perioperative red blood cell transfusion with postoperative venous thromboembolism in pediatric patients: A propensity score matched analysis.",
+      "properties": {
+        "journal": "Pediatr Blood Cancer",
+        "pub_year": 2019,
+        "title": "Association of perioperative red blood cell transfusion with postoperative venous thromboembolism in pediatric patients: A propensity score matched analysis.",
+        "pmid": 31298495,
+        "primary_key": "PUBMED-31298495",
+        "doi": "10.1002/pbc.27919"
+      }
+    },
+    {
+      "primary_key": "PUBMED-31454178",
+      "label": "LiteratureStudy",
+      "name": "The rollout of Community ART Refill Groups in Zimbabwe: a qualitative evaluation.",
+      "properties": {
+        "journal": "J Int AIDS Soc",
+        "pub_year": 2019,
+        "title": "The rollout of Community ART Refill Groups in Zimbabwe: a qualitative evaluation.",
+        "pmid": 31454178,
+        "primary_key": "PUBMED-31454178",
+        "doi": "10.1002/jia2.25393"
+      }
+    },
+    {
+      "primary_key": "PUBMED-27549490",
+      "label": "LiteratureStudy",
+      "name": "PubMed Study 27549490",
+      "properties": {
+        "journal": "Peer-Reviewed Biomedical Journal",
+        "pub_year": 2020,
+        "title": "PubMed Study 27549490",
+        "pmid": 27549490,
+        "primary_key": "PUBMED-27549490",
+        "doi": ""
+      }
+    },
+    {
+      "primary_key": "CFR-42-409",
+      "label": "CFRSection",
+      "name": "42 CFR Part 409",
+      "properties": {
+        "part": "409",
+        "title": 42,
+        "cfr_reference": "42 CFR Part 409",
+        "primary_key": "CFR-42-409"
+      }
+    },
+    {
+      "primary_key": "CFR-42-410",
+      "label": "CFRSection",
+      "name": "42 CFR Part 410",
+      "properties": {
+        "part": "410",
+        "title": 42,
+        "cfr_reference": "42 CFR Part 410",
+        "primary_key": "CFR-42-410"
+      }
+    },
+    {
+      "primary_key": "CFR-42-414",
+      "label": "CFRSection",
+      "name": "42 CFR Part 414",
+      "properties": {
+        "part": "414",
+        "title": 42,
+        "cfr_reference": "42 CFR Part 414",
+        "primary_key": "CFR-42-414"
+      }
+    },
+    {
+      "primary_key": "CFR-42-424",
+      "label": "CFRSection",
+      "name": "42 CFR Part 424",
+      "properties": {
+        "part": "424",
+        "title": 42,
+        "cfr_reference": "42 CFR Part 424",
+        "primary_key": "CFR-42-424"
+      }
+    },
+    {
+      "primary_key": "CFR-42-484",
+      "label": "CFRSection",
+      "name": "42 CFR Part 484",
+      "properties": {
+        "part": "484",
+        "title": 42,
+        "cfr_reference": "42 CFR Part 484",
+        "primary_key": "CFR-42-484"
+      }
+    },
+    {
+      "primary_key": "CFR-42-488",
+      "label": "CFRSection",
+      "name": "42 CFR Part 488",
+      "properties": {
+        "part": "488",
+        "title": 42,
+        "cfr_reference": "42 CFR Part 488",
+        "primary_key": "CFR-42-488"
+      }
+    },
+    {
+      "primary_key": "CFR-42-489",
+      "label": "CFRSection",
+      "name": "42 CFR Part 489",
+      "properties": {
+        "part": "489",
+        "title": 42,
+        "cfr_reference": "42 CFR Part 489",
+        "primary_key": "CFR-42-489"
+      }
+    },
+    {
+      "primary_key": "TR-CR13286",
+      "label": "Transmittal",
+      "name": "CR13286 (R12471CP)",
+      "properties": {
+        "superseded_transmittal_numbers": [
+          "R12379CP"
+        ],
+        "cms_manual_publication": "Pub 100-04",
+        "effective_date": "2024-01-01",
+        "betos_code": "O1L",
+        "pricing_indicator_code": "40",
+        "transmittal_number": "R12471CP",
+        "cr_number": "CR13286",
+        "benefit_category": "LC",
+        "primary_key": "TR-CR13286"
+      }
+    },
+    {
+      "primary_key": "BILL-117-hr-2617",
+      "label": "Bill",
+      "name": "HR 2617: Consolidated Appropriations Act, 2023",
+      "properties": {
+        "number": 2617,
+        "congress": 117,
+        "introduced_date": "2021-04-16",
+        "title": "Consolidated Appropriations Act, 2023",
+        "type": "hr",
+        "primary_key": "BILL-117-hr-2617"
+      }
+    },
+    {
+      "primary_key": "PLAW-117-328",
+      "label": "PublicLaw",
+      "name": "Public Law 117-328",
+      "properties": {
+        "number": 328,
+        "enacted_date": "2022-12-29",
+        "congress": 117,
+        "title": "An act making consolidated appropriations for the fiscal year ending September 30, 2023, and for providing emergency assistance for the situation in Ukraine, and for other purposes.",
+        "primary_key": "PLAW-117-328"
+      }
+    },
+    {
+      "primary_key": "DME-MAC-COPE147943",
+      "label": "CoveragePolicy",
+      "name": "Lymphedema Compression Treatment Items \u2013 Correct Coding and Billing \u2013 Revised",
+      "properties": {
+        "article_id": "DME-MAC-COPE147943",
+        "publisher_type": "DME_MAC_JOINT_PUBLICATION",
+        "policy_type": "DME_MAC_JOINT_PUBLICATION",
+        "effective_date": "2024-01-01",
+        "title": "Lymphedema Compression Treatment Items \u2013 Correct Coding and Billing \u2013 Revised",
+        "clinical_prerequisites": [
+          "Diagnosis of lymphedema documented by the treating practitioner (MD, DO, NP, PA, CNS) in the beneficiary's medical record. This documentation cannot come from a licensed clinical medical practitioner (LCMP) such as physical therapist, occupational therapist, or lymphedema therapist even if the medical records are countersigned by the prescribing practitioner.",
+          "For supplies \u2013 In addition to the description of the base item, the DMEPOS order/prescription may include all concurrently ordered supplies that are separately billed (List each separately) Quantity to be dispensed, if applicable",
+          "Treating Practitioner Name or National Provider Identifier (NPI)",
+          "Treating practitioner's signature"
+        ],
+        "primary_key": "DME-MAC-COPE147943"
+      }
+    },
+    {
+      "primary_key": "JURIS-DME-D",
+      "label": "Jurisdiction",
+      "name": "JURIS-DME-D (Noridian Healthcare Solutions)",
+      "properties": {
+        "contractor_name": "Noridian Healthcare Solutions",
+        "code": "JURIS-DME-D",
+        "name": "JURIS-DME-D (Noridian)",
+        "primary_key": "JURIS-DME-D"
+      }
+    },
+    {
+      "primary_key": "ICD10-I89.0",
+      "label": "DiagnosisCode",
+      "name": "I89.0: Lymphedema, not elsewhere classified",
+      "properties": {
+        "code": "I89.0",
+        "description": "Lymphedema, not elsewhere classified",
+        "primary_key": "ICD10-I89.0"
+      }
+    },
+    {
+      "primary_key": "ICD10-I97.2",
+      "label": "DiagnosisCode",
+      "name": "I97.2: Postmastectomy lymphedema syndrome",
+      "properties": {
+        "code": "I97.2",
+        "description": "Postmastectomy lymphedema syndrome",
+        "primary_key": "ICD10-I97.2"
+      }
+    },
+    {
+      "primary_key": "ICD10-I97.89",
+      "label": "DiagnosisCode",
+      "name": "I97.89: Other postprocedural complications and disorders of the circulatory system, not elsewhere classified",
+      "properties": {
+        "code": "I97.89",
+        "description": "Other postprocedural complications and disorders of the circulatory system, not elsewhere classified",
+        "primary_key": "ICD10-I97.89"
+      }
+    },
+    {
+      "primary_key": "ICD10-Q82.0",
+      "label": "DiagnosisCode",
+      "name": "Q82.0: Hereditary lymphedema",
+      "properties": {
+        "code": "Q82.0",
+        "description": "Hereditary lymphedema",
+        "primary_key": "ICD10-Q82.0"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6520",
+      "label": "ProcedureCode",
+      "name": "A6520: Gradient compression garment, glove, padded, for nighttime use, each",
+      "properties": {
+        "short_description": "Gradient compression garment, glove, padded, for nighttime use, each",
+        "code": "A6520",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, glove, padded, for nighttime use, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6520"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6521",
+      "label": "ProcedureCode",
+      "name": "A6521: Gradient compression garment, glove, padded, for nighttime use, custom, each",
+      "properties": {
+        "short_description": "Gradient compression garment, glove, padded, for nighttime use, custom, each",
+        "code": "A6521",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, glove, padded, for nighttime use, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6521"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6522",
+      "label": "ProcedureCode",
+      "name": "A6522: Gradient compression garment, arm, padded, for nighttime use, each",
+      "properties": {
+        "short_description": "Gradient compression garment, arm, padded, for nighttime use, each",
+        "code": "A6522",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, arm, padded, for nighttime use, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6522"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6523",
+      "label": "ProcedureCode",
+      "name": "A6523: Gradient compression garment, arm, padded, for nighttime use, custom, each",
+      "properties": {
+        "short_description": "Gradient compression garment, arm, padded, for nighttime use, custom, each",
+        "code": "A6523",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, arm, padded, for nighttime use, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6523"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6524",
+      "label": "ProcedureCode",
+      "name": "A6524: Gradient compression garment, lower leg and foot, padded, for nighttime use,",
+      "properties": {
+        "short_description": "Gradient compression garment, lower leg and foot, padded, for nighttime use,",
+        "code": "A6524",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, lower leg and foot, padded, for nighttime use,",
+        "category": "LC",
+        "primary_key": "HCPCS-A6524"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6525",
+      "label": "ProcedureCode",
+      "name": "A6525: Gradient compression garment, lower leg and foot, padded, for nighttime use,",
+      "properties": {
+        "short_description": "Gradient compression garment, lower leg and foot, padded, for nighttime use,",
+        "code": "A6525",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, lower leg and foot, padded, for nighttime use,",
+        "category": "LC",
+        "primary_key": "HCPCS-A6525"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6526",
+      "label": "ProcedureCode",
+      "name": "A6526: Gradient compression garment, full leg and foot, padded, for nighttime use, each",
+      "properties": {
+        "short_description": "Gradient compression garment, full leg and foot, padded, for nighttime use, each",
+        "code": "A6526",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, full leg and foot, padded, for nighttime use, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6526"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6527",
+      "label": "ProcedureCode",
+      "name": "A6527: Gradient compression garment, full leg and foot, padded, for nighttime use,",
+      "properties": {
+        "short_description": "Gradient compression garment, full leg and foot, padded, for nighttime use,",
+        "code": "A6527",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, full leg and foot, padded, for nighttime use,",
+        "category": "LC",
+        "primary_key": "HCPCS-A6527"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6528",
+      "label": "ProcedureCode",
+      "name": "A6528: Gradient compression garment, bra, for nighttime use, each",
+      "properties": {
+        "short_description": "Gradient compression garment, bra, for nighttime use, each",
+        "code": "A6528",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, bra, for nighttime use, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6528"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6529",
+      "label": "ProcedureCode",
+      "name": "A6529: Gradient compression garment, bra, for nighttime use, custom, each",
+      "properties": {
+        "short_description": "Gradient compression garment, bra, for nighttime use, custom, each",
+        "code": "A6529",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, bra, for nighttime use, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6529"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6530",
+      "label": "ProcedureCode",
+      "name": "A6530: Gradient compression stocking, below knee, 18-30 mmhg, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, below knee, 18-30 mmhg, each",
+        "code": "A6530",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, below knee, 18-30 mmhg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6530"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6533",
+      "label": "ProcedureCode",
+      "name": "A6533: Gradient compression stocking, thigh length, 18-30 mmhg, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, thigh length, 18-30 mmhg, each",
+        "code": "A6533",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, thigh length, 18-30 mmhg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6533"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6534",
+      "label": "ProcedureCode",
+      "name": "A6534: Gradient compression stocking, thigh length, 30-40 mmhg, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, thigh length, 30-40 mmhg, each",
+        "code": "A6534",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, thigh length, 30-40 mmhg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6534"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6535",
+      "label": "ProcedureCode",
+      "name": "A6535: Gradient compression stocking, thigh length, 40 mmhg or greater, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, thigh length, 40 mmhg or greater, each",
+        "code": "A6535",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, thigh length, 40 mmhg or greater, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6535"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6536",
+      "label": "ProcedureCode",
+      "name": "A6536: Gradient compression stocking, full length/chap style, 18-30 mmhg, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, full length/chap style, 18-30 mmhg, each",
+        "code": "A6536",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, full length/chap style, 18-30 mmhg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6536"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6537",
+      "label": "ProcedureCode",
+      "name": "A6537: Gradient compression stocking, full length/chap style, 30-40 mmhg, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, full length/chap style, 30-40 mmhg, each",
+        "code": "A6537",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, full length/chap style, 30-40 mmhg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6537"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6538",
+      "label": "ProcedureCode",
+      "name": "A6538: Gradient compression stocking, full length/chap style, 40 mmhg or greater, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, full length/chap style, 40 mmhg or greater, each",
+        "code": "A6538",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, full length/chap style, 40 mmhg or greater, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6538"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6539",
+      "label": "ProcedureCode",
+      "name": "A6539: Gradient compression stocking, waist length, 18-30 mmhg, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, waist length, 18-30 mmhg, each",
+        "code": "A6539",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, waist length, 18-30 mmhg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6539"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6540",
+      "label": "ProcedureCode",
+      "name": "A6540: Gradient compression stocking, waist length, 30-40 mmhg, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, waist length, 30-40 mmhg, each",
+        "code": "A6540",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, waist length, 30-40 mmhg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6540"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6541",
+      "label": "ProcedureCode",
+      "name": "A6541: Gradient compression stocking, waist length, 40 mmhg or greater, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, waist length, 40 mmhg or greater, each",
+        "code": "A6541",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, waist length, 40 mmhg or greater, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6541"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6549",
+      "label": "ProcedureCode",
+      "name": "A6549: Gradient compression garment, not otherwise specified",
+      "properties": {
+        "short_description": "Gradient compression garment, not otherwise specified",
+        "code": "A6549",
+        "is_custom_or_nos": true,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "LOCAL_CONTRACTOR_PRICING",
+        "long_description": "Gradient compression garment, not otherwise specified",
+        "category": "LC",
+        "primary_key": "HCPCS-A6549"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6552",
+      "label": "ProcedureCode",
+      "name": "A6552: Gradient compression stocking, below knee, 30-40 mmhg, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, below knee, 30-40 mmhg, each",
+        "code": "A6552",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, below knee, 30-40 mmhg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6552"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6553",
+      "label": "ProcedureCode",
+      "name": "A6553: Gradient compression stocking, below knee, 30-40 mmhg, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, below knee, 30-40 mmhg, custom, each",
+        "code": "A6553",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, below knee, 30-40 mmhg, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6553"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6554",
+      "label": "ProcedureCode",
+      "name": "A6554: Gradient compression stocking, below knee, 40 mmhg or greater, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, below knee, 40 mmhg or greater, each",
+        "code": "A6554",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, below knee, 40 mmhg or greater, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6554"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6555",
+      "label": "ProcedureCode",
+      "name": "A6555: Gradient compression stocking, below knee, 40 mmhg or greater, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, below knee, 40 mmhg or greater, custom, each",
+        "code": "A6555",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, below knee, 40 mmhg or greater, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6555"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6556",
+      "label": "ProcedureCode",
+      "name": "A6556: Gradient compression stocking, thigh length, 18-30 mmhg, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, thigh length, 18-30 mmhg, custom, each",
+        "code": "A6556",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, thigh length, 18-30 mmhg, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6556"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6557",
+      "label": "ProcedureCode",
+      "name": "A6557: Gradient compression stocking, thigh length, 30-40 mmhg, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, thigh length, 30-40 mmhg, custom, each",
+        "code": "A6557",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, thigh length, 30-40 mmhg, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6557"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6558",
+      "label": "ProcedureCode",
+      "name": "A6558: Gradient compression stocking, thigh length, 40 mmhg or greater, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, thigh length, 40 mmhg or greater, custom, each",
+        "code": "A6558",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, thigh length, 40 mmhg or greater, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6558"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6559",
+      "label": "ProcedureCode",
+      "name": "A6559: Gradient compression stocking, full length/chap style, 18-30 mmhg, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, full length/chap style, 18-30 mmhg, custom, each",
+        "code": "A6559",
+        "is_custom_or_nos": true,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "LOCAL_CONTRACTOR_PRICING",
+        "long_description": "Gradient compression stocking, full length/chap style, 18-30 mmhg, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6559"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6560",
+      "label": "ProcedureCode",
+      "name": "A6560: Gradient compression stocking, full length/chap style, 30-40 mmhg, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, full length/chap style, 30-40 mmhg, custom, each",
+        "code": "A6560",
+        "is_custom_or_nos": true,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "LOCAL_CONTRACTOR_PRICING",
+        "long_description": "Gradient compression stocking, full length/chap style, 30-40 mmhg, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6560"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6561",
+      "label": "ProcedureCode",
+      "name": "A6561: Gradient compression stocking, full length/chap style, 40 mmhg or greater,",
+      "properties": {
+        "short_description": "Gradient compression stocking, full length/chap style, 40 mmhg or greater,",
+        "code": "A6561",
+        "is_custom_or_nos": true,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "LOCAL_CONTRACTOR_PRICING",
+        "long_description": "Gradient compression stocking, full length/chap style, 40 mmhg or greater,",
+        "category": "LC",
+        "primary_key": "HCPCS-A6561"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6562",
+      "label": "ProcedureCode",
+      "name": "A6562: Gradient compression stocking, waist length, 18-30 mmhg, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, waist length, 18-30 mmhg, custom, each",
+        "code": "A6562",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, waist length, 18-30 mmhg, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6562"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6563",
+      "label": "ProcedureCode",
+      "name": "A6563: Gradient compression stocking, waist length, 30-40 mmhg, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, waist length, 30-40 mmhg, custom, each",
+        "code": "A6563",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, waist length, 30-40 mmhg, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6563"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6564",
+      "label": "ProcedureCode",
+      "name": "A6564: Gradient compression stocking, waist length, 40 mmhg or greater, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, waist length, 40 mmhg or greater, custom, each",
+        "code": "A6564",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, waist length, 40 mmhg or greater, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6564"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6565",
+      "label": "ProcedureCode",
+      "name": "A6565: Gradient compression gauntlet, custom, each",
+      "properties": {
+        "short_description": "Gradient compression gauntlet, custom, each",
+        "code": "A6565",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression gauntlet, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6565"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6566",
+      "label": "ProcedureCode",
+      "name": "A6566: Gradient compression garment, neck/head, each",
+      "properties": {
+        "short_description": "Gradient compression garment, neck/head, each",
+        "code": "A6566",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, neck/head, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6566"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6567",
+      "label": "ProcedureCode",
+      "name": "A6567: Gradient compression garment, neck/head, custom, each",
+      "properties": {
+        "short_description": "Gradient compression garment, neck/head, custom, each",
+        "code": "A6567",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, neck/head, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6567"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6568",
+      "label": "ProcedureCode",
+      "name": "A6568: Gradient compression garment, torso and shoulder, each",
+      "properties": {
+        "short_description": "Gradient compression garment, torso and shoulder, each",
+        "code": "A6568",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, torso and shoulder, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6568"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6569",
+      "label": "ProcedureCode",
+      "name": "A6569: Gradient compression garment, torso/shoulder, custom, each",
+      "properties": {
+        "short_description": "Gradient compression garment, torso/shoulder, custom, each",
+        "code": "A6569",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, torso/shoulder, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6569"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6570",
+      "label": "ProcedureCode",
+      "name": "A6570: Gradient compression garment, genital region, each",
+      "properties": {
+        "short_description": "Gradient compression garment, genital region, each",
+        "code": "A6570",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, genital region, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6570"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6571",
+      "label": "ProcedureCode",
+      "name": "A6571: Gradient compression garment, genital region, custom, each",
+      "properties": {
+        "short_description": "Gradient compression garment, genital region, custom, each",
+        "code": "A6571",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, genital region, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6571"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6572",
+      "label": "ProcedureCode",
+      "name": "A6572: Gradient compression garment, toe caps, each",
+      "properties": {
+        "short_description": "Gradient compression garment, toe caps, each",
+        "code": "A6572",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, toe caps, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6572"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6573",
+      "label": "ProcedureCode",
+      "name": "A6573: Gradient compression garment, toe caps, custom, each",
+      "properties": {
+        "short_description": "Gradient compression garment, toe caps, custom, each",
+        "code": "A6573",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression garment, toe caps, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6573"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6574",
+      "label": "ProcedureCode",
+      "name": "A6574: Gradient compression arm sleeve and glove combination, custom, each",
+      "properties": {
+        "short_description": "Gradient compression arm sleeve and glove combination, custom, each",
+        "code": "A6574",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression arm sleeve and glove combination, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6574"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6575",
+      "label": "ProcedureCode",
+      "name": "A6575: Gradient  compression arm sleeve and glove combination, each",
+      "properties": {
+        "short_description": "Gradient  compression arm sleeve and glove combination, each",
+        "code": "A6575",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient  compression arm sleeve and glove combination, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6575"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6576",
+      "label": "ProcedureCode",
+      "name": "A6576: Gradient  compression arm sleeve, custom, medium weight, each",
+      "properties": {
+        "short_description": "Gradient  compression arm sleeve, custom, medium weight, each",
+        "code": "A6576",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient  compression arm sleeve, custom, medium weight, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6576"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6577",
+      "label": "ProcedureCode",
+      "name": "A6577: Gradient  compression arm sleeve, custom, heavy weight, each",
+      "properties": {
+        "short_description": "Gradient  compression arm sleeve, custom, heavy weight, each",
+        "code": "A6577",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient  compression arm sleeve, custom, heavy weight, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6577"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6578",
+      "label": "ProcedureCode",
+      "name": "A6578: Gradient  compression arm sleeve, each",
+      "properties": {
+        "short_description": "Gradient  compression arm sleeve, each",
+        "code": "A6578",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient  compression arm sleeve, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6578"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6579",
+      "label": "ProcedureCode",
+      "name": "A6579: Gradient compression glove, custom, medium weight, each",
+      "properties": {
+        "short_description": "Gradient compression glove, custom, medium weight, each",
+        "code": "A6579",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression glove, custom, medium weight, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6579"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6580",
+      "label": "ProcedureCode",
+      "name": "A6580: Gradient  compression glove, custom, heavy weight, each",
+      "properties": {
+        "short_description": "Gradient  compression glove, custom, heavy weight, each",
+        "code": "A6580",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient  compression glove, custom, heavy weight, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6580"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6581",
+      "label": "ProcedureCode",
+      "name": "A6581: Gradient compression glove, each",
+      "properties": {
+        "short_description": "Gradient compression glove, each",
+        "code": "A6581",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression glove, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6581"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6582",
+      "label": "ProcedureCode",
+      "name": "A6582: Gradient compression gauntlet, each",
+      "properties": {
+        "short_description": "Gradient compression gauntlet, each",
+        "code": "A6582",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression gauntlet, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6582"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6583",
+      "label": "ProcedureCode",
+      "name": "A6583: Gradient compression wrap with adjustable straps, below knee, 30-50 mmhg, each",
+      "properties": {
+        "short_description": "Gradient compression wrap with adjustable straps, below knee, 30-50 mmhg, each",
+        "code": "A6583",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression wrap with adjustable straps, below knee, 30-50 mmhg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6583"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6584",
+      "label": "ProcedureCode",
+      "name": "A6584: Gradient compression wrap with adjustable straps, not otherwise specified",
+      "properties": {
+        "short_description": "Gradient compression wrap with adjustable straps, not otherwise specified",
+        "code": "A6584",
+        "is_custom_or_nos": true,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "LOCAL_CONTRACTOR_PRICING",
+        "long_description": "Gradient compression wrap with adjustable straps, not otherwise specified",
+        "category": "LC",
+        "primary_key": "HCPCS-A6584"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6585",
+      "label": "ProcedureCode",
+      "name": "A6585: Gradient pressure wrap with adjustable straps, above knee, each",
+      "properties": {
+        "short_description": "Gradient pressure wrap with adjustable straps, above knee, each",
+        "code": "A6585",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient pressure wrap with adjustable straps, above knee, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6585"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6586",
+      "label": "ProcedureCode",
+      "name": "A6586: Gradient pressure wrap with adjustable straps, full leg, each",
+      "properties": {
+        "short_description": "Gradient pressure wrap with adjustable straps, full leg, each",
+        "code": "A6586",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient pressure wrap with adjustable straps, full leg, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6586"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6587",
+      "label": "ProcedureCode",
+      "name": "A6587: Gradient pressure wrap with adjustable straps, foot, each",
+      "properties": {
+        "short_description": "Gradient pressure wrap with adjustable straps, foot, each",
+        "code": "A6587",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient pressure wrap with adjustable straps, foot, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6587"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6588",
+      "label": "ProcedureCode",
+      "name": "A6588: Gradient pressure wrap with adjustable straps, arm, each",
+      "properties": {
+        "short_description": "Gradient pressure wrap with adjustable straps, arm, each",
+        "code": "A6588",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient pressure wrap with adjustable straps, arm, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6588"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6589",
+      "label": "ProcedureCode",
+      "name": "A6589: Gradient pressure wrap with adjustable straps, bra, each",
+      "properties": {
+        "short_description": "Gradient pressure wrap with adjustable straps, bra, each",
+        "code": "A6589",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient pressure wrap with adjustable straps, bra, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6589"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6593",
+      "label": "ProcedureCode",
+      "name": "A6593: Accessory for gradient compression garment or wrap with adjustable straps,",
+      "properties": {
+        "short_description": "Accessory for gradient compression garment or wrap with adjustable straps,",
+        "code": "A6593",
+        "is_custom_or_nos": true,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "LOCAL_CONTRACTOR_PRICING",
+        "long_description": "Accessory for gradient compression garment or wrap with adjustable straps,",
+        "category": "LC",
+        "primary_key": "HCPCS-A6593"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6594",
+      "label": "ProcedureCode",
+      "name": "A6594: Gradient compression bandaging supply, bandage liner, lower extremity, any size",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, bandage liner, lower extremity, any size",
+        "code": "A6594",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, bandage liner, lower extremity, any size",
+        "category": "LC",
+        "primary_key": "HCPCS-A6594"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6595",
+      "label": "ProcedureCode",
+      "name": "A6595: Gradient compression bandaging supply, bandage liner, upper extremity, any size",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, bandage liner, upper extremity, any size",
+        "code": "A6595",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, bandage liner, upper extremity, any size",
+        "category": "LC",
+        "primary_key": "HCPCS-A6595"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6596",
+      "label": "ProcedureCode",
+      "name": "A6596: Gradient compression bandaging supply, conforming gauze, per linear yard, any",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, conforming gauze, per linear yard, any",
+        "code": "A6596",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, conforming gauze, per linear yard, any",
+        "category": "LC",
+        "primary_key": "HCPCS-A6596"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6597",
+      "label": "ProcedureCode",
+      "name": "A6597: Gradient compression bandage roll, elastic long stretch, linear yard, any",
+      "properties": {
+        "short_description": "Gradient compression bandage roll, elastic long stretch, linear yard, any",
+        "code": "A6597",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandage roll, elastic long stretch, linear yard, any",
+        "category": "LC",
+        "primary_key": "HCPCS-A6597"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6598",
+      "label": "ProcedureCode",
+      "name": "A6598: Gradient compression bandage roll, elastic medium stretch, per linear yard, any",
+      "properties": {
+        "short_description": "Gradient compression bandage roll, elastic medium stretch, per linear yard, any",
+        "code": "A6598",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandage roll, elastic medium stretch, per linear yard, any",
+        "category": "LC",
+        "primary_key": "HCPCS-A6598"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6599",
+      "label": "ProcedureCode",
+      "name": "A6599: Gradient compression bandage roll, inelastic short stretch, per linear yard,",
+      "properties": {
+        "short_description": "Gradient compression bandage roll, inelastic short stretch, per linear yard,",
+        "code": "A6599",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandage roll, inelastic short stretch, per linear yard,",
+        "category": "LC",
+        "primary_key": "HCPCS-A6599"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6600",
+      "label": "ProcedureCode",
+      "name": "A6600: Gradient compression bandaging supply, high density foam sheet, per 250 square",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, high density foam sheet, per 250 square",
+        "code": "A6600",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, high density foam sheet, per 250 square",
+        "category": "LC",
+        "primary_key": "HCPCS-A6600"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6601",
+      "label": "ProcedureCode",
+      "name": "A6601: Gradient compression bandaging supply, high density foam pad, any size or",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, high density foam pad, any size or",
+        "code": "A6601",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, high density foam pad, any size or",
+        "category": "LC",
+        "primary_key": "HCPCS-A6601"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6602",
+      "label": "ProcedureCode",
+      "name": "A6602: Gradient compression bandaging supply, high density foam roll for bandage, per",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, high density foam roll for bandage, per",
+        "code": "A6602",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, high density foam roll for bandage, per",
+        "category": "LC",
+        "primary_key": "HCPCS-A6602"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6603",
+      "label": "ProcedureCode",
+      "name": "A6603: Gradient compression bandaging supply, low density channel foam sheet, per 250",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, low density channel foam sheet, per 250",
+        "code": "A6603",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, low density channel foam sheet, per 250",
+        "category": "LC",
+        "primary_key": "HCPCS-A6603"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6604",
+      "label": "ProcedureCode",
+      "name": "A6604: Gradient compression bandaging supply, low density flat foam sheet, per 250",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, low density flat foam sheet, per 250",
+        "code": "A6604",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, low density flat foam sheet, per 250",
+        "category": "LC",
+        "primary_key": "HCPCS-A6604"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6605",
+      "label": "ProcedureCode",
+      "name": "A6605: Gradient compression bandaging supply, padded foam, per linear yard, any width,",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, padded foam, per linear yard, any width,",
+        "code": "A6605",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, padded foam, per linear yard, any width,",
+        "category": "LC",
+        "primary_key": "HCPCS-A6605"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6606",
+      "label": "ProcedureCode",
+      "name": "A6606: Gradient compression bandaging supply, padded textile, per linear yard, any",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, padded textile, per linear yard, any",
+        "code": "A6606",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, padded textile, per linear yard, any",
+        "category": "LC",
+        "primary_key": "HCPCS-A6606"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6607",
+      "label": "ProcedureCode",
+      "name": "A6607: Gradient compression bandaging supply, tubular protective absorption layer, per",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, tubular protective absorption layer, per",
+        "code": "A6607",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, tubular protective absorption layer, per",
+        "category": "LC",
+        "primary_key": "HCPCS-A6607"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6608",
+      "label": "ProcedureCode",
+      "name": "A6608: Gradient compression bandaging supply, tubular protective absorption padded",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, tubular protective absorption padded",
+        "code": "A6608",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression bandaging supply, tubular protective absorption padded",
+        "category": "LC",
+        "primary_key": "HCPCS-A6608"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6609",
+      "label": "ProcedureCode",
+      "name": "A6609: Gradient compression bandaging supply, not otherwise specified",
+      "properties": {
+        "short_description": "Gradient compression bandaging supply, not otherwise specified",
+        "code": "A6609",
+        "is_custom_or_nos": true,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "LOCAL_CONTRACTOR_PRICING",
+        "long_description": "Gradient compression bandaging supply, not otherwise specified",
+        "category": "LC",
+        "primary_key": "HCPCS-A6609"
+      }
+    },
+    {
+      "primary_key": "HCPCS-A6610",
+      "label": "ProcedureCode",
+      "name": "A6610: Gradient compression stocking, below knee, 18-30 mmhg, custom, each",
+      "properties": {
+        "short_description": "Gradient compression stocking, below knee, 18-30 mmhg, custom, each",
+        "code": "A6610",
+        "is_custom_or_nos": false,
+        "pricing_indicator": "40",
+        "betos_code": "O1L",
+        "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+        "long_description": "Gradient compression stocking, below knee, 18-30 mmhg, custom, each",
+        "category": "LC",
+        "primary_key": "HCPCS-A6610"
+      }
+    },
+    {
+      "primary_key": "STATE-GU",
+      "label": "State",
+      "name": "Guam",
+      "properties": {
+        "state_name": "Guam",
+        "state_code": "GU",
+        "primary_key": "STATE-GU"
+      }
+    },
+    {
+      "primary_key": "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+      "label": "LobbyingFiling",
+      "name": "LYMPHEDEMA ADVOCACY GROUP (THE D MAJOR GROUP, 2015)",
+      "properties": {
+        "amount": 0.0,
+        "year": 2015,
+        "registrant_name": "THE D MAJOR GROUP",
+        "filing_uuid": "c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+        "primary_key": "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+        "client_name": "LYMPHEDEMA ADVOCACY GROUP"
+      }
+    },
+    {
+      "primary_key": "LDA-1821a229-8264-40c2-9b04-49169d917adf",
+      "label": "LobbyingFiling",
+      "name": "LYMPHEDEMA ADVOCACY GROUP (THE D MAJOR GROUP, 2015)",
+      "properties": {
+        "amount": 20000.0,
+        "year": 2015,
+        "registrant_name": "THE D MAJOR GROUP",
+        "filing_uuid": "1821a229-8264-40c2-9b04-49169d917adf",
+        "primary_key": "LDA-1821a229-8264-40c2-9b04-49169d917adf",
+        "client_name": "LYMPHEDEMA ADVOCACY GROUP"
+      }
+    },
+    {
+      "primary_key": "POLICY-LTA",
+      "label": "Policy",
+      "name": "Policy: LTA",
+      "properties": {
+        "run_id": "run-lta-015",
+        "keyword": "LTA",
+        "primary_key": "POLICY-LTA",
+        "timestamp": "2026-10-14T03:46:51.537378+00:00"
+      }
+    },
+    {
+      "primary_key": "BILL-117-hr-3630",
+      "label": "Bill",
+      "name": "HR 3630: Lymphedema Treatment Act",
+      "properties": {
+        "number": 3630,
+        "congress": 117,
+        "introduced_date": "2021-05-28",
+        "title": "Lymphedema Treatment Act",
+        "type": "hr",
+        "primary_key": "BILL-117-hr-3630"
+      }
+    },
+    {
+      "primary_key": "CBO-58517",
+      "label": "CBOScore",
+      "name": "H.R. 3630, Lymphedema Treatment Act",
+      "properties": {
+        "id": "58517",
+        "title": "H.R. 3630, Lymphedema Treatment Act",
+        "primary_key": "CBO-58517",
+        "published_date": "2022-09-23T20:25:00Z",
+        "url": "https://www.cbo.gov/publication/58517"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source_pk": "STAT-117-328-SEC-4133",
+      "target_pk": "USC-42-1395x-s-2-JJ",
+      "label": "AMENDS",
+      "edge_key": "STAT-117-328-SEC-4133->AMENDS->USC-42-1395x-s-2-JJ",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop2_govinfo_plaw_117publ328_sec4133.xml",
+        "selector": "/us/pl/117/328/dFF/tIV/stD/s4133//ref[@href='/us/usc/t42/s1395x']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.545551+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "STAT-117-328-SEC-4133",
+      "target_pk": "USC-42-1395l-a-1",
+      "label": "AMENDS",
+      "edge_key": "STAT-117-328-SEC-4133->AMENDS->USC-42-1395l-a-1",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop2_govinfo_plaw_117publ328_sec4133.xml",
+        "selector": "/us/pl/117/328/dFF/tIV/stD/s4133//ref[@href='/us/usc/t42/s1395l']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.545551+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "STAT-117-328-SEC-4133",
+      "target_pk": "USC-42-1395m",
+      "label": "AMENDS",
+      "edge_key": "STAT-117-328-SEC-4133->AMENDS->USC-42-1395m",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop2_govinfo_plaw_117publ328_sec4133.xml",
+        "selector": "/us/pl/117/328/dFF/tIV/stD/s4133//ref[@href='/us/usc/t42/s1395m']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.545551+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "STAT-117-328-SEC-4133",
+      "target_pk": "USC-42-1395w\u20133-a-2",
+      "label": "AMENDS",
+      "edge_key": "STAT-117-328-SEC-4133->AMENDS->USC-42-1395w\u20133-a-2",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop2_govinfo_plaw_117publ328_sec4133.xml",
+        "selector": "/us/pl/117/328/dFF/tIV/stD/s4133//ref[@href='/us/usc/t42/s1395w\u20133']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.545551+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "USC-42-1395x-s-2-JJ",
+      "target_pk": "REG-FR-2023-24455",
+      "label": "AUTHORIZED_BY",
+      "edge_key": "USC-42-1395x-s-2-JJ->AUTHORIZED_BY->REG-FR-2023-24455",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.document_number['2023-24455']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "USC-42-1395l-a-1",
+      "target_pk": "REG-FR-2023-24455",
+      "label": "AUTHORIZED_BY",
+      "edge_key": "USC-42-1395l-a-1->AUTHORIZED_BY->REG-FR-2023-24455",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.document_number['2023-24455']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "USC-42-1395m",
+      "target_pk": "REG-FR-2023-24455",
+      "label": "AUTHORIZED_BY",
+      "edge_key": "USC-42-1395m->AUTHORIZED_BY->REG-FR-2023-24455",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.document_number['2023-24455']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "USC-42-1395w\u20133-a-2",
+      "target_pk": "REG-FR-2023-24455",
+      "label": "AUTHORIZED_BY",
+      "edge_key": "USC-42-1395w\u20133-a-2->AUTHORIZED_BY->REG-FR-2023-24455",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.document_number['2023-24455']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "PUBMED-25574334",
+      "label": "SUPPORTED_BY_EVIDENCE",
+      "edge_key": "REG-FR-2023-24455->SUPPORTED_BY_EVIDENCE->PUBMED-25574334",
+      "provenance": {
+        "source_uri": "Extraction/assets/tier5_ncbi_pubmed_esummary.json",
+        "selector": "$.result['25574334']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.772459+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "PUBMED-31298495",
+      "label": "SUPPORTED_BY_EVIDENCE",
+      "edge_key": "REG-FR-2023-24455->SUPPORTED_BY_EVIDENCE->PUBMED-31298495",
+      "provenance": {
+        "source_uri": "Extraction/assets/tier5_ncbi_pubmed_esummary.json",
+        "selector": "$.result['31298495']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.772459+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "PUBMED-31454178",
+      "label": "SUPPORTED_BY_EVIDENCE",
+      "edge_key": "REG-FR-2023-24455->SUPPORTED_BY_EVIDENCE->PUBMED-31454178",
+      "provenance": {
+        "source_uri": "Extraction/assets/tier5_ncbi_pubmed_esummary.json",
+        "selector": "$.result['31454178']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.772459+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "PUBMED-27549490",
+      "label": "SUPPORTED_BY_EVIDENCE",
+      "edge_key": "REG-FR-2023-24455->SUPPORTED_BY_EVIDENCE->PUBMED-27549490",
+      "provenance": {
+        "source_uri": "Extraction/assets/tier5_ncbi_pubmed_esummary.json",
+        "selector": "$.result['27549490']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.772459+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "CFR-42-409",
+      "label": "CODIFIED_IN",
+      "edge_key": "REG-FR-2023-24455->CODIFIED_IN->CFR-42-409",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.cfr_references[0]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "CFR-42-410",
+      "label": "CODIFIED_IN",
+      "edge_key": "REG-FR-2023-24455->CODIFIED_IN->CFR-42-410",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.cfr_references[1]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "CFR-42-414",
+      "label": "CODIFIED_IN",
+      "edge_key": "REG-FR-2023-24455->CODIFIED_IN->CFR-42-414",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.cfr_references[2]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "CFR-42-424",
+      "label": "CODIFIED_IN",
+      "edge_key": "REG-FR-2023-24455->CODIFIED_IN->CFR-42-424",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.cfr_references[3]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "CFR-42-484",
+      "label": "CODIFIED_IN",
+      "edge_key": "REG-FR-2023-24455->CODIFIED_IN->CFR-42-484",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.cfr_references[4]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "CFR-42-488",
+      "label": "CODIFIED_IN",
+      "edge_key": "REG-FR-2023-24455->CODIFIED_IN->CFR-42-488",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.cfr_references[5]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "REG-FR-2023-24455",
+      "target_pk": "CFR-42-489",
+      "label": "CODIFIED_IN",
+      "edge_key": "REG-FR-2023-24455->CODIFIED_IN->CFR-42-489",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+        "selector": "$.cfr_references[6]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "CFR-42-409",
+      "target_pk": "TR-CR13286",
+      "label": "IMPLEMENTED_BY",
+      "edge_key": "CFR-42-409->IMPLEMENTED_BY->TR-CR13286",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop4_cms_r12471cp_extracted.txt",
+        "selector": "Transmittal[R12471CP]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547241+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "CFR-42-410",
+      "target_pk": "TR-CR13286",
+      "label": "IMPLEMENTED_BY",
+      "edge_key": "CFR-42-410->IMPLEMENTED_BY->TR-CR13286",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop4_cms_r12471cp_extracted.txt",
+        "selector": "Transmittal[R12471CP]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547241+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "CFR-42-414",
+      "target_pk": "TR-CR13286",
+      "label": "IMPLEMENTED_BY",
+      "edge_key": "CFR-42-414->IMPLEMENTED_BY->TR-CR13286",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop4_cms_r12471cp_extracted.txt",
+        "selector": "Transmittal[R12471CP]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547241+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "BILL-117-hr-2617",
+      "target_pk": "PLAW-117-328",
+      "label": "ENACTED_AS",
+      "edge_key": "BILL-117-hr-2617->ENACTED_AS->PLAW-117-328",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop1_congress_bill_117_hr_2617.json",
+        "selector": "$.bill.laws[0]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.537378+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "PLAW-117-328",
+      "target_pk": "STAT-117-328-SEC-4133",
+      "label": "CONTAINS",
+      "edge_key": "PLAW-117-328->CONTAINS->STAT-117-328-SEC-4133",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop2_govinfo_plaw_117publ328_sec4133.xml",
+        "selector": "/us/pl/117/328/dFF/tIV/stD/s4133",
+        "ingestion_timestamp": "2026-10-14T03:46:51.545551+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "CFR-42-424",
+      "target_pk": "TR-CR13286",
+      "label": "IMPLEMENTED_BY",
+      "edge_key": "CFR-42-424->IMPLEMENTED_BY->TR-CR13286",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop4_cms_r12471cp_extracted.txt",
+        "selector": "Transmittal[R12471CP]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547241+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "CFR-42-484",
+      "target_pk": "TR-CR13286",
+      "label": "IMPLEMENTED_BY",
+      "edge_key": "CFR-42-484->IMPLEMENTED_BY->TR-CR13286",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop4_cms_r12471cp_extracted.txt",
+        "selector": "Transmittal[R12471CP]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547241+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "CFR-42-488",
+      "target_pk": "TR-CR13286",
+      "label": "IMPLEMENTED_BY",
+      "edge_key": "CFR-42-488->IMPLEMENTED_BY->TR-CR13286",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop4_cms_r12471cp_extracted.txt",
+        "selector": "Transmittal[R12471CP]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547241+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "CFR-42-489",
+      "target_pk": "TR-CR13286",
+      "label": "IMPLEMENTED_BY",
+      "edge_key": "CFR-42-489->IMPLEMENTED_BY->TR-CR13286",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop4_cms_r12471cp_extracted.txt",
+        "selector": "Transmittal[R12471CP]",
+        "ingestion_timestamp": "2026-10-14T03:46:51.547241+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "TR-CR13286",
+      "target_pk": "DME-MAC-COPE147943",
+      "label": "MANDATES_POLICY",
+      "edge_key": "TR-CR13286->MANDATES_POLICY->DME-MAC-COPE147943",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop5_cgs_joint_mac_cope147943.html",
+        "selector": "//article[@id='DME-MAC-COPE147943']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "TR-CR13286",
+      "target_pk": "JURIS-DME-D",
+      "label": "APPLIES_TO_JURISDICTION",
+      "edge_key": "TR-CR13286->APPLIES_TO_JURISDICTION->JURIS-DME-D",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop7_cms_dmepos_2024_lc_category.csv",
+        "selector": "CMS MAC Region Allocation Table: Jurisdiction D",
+        "ingestion_timestamp": "2026-10-14T03:46:51.719507+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "ICD10-I89.0",
+      "label": "REQUIRES_DIAGNOSIS",
+      "edge_key": "DME-MAC-COPE147943->REQUIRES_DIAGNOSIS->ICD10-I89.0",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop5_cgs_joint_mac_cope147943.html",
+        "selector": "//table//tr[td='I89.0']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "ICD10-I97.2",
+      "label": "REQUIRES_DIAGNOSIS",
+      "edge_key": "DME-MAC-COPE147943->REQUIRES_DIAGNOSIS->ICD10-I97.2",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop5_cgs_joint_mac_cope147943.html",
+        "selector": "//table//tr[td='I97.2']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "ICD10-I97.89",
+      "label": "REQUIRES_DIAGNOSIS",
+      "edge_key": "DME-MAC-COPE147943->REQUIRES_DIAGNOSIS->ICD10-I97.89",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop5_cgs_joint_mac_cope147943.html",
+        "selector": "//table//tr[td='I97.89']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "ICD10-Q82.0",
+      "label": "REQUIRES_DIAGNOSIS",
+      "edge_key": "DME-MAC-COPE147943->REQUIRES_DIAGNOSIS->ICD10-Q82.0",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop5_cgs_joint_mac_cope147943.html",
+        "selector": "//table//tr[td='Q82.0']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6520",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6520",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6520', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6521",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6521",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6521', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6522",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6522",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6522', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6523",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6523",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6523', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6524",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6524",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6524', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6525",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6525",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6525', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6526",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6526",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6526', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6527",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6527",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6527', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6528",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6528",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6528', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6529",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6529",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6529', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6530",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6530",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6530', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6533",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6533",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6533', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6534",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6534",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6534', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6535",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6535",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6535', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6536",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6536",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6536', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6537",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6537",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6537', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6538",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6538",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6538', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6539",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6539",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6539', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6540",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6540",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6540', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6541",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6541",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6541', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6549",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6549",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6549', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6552",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6552",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6552', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6553",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6553",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6553', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6554",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6554",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6554', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6555",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6555",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6555', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6556",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6556",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6556', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6557",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6557",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6557', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6558",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6558",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6558', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6559",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6559",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6559', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6560",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6560",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6560', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6561",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6561",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6561', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6562",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6562",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6562', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6563",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6563",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6563', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6564",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6564",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6564', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6565",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6565",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6565', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6566",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6566",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6566', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6567",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6567",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6567', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6568",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6568",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6568', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6569",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6569",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6569', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6570",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6570",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6570', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6571",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6571",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6571', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6572",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6572",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6572', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6573",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6573",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6573', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6574",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6574",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6574', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6575",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6575",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6575', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6576",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6576",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6576', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6577",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6577",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6577', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6578",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6578",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6578', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6579",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6579",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6579', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6580",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6580",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6580', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6581",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6581",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6581', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6582",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6582",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6582', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6583",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6583",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6583', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6584",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6584",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6584', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6585",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6585",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6585', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6586",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6586",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6586', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6587",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6587",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6587', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6588",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6588",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6588', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6589",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6589",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6589', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6593",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6593",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6593', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6594",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6594",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6594', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6595",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6595",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6595', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6596",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6596",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6596', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6597",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6597",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6597', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6598",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6598",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6598', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6599",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6599",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6599', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6600",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6600",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6600', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6601",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6601",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6601', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6602",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6602",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6602', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6603",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6603",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6603', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6604",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6604",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6604', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6605",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6605",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6605', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6606",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6606",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6606', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6607",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6607",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6607', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6608",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6608",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6608', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6609",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6609",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6609', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "DME-MAC-COPE147943",
+      "target_pk": "HCPCS-A6610",
+      "label": "COVERS_PROCEDURE",
+      "edge_key": "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6610",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+        "selector": "HCPCS[code='A6610', BETOS='O1L', PI='40']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "JURIS-DME-D",
+      "target_pk": "STATE-GU",
+      "label": "COVERS_STATE",
+      "edge_key": "JURIS-DME-D->COVERS_STATE->STATE-GU",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop7_cms_dmepos_2024_lc_category.csv",
+        "selector": "DME MAC Map: JURIS-D -> STATE-GU",
+        "ingestion_timestamp": "2026-10-14T03:46:51.719507+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "POLICY-LTA",
+      "target_pk": "BILL-117-hr-3630",
+      "label": "DISCOVERED_BILL",
+      "edge_key": "POLICY-LTA->DISCOVERED_BILL->BILL-117-hr-3630",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop1_congress_bill_117_hr_3630.json",
+        "selector": "$.bill",
+        "ingestion_timestamp": "2026-10-14T03:46:51.537378+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "BILL-117-hr-3630",
+      "target_pk": "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+      "label": "HAS_ADVOCACY_RECORD",
+      "edge_key": "BILL-117-hr-3630->HAS_ADVOCACY_RECORD->LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+      "provenance": {
+        "source_uri": "Extraction/assets/tier5_lda_senate_filings_3630.json",
+        "selector": "$.results[filing_uuid='c8697fc5-7f3b-4861-8a49-d9e6357ad287']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.772459+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "BILL-117-hr-3630",
+      "target_pk": "LDA-1821a229-8264-40c2-9b04-49169d917adf",
+      "label": "HAS_ADVOCACY_RECORD",
+      "edge_key": "BILL-117-hr-3630->HAS_ADVOCACY_RECORD->LDA-1821a229-8264-40c2-9b04-49169d917adf",
+      "provenance": {
+        "source_uri": "Extraction/assets/tier5_lda_senate_filings_3630.json",
+        "selector": "$.results[filing_uuid='1821a229-8264-40c2-9b04-49169d917adf']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.772459+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "BILL-117-hr-3630",
+      "target_pk": "BILL-117-hr-2617",
+      "label": "INCORPORATED_INTO",
+      "edge_key": "BILL-117-hr-3630->INCORPORATED_INTO->BILL-117-hr-2617",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop1_congress_bill_117_hr_2617.json",
+        "selector": "$.bill.relatedBills",
+        "ingestion_timestamp": "2026-10-14T03:46:51.537378+00:00",
+        "run_id": "run-lta-015"
+      }
+    },
+    {
+      "source_pk": "BILL-117-hr-3630",
+      "target_pk": "CBO-58517",
+      "label": "HAS_BUDGET_IMPACT",
+      "edge_key": "BILL-117-hr-3630->HAS_BUDGET_IMPACT->CBO-58517",
+      "provenance": {
+        "source_uri": "Extraction/assets/hop1_congress_bill_117_hr_3630.json",
+        "selector": "$.bill.cboCostEstimates[id='58517']",
+        "ingestion_timestamp": "2026-10-14T03:46:51.772459+00:00",
+        "run_id": "run-lta-015"
+      }
+    }
+  ],
+  "total_nodes": 109,
+  "total_edges": 117
+}

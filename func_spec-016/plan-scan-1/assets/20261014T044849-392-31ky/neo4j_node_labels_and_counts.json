@@ -1,0 +1,78 @@
+[
+  {
+    "label": "Bill",
+    "count": 2
+  },
+  {
+    "label": "CBOScore",
+    "count": 1
+  },
+  {
+    "label": "CFRSection",
+    "count": 7
+  },
+  {
+    "label": "CoveragePolicy",
+    "count": 1
+  },
+  {
+    "label": "DiagnosisCode",
+    "count": 4
+  },
+  {
+    "label": "FeeScheduleRate",
+    "count": 3710
+  },
+  {
+    "label": "Jurisdiction",
+    "count": 4
+  },
+  {
+    "label": "LiteratureStudy",
+    "count": 4
+  },
+  {
+    "label": "LobbyingFiling",
+    "count": 2
+  },
+  {
+    "label": "Policy",
+    "count": 1
+  },
+  {
+    "label": "PolicyNode",
+    "count": 3875
+  },
+  {
+    "label": "ProcedureCode",
+    "count": 77
+  },
+  {
+    "label": "PublicLaw",
+    "count": 1
+  },
+  {
+    "label": "Regulation",
+    "count": 1
+  },
+  {
+    "label": "State",
+    "count": 54
+  },
+  {
+    "label": "StatutorySection",
+    "count": 1
+  },
+  {
+    "label": "Strategy",
+    "count": 0
+  },
+  {
+    "label": "Transmittal",
+    "count": 1
+  },
+  {
+    "label": "USCSection",
+    "count": 4
+  }
+]

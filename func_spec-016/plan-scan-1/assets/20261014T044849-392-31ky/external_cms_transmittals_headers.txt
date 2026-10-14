@@ -1,0 +1,27 @@
+HTTP 200
+Content-Type: text/html; charset=utf-8
+Content-Length: 30295
+Cache-Control: max-age=2764800, public
+X-Drupal-Dynamic-Cache: UNCACHEABLE (poor cacheability)
+Content-Language: en
+X-Content-Type-Options: nosniff
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+X-Generator: Drupal 11 (https://www.drupal.org)
+Last-Modified: Wed, 14 Oct 2026 04:24:57 GMT
+ETag: "1791951897-gzip"
+Vary: Accept-Encoding
+Content-Encoding: gzip
+X-Request-ID: v-36aba400-c787-11f1-b3c1-6bf9e6a00fd1
+X-AH-Environment: prod
+X-Cache-Hits: 12
+X-Age: 989
+Accept-Ranges: bytes
+Date: Wed, 14 Oct 2026 04:57:33 GMT
+Connection: keep-alive
+Set-Cookie: _ga=GA1.2.289458455.1791953853; expires=Fri, 13-Oct-2028 04:57:33 GMT; path=/; domain=.cms.gov; secure, cms_fpid=602f209a-d8fc-bd5d-6bb4-d64230063806; expires=Fri, 13-Oct-2028 04:57:33 GMT; path=/; domain=.cms.gov; secure; SameSite=Lax
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains ; preload
+Access-Control-Allow-Origin: *
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Permitted-Cross-Domain-Policies: master-only
+Akamai-GRN: 0.88a3cf17.1791953853.144e25dc

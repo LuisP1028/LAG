@@ -1,0 +1,263 @@
+{
+  "Bill": {
+    "labels": [
+      "Bill",
+      "PolicyNode"
+    ],
+    "properties": {
+      "number": 2617,
+      "congress": 117,
+      "introduced_date": "2021-04-16",
+      "title": "Consolidated Appropriations Act, 2023",
+      "type": "hr",
+      "primary_key": "BILL-117-hr-2617"
+    }
+  },
+  "CBOScore": {
+    "labels": [
+      "CBOScore",
+      "PolicyNode"
+    ],
+    "properties": {
+      "id": "58517",
+      "title": "H.R. 3630, Lymphedema Treatment Act",
+      "primary_key": "CBO-58517",
+      "published_date": "2022-09-23T20:25:00Z",
+      "url": "https://www.cbo.gov/publication/58517"
+    }
+  },
+  "CFRSection": {
+    "labels": [
+      "CFRSection",
+      "PolicyNode"
+    ],
+    "properties": {
+      "part": "409",
+      "title": 42,
+      "cfr_reference": "42 CFR Part 409",
+      "primary_key": "CFR-42-409"
+    }
+  },
+  "CoveragePolicy": {
+    "labels": [
+      "CoveragePolicy",
+      "PolicyNode"
+    ],
+    "properties": {
+      "article_id": "DME-MAC-COPE147943",
+      "publisher_type": "DME_MAC_JOINT_PUBLICATION",
+      "policy_type": "DME_MAC_JOINT_PUBLICATION",
+      "effective_date": "2024-01-01",
+      "title": "Lymphedema Compression Treatment Items \u2013 Correct Coding and Billing \u2013 Revised",
+      "clinical_prerequisites": [
+        "Diagnosis of lymphedema documented by the treating practitioner (MD, DO, NP, PA, CNS) in the beneficiary's medical record. This documentation cannot come from a licensed clinical medical practitioner (LCMP) such as physical therapist, occupational therapist, or lymphedema therapist even if the medical records are countersigned by the prescribing practitioner.",
+        "For supplies \u2013 In addition to the description of the base item, the DMEPOS order/prescription may include all concurrently ordered supplies that are separately billed (List each separately) Quantity to be dispensed, if applicable",
+        "Treating Practitioner Name or National Provider Identifier (NPI)",
+        "Treating practitioner's signature"
+      ],
+      "primary_key": "DME-MAC-COPE147943"
+    }
+  },
+  "DiagnosisCode": {
+    "labels": [
+      "DiagnosisCode",
+      "PolicyNode"
+    ],
+    "properties": {
+      "code": "I89.0",
+      "description": "Lymphedema, not elsewhere classified",
+      "primary_key": "ICD10-I89.0"
+    }
+  },
+  "FeeScheduleRate": {
+    "labels": [
+      "PolicyNode",
+      "FeeScheduleRate"
+    ],
+    "properties": {
+      "ceiling": 0.0,
+      "fee_amount": 119.54,
+      "is_rural": false,
+      "year": 2024,
+      "hcpcs_code": "A6520",
+      "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+      "state_code": "AL",
+      "floor": 0.0,
+      "primary_key": "FEE-A6520-AL-NR-2024"
+    }
+  },
+  "Jurisdiction": {
+    "labels": [
+      "Jurisdiction",
+      "PolicyNode"
+    ],
+    "properties": {
+      "contractor_name": "Noridian Healthcare Solutions",
+      "code": "JURIS-DME-A",
+      "name": "JURIS-DME-A (Noridian)",
+      "primary_key": "JURIS-DME-A"
+    }
+  },
+  "LiteratureStudy": {
+    "labels": [
+      "LiteratureStudy",
+      "PolicyNode"
+    ],
+    "properties": {
+      "journal": "Pan Afr Med J",
+      "pub_year": 2014,
+      "title": "[Psychosocial impact of sickle cell disease in the parents of children living in Kinshasa, Democratic Republic of Congo: a qualitative study].",
+      "pmid": 25574334,
+      "primary_key": "PUBMED-25574334",
+      "doi": "10.11604/pamj.2014.19.5.2830"
+    }
+  },
+  "LobbyingFiling": {
+    "labels": [
+      "LobbyingFiling",
+      "PolicyNode"
+    ],
+    "properties": {
+      "amount": 0.0,
+      "year": 2015,
+      "registrant_name": "THE D MAJOR GROUP",
+      "filing_uuid": "c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+      "primary_key": "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+      "client_name": "LYMPHEDEMA ADVOCACY GROUP"
+    }
+  },
+  "Policy": {
+    "labels": [
+      "PolicyNode",
+      "Policy"
+    ],
+    "properties": {
+      "run_id": "run-lta-015",
+      "keyword": "LTA",
+      "primary_key": "POLICY-LTA",
+      "timestamp": "2026-10-14T03:46:51.537378+00:00"
+    }
+  },
+  "ProcedureCode": {
+    "labels": [
+      "PolicyNode",
+      "ProcedureCode"
+    ],
+    "properties": {
+      "short_description": "Gradient compression garment, glove, padded, for nighttime use, each",
+      "code": "A6520",
+      "is_custom_or_nos": false,
+      "pricing_indicator": "40",
+      "betos_code": "O1L",
+      "pricing_methodology": "NATIONAL_FEE_SCHEDULE",
+      "long_description": "Gradient compression garment, glove, padded, for nighttime use, each",
+      "category": "LC",
+      "primary_key": "HCPCS-A6520"
+    }
+  },
+  "PublicLaw": {
+    "labels": [
+      "PolicyNode",
+      "PublicLaw"
+    ],
+    "properties": {
+      "number": 328,
+      "enacted_date": "2022-12-29",
+      "congress": 117,
+      "title": "An act making consolidated appropriations for the fiscal year ending September 30, 2023, and for providing emergency assistance for the situation in Ukraine, and for other purposes.",
+      "primary_key": "PLAW-117-328"
+    }
+  },
+  "Regulation": {
+    "labels": [
+      "PolicyNode",
+      "Regulation"
+    ],
+    "properties": {
+      "document_number": "2023-24455",
+      "citation": "88 FR 77676",
+      "rin": "0938-AV03",
+      "effective_date": "2024-01-01",
+      "cfr_parts": [
+        "42 CFR Part 409",
+        "42 CFR Part 410",
+        "42 CFR Part 414",
+        "42 CFR Part 424",
+        "42 CFR Part 484",
+        "42 CFR Part 488",
+        "42 CFR Part 489"
+      ],
+      "docket_id": "CMS-1780-F",
+      "primary_key": "REG-FR-2023-24455"
+    }
+  },
+  "State": {
+    "labels": [
+      "State",
+      "PolicyNode"
+    ],
+    "properties": {
+      "state_name": "Connecticut",
+      "state_code": "CT",
+      "primary_key": "STATE-CT"
+    }
+  },
+  "StatutorySection": {
+    "labels": [
+      "StatutorySection",
+      "PolicyNode"
+    ],
+    "properties": {
+      "subsections": [
+        "s",
+        "2",
+        "JJ"
+      ],
+      "uslm_section_path": "/us/pl/117/328/dFF/tIV/stD/s4133",
+      "statute_section_number": "4133",
+      "heading": "MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.",
+      "public_law_id": "PLAW-117-328",
+      "effective_date": "2024-01-01",
+      "section": "1395x",
+      "text": "SEC. 4133. MEDICARE COVERAGE OF CERTAIN LYMPHEDEMA COMPRESSION TREATMENT ITEMS.(a) Coverage.\u2014(1) In general.\u2014Section 1861 of the Social Security Act (42 U.S.C. 1395x), as amended by section 4121(a), is amended\u2014(A) in subsection (s)(2)\u2014(i) in subparagraph (HH), by striking \u201cand\u201d after the semicolon at the end;136 STAT. 5919 (ii) in subparagraph (II), by striking the period at the end and inserting \u201c; and\u201d; and (iii) by adding at the end the following new subparagraph:\u201c(JJ) lymphedema compression ",
+      "title": 42,
+      "primary_key": "STAT-117-328-SEC-4133"
+    }
+  },
+  "Transmittal": {
+    "labels": [
+      "PolicyNode",
+      "Transmittal"
+    ],
+    "properties": {
+      "superseded_transmittal_numbers": [
+        "R12379CP"
+      ],
+      "cms_manual_publication": "Pub 100-04",
+      "effective_date": "2024-01-01",
+      "betos_code": "O1L",
+      "pricing_indicator_code": "40",
+      "transmittal_number": "R12471CP",
+      "cr_number": "CR13286",
+      "benefit_category": "LC",
+      "primary_key": "TR-CR13286"
+    }
+  },
+  "USCSection": {
+    "labels": [
+      "USCSection",
+      "PolicyNode"
+    ],
+    "properties": {
+      "subsections": [
+        "s",
+        "2",
+        "JJ"
+      ],
+      "section": "1395x",
+      "citation_string": "42 U.S.C. 1395x(s)(2)(JJ)",
+      "title": 42,
+      "primary_key": "USC-42-1395x-s-2-JJ"
+    }
+  }
+}

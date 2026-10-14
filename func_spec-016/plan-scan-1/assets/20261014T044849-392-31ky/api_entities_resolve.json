@@ -1,0 +1,25 @@
+{
+  "anchors": [
+    {
+      "slot": "state",
+      "primary_key": "STATE-WI",
+      "matched_text": "Wisconsin",
+      "entity_type": "State",
+      "label": "State"
+    },
+    {
+      "slot": "diagnosis",
+      "primary_key": "ICD10-I97.2",
+      "matched_text": "breast cancer and lymphedema",
+      "entity_type": "DiagnosisCode",
+      "label": "DiagnosisCode"
+    },
+    {
+      "slot": "policy",
+      "primary_key": "POLICY-LTA",
+      "matched_text": "lymphedema",
+      "entity_type": "Policy",
+      "label": "Policy"
+    }
+  ]
+}

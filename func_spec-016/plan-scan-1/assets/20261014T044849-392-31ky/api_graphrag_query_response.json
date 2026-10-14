@@ -1,0 +1,164 @@
+{
+  "answer": "### Summary of Coverage and Reimbursement for Lymphedema Supplies\n\nThe provided GRAPH CONTEXT outlines the coverage and reimbursement policies for lymphedema supplies under Medicare. The context includes the Authorizing Coverage Policy [DME-MAC-COPE147943], which specifies the requirements for coverage, including a documented diagnosis of lymphedema by a treating practitioner. The policy also outlines the necessary documentation for supplies, including the description of the base item, quantity to be dispensed, and the treating practitioner's signature.\n\nThe CMS Transmittal [TR-CR13286] and Enacted Public Law [PLAW-117-328] support the coverage policy, while the Federal Register Rule [REG-FR-2023-24455] codifies the changes to the Medicare program. The Regional Claims Contractor [JURIS-DME-B] and Beneficiary State [STATE-WI] are also specified in the context.\n\n### Covered Procedure Codes and Reimbursement Rates\n\nThe GRAPH CONTEXT lists several covered procedure codes for lymphedema compression treatment items, including [HCPCS-A6522], [HCPCS-A6520], [HCPCS-A6521], [HCPCS-A6523], [HCPCS-A6524], and [HCPCS-A6525]. The reimbursement rates for these codes are as follows:\n\n* [HCPCS-A6522]: Allowable Reimbursement = $290.47, Calculated 20% patient coinsurance = $58.09\n* [HCPCS-A6520]: Allowable Reimbursement = $119.54, Calculated 20% patient coinsurance = $23.91\n* [HCPCS-A6521]: Allowable Reimbursement = $474.33, Calculated 20% patient coinsurance = $94.87\n* [HCPCS-A6523]: Allowable Reimbursement = $689.17, Calculated 20% patient coinsurance = $137.83\n* [HCPCS-A6524]: Allowable Reimbursement = $362.39, Calculated 20% patient coinsurance = $72.48\n* [HCPCS-A6525]: Allowable Reimbursement = $731.60, Calculated 20% patient coinsurance = $146.32\n\nThese rates are specific to the state of Wisconsin and are based on the national fee schedule.",
+  "active_node_pks": [
+    "BILL-117-hr-2617",
+    "BILL-117-hr-3630",
+    "CBO-58517",
+    "CFR-42-409",
+    "CFR-42-410",
+    "CFR-42-414",
+    "CFR-42-424",
+    "CFR-42-484",
+    "CFR-42-488",
+    "CFR-42-489",
+    "DME-MAC-COPE147943",
+    "FEE-A6522-WI-NR-2024",
+    "HCPCS-A6522",
+    "ICD10-I97.2",
+    "JURIS-DME-B",
+    "LDA-1821a229-8264-40c2-9b04-49169d917adf",
+    "LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+    "PLAW-117-328",
+    "POLICY-LTA",
+    "PUBMED-25574334",
+    "PUBMED-27549490",
+    "PUBMED-31298495",
+    "PUBMED-31454178",
+    "REG-FR-2023-24455",
+    "STAT-117-328-SEC-4133",
+    "STATE-WI",
+    "TR-CR13286",
+    "USC-42-1395l-a-1",
+    "USC-42-1395m",
+    "USC-42-1395w\u20133-a-2",
+    "USC-42-1395x-s-2-JJ"
+  ],
+  "active_edge_keys": [
+    "BILL-117-hr-2617->ENACTED_AS->PLAW-117-328",
+    "BILL-117-hr-3630->HAS_ADVOCACY_RECORD->LDA-1821a229-8264-40c2-9b04-49169d917adf",
+    "BILL-117-hr-3630->HAS_ADVOCACY_RECORD->LDA-c8697fc5-7f3b-4861-8a49-d9e6357ad287",
+    "BILL-117-hr-3630->HAS_BUDGET_IMPACT->CBO-58517",
+    "BILL-117-hr-3630->INCORPORATED_INTO->BILL-117-hr-2617",
+    "CFR-42-409->IMPLEMENTED_BY->TR-CR13286",
+    "CFR-42-410->IMPLEMENTED_BY->TR-CR13286",
+    "CFR-42-414->IMPLEMENTED_BY->TR-CR13286",
+    "CFR-42-424->IMPLEMENTED_BY->TR-CR13286",
+    "CFR-42-484->IMPLEMENTED_BY->TR-CR13286",
+    "CFR-42-488->IMPLEMENTED_BY->TR-CR13286",
+    "CFR-42-489->IMPLEMENTED_BY->TR-CR13286",
+    "DME-MAC-COPE147943->COVERS_PROCEDURE->HCPCS-A6522",
+    "DME-MAC-COPE147943->REQUIRES_DIAGNOSIS->ICD10-I97.2",
+    "FEE-A6522-WI-NR-2024->APPLIES_TO_STATE->STATE-WI",
+    "HCPCS-A6522->HAS_RATE->FEE-A6522-WI-NR-2024",
+    "JURIS-DME-B->COVERS_STATE->STATE-WI",
+    "PLAW-117-328->CONTAINS->STAT-117-328-SEC-4133",
+    "POLICY-LTA->DISCOVERED_BILL->BILL-117-hr-3630",
+    "REG-FR-2023-24455->CODIFIED_IN->CFR-42-409",
+    "REG-FR-2023-24455->CODIFIED_IN->CFR-42-410",
+    "REG-FR-2023-24455->CODIFIED_IN->CFR-42-414",
+    "REG-FR-2023-24455->CODIFIED_IN->CFR-42-424",
+    "REG-FR-2023-24455->CODIFIED_IN->CFR-42-484",
+    "REG-FR-2023-24455->CODIFIED_IN->CFR-42-488",
+    "REG-FR-2023-24455->CODIFIED_IN->CFR-42-489",
+    "REG-FR-2023-24455->SUPPORTED_BY_EVIDENCE->PUBMED-25574334",
+    "REG-FR-2023-24455->SUPPORTED_BY_EVIDENCE->PUBMED-27549490",
+    "REG-FR-2023-24455->SUPPORTED_BY_EVIDENCE->PUBMED-31298495",
+    "REG-FR-2023-24455->SUPPORTED_BY_EVIDENCE->PUBMED-31454178",
+    "STAT-117-328-SEC-4133->AMENDS->USC-42-1395l-a-1",
+    "STAT-117-328-SEC-4133->AMENDS->USC-42-1395m",
+    "STAT-117-328-SEC-4133->AMENDS->USC-42-1395w\u20133-a-2",
+    "STAT-117-328-SEC-4133->AMENDS->USC-42-1395x-s-2-JJ",
+    "TR-CR13286->APPLIES_TO_JURISDICTION->JURIS-DME-B",
+    "TR-CR13286->MANDATES_POLICY->DME-MAC-COPE147943",
+    "USC-42-1395l-a-1->AUTHORIZED_BY->REG-FR-2023-24455",
+    "USC-42-1395m->AUTHORIZED_BY->REG-FR-2023-24455",
+    "USC-42-1395w\u20133-a-2->AUTHORIZED_BY->REG-FR-2023-24455",
+    "USC-42-1395x-s-2-JJ->AUTHORIZED_BY->REG-FR-2023-24455"
+  ],
+  "anchors": [
+    {
+      "slot": "state",
+      "primary_key": "STATE-WI",
+      "matched_text": "Wisconsin",
+      "entity_type": "State",
+      "label": "State"
+    },
+    {
+      "slot": "diagnosis",
+      "primary_key": "ICD10-I97.2",
+      "matched_text": "breast cancer, need lymphedema",
+      "entity_type": "DiagnosisCode",
+      "label": "DiagnosisCode"
+    },
+    {
+      "slot": "policy",
+      "primary_key": "POLICY-LTA",
+      "matched_text": "lymphedema",
+      "entity_type": "Policy",
+      "label": "Policy"
+    }
+  ],
+  "provenance_sources": [
+    {
+      "source_uri": "Extraction/assets/hop7_cms_dmepos_2024_lc_category.csv",
+      "selector": "DME MAC Map: JURIS-B -> STATE-WI",
+      "ingestion_timestamp": "2026-10-14T03:46:51.719507+00:00",
+      "run_id": "run-lta-015"
+    },
+    {
+      "source_uri": "Extraction/assets/hop5_cgs_joint_mac_cope147943.html",
+      "selector": "//article[@id='DME-MAC-COPE147943']",
+      "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+      "run_id": "run-lta-015"
+    },
+    {
+      "source_uri": "Extraction/assets/hop6_cms_hcpcs_2024_anweb_o1l_slice.txt",
+      "selector": "HCPCS[code='A6520', BETOS='O1L', PI='40']",
+      "ingestion_timestamp": "2026-10-14T03:46:51.709237+00:00",
+      "run_id": "run-lta-015"
+    },
+    {
+      "source_uri": "Extraction/assets/hop4_cms_r12471cp_extracted.txt",
+      "selector": "Transmittal[R12471CP]",
+      "ingestion_timestamp": "2026-10-14T03:46:51.547241+00:00",
+      "run_id": "run-lta-015"
+    },
+    {
+      "source_uri": "Extraction/assets/hop3_federal_register_doc_2023_24455.json",
+      "selector": "$.cfr_references[0]",
+      "ingestion_timestamp": "2026-10-14T03:46:51.547279+00:00",
+      "run_id": "run-lta-015"
+    },
+    {
+      "source_uri": "Extraction/assets/hop2_govinfo_plaw_117publ328_sec4133.xml",
+      "selector": "/us/pl/117/328/dFF/tIV/stD/s4133//ref[@href='/us/usc/t42/s1395x']",
+      "ingestion_timestamp": "2026-10-14T03:46:51.545551+00:00",
+      "run_id": "run-lta-015"
+    },
+    {
+      "source_uri": "Extraction/assets/hop1_congress_bill_117_hr_2617.json",
+      "selector": "$.bill.laws[0]",
+      "ingestion_timestamp": "2026-10-14T03:46:51.537378+00:00",
+      "run_id": "run-lta-015"
+    },
+    {
+      "source_uri": "Extraction/assets/hop1_congress_bill_117_hr_3630.json",
+      "selector": "$.bill",
+      "ingestion_timestamp": "2026-10-14T03:46:51.537378+00:00",
+      "run_id": "run-lta-015"
+    },
+    {
+      "source_uri": "Extraction/assets/tier5_lda_senate_filings_3630.json",
+      "selector": "$.results[filing_uuid='c8697fc5-7f3b-4861-8a49-d9e6357ad287']",
+      "ingestion_timestamp": "2026-10-14T03:46:51.772459+00:00",
+      "run_id": "run-lta-015"
+    },
+    {
+      "source_uri": "Extraction/assets/tier5_ncbi_pubmed_esummary.json",
+      "selector": "$.result['25574334']",
+      "ingestion_timestamp": "2026-10-14T03:46:51.772459+00:00",
+      "run_id": "run-lta-015"
+    }
+  ],
+  "duration_ms": 13156.98
+}

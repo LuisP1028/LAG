@@ -1,0 +1,199 @@
+{
+  "total_nodes": 3875,
+  "total_edges": 7593,
+  "nodes_by_label": [
+    {
+      "labels": [
+        "PolicyNode",
+        "FeeScheduleRate"
+      ],
+      "count": 3710
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "ProcedureCode"
+      ],
+      "count": 77
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "State"
+      ],
+      "count": 54
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "CFRSection"
+      ],
+      "count": 7
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "USCSection"
+      ],
+      "count": 4
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "Jurisdiction"
+      ],
+      "count": 4
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "DiagnosisCode"
+      ],
+      "count": 4
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "LiteratureStudy"
+      ],
+      "count": 4
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "Bill"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "LobbyingFiling"
+      ],
+      "count": 2
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "StatutorySection"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "Regulation"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "PublicLaw"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "Transmittal"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "CoveragePolicy"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "Policy"
+      ],
+      "count": 1
+    },
+    {
+      "labels": [
+        "PolicyNode",
+        "CBOScore"
+      ],
+      "count": 1
+    }
+  ],
+  "edges_by_type": [
+    {
+      "rel_type": "HAS_RATE",
+      "count": 3710
+    },
+    {
+      "rel_type": "APPLIES_TO_STATE",
+      "count": 3710
+    },
+    {
+      "rel_type": "COVERS_PROCEDURE",
+      "count": 77
+    },
+    {
+      "rel_type": "COVERS_STATE",
+      "count": 54
+    },
+    {
+      "rel_type": "CODIFIED_IN",
+      "count": 7
+    },
+    {
+      "rel_type": "IMPLEMENTED_BY",
+      "count": 7
+    },
+    {
+      "rel_type": "AMENDS",
+      "count": 4
+    },
+    {
+      "rel_type": "AUTHORIZED_BY",
+      "count": 4
+    },
+    {
+      "rel_type": "SUPPORTED_BY_EVIDENCE",
+      "count": 4
+    },
+    {
+      "rel_type": "APPLIES_TO_JURISDICTION",
+      "count": 4
+    },
+    {
+      "rel_type": "REQUIRES_DIAGNOSIS",
+      "count": 4
+    },
+    {
+      "rel_type": "HAS_ADVOCACY_RECORD",
+      "count": 2
+    },
+    {
+      "rel_type": "ENACTED_AS",
+      "count": 1
+    },
+    {
+      "rel_type": "CONTAINS",
+      "count": 1
+    },
+    {
+      "rel_type": "MANDATES_POLICY",
+      "count": 1
+    },
+    {
+      "rel_type": "DISCOVERED_BILL",
+      "count": 1
+    },
+    {
+      "rel_type": "INCORPORATED_INTO",
+      "count": 1
+    },
+    {
+      "rel_type": "HAS_BUDGET_IMPACT",
+      "count": 1
+    }
+  ]
+}

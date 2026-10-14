@@ -1,0 +1,74 @@
+[
+  {
+    "type": "AMENDS",
+    "count": 4
+  },
+  {
+    "type": "APPLIES_TO_JURISDICTION",
+    "count": 4
+  },
+  {
+    "type": "APPLIES_TO_STATE",
+    "count": 3710
+  },
+  {
+    "type": "AUTHORIZED_BY",
+    "count": 4
+  },
+  {
+    "type": "CODIFIED_IN",
+    "count": 7
+  },
+  {
+    "type": "CONTAINS",
+    "count": 1
+  },
+  {
+    "type": "COVERS_PROCEDURE",
+    "count": 77
+  },
+  {
+    "type": "COVERS_STATE",
+    "count": 54
+  },
+  {
+    "type": "DISCOVERED_BILL",
+    "count": 1
+  },
+  {
+    "type": "ENACTED_AS",
+    "count": 1
+  },
+  {
+    "type": "HAS_ADVOCACY_RECORD",
+    "count": 2
+  },
+  {
+    "type": "HAS_BUDGET_IMPACT",
+    "count": 1
+  },
+  {
+    "type": "HAS_RATE",
+    "count": 3710
+  },
+  {
+    "type": "IMPLEMENTED_BY",
+    "count": 7
+  },
+  {
+    "type": "INCORPORATED_INTO",
+    "count": 1
+  },
+  {
+    "type": "MANDATES_POLICY",
+    "count": 1
+  },
+  {
+    "type": "REQUIRES_DIAGNOSIS",
+    "count": 4
+  },
+  {
+    "type": "SUPPORTED_BY_EVIDENCE",
+    "count": 4
+  }
+]

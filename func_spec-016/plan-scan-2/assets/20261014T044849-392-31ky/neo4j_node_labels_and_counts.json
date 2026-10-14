@@ -1,0 +1,21 @@
+{
+  "Bill": 2,
+  "CBOScore": 1,
+  "CFRSection": 7,
+  "CoveragePolicy": 1,
+  "DiagnosisCode": 4,
+  "FeeScheduleRate": 3710,
+  "Jurisdiction": 4,
+  "LiteratureStudy": 4,
+  "LobbyingFiling": 2,
+  "Policy": 1,
+  "PolicyNode": 3875,
+  "ProcedureCode": 77,
+  "PublicLaw": 1,
+  "Regulation": 1,
+  "State": 54,
+  "StatutorySection": 1,
+  "Strategy": 0,
+  "Transmittal": 1,
+  "USCSection": 4
+}

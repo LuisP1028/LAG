@@ -1,0 +1,8 @@
+HTTP 301
+Server: nginx/1.31.3
+Content-Type: text/html
+Content-Length: 169
+Location: https://lda.gov/filings/public/filing/search/
+Date: Wed, 14 Oct 2026 04:57:33 GMT
+Connection: keep-alive
+Strict-Transport-Security: max-age=31536000

@@ -1,0 +1,28 @@
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Security-Policy: frame-ancestors 'self' https://www.google.com;default-src 'none';script-src 'self' 'nonce-NbhYZxK3RVRhGQsKOZbCaA==' https://ds-aksb-a.akamaihd.net https://www.google.com https://www.gstatic.com https://cdn.jsdelivr.net https://tealium-tags.cms.gov https://tags.tiqcdn.com/ https://cdn1.adoberesources.net https://dap.digitalgov.gov https://www.googletagmanager.com;font-src 'self';connect-src 'self' https://ds-aksb-a.akamaihd.net https://www.google.com https://adobedc.demdex.net https://adobe-ep.cms.gov https://dap.digitalgov.gov https://www.google-analytics.com;img-src 'self' data: https://ds-aksb-a.akamaihd.net https://www.cms.gov;style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;frame-src 'self' https://www.google.com;
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+Vary: Accept-Encoding
+Expires: Wed, 14 Oct 2026 04:54:17 GMT
+Cache-Control: max-age=0, no-cache, no-store
+Pragma: no-cache
+Date: Wed, 14 Oct 2026 04:54:17 GMT
+Transfer-Encoding: chunked
+Connection: close
+Connection: Transfer-Encoding
+Set-Cookie: sawSearchModal=true; expires=Sat, 09 Oct 2027 09:10:44 GMT; path=/; secure; samesite=lax; httponly
+Set-Cookie: mcdSearchTourFinished=true; expires=Sat, 09 Oct 2027 09:10:44 GMT; path=/; secure; samesite=lax; httponly
+Set-Cookie: mcdReportTourFinished=true; expires=Sat, 09 Oct 2027 09:10:44 GMT; path=/; secure; samesite=lax; httponly
+Set-Cookie: .AspNetCore.Antiforgery.91ugCgDjLVs=CfDJ8JTtCw4Pd1FFu2WDYugYDBP2lBgbW7qnxr2AS1nPe5TqHwKn6wiDgOz_BEWJ4BNV1JD_eXpwT_qQMoi7VfAgRTKmUQW-tyylygn4GWXWsQOmmbQQa309IfNQ0kzSEQxhvS7T29DjZW-vDj8apFHsOc8; path=/medicare-coverage-database; secure; samesite=strict; httponly
+Set-Cookie: mcdSearchTourFinished=true; expires=Sat, 09 Oct 2027 09:10:44 GMT; path=/; secure; samesite=lax; httponly
+Set-Cookie: mcdReportTourFinished=true; expires=Sat, 09 Oct 2027 09:10:44 GMT; path=/; secure; samesite=lax; httponly
+Set-Cookie: .AspNetCore.Session.Mcd=CfDJ8JTtCw4Pd1FFu2WDYugYDBMwEafdr2bJF2bMgxz4rqCvYeye3b9wV8wScfmkk8gqzVNzu8h0369UJpSU4KtbyV8acV4XSI3LLEjaOB0L6EhS7uzNQ%2BEK6jdZMU04g106GP%2BMYZ98zExT%2F0kRr%2FlRCPX7v2jIEnuK6JU2QnGOyCz7; path=/medicare-coverage-database; secure; samesite=lax; httponly
+Set-Cookie: _ga=GA1.2.1937089140.1791953656; expires=Fri, 13-Oct-2028 04:54:17 GMT; path=/; domain=.cms.gov; secure
+Set-Cookie: cms_fpid=d7272b93-3c90-bbbb-106a-53f25d46f1d4; expires=Fri, 13-Oct-2028 04:54:17 GMT; path=/; domain=.cms.gov; secure; SameSite=Lax
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains ; preload
+Access-Control-Allow-Origin: *
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Permitted-Cross-Domain-Policies: master-only
+Akamai-GRN: 0.88a3cf17.1791953656.14476305
