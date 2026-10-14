@@ -1,28 +1,30 @@
 {
-  "deployed_at": "2026-10-14T16:16:19.711296+00:00",
+  "deployed_at": "2026-10-14T22:18:33.518844+00:00",
+  "mac_server_host": "egg@10.0.0.62 (Eggs-MacBook-Air.local)",
   "local_container_ingress": {
     "image_tag": "lag-policy-engine:local",
     "backend_container": "lag-policy-engine-local",
     "tunnel_container": "lag-policy-engine-tunnel",
     "docker_network": "lag-net",
     "local_url": "http://127.0.0.1:7860",
-    "public_https_url": "https://lens-flashing-division-avatar.trycloudflare.com",
+    "public_https_url": "https://evident-consolidation-dod-seo.trycloudflare.com",
     "health": {
       "status": "ok",
       "neo4j_connected": true,
       "loaded_policies": [
         "LTA"
       ],
-      "uptime_seconds": 1.45,
+      "uptime_seconds": 473.89,
       "storage_backend": "embedded",
-      "timestamp": "2026-10-14T16:15:34.015984+00:00"
+      "timestamp": "2026-10-14T22:17:58.182448+00:00"
     }
   },
   "github_pages": {
     "github_repo": "https://github.com/LuisP1028/lag-policy-engine-showcase",
     "pages_url": "https://luisp1028.github.io/lag-policy-engine-showcase/",
-    "commit_sha": "9943967ecfe69afa49d316dd483addd7b44e5925",
-    "backend_url": "https://lens-flashing-division-avatar.trycloudflare.com",
+    "commit_sha": "b3071bec858c4c280ea175cbdfe6e2d428477bb8",
+    "js_asset": "assets/index-D3FIkWiq.js",
+    "backend_url": "https://evident-consolidation-dod-seo.trycloudflare.com",
     "status": "online"
   },
   "verification": {
@@ -32,9 +34,9 @@
       "loaded_policies": [
         "LTA"
       ],
-      "uptime_seconds": 10.34,
+      "uptime_seconds": 473.89,
       "storage_backend": "embedded",
-      "timestamp": "2026-10-14T16:15:42.906608+00:00"
+      "timestamp": "2026-10-14T22:17:58.182448+00:00"
     },
     "graph_summary": {
       "total_nodes": 3875,
@@ -47,8 +49,15 @@
     "live_topology_edges": 173,
     "wi_fee_schedule_nodes": 70,
     "inspected_entity_pk": "PLAW-117-328",
-    "graphrag_query_duration_ms": 34522.25,
+    "graphrag_query_duration_ms": 22524.23,
     "graphrag_illuminated_nodes": 31,
+    "micro_fact": {
+      "micro_fact": "Federal Register Rule 88 FR 77676 implements Public Law 117-328 Section 4133.",
+      "word_count": 12,
+      "model_id": "deepseek-ai/DeepSeek-V3",
+      "source": "deepseek",
+      "telemetry_notice": null
+    },
     "pages_lta_nodes": 3875,
     "pages_ivig_nodes": 183
   }

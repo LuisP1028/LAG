@@ -10,7 +10,7 @@
  * 4. Falls back to `DEFAULT_PUBLIC_INGRESS_URL` on `*.github.io`, or `""` on local dev (`localhost`).
  */
 
-export const DEFAULT_PUBLIC_INGRESS_URL = 'https://lens-flashing-division-avatar.trycloudflare.com';
+export const DEFAULT_PUBLIC_INGRESS_URL = 'https://evident-consolidation-dod-seo.trycloudflare.com';
 export const DEFAULT_HF_SPACE_URL = DEFAULT_PUBLIC_INGRESS_URL;
 
 const STORAGE_KEY = 'lag_runtime_api_url';
