@@ -6,6 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from neo4j import Session
 
 from src.api.models import (
+    EntityInspectionResponse,
     EntityResolveRequest,
     EntityResolveResponse,
     HealthResponse,
@@ -35,6 +36,8 @@ from src.graphrag.pipeline import GraphRAGPipeline
 from src.graphrag.traversal import TopologicalTraversalEngine
 
 router = APIRouter(prefix="/api")
+
+_SERVER_BOOT_MONOTONIC: float = time.monotonic()
 
 # Singleton dependencies managed during lifespan
 _sync_engine: Optional[Neo4jSyncEngine] = None
@@ -68,10 +71,26 @@ def get_neo4j_session():
 
 @router.get("/health", response_model=HealthResponse)
 def health_check(session: Session = Depends(get_neo4j_session)):
-    """Verifies service health and Neo4j connectivity."""
+    """Verifies service health, Neo4j/Embedded connectivity, loaded policy domains, and service uptime."""
     engine = get_sync_engine()
     engine.get_driver().verify_connectivity()
-    return HealthResponse()
+    policy_rows = session.run("MATCH (p:Policy) RETURN p.keyword AS kw, p.primary_key AS pk").data()
+    loaded_policies: List[str] = []
+    for row in policy_rows:
+        kw = row.get("kw") or str(row.get("pk") or "").replace("POLICY-", "")
+        if kw and str(kw) not in loaded_policies:
+            loaded_policies.append(str(kw))
+    if not loaded_policies:
+        loaded_policies = ["LTA"]
+    uptime_seconds = round(max(0.0, time.monotonic() - _SERVER_BOOT_MONOTONIC), 2)
+    storage_backend = "embedded" if str(engine.uri).startswith("embedded://") else "neo4j"
+    return HealthResponse(
+        status="ok",
+        neo4j_connected=True,
+        loaded_policies=sorted(loaded_policies),
+        uptime_seconds=uptime_seconds,
+        storage_backend=storage_backend,
+    )
 
 
 @router.get("/graph/summary")
@@ -513,6 +532,148 @@ def resolve_entities(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={"error_type": "EntityResolutionError", "message": exc.message, "details": exc.details},
         )
+
+
+@router.get("/entities/{primary_key:path}", response_model=EntityInspectionResponse)
+def inspect_entity(
+    primary_key: str,
+    session: Session = Depends(get_neo4j_session),
+) -> EntityInspectionResponse:
+    """Returns deep contextual provenance, citations, text excerpts, and incident relationships for a single entity."""
+    clean_pk = primary_key.strip()
+    if not clean_pk:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail={
+                "error_type": "EntityResolutionError",
+                "message": "Entity primary_key must not be empty.",
+                "details": {"primary_key": primary_key},
+            },
+        )
+
+    rec = session.run(
+        "MATCH (n:PolicyNode) WHERE n.primary_key = $pk OR toUpper(n.primary_key) = toUpper($pk) RETURN n, labels(n) AS lbls",
+        pk=clean_pk,
+    ).single()
+    if not rec:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={
+                "error_type": "EntityResolutionError",
+                "message": f"Entity '{clean_pk}' not found in knowledge graph.",
+                "details": {"primary_key": clean_pk},
+            },
+        )
+
+    node_obj = rec["n"]
+    props = dict(node_obj)
+    actual_pk = str(props.get("primary_key", clean_pk))
+    raw_labels = list(rec["lbls"] or [])
+    label = resolve_label_from_pk_and_labels(actual_pk, raw_labels)
+    name = derive_node_display_name(label, actual_pk, props)
+
+    text_excerpt = ""
+    for candidate_key in (
+        "text",
+        "text_excerpt",
+        "long_description",
+        "description",
+        "short_description",
+        "heading",
+        "title",
+    ):
+        val = props.get(candidate_key)
+        if val and str(val).strip():
+            text_excerpt = str(val).strip()
+            break
+    if not text_excerpt:
+        text_excerpt = name
+
+    citations: List[str] = []
+    for cit_key in (
+        "citation_string",
+        "citation",
+        "cfr_reference",
+        "uslm_section_path",
+        "public_law_id",
+        "docket_id",
+        "rin",
+        "cr_number",
+        "transmittal_number",
+        "article_id",
+    ):
+        cval = props.get(cit_key)
+        if cval and str(cval).strip() and str(cval).strip() not in citations:
+            citations.append(str(cval).strip())
+
+    for list_key in ("cfr_parts", "clinical_prerequisites", "superseded_transmittal_numbers"):
+        lval = props.get(list_key)
+        if isinstance(lval, list):
+            for item in lval:
+                if item and str(item).strip() and str(item).strip() not in citations:
+                    citations.append(str(item).strip())
+
+    rel_rows = session.run(
+        """
+        MATCH (src:PolicyNode)-[r]->(tgt:PolicyNode)
+        WHERE src.primary_key = $pk OR tgt.primary_key = $pk
+        RETURN src.primary_key AS spk, tgt.primary_key AS tpk, r
+        LIMIT 250
+        """,
+        pk=actual_pk,
+    )
+
+    relationships: List[TopologyEdge] = []
+    provenance_list: List[Dict[str, Any]] = []
+    seen_prov_keys: Set[Tuple[str, str, str, str]] = set()
+
+    for row in rel_rows:
+        spk = str(row.get("spk") or "")
+        tpk = str(row.get("tpk") or "")
+        rel = row.get("r")
+        if not spk or not tpk or rel is None:
+            continue
+        rel_type = rel.type if hasattr(rel, "type") else getattr(rel, "label", "RELATED_TO")
+        rel_props = dict(rel) if hasattr(rel, "items") else {}
+        edge_key = f"{spk}->{rel_type}->{tpk}"
+        prov = {
+            "source_uri": str(rel_props.get("source_uri", "")),
+            "selector": str(rel_props.get("selector", "")),
+            "ingestion_timestamp": str(rel_props.get("ingestion_timestamp", "")),
+            "run_id": str(rel_props.get("run_id", "")),
+        }
+        relationships.append(
+            TopologyEdge(
+                source_pk=spk,
+                target_pk=tpk,
+                label=rel_type,
+                edge_key=edge_key,
+                provenance=prov,
+            )
+        )
+        pkey = (prov["source_uri"], prov["selector"], prov["run_id"], prov["ingestion_timestamp"])
+        if any(pkey) and pkey not in seen_prov_keys:
+            seen_prov_keys.add(pkey)
+            provenance_list.append(prov)
+
+    if not provenance_list and (props.get("source_uri") or props.get("run_id") or props.get("timestamp")):
+        provenance_list.append({
+            "source_uri": str(props.get("source_uri") or props.get("url") or "exports/lta_knowledge_graph.json"),
+            "selector": str(props.get("selector") or f"$.nodes[?(@.primary_key=='{actual_pk}')]"),
+            "ingestion_timestamp": str(props.get("ingestion_timestamp") or props.get("timestamp") or ""),
+            "run_id": str(props.get("run_id") or ""),
+        })
+
+    return EntityInspectionResponse(
+        primary_key=actual_pk,
+        label=label,
+        name=name,
+        properties=props,
+        text_excerpt=text_excerpt,
+        citations=citations,
+        provenance=provenance_list,
+        relationships=relationships,
+    )
 
 
 @router.post("/graphrag/subgraph", response_model=SubgraphResponse)

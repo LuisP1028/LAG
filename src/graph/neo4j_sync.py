@@ -87,12 +87,16 @@ class Neo4jSyncEngine:
         self.username = username
         self.password = password
         self.database = database
-        self._driver: Optional[Driver] = None
+        self._driver: Optional[Any] = None
 
-    def get_driver(self) -> Driver:
-        """Lazily initializes and returns the Neo4j driver."""
+    def get_driver(self) -> Any:
+        """Lazily initializes and returns the Neo4j or Embedded graph driver."""
         if self._driver is None:
-            self._driver = GraphDatabase.driver(self.uri, auth=(self.username, self.password))
+            if str(self.uri).startswith("embedded://"):
+                from src.graph.embedded_driver import EmbeddedGraphDriver
+                self._driver = EmbeddedGraphDriver(self.uri)
+            else:
+                self._driver = GraphDatabase.driver(self.uri, auth=(self.username, self.password))
             self._driver.verify_connectivity()
         return self._driver
 
@@ -105,6 +109,8 @@ class Neo4jSyncEngine:
     def init_schema(self) -> None:
         """Creates uniqueness constraints across PolicyNode and all 17 canonical entity labels."""
         driver = self.get_driver()
+        if str(self.uri).startswith("embedded://"):
+            return
         with driver.session(database=self.database) as session:
             # Drop standalone non-constraint RANGE indexes on primary_key that would collide with uniqueness constraints
             idx_rows = session.run("SHOW INDEXES").data()

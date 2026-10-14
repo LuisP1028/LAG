@@ -75,3 +75,37 @@ export interface GraphSummary {
   nodes_by_label: { labels: string[]; count: number }[];
   edges_by_type: { rel_type: string; count: number }[];
 }
+
+export type ProvenanceMetadata = EdgeProvenance;
+
+export type ExecutionStatus =
+  | 'idle'
+  | 'executing'
+  | 'cached'
+  | 'querying'
+  | 'streaming'
+  | 'completed'
+  | 'error';
+
+export type BackendConnectionState = 'connecting' | 'online' | 'cold_starting' | 'unreachable' | 'error';
+
+export type DataSourceMode = 'live' | 'precomputed_lta' | 'precomputed_ivig';
+
+export interface EntityInspectionData {
+  primary_key: string;
+  label: string;
+  name: string;
+  properties: NodeProperties;
+  text_excerpt: string;
+  citations: string[];
+  provenance: ProvenanceMetadata[] | ProvenanceMetadata;
+  relationships: {
+    source_pk: string;
+    target_pk: string;
+    label: string;
+    edge_key: string;
+    provenance: EdgeProvenance;
+  }[];
+}
+
+

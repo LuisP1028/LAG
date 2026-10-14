@@ -1,0 +1,33 @@
+services:
+  lag-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lag-policy-engine:local
+    container_name: lag-policy-engine-local
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - PORT=7860
+      - API_PORT=7860
+      - NEO4J_URI=embedded://exports/lta_knowledge_graph.json
+    ports:
+      - "127.0.0.1:7860:7860"
+    networks:
+      - lag-net
+
+  lag-https-tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: lag-policy-engine-tunnel
+    restart: unless-stopped
+    depends_on:
+      - lag-backend
+    command: tunnel --no-autoupdate --url http://lag-policy-engine-local:7860
+    networks:
+      - lag-net
+
+networks:
+  lag-net:
+    name: lag-net
+    driver: bridge

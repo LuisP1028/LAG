@@ -10,6 +10,7 @@ export type NodeShape =
   | 'pentagon'
   | 'diamond'
   | 'octagon'
+  | 'double_ring'
   | 'double_REring'
   | 'rounded_square'
   | 'dot'
@@ -166,6 +167,26 @@ export const CANVAS_PALETTE = {
   panelBorder: '#1e293b',
 };
 
+export const NODE_VISUAL_REGISTRY: Record<string, NodeVisualConfig> = {
+  Policy: NODE_THEME_REGISTRY.Policy,
+  Bill: NODE_THEME_REGISTRY.Bill,
+  PublicLaw: NODE_THEME_REGISTRY.PublicLaw,
+  StatutorySection: NODE_THEME_REGISTRY.StatutorySection,
+  USCSection: NODE_THEME_REGISTRY.USCSection,
+  Regulation: NODE_THEME_REGISTRY.Regulation,
+  CFRSection: NODE_THEME_REGISTRY.CFRSection,
+  Transmittal: NODE_THEME_REGISTRY.Transmittal,
+  CoveragePolicy: NODE_THEME_REGISTRY.CoveragePolicy,
+  DiagnosisCode: NODE_THEME_REGISTRY.DiagnosisCode,
+  ProcedureCode: NODE_THEME_REGISTRY.ProcedureCode,
+  FeeScheduleRate: NODE_THEME_REGISTRY.FeeScheduleRate,
+  Jurisdiction: NODE_THEME_REGISTRY.Jurisdiction,
+  State: NODE_THEME_REGISTRY.State,
+  LobbyingFiling: NODE_THEME_REGISTRY.LobbyingFiling,
+  CBOScore: NODE_THEME_REGISTRY.CBOScore,
+  LiteratureStudy: NODE_THEME_REGISTRY.LiteratureStudy,
+};
+
 export function getNodeVisual(label: string): NodeVisualConfig {
   return (
     NODE_THEME_REGISTRY[label] || {
@@ -176,3 +197,4 @@ export function getNodeVisual(label: string): NodeVisualConfig {
     }
   );
 }
+

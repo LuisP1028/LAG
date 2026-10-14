@@ -1,0 +1,55 @@
+{
+  "deployed_at": "2026-10-14T16:16:19.711296+00:00",
+  "local_container_ingress": {
+    "image_tag": "lag-policy-engine:local",
+    "backend_container": "lag-policy-engine-local",
+    "tunnel_container": "lag-policy-engine-tunnel",
+    "docker_network": "lag-net",
+    "local_url": "http://127.0.0.1:7860",
+    "public_https_url": "https://lens-flashing-division-avatar.trycloudflare.com",
+    "health": {
+      "status": "ok",
+      "neo4j_connected": true,
+      "loaded_policies": [
+        "LTA"
+      ],
+      "uptime_seconds": 1.45,
+      "storage_backend": "embedded",
+      "timestamp": "2026-10-14T16:15:34.015984+00:00"
+    }
+  },
+  "github_pages": {
+    "github_repo": "https://github.com/LuisP1028/lag-policy-engine-showcase",
+    "pages_url": "https://luisp1028.github.io/lag-policy-engine-showcase/",
+    "commit_sha": "9943967ecfe69afa49d316dd483addd7b44e5925",
+    "backend_url": "https://lens-flashing-division-avatar.trycloudflare.com",
+    "status": "online"
+  },
+  "verification": {
+    "backend_health": {
+      "status": "ok",
+      "neo4j_connected": true,
+      "loaded_policies": [
+        "LTA"
+      ],
+      "uptime_seconds": 10.34,
+      "storage_backend": "embedded",
+      "timestamp": "2026-10-14T16:15:42.906608+00:00"
+    },
+    "graph_summary": {
+      "total_nodes": 3875,
+      "total_edges": 7593,
+      "label_categories": 17,
+      "relationship_types": 18
+    },
+    "cors_allow_origin": "https://luisp1028.github.io",
+    "live_topology_nodes": 165,
+    "live_topology_edges": 173,
+    "wi_fee_schedule_nodes": 70,
+    "inspected_entity_pk": "PLAW-117-328",
+    "graphrag_query_duration_ms": 34522.25,
+    "graphrag_illuminated_nodes": 31,
+    "pages_lta_nodes": 3875,
+    "pages_ivig_nodes": 183
+  }
+}

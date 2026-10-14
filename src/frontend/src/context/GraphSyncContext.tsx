@@ -3,8 +3,17 @@
  */
 
 import React, { createContext, useContext, useState, useCallback, useMemo, useRef } from 'react';
-import type { GraphNode, AnchorEntity, GraphRAGQueryResponse } from '../types/graph';
+import type {
+  GraphNode,
+  GraphLink,
+  AnchorEntity,
+  GraphRAGQueryResponse,
+  ExecutionStatus,
+  BackendConnectionState,
+  DataSourceMode,
+} from '../types/graph';
 import { constructInquiryPrompt } from '../utils/promptGenerator';
+import { getApiBaseUrl } from '../utils/apiConfig';
 
 export interface ChatMessage {
   id: string;
@@ -151,11 +160,19 @@ interface GraphSyncContextType {
   activeNodePKs: Set<string>;
   activeEdgeKeys: Set<string>;
   selectedNode: GraphNode | null;
+  selectedEdge: GraphLink | null;
   seededAnchor: AnchorEntity | null;
   isIlluminated: boolean;
   quickPrompts: string[];
   filterJurisdiction: string;
   filterState: string;
+  filterCategory: string;
+  searchQuery: string;
+  includeFeeSchedules: boolean;
+  dataSourceMode: DataSourceMode;
+  executionStatus: ExecutionStatus;
+  backendState: BackendConnectionState;
+  backendMessage: string | null;
   availableStates: StateOption[];
   availablePolicies: PolicyOption[];
   policyKeyword: string;
@@ -166,10 +183,18 @@ interface GraphSyncContextType {
   focusTarget: { x: number; y: number; zoom?: number } | null;
 
   selectNode: (node: GraphNode | null) => void;
+  selectEdge: (edge: GraphLink | null) => void;
   setIlluminatedPath: (response: GraphRAGQueryResponse) => void;
   clearIllumination: () => void;
   setFilterJurisdiction: (jurisdiction: string) => void;
   setFilterState: (state: string) => void;
+  setFilterCategory: (category: string) => void;
+  setSearchQuery: (query: string) => void;
+  setIncludeFeeSchedules: (include: boolean) => void;
+  setDataSourceMode: (mode: DataSourceMode) => void;
+  setExecutionStatus: (status: ExecutionStatus) => void;
+  setBackendState: (state: BackendConnectionState) => void;
+  setBackendMessage: (msg: string | null) => void;
   setPolicyKeyword: (keyword: string) => void;
   setAvailablePolicies: (policies: PolicyOption[]) => void;
   setIsChatOpen: (open: boolean) => void;
@@ -184,6 +209,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const [activeNodePKs, setActiveNodePKs] = useState<Set<string>>(new Set());
   const [activeEdgeKeys, setActiveEdgeKeys] = useState<Set<string>>(new Set());
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
+  const [selectedEdge, setSelectedEdge] = useState<GraphLink | null>(null);
   const [seededAnchor, setSeededAnchor] = useState<AnchorEntity | null>(null);
   const [isIlluminated, setIsIlluminated] = useState<boolean>(false);
   const [isQueryLoading, setIsQueryLoading] = useState<boolean>(false);
@@ -206,9 +232,17 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const [filterJurisdiction, setFilterJurisdictionState] = useState<string>("");
   const [jurisdictionScope, setJurisdictionScope] = useState<string>("");
   const [filterState, setFilterStateState] = useState<string>("");
+  const [filterCategory, setFilterCategory] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [includeFeeSchedules, setIncludeFeeSchedules] = useState<boolean>(false);
+  const [dataSourceMode, setDataSourceMode] = useState<DataSourceMode>('live');
+  const [executionStatus, setExecutionStatus] = useState<ExecutionStatus>('idle');
+  const [backendState, setBackendState] = useState<BackendConnectionState>('connecting');
+  const [backendMessage, setBackendMessage] = useState<string | null>(null);
   const [policyKeyword, setPolicyKeyword] = useState<string>("LTA");
   const [availablePolicies, setAvailablePolicies] = useState<PolicyOption[]>([
     { keyword: 'LTA', label: 'LTA (Lymphedema Treatment Act)' },
+    { keyword: 'IVIG', label: 'IVIG (Medicare IVIG Access Enhancement Act)' },
   ]);
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
   const [focusTarget, setFocusTarget] = useState<{ x: number; y: number; zoom?: number } | null>(null);
@@ -226,8 +260,19 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     return ALL_STATES_SORTED;
   }, [jurisdictionScope]);
 
+  const selectEdge = useCallback((edge: GraphLink | null) => {
+    setSelectedEdge(edge);
+    if (edge) {
+      setSelectedNode(null);
+      setSeededAnchor(null);
+    }
+  }, []);
+
   const selectNode = useCallback((node: GraphNode | null) => {
     setSelectedNode(node);
+    if (node) {
+      setSelectedEdge(null);
+    }
     if (!node) {
       setSeededAnchor(null);
       return;
@@ -317,6 +362,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const clearIllumination = useCallback(() => {
     latestQueryIdRef.current += 1;
     setIsQueryLoading(false);
+    setExecutionStatus('idle');
     setActiveNodePKs(new Set());
     setActiveEdgeKeys(new Set());
     setIsIlluminated(false);
@@ -388,6 +434,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
 
       const queryId = ++latestQueryIdRef.current;
       setErrorMsg(null);
+      setExecutionStatus('querying');
       const userMsg: ChatMessage = {
         id: `user-${Date.now()}-${queryId}`,
         sender: 'user',
@@ -398,7 +445,8 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       setIsQueryLoading(true);
 
       try {
-        const res = await fetch('/api/graphrag/query', {
+        const apiBase = getApiBaseUrl();
+        const res = await fetch(`${apiBase}/api/graphrag/query`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -410,6 +458,8 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
           }),
         });
 
+        setExecutionStatus('streaming');
+
         if (!res.ok) {
           const errData = await res.json().catch(() => ({}));
           throw new Error(errData.message || errData.detail?.message || `API error ${res.status}`);
@@ -418,6 +468,9 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         const data: GraphRAGQueryResponse = await res.json();
         if (queryId !== latestQueryIdRef.current) return;
 
+        setBackendState('online');
+        setBackendMessage(null);
+        setExecutionStatus('completed');
         setIlluminatedPath(data);
 
         const assistantMsg: ChatMessage = {
@@ -432,6 +485,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         if (queryId !== latestQueryIdRef.current) return;
         const msg = err instanceof Error ? err.message : 'Error executing GraphRAG query.';
         setErrorMsg(msg);
+        setExecutionStatus('error');
         const errorChatMsg: ChatMessage = {
           id: `err-${Date.now()}-${queryId}`,
           sender: 'assistant',
@@ -462,11 +516,19 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       activeNodePKs,
       activeEdgeKeys,
       selectedNode,
+      selectedEdge,
       seededAnchor,
       isIlluminated,
       quickPrompts,
       filterJurisdiction,
       filterState,
+      filterCategory,
+      searchQuery,
+      includeFeeSchedules,
+      dataSourceMode,
+      executionStatus,
+      backendState,
+      backendMessage,
       availableStates,
       availablePolicies,
       policyKeyword,
@@ -476,10 +538,18 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       errorMsg,
       focusTarget,
       selectNode,
+      selectEdge,
       setIlluminatedPath,
       clearIllumination,
       setFilterJurisdiction,
       setFilterState,
+      setFilterCategory,
+      setSearchQuery,
+      setIncludeFeeSchedules,
+      setDataSourceMode,
+      setExecutionStatus,
+      setBackendState,
+      setBackendMessage,
       setPolicyKeyword,
       setAvailablePolicies,
       setIsChatOpen,
@@ -491,11 +561,19 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       activeNodePKs,
       activeEdgeKeys,
       selectedNode,
+      selectedEdge,
       seededAnchor,
       isIlluminated,
       quickPrompts,
       filterJurisdiction,
       filterState,
+      filterCategory,
+      searchQuery,
+      includeFeeSchedules,
+      dataSourceMode,
+      executionStatus,
+      backendState,
+      backendMessage,
       availableStates,
       availablePolicies,
       policyKeyword,
@@ -505,6 +583,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       errorMsg,
       focusTarget,
       selectNode,
+      selectEdge,
       setIlluminatedPath,
       clearIllumination,
       setFilterJurisdiction,

@@ -12,26 +12,42 @@ interface GraphCanvasProps {
   nodes: GraphNode[];
   links: GraphLink[];
   loading: boolean;
+  emptyFilterMessage?: string | null;
+  onResetFilters?: () => void;
 }
 
-export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading }) => {
+export const GraphCanvas: React.FC<GraphCanvasProps> = ({
+  nodes,
+  links,
+  loading,
+  emptyFilterMessage,
+  onResetFilters,
+}) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const simulationRef = useRef<d3.Simulation<GraphNode, d3.SimulationLinkDatum<GraphNode>> | null>(null);
   const transformRef = useRef<d3.ZoomTransform>(d3.zoomIdentity);
   const zoomBehaviorRef = useRef<d3.ZoomBehavior<HTMLCanvasElement, unknown> | null>(null);
+  const draggedNodeRef = useRef<GraphNode | null>(null);
+  const dragMovedRef = useRef<boolean>(false);
+  const dragStartPosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const nodesRef = useRef<GraphNode[]>(nodes);
+  nodesRef.current = nodes;
 
   const {
     activeNodePKs,
     activeEdgeKeys,
     isIlluminated,
     selectedNode,
+    selectedEdge,
     selectNode,
+    selectEdge,
   } = useGraphSync();
 
   const [isHudOpen, setIsHudOpen] = useState<boolean>(true);
   const renderRef = useRef<() => void>(() => {});
 
   const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
+  const [hoveredEdge, setHoveredEdge] = useState<GraphLink | null>(null);
   const [fps, setFps] = useState<number>(60);
   const frameCountRef = useRef<number>(0);
   const lastFpsTimeRef = useRef<number>(performance.now());
@@ -177,12 +193,22 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
         isIlluminated &&
         (activeEdgeKeys.has(link.edge_key) ||
           (activeNodePKs.has(source.primary_key) && activeNodePKs.has(target.primary_key)));
+      const isSelectedEdge = selectedEdge?.edge_key === link.edge_key;
+      const isHoveredEdge = hoveredEdge?.edge_key === link.edge_key;
 
       let alpha = 0.55;
       let strokeColor = 'rgba(71, 85, 105, 0.6)';
       let lineWidth = 1.2 / transform.k;
 
-      if (isIlluminated) {
+      if (isSelectedEdge) {
+        alpha = 1.0;
+        strokeColor = '#38bdf8';
+        lineWidth = 4.0 / transform.k;
+      } else if (isHoveredEdge) {
+        alpha = 1.0;
+        strokeColor = '#7dd3fc';
+        lineWidth = 2.6 / transform.k;
+      } else if (isIlluminated) {
         if (isActiveEdge) {
           alpha = 1.0;
           strokeColor = CANVAS_PALETTE.activeEdge;
@@ -204,8 +230,8 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
       ctx.lineTo(target.x, target.y);
       ctx.stroke();
 
-      // If active edge, draw animated directional indicator pulse
-      if (isActiveEdge) {
+      // If active, selected, or hovered edge, draw directional arrow indicator
+      if (isActiveEdge || isSelectedEdge || isHoveredEdge) {
         const midX = (source.x + target.x) / 2;
         const midY = (source.y + target.y) / 2;
         const angle = Math.atan2(target.y - source.y, target.x - source.x);
@@ -213,14 +239,33 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
         ctx.save();
         ctx.translate(midX, midY);
         ctx.rotate(angle);
-        ctx.fillStyle = CANVAS_PALETTE.accentAmber;
+        ctx.fillStyle = isSelectedEdge ? '#38bdf8' : CANVAS_PALETTE.accentAmber;
         ctx.beginPath();
-        ctx.moveTo(6 / transform.k, 0);
-        ctx.lineTo(-4 / transform.k, -3.5 / transform.k);
-        ctx.lineTo(-4 / transform.k, 3.5 / transform.k);
+        ctx.moveTo(7 / transform.k, 0);
+        ctx.lineTo(-4.5 / transform.k, -4 / transform.k);
+        ctx.lineTo(-4.5 / transform.k, 4 / transform.k);
         ctx.closePath();
         ctx.fill();
         ctx.restore();
+
+        if (isSelectedEdge || isHoveredEdge) {
+          ctx.save();
+          ctx.font = `700 ${Math.max(8, Math.min(11, 10 / transform.k))}px "SF Mono", "Fira Code", monospace`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          const lblText = link.label;
+          const tw = ctx.measureText(lblText).width;
+          const bw = tw + 8 / transform.k;
+          const bh = 13 / transform.k;
+          ctx.fillStyle = 'rgba(10, 17, 40, 0.92)';
+          ctx.fillRect(midX - bw / 2, midY - bh / 2 - 10 / transform.k, bw, bh);
+          ctx.strokeStyle = '#38bdf8';
+          ctx.lineWidth = 1.0 / transform.k;
+          ctx.strokeRect(midX - bw / 2, midY - bh / 2 - 10 / transform.k, bw, bh);
+          ctx.fillStyle = '#38bdf8';
+          ctx.fillText(lblText, midX, midY - 10 / transform.k);
+          ctx.restore();
+        }
       }
 
       ctx.restore();
@@ -495,7 +540,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     });
 
     ctx.restore();
-  }, [nodes, links, isIlluminated, activeNodePKs, activeEdgeKeys, selectedNode, hoveredNode, syncCanvasDimensions]);
+  }, [nodes, links, isIlluminated, activeNodePKs, activeEdgeKeys, selectedNode, selectedEdge, hoveredNode, hoveredEdge, syncCanvasDimensions]);
 
   // Synchronously update renderRef on every render pass so D3 listeners never invoke a stale closure
   renderRef.current = render;
@@ -550,6 +595,30 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     };
   }, [nodes, links]);
 
+  // Helper to hit-test a node from raw client coordinates
+  const findNodeAtClientCoords = useCallback((clientX: number, clientY: number): GraphNode | null => {
+    const canvas = canvasRef.current;
+    if (!canvas) return null;
+    const rect = canvas.getBoundingClientRect();
+    const transform = transformRef.current;
+
+    const mouseX = (clientX - rect.left - transform.x) / transform.k;
+    const mouseY = (clientY - rect.top - transform.y) / transform.k;
+    const currentNodes = nodesRef.current;
+
+    for (let i = currentNodes.length - 1; i >= 0; i--) {
+      const node = currentNodes[i];
+      if (node.x === undefined || node.y === undefined) continue;
+      const baseRadius = node.radius || 10;
+      const hitRadius = (baseRadius / Math.max(0.7, Math.min(1.4, transform.k))) + 4 / transform.k;
+      const dist = Math.hypot(node.x - mouseX, node.y - mouseY);
+      if (dist <= hitRadius) {
+        return node;
+      }
+    }
+    return null;
+  }, []);
+
   // Mount-only D3 Zoom and Drag Behavior delegating to renderRef.current()
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -557,6 +626,13 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
 
     const zoom = d3
       .zoom<HTMLCanvasElement, unknown>()
+      .filter((event) => {
+        if (event.type === 'mousedown') {
+          const hit = findNodeAtClientCoords(event.clientX, event.clientY);
+          if (hit) return false;
+        }
+        return !event.button;
+      })
       .scaleExtent([0.2, 5.0])
       .on('zoom', (event) => {
         transformRef.current = event.transform;
@@ -568,7 +644,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
 
     syncCanvasDimensions(canvas);
     renderRef.current();
-  }, [syncCanvasDimensions]);
+  }, [syncCanvasDimensions, findNodeAtClientCoords]);
 
   // Handle window and container Resize while preserving illuminated state
   useEffect(() => {
@@ -603,7 +679,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
       renderRef.current();
     });
     return () => cancelAnimationFrame(rafId);
-  }, [render, isIlluminated, activeNodePKs, activeEdgeKeys, selectedNode, hoveredNode]);
+  }, [render, isIlluminated, activeNodePKs, activeEdgeKeys, selectedNode, selectedEdge, hoveredNode, hoveredEdge]);
 
   // Trigger camera framing or immediate de-illumination repaint after simulation & zoom are initialized
   useEffect(() => {
@@ -617,7 +693,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     }
   }, [isIlluminated, activeNodePKs, frameActiveSubgraph]);
 
-  // Mouse click and hover detection
+  // Mouse click and hover detection for nodes and edges
   const findNodeAtEvent = (e: React.MouseEvent<HTMLCanvasElement>): GraphNode | null => {
     const canvas = canvasRef.current;
     if (!canvas) return null;
@@ -641,21 +717,117 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     return null;
   };
 
+  const findEdgeAtEvent = (e: React.MouseEvent<HTMLCanvasElement>): GraphLink | null => {
+    const canvas = canvasRef.current;
+    if (!canvas) return null;
+    const rect = canvas.getBoundingClientRect();
+    const transform = transformRef.current;
+
+    const mouseX = (e.clientX - rect.left - transform.x) / transform.k;
+    const mouseY = (e.clientY - rect.top - transform.y) / transform.k;
+    const nodeByPk = new Map<string, GraphNode>(nodes.map((n) => [n.primary_key, n]));
+    const threshold = 6 / transform.k;
+
+    let closestEdge: GraphLink | null = null;
+    let closestDist = threshold;
+
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i];
+      const source = typeof link.source === 'object' ? (link.source as GraphNode) : nodeByPk.get(link.source as string);
+      const target = typeof link.target === 'object' ? (link.target as GraphNode) : nodeByPk.get(link.target as string);
+      if (!source || !target || source.x === undefined || source.y === undefined || target.x === undefined || target.y === undefined) {
+        continue;
+      }
+      const dx = target.x - source.x;
+      const dy = target.y - source.y;
+      const lenSq = dx * dx + dy * dy;
+      if (lenSq === 0) continue;
+
+      const t = Math.max(0, Math.min(1, ((mouseX - source.x) * dx + (mouseY - source.y) * dy) / lenSq));
+      const projX = source.x + t * dx;
+      const projY = source.y + t * dy;
+      const dist = Math.hypot(mouseX - projX, mouseY - projY);
+      if (dist <= closestDist) {
+        closestDist = dist;
+        closestEdge = link;
+      }
+    }
+    return closestEdge;
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    const hitNode = findNodeAtEvent(e);
+    if (hitNode) {
+      draggedNodeRef.current = hitNode;
+      dragMovedRef.current = false;
+      dragStartPosRef.current = { x: e.clientX, y: e.clientY };
+      hitNode.fx = hitNode.x;
+      hitNode.fy = hitNode.y;
+      simulationRef.current?.alphaTarget(0.25).restart();
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (draggedNodeRef.current) {
+      simulationRef.current?.alphaTarget(0);
+      draggedNodeRef.current = null;
+    }
+  };
+
   const handlePointerDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (dragMovedRef.current) {
+      dragMovedRef.current = false;
+      return;
+    }
     if (e.defaultPrevented) return;
     if (!canvasRef.current) return;
-    selectNode(findNodeAtEvent(e));
+    const hitNode = findNodeAtEvent(e);
+    if (hitNode) {
+      selectNode(hitNode);
+      return;
+    }
+    const hitEdge = findEdgeAtEvent(e);
+    if (hitEdge) {
+      selectEdge(hitEdge);
+      return;
+    }
+    selectNode(null);
+    selectEdge(null);
   };
 
   const handlePointerMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const hovered = findNodeAtEvent(e);
 
+    if (draggedNodeRef.current) {
+      const movedDist = Math.hypot(e.clientX - dragStartPosRef.current.x, e.clientY - dragStartPosRef.current.y);
+      if (movedDist > 2) {
+        dragMovedRef.current = true;
+      }
+      const rect = canvas.getBoundingClientRect();
+      const transform = transformRef.current;
+      const graphX = (e.clientX - rect.left - transform.x) / transform.k;
+      const graphY = (e.clientY - rect.top - transform.y) / transform.k;
+      draggedNodeRef.current.fx = graphX;
+      draggedNodeRef.current.fy = graphY;
+      draggedNodeRef.current.x = graphX;
+      draggedNodeRef.current.y = graphY;
+      canvas.style.cursor = 'grabbing';
+      renderRef.current();
+      return;
+    }
+
+    const hovered = findNodeAtEvent(e);
     if (hovered !== hoveredNode) {
       setHoveredNode(hovered);
-      canvas.style.cursor = hovered ? 'pointer' : 'crosshair';
     }
+
+    const edgeHovered = hovered ? null : findEdgeAtEvent(e);
+    if (edgeHovered !== hoveredEdge) {
+      setHoveredEdge(edgeHovered);
+    }
+
+    canvas.style.cursor = hovered || edgeHovered ? 'pointer' : 'crosshair';
   };
 
   const isHoveredNodeActive = Boolean(
@@ -666,12 +838,16 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
     <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
       <canvas
         ref={canvasRef}
+        data-testid="graph-canvas"
         style={{
           width: '100%',
           height: '100%',
           display: 'block',
           backgroundColor: CANVAS_PALETTE.bgVoid,
         }}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
         onClick={handlePointerDown}
         onMouseMove={handlePointerMove}
       />
@@ -779,6 +955,79 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({ nodes, links, loading 
           <div style={{ color: CANVAS_PALETTE.accentAmber, fontWeight: 600 }}>
             {hoveredNode.name}
           </div>
+        </div>
+      )}
+
+      {!hoveredNode && hoveredEdge && (
+        <div
+          data-testid="edge-hover-tooltip"
+          style={{
+            position: 'absolute',
+            bottom: 16,
+            left: 14,
+            backgroundColor: 'rgba(10, 17, 40, 0.92)',
+            border: '1px solid #38bdf8',
+            borderRadius: 6,
+            padding: '8px 12px',
+            fontFamily: '"SF Mono", "Fira Code", monospace',
+            fontSize: 11,
+            color: '#f8fafc',
+            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.5)',
+            pointerEvents: 'none',
+            zIndex: 15,
+            maxWidth: 420,
+          }}
+        >
+          <div style={{ color: '#38bdf8', fontWeight: 700, marginBottom: 2 }}>
+            RELATIONSHIP: {hoveredEdge.label}
+          </div>
+          <div style={{ color: '#cbd5e1', fontSize: 10 }}>
+            {hoveredEdge.edge_key}
+          </div>
+        </div>
+      )}
+
+      {!loading && emptyFilterMessage && (
+        <div
+          data-testid="empty-filter-diagnostic"
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: 'rgba(15, 23, 42, 0.94)',
+            border: `1px solid ${CANVAS_PALETTE.accentAmber}`,
+            borderRadius: 8,
+            padding: '18px 24px',
+            fontFamily: '"SF Mono", monospace',
+            fontSize: 12,
+            color: '#f8fafc',
+            textAlign: 'center',
+            zIndex: 18,
+            boxShadow: '0 8px 24px rgba(0,0,0,0.6)',
+          }}
+        >
+          <div style={{ color: CANVAS_PALETTE.accentAmber, fontWeight: 700, marginBottom: 8 }}>
+            ◈ FILTER DIAGNOSTIC
+          </div>
+          <div style={{ marginBottom: 12 }}>{emptyFilterMessage}</div>
+          {onResetFilters && (
+            <button
+              onClick={onResetFilters}
+              style={{
+                backgroundColor: CANVAS_PALETTE.accentAmber,
+                color: '#0a1128',
+                border: 'none',
+                borderRadius: 4,
+                padding: '6px 14px',
+                fontWeight: 700,
+                fontSize: 11,
+                cursor: 'pointer',
+              }}
+            >
+              Reset Active Filters
+            </button>
+          )}
         </div>
       )}
 

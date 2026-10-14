@@ -1,11 +1,13 @@
 /**
- * Dedicated node detail inspection drawer across all 17 8-hop entity categories.
+ * Dedicated node and edge detail inspection drawer across all 17 8-hop entity categories
+ * and 18 topological edge types.
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGraphSync } from '../context/GraphSyncContext';
 import { getNodeVisual, CANVAS_PALETTE } from '../styles/graph_theme';
-import type { GraphNode, GraphLink } from '../types/graph';
+import type { GraphNode, GraphLink, EntityInspectionData, ProvenanceMetadata } from '../types/graph';
+import { getApiBaseUrl } from '../utils/apiConfig';
 
 interface NodeDetailDrawerProps {
   nodes: GraphNode[];
@@ -13,12 +15,283 @@ interface NodeDetailDrawerProps {
 }
 
 export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links }) => {
-  const { selectedNode, selectNode, inquireNode, isQueryLoading } = useGraphSync();
+  const {
+    selectedNode,
+    selectNode,
+    selectedEdge,
+    selectEdge,
+    inquireNode,
+    isQueryLoading,
+    dataSourceMode,
+  } = useGraphSync();
+
+  const [inspectedData, setInspectedData] = useState<EntityInspectionData | null>(null);
+  const [isInspecting, setIsInspecting] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!selectedNode) {
+      setInspectedData(null);
+      return;
+    }
+
+    let cancelled = false;
+    const fetchEntityDetail = async () => {
+      setIsInspecting(true);
+      try {
+        const res = await fetch(
+          `${getApiBaseUrl()}/api/entities/${encodeURIComponent(selectedNode.primary_key)}`
+        );
+        if (res.ok && !cancelled) {
+          const detail: EntityInspectionData = await res.json();
+          setInspectedData(detail);
+        } else if (!cancelled) {
+          setInspectedData(null);
+        }
+      } catch {
+        if (!cancelled) {
+          setInspectedData(null);
+        }
+      } finally {
+        if (!cancelled) {
+          setIsInspecting(false);
+        }
+      }
+    };
+
+    if (dataSourceMode === 'live') {
+      fetchEntityDetail();
+    } else {
+      setInspectedData(null);
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedNode, dataSourceMode]);
+
+  // Render Edge Detail Inspection View if an edge is selected
+  if (selectedEdge && !selectedNode) {
+    const srcPk =
+      typeof selectedEdge.source === 'object'
+        ? (selectedEdge.source as GraphNode).primary_key
+        : String(selectedEdge.source);
+    const tgtPk =
+      typeof selectedEdge.target === 'object'
+        ? (selectedEdge.target as GraphNode).primary_key
+        : String(selectedEdge.target);
+    const srcNode = nodes.find((n) => n.primary_key === srcPk);
+    const tgtNode = nodes.find((n) => n.primary_key === tgtPk);
+    const prov: ProvenanceMetadata = selectedEdge.provenance || {
+      source_uri: '',
+      selector: '',
+      ingestion_timestamp: '',
+      run_id: '',
+    };
+
+    return (
+      <div
+        data-testid="edge-detail-drawer"
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          width: 390,
+          height: '100%',
+          backgroundColor: CANVAS_PALETTE.panelBg,
+          backdropFilter: 'blur(12px)',
+          borderLeft: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+          boxShadow: '-8px 0 24px rgba(0, 0, 0, 0.6)',
+          display: 'flex',
+          flexDirection: 'column',
+          zIndex: 20,
+          color: CANVAS_PALETTE.textPrimary,
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+        }}
+      >
+        <div
+          style={{
+            padding: '16px 20px',
+            borderBottom: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+          }}
+        >
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+              <span
+                style={{
+                  backgroundColor: '#0284c7',
+                  color: '#ffffff',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  padding: '2px 8px',
+                  borderRadius: 4,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                }}
+              >
+                {selectedEdge.label}
+              </span>
+              <span style={{ fontFamily: 'monospace', fontSize: 11, color: CANVAS_PALETTE.textMuted }}>
+                {selectedEdge.edge_key}
+              </span>
+            </div>
+            <h2 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: CANVAS_PALETTE.accentAmber, lineHeight: 1.3 }}>
+              Relationship Edge Inspection
+            </h2>
+          </div>
+
+          <button
+            data-testid="close-edge-drawer-btn"
+            onClick={() => selectEdge(null)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: CANVAS_PALETTE.textMuted,
+              cursor: 'pointer',
+              fontSize: 18,
+              padding: 4,
+            }}
+            title="Close Drawer"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div style={{ flex: 1, overflowY: 'auto', padding: '16px 20px' }}>
+          {/* Directional Linkage Summary */}
+          <div style={{ marginBottom: 20 }}>
+            <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 8 }}>
+              Directional Linkage
+            </div>
+            <div
+              data-testid="edge-linkage-card"
+              style={{
+                padding: '12px',
+                backgroundColor: 'rgba(15, 23, 42, 0.7)',
+                border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+                borderRadius: 6,
+                fontFamily: 'monospace',
+                fontSize: 12,
+                color: '#f8fafc',
+                wordBreak: 'break-word',
+              }}
+            >
+              {srcPk} <span style={{ color: CANVAS_PALETTE.accentAmber }}>→ {selectedEdge.label} →</span> {tgtPk}
+            </div>
+          </div>
+
+          {/* Source & Target Entity Cards */}
+          <div style={{ marginBottom: 20 }}>
+            <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 8 }}>
+              Source Entity
+            </div>
+            <div
+              onClick={() => srcNode && selectNode(srcNode)}
+              style={{
+                padding: '10px 12px',
+                backgroundColor: 'rgba(30, 41, 59, 0.5)',
+                border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+                borderRadius: 6,
+                cursor: srcNode ? 'pointer' : 'default',
+                marginBottom: 12,
+              }}
+            >
+              <div style={{ fontSize: 10, color: CANVAS_PALETTE.textMuted, fontFamily: 'monospace' }}>
+                {srcNode?.label || 'Entity'} • {srcPk}
+              </div>
+              <div style={{ fontSize: 13, fontWeight: 600, color: '#f8fafc', marginTop: 2 }}>
+                {srcNode?.name || srcPk}
+              </div>
+            </div>
+
+            <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 8 }}>
+              Target Entity
+            </div>
+            <div
+              onClick={() => tgtNode && selectNode(tgtNode)}
+              style={{
+                padding: '10px 12px',
+                backgroundColor: 'rgba(30, 41, 59, 0.5)',
+                border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+                borderRadius: 6,
+                cursor: tgtNode ? 'pointer' : 'default',
+              }}
+            >
+              <div style={{ fontSize: 10, color: CANVAS_PALETTE.textMuted, fontFamily: 'monospace' }}>
+                {tgtNode?.label || 'Entity'} • {tgtPk}
+              </div>
+              <div style={{ fontSize: 13, fontWeight: 600, color: '#f8fafc', marginTop: 2 }}>
+                {tgtNode?.name || tgtPk}
+              </div>
+            </div>
+          </div>
+
+          {/* Edge Provenance Metadata */}
+          <div data-testid="edge-provenance-section" style={{ marginBottom: 20 }}>
+            <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 8 }}>
+              Edge Provenance Metadata
+            </div>
+            <div
+              style={{
+                backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+                borderRadius: 6,
+                overflow: 'hidden',
+              }}
+            >
+              {(
+                [
+                  ['source_uri', prov.source_uri],
+                  ['selector', prov.selector],
+                  ['run_id', prov.run_id],
+                  ['ingestion_timestamp', prov.ingestion_timestamp],
+                ] as [string, string][]
+              ).map(([key, val], idx) => (
+                <div
+                  key={key}
+                  style={{
+                    display: 'flex',
+                    padding: '8px 12px',
+                    fontSize: 12,
+                    borderBottom: idx < 3 ? `1px solid ${CANVAS_PALETTE.panelBorder}` : 'none',
+                    backgroundColor: idx % 2 === 0 ? 'rgba(30, 41, 59, 0.2)' : 'transparent',
+                  }}
+                >
+                  <span style={{ width: '44%', color: CANVAS_PALETTE.textMuted, fontFamily: 'monospace' }}>
+                    {key}:
+                  </span>
+                  <span style={{ width: '56%', color: '#f1f5f9', wordBreak: 'break-all', fontWeight: 500 }}>
+                    {key === 'source_uri' && val && (val.startsWith('http') || val.startsWith('file://')) ? (
+                      <a
+                        href={val}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#38bdf8', textDecoration: 'underline' }}
+                      >
+                        {val}
+                      </a>
+                    ) : (
+                      val || '[UNSPECIFIED IN GRAPH]'
+                    )}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!selectedNode) return null;
 
   const visual = getNodeVisual(selectedNode.label);
-  const props = selectedNode.properties || {};
+  const props = {
+    ...(selectedNode.properties || {}),
+    ...(inspectedData?.properties || {}),
+  };
 
   // Find immediate incoming and outgoing relationships with provenance
   const connectedNeighbors = links
@@ -34,6 +307,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
       const neighborPk = isOutgoing ? tgtPk : srcPk;
       const neighborNode = nodes.find((n) => n.primary_key === neighborPk);
       return {
+        edge: l,
         direction: isOutgoing ? 'OUTGOING' : 'INCOMING',
         relLabel: l.label,
         neighborPk,
@@ -43,6 +317,64 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
         provenance: l.provenance,
       };
     });
+
+  // Resolve provenance metadata across node inspection payload, node properties, or incident edges
+  const inspectedProv: Partial<ProvenanceMetadata> | undefined = Array.isArray(inspectedData?.provenance)
+    ? inspectedData?.provenance[0]
+    : inspectedData?.provenance;
+  const firstEdgeProv = connectedNeighbors.find((cn) => cn.provenance?.source_uri)?.provenance;
+  const effectiveProvenance: ProvenanceMetadata = {
+    source_uri: String(
+      inspectedProv?.source_uri ||
+        props.source_uri ||
+        props.url ||
+        props.source_url ||
+        firstEdgeProv?.source_uri ||
+        ''
+    ),
+    selector: String(
+      inspectedProv?.selector ||
+        props.selector ||
+        firstEdgeProv?.selector ||
+        ''
+    ),
+    run_id: String(
+      inspectedProv?.run_id ||
+        props.run_id ||
+        firstEdgeProv?.run_id ||
+        ''
+    ),
+    ingestion_timestamp: String(
+      inspectedProv?.ingestion_timestamp ||
+        props.ingestion_timestamp ||
+        firstEdgeProv?.ingestion_timestamp ||
+        ''
+    ),
+  };
+
+  // Extract statutory, regulatory, clinical, or policy text excerpt
+  const textExcerpt: string =
+    inspectedData?.text_excerpt ||
+    String(
+      props.full_text ||
+        props.text_excerpt ||
+        props.summary ||
+        props.description ||
+        props.short_description ||
+        props.long_description ||
+        props.title ||
+        props.official_title ||
+        ''
+    );
+
+  // Extract official citations and identifiers
+  const citations: string[] =
+    inspectedData?.citations && inspectedData.citations.length > 0
+      ? inspectedData.citations
+      : (['cfr_reference', 'citation', 'statutory_citation', 'public_law_id', 'article_id', 'cr_number', 'code', 'hcpcs_code', 'pmid']
+          .map((k) => props[k])
+          .filter((v) => v !== undefined && v !== null && String(v).trim() !== '')
+          .map((v) => String(v)));
 
   // Construct official government external links strictly from persisted properties without hardcoded fallbacks
   const getGovernmentSourceLink = (): { title: string; url: string } | null => {
@@ -226,7 +558,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
     if (typeof val === 'boolean') {
       return val ? 'Yes (true)' : 'No (false)';
     }
-    if (typeof val === 'number' && ['fee_amount', 'ceiling', 'floor', 'amount'].includes(key)) {
+    if (typeof val === 'number' && ['fee_amount', 'ceiling', 'floor', 'amount', 'non_rural_rate', 'rural_rate'].includes(key)) {
       return `$${val.toFixed(2)} (${val})`;
     }
     return String(val);
@@ -239,11 +571,12 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
 
   return (
     <div
+      data-testid="node-detail-drawer"
       style={{
         position: 'absolute',
         top: 0,
         right: 0,
-        width: 380,
+        width: 390,
         height: '100%',
         backgroundColor: CANVAS_PALETTE.panelBg,
         backdropFilter: 'blur(12px)',
@@ -285,6 +618,9 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
             <span style={{ fontFamily: 'monospace', fontSize: 11, color: CANVAS_PALETTE.textMuted }}>
               {selectedNode.primary_key}
             </span>
+            {isInspecting && (
+              <span style={{ fontSize: 10, color: CANVAS_PALETTE.accentAmber }}>SYNCING...</span>
+            )}
           </div>
           <h2 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: CANVAS_PALETTE.accentAmber, lineHeight: 1.3 }}>
             {selectedNode.name}
@@ -292,6 +628,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
         </div>
 
         <button
+          data-testid="close-node-drawer-btn"
           onClick={() => selectNode(null)}
           style={{
             background: 'none',
@@ -315,12 +652,64 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
             System Description
           </div>
           <div style={{ fontSize: 13, color: '#cbd5e1', lineHeight: 1.4 }}>
-            {props.description || props.short_description || visual.description}
+            {String(props.description || props.short_description || visual.description)}
           </div>
         </div>
 
+        {/* Statutory / Clinical / Policy Text Excerpt */}
+        {textExcerpt && (
+          <div data-testid="node-text-excerpt" style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 4 }}>
+              Statutory / Clinical Text Excerpt
+            </div>
+            <div
+              style={{
+                fontSize: 12,
+                color: '#e2e8f0',
+                lineHeight: 1.5,
+                padding: '10px 12px',
+                backgroundColor: 'rgba(15, 23, 42, 0.7)',
+                borderLeft: `3px solid ${CANVAS_PALETTE.accentAmber}`,
+                borderRadius: 4,
+                maxHeight: 160,
+                overflowY: 'auto',
+              }}
+            >
+              {textExcerpt}
+            </div>
+          </div>
+        )}
+
+        {/* Official Citations */}
+        {citations.length > 0 && (
+          <div data-testid="node-citations-list" style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 6 }}>
+              Official Citations & Identifiers
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+              {citations.map((cit, idx) => (
+                <span
+                  key={idx}
+                  style={{
+                    fontFamily: 'monospace',
+                    fontSize: 11,
+                    backgroundColor: 'rgba(56, 189, 248, 0.15)',
+                    color: '#7dd3fc',
+                    border: '1px solid rgba(56, 189, 248, 0.35)',
+                    padding: '2px 8px',
+                    borderRadius: 4,
+                  }}
+                >
+                  {cit}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Action Button: Ask Agent */}
         <button
+          data-testid="inquire-node-btn"
           onClick={() => selectedNode && inquireNode(selectedNode)}
           disabled={isQueryLoading}
           style={{
@@ -375,8 +764,61 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
           </div>
         )}
 
+        {/* Explicit Provenance Metadata Block */}
+        <div data-testid="node-provenance-section" style={{ marginBottom: 20 }}>
+          <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 8 }}>
+            Provenance Metadata
+          </div>
+          <div
+            style={{
+              backgroundColor: 'rgba(15, 23, 42, 0.6)',
+              border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+              borderRadius: 6,
+              overflow: 'hidden',
+            }}
+          >
+            {(
+              [
+                ['source_uri', effectiveProvenance.source_uri],
+                ['selector', effectiveProvenance.selector],
+                ['run_id', effectiveProvenance.run_id],
+                ['ingestion_timestamp', effectiveProvenance.ingestion_timestamp],
+              ] as [string, string][]
+            ).map(([key, val], idx) => (
+              <div
+                key={key}
+                style={{
+                  display: 'flex',
+                  padding: '7px 12px',
+                  fontSize: 11,
+                  borderBottom: idx < 3 ? `1px solid ${CANVAS_PALETTE.panelBorder}` : 'none',
+                  backgroundColor: idx % 2 === 0 ? 'rgba(30, 41, 59, 0.2)' : 'transparent',
+                }}
+              >
+                <span style={{ width: '44%', color: CANVAS_PALETTE.textMuted, fontFamily: 'monospace' }}>
+                  {key}:
+                </span>
+                <span style={{ width: '56%', color: '#f1f5f9', wordBreak: 'break-all', fontWeight: 500 }}>
+                  {key === 'source_uri' && val && (val.startsWith('http') || val.startsWith('file://')) ? (
+                    <a
+                      href={val}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: '#38bdf8', textDecoration: 'underline' }}
+                    >
+                      {val}
+                    </a>
+                  ) : (
+                    val || '[UNSPECIFIED IN GRAPH]'
+                  )}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Properties Table */}
-        <div style={{ marginBottom: 20 }}>
+        <div data-testid="node-attributes-table" style={{ marginBottom: 20 }}>
           <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 8 }}>
             Entity Attributes
           </div>
@@ -419,20 +861,21 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
             {connectedNeighbors.map((cn, i) => (
               <div
                 key={i}
-                onClick={() => cn.neighborNode && selectNode(cn.neighborNode)}
                 style={{
                   padding: '8px 10px',
                   backgroundColor: 'rgba(30, 41, 59, 0.4)',
                   border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
                   borderRadius: 6,
-                  cursor: cn.neighborNode ? 'pointer' : 'default',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   transition: 'background-color 0.15s ease',
                 }}
               >
-                <div style={{ maxWidth: '72%' }}>
+                <div
+                  onClick={() => cn.neighborNode && selectNode(cn.neighborNode)}
+                  style={{ maxWidth: '68%', cursor: cn.neighborNode ? 'pointer' : 'default' }}
+                >
                   <div style={{ fontSize: 10, color: CANVAS_PALETTE.textMuted, fontFamily: 'monospace' }}>
                     {cn.direction === 'OUTGOING' ? '→' : '←'} {cn.relLabel}
                   </div>
@@ -445,17 +888,33 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
                     </div>
                   )}
                 </div>
-                <span
-                  style={{
-                    fontSize: 10,
-                    padding: '2px 6px',
-                    borderRadius: 4,
-                    backgroundColor: getNodeVisual(cn.neighborLabel).badgeColor,
-                    color: '#fff',
-                  }}
-                >
-                  {cn.neighborLabel}
-                </span>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4 }}>
+                  <span
+                    style={{
+                      fontSize: 10,
+                      padding: '2px 6px',
+                      borderRadius: 4,
+                      backgroundColor: getNodeVisual(cn.neighborLabel).badgeColor,
+                      color: '#fff',
+                    }}
+                  >
+                    {cn.neighborLabel}
+                  </span>
+                  <button
+                    onClick={() => selectEdge(cn.edge)}
+                    style={{
+                      fontSize: 9,
+                      padding: '2px 6px',
+                      borderRadius: 3,
+                      backgroundColor: 'rgba(56, 189, 248, 0.15)',
+                      color: '#38bdf8',
+                      border: '1px solid rgba(56, 189, 248, 0.4)',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Inspect Edge
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -464,3 +923,4 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
     </div>
   );
 };
+

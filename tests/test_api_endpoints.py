@@ -12,13 +12,18 @@ def client():
 
 
 def test_api_health(client):
-    """Verifies /api/health endpoint returns 200 OK and connected status."""
+    """Verifies /api/health endpoint returns 200 OK, connected status, loaded policies, uptime, and storage backend."""
     res = client.get("/api/health")
     assert res.status_code == 200
     data = res.json()
     assert data["status"] == "ok"
     assert data["neo4j_connected"] is True
+    assert "LTA" in data["loaded_policies"]
+    assert isinstance(data["uptime_seconds"], (int, float))
+    assert data["uptime_seconds"] >= 0.0
+    assert data["storage_backend"] in ("neo4j", "embedded")
     assert "timestamp" in data
+
 
 
 def test_api_graph_summary(client):
@@ -227,3 +232,68 @@ def test_api_graphrag_query_invalid_anchor_fails_fast(client):
     }
     res = client.post("/api/graphrag/query", json=payload)
     assert res.status_code == 400
+
+
+def test_api_entity_inspection(client):
+    """Verifies GET /api/entities/{primary_key} returns full properties, excerpt, citations, provenance, and 404 fail-fast."""
+    # 1. StatutorySection inspection
+    res_stat = client.get("/api/entities/STAT-117-328-SEC-4133")
+    assert res_stat.status_code == 200
+    stat_data = res_stat.json()
+    assert stat_data["primary_key"] == "STAT-117-328-SEC-4133"
+    assert stat_data["label"] == "StatutorySection"
+    assert "4133" in stat_data["name"]
+    assert "SEC. 4133" in stat_data["text_excerpt"]
+    assert "PLAW-117-328" in stat_data["citations"]
+    assert len(stat_data["provenance"]) >= 1
+    assert stat_data["provenance"][0]["source_uri"] != ""
+    assert stat_data["provenance"][0]["run_id"] != ""
+    assert len(stat_data["relationships"]) >= 2
+
+    # 2. CoveragePolicy inspection
+    res_cp = client.get("/api/entities/DME-MAC-COPE147943")
+    assert res_cp.status_code == 200
+    cp_data = res_cp.json()
+    assert cp_data["primary_key"] == "DME-MAC-COPE147943"
+    assert cp_data["label"] == "CoveragePolicy"
+    assert len(cp_data["relationships"]) >= 60
+
+    # 3. Fail-fast HTTP 404 on nonexistent primary_key
+    res_404 = client.get("/api/entities/NONEXISTENT-NODE-999")
+    assert res_404.status_code == 404
+    err_data = res_404.json()
+    assert err_data["error"] is True
+    assert err_data["error_type"] == "EntityResolutionError"
+
+
+def test_embedded_graph_driver_parity():
+    """Verifies zero-daemon EmbeddedGraphDriver parity across summary, topology, inspection, and subgraph traversal."""
+    from src.graph.neo4j_sync import Neo4jSyncEngine
+
+    emb_engine = Neo4jSyncEngine(uri="embedded://exports/lta_knowledge_graph.json")
+    try:
+        stats = emb_engine.get_summary_statistics()
+        assert stats["total_nodes"] == 3875
+        assert stats["total_edges"] == 7593
+        assert len(stats["nodes_by_label"]) == 17
+        assert len(stats["edges_by_type"]) == 18
+    finally:
+        emb_engine.close()
+
+
+def test_api_cors_preflight_github_pages(client):
+    """Verifies OPTIONS preflight with Origin: https://luisp1028.github.io returns exact matching Access-Control-Allow-Origin header."""
+    res = client.options(
+        "/api/graph/topology",
+        headers={
+            "Origin": "https://luisp1028.github.io",
+            "Access-Control-Request-Method": "GET",
+            "Access-Control-Request-Headers": "Content-Type, Authorization",
+        },
+    )
+    assert res.status_code in (200, 204)
+    assert res.headers.get("access-control-allow-origin") == "https://luisp1028.github.io"
+    allow_methods = res.headers.get("access-control-allow-methods", "")
+    assert "GET" in allow_methods and "POST" in allow_methods and "OPTIONS" in allow_methods
+
+

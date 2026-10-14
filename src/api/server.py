@@ -18,21 +18,22 @@ load_dotenv()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Manages Neo4j driver connection lifecycle during server startup and shutdown."""
+    """Manages Neo4j or Embedded driver connection lifecycle during server startup and shutdown."""
     neo4j_uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
     neo4j_user = os.getenv("NEO4J_USERNAME", "neo4j")
     neo4j_pass = os.getenv("NEO4J_PASSWORD", "qwertyui")
 
     engine = Neo4jSyncEngine(uri=neo4j_uri, username=neo4j_user, password=neo4j_pass)
-    engine.init_schema()
+    if not str(neo4j_uri).startswith("embedded://"):
+        engine.init_schema()
     engine.get_driver().verify_connectivity()
     set_sync_engine(engine)
-    print(f"[API Server] Connected to Neo4j at {neo4j_uri}")
+    print(f"[API Server] Connected to graph store at {neo4j_uri}")
 
     yield
 
     engine.close()
-    print("[API Server] Neo4j connection pool drained cleanly.")
+    print("[API Server] Graph connection pool drained cleanly.")
 
 
 def create_app() -> FastAPI:
@@ -44,19 +45,20 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
 
-    # Configure CORS for local React/Vite development
+    # Configure CORS for GitHub Pages showcase and local React/Vite development
     app.add_middleware(
         CORSMiddleware,
         allow_origins=[
+            "https://luisp1028.github.io",
             "http://localhost:3000",
             "http://localhost:5173",
             "http://127.0.0.1:3000",
             "http://127.0.0.1:5173",
-            "*",
         ],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
+        allow_origin_regex=r"https://.*\.github\.io|https://.*\.trycloudflare\.com|https://.*\.hf\.space|http://localhost(:\d+)?|http://127\.0\.0\.1(:\d+)?",
+        allow_credentials=False,
+        allow_methods=["GET", "POST", "OPTIONS"],
+        allow_headers=["Content-Type", "Authorization", "*"],
     )
 
     # Standardized Error Envelope Handler for HTTPExceptions
@@ -105,5 +107,5 @@ app = create_app()
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.getenv("API_PORT", "8000"))
-    uvicorn.run("src.api.server:app", host="0.0.0.0", port=port, reload=True)
+    port = int(os.getenv("PORT", os.getenv("API_PORT", "8000")))
+    uvicorn.run("src.api.server:app", host="0.0.0.0", port=port, reload=False)
