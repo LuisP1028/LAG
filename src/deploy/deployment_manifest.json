@@ -1,5 +1,5 @@
 {
-  "deployed_at": "2026-10-14T22:18:33.518844+00:00",
+  "deployed_at": "2026-10-14T22:33:15+00:00",
   "mac_server_host": "egg@10.0.0.62 (Eggs-MacBook-Air.local)",
   "local_container_ingress": {
     "image_tag": "lag-policy-engine:local",
@@ -26,6 +26,35 @@
     "js_asset": "assets/index-D3FIkWiq.js",
     "backend_url": "https://evident-consolidation-dod-seo.trycloudflare.com",
     "status": "online"
+  },
+  "bartending_runtime": {
+    "github_repo": "https://github.com/LuisP1028/Bartending",
+    "pages_url": "https://luisp1028.github.io/Bartending/",
+    "commit_sha": "8c4e1a9",
+    "image_tag": "bartending-app:local",
+    "backend_container": "bartending-app-local",
+    "tunnel_container": "bartending-https-tunnel",
+    "docker_network": "bartending-net",
+    "local_url": "http://127.0.0.1:3001",
+    "public_https_url": "https://rolled-blackberry-dairy-browsing.trycloudflare.com",
+    "persistence": {
+      "sqlite_path": "/Users/egg/Desktop/Bartending/data/patrons.sqlite",
+      "runtime_patrons_json": "/Users/egg/Desktop/Bartending/data/runtime-patrons.json",
+      "postgres_database": "bartending",
+      "roster_storage": "gcs-postgres",
+      "active_characters": 5,
+      "runtime_patrons": 2,
+      "ghost_patrons": 0
+    },
+    "status": "online"
+  },
+  "mac_server_coexistence": {
+    "polymarket_postgres": "Up (port 5432, restart=unless-stopped)",
+    "polymarket_redis": "Up (port 6379, restart=unless-stopped)",
+    "lag_policy_engine_local": "Up (port 7860, restart=unless-stopped)",
+    "lag_policy_engine_tunnel": "Up (https://evident-consolidation-dod-seo.trycloudflare.com, restart=unless-stopped)",
+    "bartending_app_local": "Up (port 3001, restart=unless-stopped)",
+    "bartending_https_tunnel": "Up (https://rolled-blackberry-dairy-browsing.trycloudflare.com, restart=unless-stopped)"
   },
   "verification": {
     "backend_health": {
