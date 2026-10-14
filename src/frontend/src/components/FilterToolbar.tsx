@@ -25,6 +25,7 @@ const CANONICAL_CATEGORIES = Object.keys(NODE_VISUAL_REGISTRY);
 export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }) => {
   const [showApiConfig, setShowApiConfig] = useState<boolean>(false);
   const [customApiUrl, setCustomApiUrl] = useState<string>(() => getApiBaseUrl());
+  const [mobileFiltersExpanded, setMobileFiltersExpanded] = useState<boolean>(false);
 
   const {
     filterJurisdiction,
@@ -51,6 +52,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
     setIsChatOpen,
     selectedNode,
     selectedEdge,
+    isMobileViewport,
   } = useGraphSync();
 
   const handleApplyApiUrl = (e: React.FormEvent) => {
@@ -134,47 +136,28 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
   const statusBadge = getStatusBadgeStyle();
   const isInspectionOpen = Boolean(selectedNode || selectedEdge);
 
-  return (
-    <div
-      data-testid="filter-toolbar"
-      style={{
-        position: 'absolute',
-        top: 14,
-        right: 14,
-        left: isInspectionOpen ? 'min(404px, calc(45vw + 14px))' : 14,
-        display: 'flex',
-        flexWrap: 'wrap',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        gap: 8,
-        zIndex: 10,
-        backgroundColor: 'rgba(15, 23, 42, 0.92)',
-        backdropFilter: 'blur(8px)',
-        border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-        padding: '6px 12px',
-        borderRadius: 8,
-        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
-        fontFamily: '"SF Mono", "Fira Code", monospace',
-        fontSize: 11,
-      }}
-    >
+  const selectStyle: React.CSSProperties = {
+    backgroundColor: 'rgba(30, 41, 59, 0.85)',
+    color: '#f8fafc',
+    border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+    borderRadius: 4,
+    padding: isMobileViewport ? '3px 5px' : '4px 6px',
+    fontSize: 11,
+    cursor: 'pointer',
+    maxWidth: isMobileViewport ? 140 : 'none',
+  };
+
+  const filterControls = (
+    <>
       {/* Execution Mode / Pre-computed Run Selector */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
         <span style={{ color: CANVAS_PALETTE.textMuted }}>SOURCE:</span>
         <select
           aria-label="RUN SOURCE"
           data-testid="run-mode-select"
           value={dataSourceMode}
           onChange={handleDataSourceModeChange}
-          style={{
-            backgroundColor: 'rgba(30, 41, 59, 0.9)',
-            color: '#f8fafc',
-            border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-            borderRadius: 4,
-            padding: '4px 6px',
-            fontSize: 11,
-            cursor: 'pointer',
-          }}
+          style={selectStyle}
         >
           <option value="live">Live Container API (Public HTTPS)</option>
           <option value="precomputed_lta">Pre-computed Run: LTA (3,875 Nodes)</option>
@@ -196,6 +179,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
             fontSize: 10,
             cursor: 'pointer',
             fontWeight: 600,
+            flexShrink: 0,
           }}
           title="Configure Live HTTPS Tunnel URL"
         >
@@ -206,7 +190,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
       {showApiConfig && (
         <form
           onSubmit={handleApplyApiUrl}
-          style={{ display: 'flex', alignItems: 'center', gap: 4 }}
+          style={{ display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}
         >
           <input
             type="text"
@@ -221,8 +205,8 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
               border: '1px solid #38bdf8',
               borderRadius: 4,
               padding: '4px 8px',
-              fontSize: 11,
-              width: 220,
+              fontSize: isMobileViewport ? 16 : 11,
+              width: isMobileViewport ? 180 : 220,
               outline: 'none',
             }}
           />
@@ -246,22 +230,14 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
       )}
 
       {/* Dedicated Jurisdiction Selector */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
         <span style={{ color: CANVAS_PALETTE.textMuted }}>JURISDICTION:</span>
         <select
           aria-label="JURISDICTION"
           data-testid="jurisdiction-select"
           value={filterJurisdiction}
           onChange={handleJurisdictionChange}
-          style={{
-            backgroundColor: 'rgba(30, 41, 59, 0.8)',
-            color: '#f8fafc',
-            border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-            borderRadius: 4,
-            padding: '4px 6px',
-            fontSize: 11,
-            cursor: 'pointer',
-          }}
+          style={selectStyle}
         >
           <option value="">All Jurisdictions (National Overview)</option>
           <option value="JURIS-DME-A">Jurisdiction A (Northeast - Noridian)</option>
@@ -272,22 +248,14 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
       </div>
 
       {/* Dedicated State Selector (54 US States & Territories) */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
         <span style={{ color: CANVAS_PALETTE.textMuted }}>STATE:</span>
         <select
           aria-label="STATE"
           data-testid="state-select"
           value={filterState}
           onChange={handleStateChange}
-          style={{
-            backgroundColor: 'rgba(30, 41, 59, 0.8)',
-            color: '#f8fafc',
-            border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-            borderRadius: 4,
-            padding: '4px 6px',
-            fontSize: 11,
-            cursor: 'pointer',
-          }}
+          style={selectStyle}
         >
           <option value="">All States (Overview)</option>
           {availableStates.map((st) => (
@@ -299,22 +267,14 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
       </div>
 
       {/* Dynamic Policy Selector populated from persisted Policy nodes */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
         <span style={{ color: CANVAS_PALETTE.textMuted }}>POLICY:</span>
         <select
           aria-label="POLICY"
           data-testid="policy-select"
           value={policyKeyword}
           onChange={handlePolicyChange}
-          style={{
-            backgroundColor: 'rgba(30, 41, 59, 0.8)',
-            color: '#f8fafc',
-            border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-            borderRadius: 4,
-            padding: '4px 6px',
-            fontSize: 11,
-            cursor: 'pointer',
-          }}
+          style={selectStyle}
         >
           {availablePolicies.map((pol) => (
             <option key={pol.keyword} value={pol.keyword}>
@@ -326,22 +286,14 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
       </div>
 
       {/* Entity Category Filter across all 17 categories */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
         <span style={{ color: CANVAS_PALETTE.textMuted }}>CATEGORY:</span>
         <select
           aria-label="CATEGORY"
           data-testid="category-select"
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
-          style={{
-            backgroundColor: 'rgba(30, 41, 59, 0.8)',
-            color: '#f8fafc',
-            border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-            borderRadius: 4,
-            padding: '4px 6px',
-            fontSize: 11,
-            cursor: 'pointer',
-          }}
+          style={selectStyle}
         >
           <option value="">All 17 Categories</option>
           {CANONICAL_CATEGORIES.map((cat) => (
@@ -353,7 +305,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
       </div>
 
       {/* Lexical Node Search Input */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0 }}>
         <input
           type="text"
           aria-label="SEARCH NODES"
@@ -366,9 +318,10 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
             color: '#f8fafc',
             border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
             borderRadius: 4,
-            padding: '4px 8px',
-            fontSize: 11,
-            width: 150,
+            padding: isMobileViewport ? '2px 8px' : '4px 8px',
+            height: isMobileViewport ? 28 : 'auto',
+            fontSize: isMobileViewport ? 16 : 11,
+            width: isMobileViewport ? 140 : 150,
             outline: 'none',
           }}
         />
@@ -401,6 +354,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
           cursor: 'pointer',
           fontSize: 11,
           userSelect: 'none',
+          flexShrink: 0,
         }}
       >
         <input
@@ -412,7 +366,11 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
         />
         <span>FEE RATES</span>
       </label>
+    </>
+  );
 
+  const statusAndActionControls = (
+    <>
       {/* Execution Status Badge */}
       <div
         data-testid="execution-status-badge"
@@ -425,10 +383,34 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
           fontSize: 10,
           fontWeight: 700,
           letterSpacing: '0.03em',
+          whiteSpace: 'nowrap',
+          flexShrink: 0,
         }}
       >
         {statusBadge.label}
       </div>
+
+      {isMobileViewport && (
+        <button
+          type="button"
+          data-testid="mobile-filters-toggle-btn"
+          onClick={() => setMobileFiltersExpanded((prev) => !prev)}
+          style={{
+            backgroundColor: 'rgba(30, 41, 59, 0.9)',
+            color: '#e2e8f0',
+            border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+            borderRadius: 4,
+            padding: '4px 8px',
+            fontSize: 10,
+            fontWeight: 600,
+            cursor: 'pointer',
+            whiteSpace: 'nowrap',
+            flexShrink: 0,
+          }}
+        >
+          {mobileFiltersExpanded ? '▴ COMPACT' : '▾ FILTERS'}
+        </button>
+      )}
 
       {/* Clear Illumination Button */}
       {isIlluminated && (
@@ -440,10 +422,12 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
             color: '#fb7185',
             border: '1px solid #fb7185',
             borderRadius: 4,
-            padding: '4px 10px',
+            padding: '4px 8px',
             cursor: 'pointer',
             fontSize: 11,
             fontWeight: 600,
+            whiteSpace: 'nowrap',
+            flexShrink: 0,
           }}
         >
           ✕ RESET PATH
@@ -459,18 +443,105 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
           color: '#0a1128',
           border: 'none',
           borderRadius: 4,
-          padding: '5px 12px',
+          padding: isMobileViewport ? '5px 10px' : '5px 12px',
           cursor: 'pointer',
           fontSize: 11,
           fontWeight: 700,
           display: 'flex',
           alignItems: 'center',
           gap: 6,
+          whiteSpace: 'nowrap',
+          flexShrink: 0,
           boxShadow: '0 2px 8px rgba(255, 183, 3, 0.3)',
         }}
       >
         ◈ GRAPHRAG CHAT
       </button>
+    </>
+  );
+
+  if (isMobileViewport) {
+    return (
+      <div
+        data-testid="filter-toolbar"
+        style={{
+          position: 'absolute',
+          top: 'calc(10px + env(safe-area-inset-top, 0px))',
+          left: 10,
+          right: 10,
+          maxWidth: 'calc(100vw - 20px)',
+          boxSizing: 'border-box',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 6,
+          zIndex: 10,
+          backgroundColor: 'rgba(15, 23, 42, 0.92)',
+          backdropFilter: 'blur(8px)',
+          border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+          padding: '6px 10px',
+          borderRadius: 8,
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+          fontFamily: '"SF Mono", "Fira Code", monospace',
+          fontSize: 11,
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 6,
+            width: '100%',
+            overflowX: 'auto',
+            WebkitOverflowScrolling: 'touch',
+          }}
+        >
+          {statusAndActionControls}
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: mobileFiltersExpanded ? 'wrap' : 'nowrap',
+            alignItems: 'center',
+            gap: 8,
+            width: '100%',
+            overflowX: mobileFiltersExpanded ? 'visible' : 'auto',
+            WebkitOverflowScrolling: 'touch',
+            paddingBottom: 2,
+          }}
+        >
+          {filterControls}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      data-testid="filter-toolbar"
+      style={{
+        position: 'absolute',
+        top: 14,
+        right: 14,
+        left: isInspectionOpen ? 'min(404px, calc(45vw + 14px))' : 14,
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        gap: 8,
+        zIndex: 10,
+        backgroundColor: 'rgba(15, 23, 42, 0.92)',
+        backdropFilter: 'blur(8px)',
+        border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+        padding: '6px 12px',
+        borderRadius: 8,
+        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+        fontFamily: '"SF Mono", "Fira Code", monospace',
+        fontSize: 11,
+      }}
+    >
+      {filterControls}
+      {statusAndActionControls}
     </div>
   );
 };

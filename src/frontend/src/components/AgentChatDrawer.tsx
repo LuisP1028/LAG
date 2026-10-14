@@ -18,6 +18,9 @@ export const AgentChatDrawer: React.FC = () => {
     submitInquiry,
     seededAnchor,
     microFact,
+    isMobileViewport,
+    selectedNode,
+    selectedEdge,
   } = useGraphSync();
 
   const [inputQuery, setInputQuery] = useState<string>('');
@@ -38,13 +41,14 @@ export const AgentChatDrawer: React.FC = () => {
         position: 'absolute',
         top: 0,
         right: 0,
-        width: 440,
-        maxWidth: '45vw',
+        left: isMobileViewport ? 0 : 'auto',
+        width: isMobileViewport ? '100%' : 440,
+        maxWidth: isMobileViewport ? '100vw' : '45vw',
         height: '100%',
         boxSizing: 'border-box',
         backgroundColor: CANVAS_PALETTE.panelBg,
         backdropFilter: 'blur(16px)',
-        borderLeft: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+        borderLeft: isMobileViewport ? 'none' : `1px solid ${CANVAS_PALETTE.panelBorder}`,
         boxShadow: '-10px 0 32px rgba(0, 0, 0, 0.7)',
         display: 'flex',
         flexDirection: 'column',
@@ -56,14 +60,18 @@ export const AgentChatDrawer: React.FC = () => {
       {/* Header */}
       <div
         style={{
-          padding: '16px 20px',
+          padding: isMobileViewport
+            ? 'calc(14px + env(safe-area-inset-top, 0px)) 16px 12px'
+            : '16px 20px',
           borderBottom: `1px solid ${CANVAS_PALETTE.panelBorder}`,
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: 'flex-start',
+          gap: 10,
+          flexShrink: 0,
         }}
       >
-        <div>
+        <div style={{ minWidth: 0, flex: 1 }}>
           <div
             data-testid="assistant-drawer-title"
             style={{
@@ -88,33 +96,59 @@ export const AgentChatDrawer: React.FC = () => {
           </div>
         </div>
 
-        <button
-          data-testid="close-chat-drawer-btn"
-          onClick={() => {
-            clearIllumination();
-            setIsChatOpen(false);
-          }}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: CANVAS_PALETTE.textMuted,
-            cursor: 'pointer',
-            fontSize: 18,
-          }}
-        >
-          ✕
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+          {isMobileViewport && (selectedNode || selectedEdge) && (
+            <button
+              type="button"
+              data-testid="mobile-return-to-node-btn"
+              onClick={() => setIsChatOpen(false)}
+              style={{
+                backgroundColor: 'rgba(56, 189, 248, 0.16)',
+                color: '#38bdf8',
+                border: '1px solid rgba(56, 189, 248, 0.45)',
+                borderRadius: 4,
+                padding: '4px 8px',
+                fontSize: 11,
+                fontWeight: 600,
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+              }}
+              title="Return to Entity Inspection"
+            >
+              ← Inspect {selectedNode ? selectedNode.primary_key : 'Edge'}
+            </button>
+          )}
+          <button
+            data-testid="close-chat-drawer-btn"
+            onClick={() => {
+              clearIllumination();
+              setIsChatOpen(false);
+            }}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: CANVAS_PALETTE.textMuted,
+              cursor: 'pointer',
+              fontSize: 18,
+              padding: 4,
+            }}
+          >
+            ✕
+          </button>
+        </div>
       </div>
 
       {/* Quick Prompts Bar */}
       <div
         style={{
-          padding: '8px 16px',
+          padding: isMobileViewport ? '8px 14px' : '8px 16px',
           borderBottom: `1px solid ${CANVAS_PALETTE.panelBorder}`,
           display: 'flex',
           gap: 6,
           overflowX: 'auto',
+          WebkitOverflowScrolling: 'touch',
           backgroundColor: 'rgba(15, 23, 42, 0.4)',
+          flexShrink: 0,
         }}
       >
         {quickPrompts.slice(0, 3).map((prompt, idx) => (
@@ -131,6 +165,7 @@ export const AgentChatDrawer: React.FC = () => {
               fontSize: 11,
               color: '#f1f5f9',
               cursor: 'pointer',
+              flexShrink: 0,
             }}
           >
             {prompt.length > 34 ? prompt.substring(0, 32) + '...' : prompt}
@@ -139,7 +174,19 @@ export const AgentChatDrawer: React.FC = () => {
       </div>
 
       {/* Messages Thread */}
-      <div style={{ flex: 1, overflowY: 'auto', padding: '16px 20px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div
+        data-testid="agent-chat-messages"
+        style={{
+          flex: 1,
+          minHeight: 0,
+          overflowY: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          padding: isMobileViewport ? '14px 16px' : '16px 20px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 14,
+        }}
+      >
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -152,6 +199,7 @@ export const AgentChatDrawer: React.FC = () => {
               padding: '12px 14px',
               fontSize: 13,
               lineHeight: 1.45,
+              wordBreak: 'break-word',
             }}
           >
             {/* Header */}
@@ -188,6 +236,8 @@ export const AgentChatDrawer: React.FC = () => {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: 6,
                 }}
               >
                 <span>⚡ Latency: <strong style={{ color: '#4ade80' }}>{msg.responsePayload.duration_ms}ms</strong></span>
@@ -222,6 +272,7 @@ export const AgentChatDrawer: React.FC = () => {
               borderRadius: 6,
               color: '#fecdd3',
               fontSize: 12,
+              wordBreak: 'break-word',
             }}
           >
             <strong>Error:</strong> {errorMsg}
@@ -231,10 +282,14 @@ export const AgentChatDrawer: React.FC = () => {
 
       {/* Input Form */}
       <div
+        data-testid="agent-chat-input-bar"
         style={{
-          padding: '14px 20px',
+          padding: isMobileViewport
+            ? '12px 14px calc(16px + env(safe-area-inset-bottom, 0px))'
+            : '14px 20px calc(14px + env(safe-area-inset-bottom, 0px))',
           borderTop: `1px solid ${CANVAS_PALETTE.panelBorder}`,
-          backgroundColor: 'rgba(10, 17, 40, 0.95)',
+          backgroundColor: 'rgba(10, 17, 40, 0.98)',
+          flexShrink: 0,
         }}
       >
         <form
@@ -242,27 +297,30 @@ export const AgentChatDrawer: React.FC = () => {
             e.preventDefault();
             handleSend();
           }}
-          style={{ display: 'flex', gap: 8 }}
+          style={{ display: 'flex', alignItems: 'center', gap: 8, width: '100%' }}
         >
           <input
             type="text"
+            data-testid="agent-chat-input"
             value={inputQuery}
             onChange={(e) => setInputQuery(e.target.value)}
             placeholder="Ask Medicare policy question (e.g. Wisconsin breast cancer...)"
             disabled={isQueryLoading}
             style={{
               flex: 1,
+              minWidth: 0,
               backgroundColor: 'rgba(30, 41, 59, 0.9)',
               color: '#f8fafc',
               border: `1px solid ${CANVAS_PALETTE.panelBorder}`,
               borderRadius: 6,
-              padding: '10px 14px',
-              fontSize: 13,
+              padding: '10px 12px',
+              fontSize: isMobileViewport ? 16 : 13,
               outline: 'none',
             }}
           />
           <button
             type="submit"
+            data-testid="agent-chat-send-btn"
             disabled={isQueryLoading || !inputQuery.trim()}
             style={{
               backgroundColor: CANVAS_PALETTE.accentAmber,
@@ -272,6 +330,8 @@ export const AgentChatDrawer: React.FC = () => {
               border: 'none',
               borderRadius: 6,
               padding: '0 16px',
+              minHeight: 40,
+              flexShrink: 0,
               cursor: isQueryLoading ? 'not-allowed' : 'pointer',
               boxShadow: '0 2px 8px rgba(255, 183, 3, 0.3)',
             }}

@@ -327,3 +327,44 @@ def test_qwen_default_model_and_deepseek_micro_fact(client, monkeypatch):
     assert fallback_res["telemetry_notice"] is not None
 
 
+def test_fs022_mobile_bottom_bar_non_occlusion_contracts():
+    """Verifies FS022 mobile bottom bar non-occlusion, dynamic viewport height (dvh), safe-area-inset-bottom, and responsive drawer contracts."""
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    frontend_dir = root / "src" / "frontend"
+
+    index_html = (frontend_dir / "index.html").read_text(encoding="utf-8")
+    assert "viewport-fit=cover" in index_html
+
+    index_css = (frontend_dir / "src" / "index.css").read_text(encoding="utf-8")
+    assert "100dvh" in index_css
+    assert "env(safe-area-inset-bottom" in index_css
+    assert "--app-height" in index_css
+
+    sync_ctx = (frontend_dir / "src" / "context" / "GraphSyncContext.tsx").read_text(encoding="utf-8")
+    assert "isMobileViewport" in sync_ctx
+    assert "visualViewport" in sync_ctx
+    assert "--app-height" in sync_ctx
+
+    app_tsx = (frontend_dir / "src" / "App.tsx").read_text(encoding="utf-8")
+    assert "env(safe-area-inset-bottom" in app_tsx
+    assert "flexWrap: 'wrap'" in app_tsx
+    assert "var(--app-height, 100dvh)" in app_tsx
+
+    chat_drawer = (frontend_dir / "src" / "components" / "AgentChatDrawer.tsx").read_text(encoding="utf-8")
+    assert "env(safe-area-inset-bottom" in chat_drawer
+    assert "isMobileViewport ? '100%' : 440" in chat_drawer
+    assert "isMobileViewport ? 16 : 13" in chat_drawer
+    assert 'data-testid="mobile-return-to-node-btn"' in chat_drawer
+
+    node_drawer = (frontend_dir / "src" / "components" / "NodeDetailDrawer.tsx").read_text(encoding="utf-8")
+    assert "env(safe-area-inset-bottom" in node_drawer
+    assert "isMobileViewport ? '100%' : 390" in node_drawer
+    assert "if (isMobileViewport && isChatOpen)" in node_drawer
+
+    toolbar = (frontend_dir / "src" / "components" / "FilterToolbar.tsx").read_text(encoding="utf-8")
+    assert 'data-testid="mobile-filters-toggle-btn"' in toolbar
+    assert "isMobileViewport ? 16 : 11" in toolbar
+
+

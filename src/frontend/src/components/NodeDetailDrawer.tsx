@@ -23,6 +23,8 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
     inquireNode,
     isQueryLoading,
     dataSourceMode,
+    isMobileViewport,
+    isChatOpen,
   } = useGraphSync();
 
   const [inspectedData, setInspectedData] = useState<EntityInspectionData | null>(null);
@@ -69,6 +71,12 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
     };
   }, [selectedNode, dataSourceMode]);
 
+  // On mobile viewports (<= 768px), yield foreground to AgentChatDrawer when chat is open
+  // so the two drawers never stack or occlude each other's bottom controls.
+  if (isMobileViewport && isChatOpen) {
+    return null;
+  }
+
   // Render Edge Detail Inspection View if an edge is selected
   if (selectedEdge && !selectedNode) {
     const srcPk =
@@ -95,13 +103,14 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
           position: 'absolute',
           top: 0,
           left: 0,
-          width: 390,
-          maxWidth: '45vw',
+          right: isMobileViewport ? 0 : 'auto',
+          width: isMobileViewport ? '100%' : 390,
+          maxWidth: isMobileViewport ? '100vw' : '45vw',
           height: '100%',
           boxSizing: 'border-box',
           backgroundColor: CANVAS_PALETTE.panelBg,
           backdropFilter: 'blur(12px)',
-          borderRight: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+          borderRight: isMobileViewport ? 'none' : `1px solid ${CANVAS_PALETTE.panelBorder}`,
           boxShadow: '8px 0 24px rgba(0, 0, 0, 0.6)',
           display: 'flex',
           flexDirection: 'column',
@@ -112,15 +121,18 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
       >
         <div
           style={{
-            padding: '16px 20px',
+            padding: isMobileViewport
+              ? 'calc(14px + env(safe-area-inset-top, 0px)) 16px 14px'
+              : '16px 20px',
             borderBottom: `1px solid ${CANVAS_PALETTE.panelBorder}`,
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'flex-start',
+            flexShrink: 0,
           }}
         >
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+          <div style={{ minWidth: 0, flex: 1 }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginBottom: 6 }}>
               <span
                 style={{
                   backgroundColor: '#0284c7',
@@ -135,7 +147,14 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
               >
                 {selectedEdge.label}
               </span>
-              <span style={{ fontFamily: 'monospace', fontSize: 11, color: CANVAS_PALETTE.textMuted }}>
+              <span
+                style={{
+                  fontFamily: 'monospace',
+                  fontSize: 11,
+                  color: CANVAS_PALETTE.textMuted,
+                  wordBreak: 'break-all',
+                }}
+              >
                 {selectedEdge.edge_key}
               </span>
             </div>
@@ -154,6 +173,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
               cursor: 'pointer',
               fontSize: 18,
               padding: 4,
+              flexShrink: 0,
             }}
             title="Close Drawer"
           >
@@ -161,7 +181,19 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
           </button>
         </div>
 
-        <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', padding: '16px 20px' }}>
+        <div
+          data-testid="edge-drawer-scroll-body"
+          style={{
+            flex: 1,
+            minHeight: 0,
+            overflowY: 'auto',
+            overflowX: 'hidden',
+            WebkitOverflowScrolling: 'touch',
+            padding: isMobileViewport
+              ? '16px 16px calc(32px + env(safe-area-inset-bottom, 0px))'
+              : '16px 20px calc(24px + env(safe-area-inset-bottom, 0px))',
+          }}
+        >
           {/* Directional Linkage Summary */}
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 8 }}>
@@ -578,13 +610,14 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
         position: 'absolute',
         top: 0,
         left: 0,
-        width: 390,
-        maxWidth: '45vw',
+        right: isMobileViewport ? 0 : 'auto',
+        width: isMobileViewport ? '100%' : 390,
+        maxWidth: isMobileViewport ? '100vw' : '45vw',
         height: '100%',
         boxSizing: 'border-box',
         backgroundColor: CANVAS_PALETTE.panelBg,
         backdropFilter: 'blur(12px)',
-        borderRight: `1px solid ${CANVAS_PALETTE.panelBorder}`,
+        borderRight: isMobileViewport ? 'none' : `1px solid ${CANVAS_PALETTE.panelBorder}`,
         boxShadow: '8px 0 24px rgba(0, 0, 0, 0.6)',
         display: 'flex',
         flexDirection: 'column',
@@ -596,15 +629,18 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
       {/* Header */}
       <div
         style={{
-          padding: '16px 20px',
+          padding: isMobileViewport
+            ? 'calc(14px + env(safe-area-inset-top, 0px)) 16px 14px'
+            : '16px 20px',
           borderBottom: `1px solid ${CANVAS_PALETTE.panelBorder}`,
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-start',
+          flexShrink: 0,
         }}
       >
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+        <div style={{ minWidth: 0, flex: 1 }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginBottom: 6 }}>
             <span
               style={{
                 backgroundColor: visual.badgeColor,
@@ -619,7 +655,14 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
             >
               {selectedNode.label}
             </span>
-            <span style={{ fontFamily: 'monospace', fontSize: 11, color: CANVAS_PALETTE.textMuted }}>
+            <span
+              style={{
+                fontFamily: 'monospace',
+                fontSize: 11,
+                color: CANVAS_PALETTE.textMuted,
+                wordBreak: 'break-all',
+              }}
+            >
               {selectedNode.primary_key}
             </span>
             {isInspecting && (
@@ -641,6 +684,7 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
             cursor: 'pointer',
             fontSize: 18,
             padding: 4,
+            flexShrink: 0,
           }}
           title="Close Drawer"
         >
@@ -649,7 +693,19 @@ export const NodeDetailDrawer: React.FC<NodeDetailDrawerProps> = ({ nodes, links
       </div>
 
       {/* Body Content */}
-      <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden', padding: '16px 20px' }}>
+      <div
+        data-testid="node-drawer-scroll-body"
+        style={{
+          flex: 1,
+          minHeight: 0,
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          WebkitOverflowScrolling: 'touch',
+          padding: isMobileViewport
+            ? '16px 16px calc(32px + env(safe-area-inset-bottom, 0px))'
+            : '16px 20px calc(24px + env(safe-area-inset-bottom, 0px))',
+        }}
+      >
         {/* Scope / Description */}
         <div style={{ marginBottom: 16 }}>
           <div style={{ fontSize: 11, fontWeight: 600, color: CANVAS_PALETTE.textMuted, textTransform: 'uppercase', marginBottom: 4 }}>

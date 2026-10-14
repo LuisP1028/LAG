@@ -52,6 +52,8 @@ const MainVisualizer: React.FC = () => {
     setBackendMessage,
     selectedNode,
     selectedEdge,
+    isMobileViewport,
+    isChatOpen,
   } = useGraphSync();
 
   const probeHealth = useCallback(async () => {
@@ -269,62 +271,112 @@ const MainVisualizer: React.FC = () => {
   }, [nodes, links, filterCategory, searchQuery]);
 
   const isInspectionOpen = Boolean(selectedNode || selectedEdge);
-  const bannerLeftOffset = isInspectionOpen ? 'min(410px, calc(45vw + 20px))' : 20;
+  const bannerLeftOffset = isMobileViewport
+    ? 12
+    : isInspectionOpen
+      ? 'min(410px, calc(45vw + 20px))'
+      : 20;
+  const bannerRightOffset = isMobileViewport
+    ? 12
+    : isChatOpen
+      ? 'min(460px, calc(45vw + 20px))'
+      : 'auto';
+  const bannerBottomOffset = isMobileViewport
+    ? isChatOpen
+      ? 'calc(76px + env(safe-area-inset-bottom, 0px))'
+      : 'calc(14px + env(safe-area-inset-bottom, 0px))'
+    : 'calc(20px + env(safe-area-inset-bottom, 0px))';
+
+  const isStatusBannerVisible =
+    dataSourceMode === 'live' &&
+    (backendState === 'connecting' || backendState === 'cold_starting');
+  const isErrorBannerVisible = Boolean(
+    fetchError || (backendState === 'error' && dataSourceMode === 'live')
+  );
+  const isBannerActive = isStatusBannerVisible || isErrorBannerVisible;
 
   return (
-    <div style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' }}>
+    <div
+      data-testid="app-viewport-root"
+      style={{
+        position: 'relative',
+        width: '100%',
+        maxWidth: '100vw',
+        height: 'var(--app-height, 100dvh)',
+        overflow: 'hidden',
+      }}
+    >
       <FilterToolbar onReloadTopology={fetchTopology} />
-      <GraphCanvas nodes={visibleNodes} links={visibleLinks} loading={loading} />
+      <GraphCanvas
+        nodes={visibleNodes}
+        links={visibleLinks}
+        loading={loading}
+        isBannerActive={isBannerActive}
+      />
       <NodeDetailDrawer nodes={nodes} links={links} />
       <AgentChatDrawer />
 
       {/* Cold-Start / Readiness Banner */}
-      {dataSourceMode === 'live' &&
-        (backendState === 'connecting' || backendState === 'cold_starting') && (
-          <div
-            data-testid="backend-status-banner"
-            style={{
-              position: 'absolute',
-              bottom: 20,
-              left: bannerLeftOffset,
-              backgroundColor: 'rgba(15, 23, 42, 0.94)',
-              border: '1px solid #38bdf8',
-              color: '#e0f2fe',
-              padding: '10px 16px',
-              borderRadius: 6,
-              fontSize: 12,
-              fontFamily: 'monospace',
-              zIndex: 100,
-              boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
-            }}
-          >
-            ⟳ {backendMessage || 'Connecting to cloud backend...'}
-          </div>
-        )}
+      {isStatusBannerVisible && (
+        <div
+          data-testid="backend-status-banner"
+          style={{
+            position: 'absolute',
+            bottom: bannerBottomOffset,
+            left: bannerLeftOffset,
+            right: bannerRightOffset,
+            maxWidth: isMobileViewport ? 'calc(100vw - 24px)' : 780,
+            boxSizing: 'border-box',
+            backgroundColor: 'rgba(15, 23, 42, 0.94)',
+            border: '1px solid #38bdf8',
+            color: '#e0f2fe',
+            padding: isMobileViewport ? '8px 12px' : '10px 16px',
+            borderRadius: 6,
+            fontSize: isMobileViewport ? 11 : 12,
+            fontFamily: 'monospace',
+            zIndex: 100,
+            boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
+            wordBreak: 'break-word',
+          }}
+        >
+          ⟳ {backendMessage || 'Connecting to cloud backend...'}
+        </div>
+      )}
 
       {/* Fail-Fast Backend Error Banner with Explicit Pre-Computed Run Switch */}
-      {(fetchError || (backendState === 'error' && dataSourceMode === 'live')) && (
+      {isErrorBannerVisible && (
         <div
           data-testid="backend-error-banner"
           style={{
             position: 'absolute',
-            bottom: 20,
+            bottom: bannerBottomOffset,
             left: bannerLeftOffset,
+            right: bannerRightOffset,
             backgroundColor: 'rgba(225, 29, 72, 0.94)',
             color: '#ffffff',
-            padding: '12px 16px',
+            padding: isMobileViewport ? '10px 12px' : '12px 16px',
             borderRadius: 6,
-            fontSize: 12,
+            fontSize: isMobileViewport ? 11 : 12,
             fontFamily: 'monospace',
             zIndex: 100,
             boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
             display: 'flex',
+            flexWrap: 'wrap',
             alignItems: 'center',
-            gap: 12,
-            maxWidth: 780,
+            gap: isMobileViewport ? 8 : 12,
+            maxWidth: isMobileViewport ? 'calc(100vw - 24px)' : 780,
+            boxSizing: 'border-box',
           }}
         >
-          <span>▲ FAIL-FAST ERROR: {fetchError || backendMessage}</span>
+          <span
+            style={{
+              flex: isMobileViewport ? '1 1 100%' : '1 1 auto',
+              wordBreak: 'break-word',
+              lineHeight: 1.35,
+            }}
+          >
+            ▲ FAIL-FAST ERROR: {fetchError || backendMessage}
+          </span>
           <button
             data-testid="retry-backend-btn"
             onClick={() => {
@@ -341,12 +393,14 @@ const MainVisualizer: React.FC = () => {
               background: '#fff',
               color: '#0f172a',
               border: 'none',
-              padding: '4px 10px',
+              padding: isMobileViewport ? '6px 10px' : '4px 10px',
+              minHeight: isMobileViewport ? 32 : 'auto',
               borderRadius: 4,
               cursor: 'pointer',
               fontWeight: 700,
               fontSize: 11,
               whiteSpace: 'nowrap',
+              flex: isMobileViewport ? '1 1 auto' : '0 0 auto',
             }}
           >
             Retry Live API
@@ -369,12 +423,14 @@ const MainVisualizer: React.FC = () => {
                   background: '#ffb703',
                   color: '#0a1128',
                   border: 'none',
-                  padding: '4px 10px',
+                  padding: isMobileViewport ? '6px 10px' : '4px 10px',
+                  minHeight: isMobileViewport ? 32 : 'auto',
                   borderRadius: 4,
                   cursor: 'pointer',
                   fontWeight: 700,
                   fontSize: 11,
                   whiteSpace: 'nowrap',
+                  flex: isMobileViewport ? '1 1 auto' : '0 0 auto',
                 }}
               >
                 Load Pre-computed LTA Snapshot
@@ -395,12 +451,14 @@ const MainVisualizer: React.FC = () => {
                   background: '#38bdf8',
                   color: '#0a1128',
                   border: 'none',
-                  padding: '4px 10px',
+                  padding: isMobileViewport ? '6px 10px' : '4px 10px',
+                  minHeight: isMobileViewport ? 32 : 'auto',
                   borderRadius: 4,
                   cursor: 'pointer',
                   fontWeight: 700,
                   fontSize: 11,
                   whiteSpace: 'nowrap',
+                  flex: isMobileViewport ? '1 1 auto' : '0 0 auto',
                 }}
               >
                 Load Pre-computed IVIG Snapshot

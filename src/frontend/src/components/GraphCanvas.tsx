@@ -14,6 +14,7 @@ interface GraphCanvasProps {
   loading: boolean;
   emptyFilterMessage?: string | null;
   onResetFilters?: () => void;
+  isBannerActive?: boolean;
 }
 
 export const GraphCanvas: React.FC<GraphCanvasProps> = ({
@@ -22,6 +23,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
   loading,
   emptyFilterMessage,
   onResetFilters,
+  isBannerActive = false,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const simulationRef = useRef<d3.Simulation<GraphNode, d3.SimulationLinkDatum<GraphNode>> | null>(null);
@@ -41,6 +43,8 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     selectedEdge,
     selectNode,
     selectEdge,
+    isMobileViewport,
+    isChatOpen,
   } = useGraphSync();
 
   const renderRef = useRef<() => void>(() => {});
@@ -770,11 +774,19 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     if (!canvasRef.current) return;
     const hitNode = findNodeAtEvent(e);
     if (hitNode) {
+      if (isMobileViewport) {
+        setHoveredNode(null);
+        setHoveredEdge(null);
+      }
       selectNode(hitNode);
       return;
     }
     const hitEdge = findEdgeAtEvent(e);
     if (hitEdge) {
+      if (isMobileViewport) {
+        setHoveredNode(null);
+        setHoveredEdge(null);
+      }
       selectEdge(hitEdge);
       return;
     }
@@ -821,7 +833,17 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     hoveredNode && isIlluminated && activeNodePKs.has(hoveredNode.primary_key)
   );
   const isInspectionOpen = Boolean(selectedNode || selectedEdge);
-  const tooltipLeftOffset = isInspectionOpen ? 'min(406px, calc(45vw + 16px))' : 14;
+  const tooltipLeftOffset = isMobileViewport
+    ? 12
+    : isInspectionOpen
+      ? 'min(406px, calc(45vw + 16px))'
+      : 14;
+  const tooltipBottomOffset = isBannerActive
+    ? isMobileViewport
+      ? 'calc(124px + env(safe-area-inset-bottom, 0px))'
+      : 'calc(88px + env(safe-area-inset-bottom, 0px))'
+    : 'calc(16px + env(safe-area-inset-bottom, 0px))';
+  const showMobileTooltip = !isMobileViewport || (!isInspectionOpen && !isChatOpen);
 
   const handleMouseLeave = () => {
     handleMouseUp();
@@ -839,6 +861,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
           height: '100%',
           display: 'block',
           backgroundColor: CANVAS_PALETTE.bgVoid,
+          touchAction: 'none',
         }}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
@@ -847,13 +870,14 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
         onMouseMove={handlePointerMove}
       />
 
-      {hoveredNode && (
+      {hoveredNode && showMobileTooltip && (
         <div
           data-testid="node-hover-tooltip"
           style={{
             position: 'absolute',
-            bottom: 16,
+            bottom: tooltipBottomOffset,
             left: tooltipLeftOffset,
+            right: isMobileViewport ? 12 : 'auto',
             backgroundColor: 'rgba(10, 17, 40, 0.92)',
             border: `1px solid ${
               isHoveredNodeActive ? CANVAS_PALETTE.accentAmber : CANVAS_PALETTE.panelBorder
@@ -866,7 +890,8 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
             boxShadow: '0 4px 16px rgba(0, 0, 0, 0.5)',
             pointerEvents: 'none',
             zIndex: 15,
-            maxWidth: 360,
+            maxWidth: isMobileViewport ? 'calc(100vw - 24px)' : 360,
+            boxSizing: 'border-box',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 3 }}>
@@ -892,13 +917,14 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
         </div>
       )}
 
-      {!hoveredNode && hoveredEdge && (
+      {!hoveredNode && hoveredEdge && showMobileTooltip && (
         <div
           data-testid="edge-hover-tooltip"
           style={{
             position: 'absolute',
-            bottom: 16,
+            bottom: tooltipBottomOffset,
             left: tooltipLeftOffset,
+            right: isMobileViewport ? 12 : 'auto',
             backgroundColor: 'rgba(10, 17, 40, 0.92)',
             border: '1px solid #38bdf8',
             borderRadius: 6,
@@ -909,7 +935,8 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
             boxShadow: '0 4px 16px rgba(0, 0, 0, 0.5)',
             pointerEvents: 'none',
             zIndex: 15,
-            maxWidth: 420,
+            maxWidth: isMobileViewport ? 'calc(100vw - 24px)' : 420,
+            boxSizing: 'border-box',
           }}
         >
           <div style={{ color: '#38bdf8', fontWeight: 700, marginBottom: 2 }}>

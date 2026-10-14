@@ -64,16 +64,17 @@ export function getRuntimeApiBaseUrl(): string {
 }
 
 export function getApiBaseUrl(): string {
-  // 1. Check URL query parameter (?api_url=https://...)
+  // 1. Check interactive runtime override (set via setRuntimeApiBaseUrl or prior query param seed)
+  if (runtimeApiUrlOverride && runtimeApiUrlOverride.length > 0) {
+    return runtimeApiUrlOverride;
+  }
+
+  // 2. Check URL query parameter (?api_url=https://...) on initial resolution
   const fromQuery = readQueryParamApiUrl();
   if (fromQuery) {
     return fromQuery;
   }
 
-  // 2. Check interactive runtime override (in-memory or sessionStorage)
-  if (runtimeApiUrlOverride && runtimeApiUrlOverride.length > 0) {
-    return runtimeApiUrlOverride;
-  }
   if (typeof window !== 'undefined') {
     try {
       const stored = window.sessionStorage?.getItem(STORAGE_KEY);

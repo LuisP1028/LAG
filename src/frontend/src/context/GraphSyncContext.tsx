@@ -187,6 +187,7 @@ interface GraphSyncContextType {
   errorMsg: string | null;
   focusTarget: { x: number; y: number; zoom?: number } | null;
   microFact: string;
+  isMobileViewport: boolean;
 
   selectNode: (node: GraphNode | null) => void;
   selectEdge: (edge: GraphLink | null) => void;
@@ -253,6 +254,40 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
   const [focusTarget, setFocusTarget] = useState<{ x: number; y: number; zoom?: number } | null>(null);
   const [microFact, setMicroFact] = useState<string>(DEFAULT_GRAPH_MICRO_FACT);
+  const [isMobileViewport, setIsMobileViewport] = useState<boolean>(() =>
+    typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+  );
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const syncViewportMetrics = () => {
+      const vw = window.innerWidth;
+      const vh = window.visualViewport?.height || window.innerHeight;
+      setIsMobileViewport(vw <= 768);
+      if (vh > 0 && typeof document !== 'undefined') {
+        document.documentElement.style.setProperty('--app-height', `${Math.round(vh)}px`);
+      }
+    };
+
+    syncViewportMetrics();
+    window.addEventListener('resize', syncViewportMetrics);
+    window.addEventListener('orientationchange', syncViewportMetrics);
+    const vv = window.visualViewport;
+    if (vv) {
+      vv.addEventListener('resize', syncViewportMetrics);
+      vv.addEventListener('scroll', syncViewportMetrics);
+    }
+
+    return () => {
+      window.removeEventListener('resize', syncViewportMetrics);
+      window.removeEventListener('orientationchange', syncViewportMetrics);
+      if (vv) {
+        vv.removeEventListener('resize', syncViewportMetrics);
+        vv.removeEventListener('scroll', syncViewportMetrics);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -318,6 +353,9 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     if (edge) {
       setSelectedNode(null);
       setSeededAnchor(null);
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+        setIsChatOpen(false);
+      }
     }
   }, []);
 
@@ -325,6 +363,9 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     setSelectedNode(node);
     if (node) {
       setSelectedEdge(null);
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+        setIsChatOpen(false);
+      }
     }
     if (!node) {
       setSeededAnchor(null);
@@ -541,6 +582,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       errorMsg,
       focusTarget,
       microFact,
+      isMobileViewport,
       selectNode,
       selectEdge,
       setIlluminatedPath,
@@ -587,6 +629,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       errorMsg,
       focusTarget,
       microFact,
+      isMobileViewport,
       selectNode,
       selectEdge,
       setIlluminatedPath,
