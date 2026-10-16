@@ -24,7 +24,7 @@ import httpx
 
 DEFAULT_GITHUB_REPO = "LuisP1028/lag-policy-engine-showcase"
 DEFAULT_PAGES_URL = "https://luisp1028.github.io/lag-policy-engine-showcase/"
-DEFAULT_BACKEND_URL = "https://evident-consolidation-dod-seo.trycloudflare.com"
+DEFAULT_BACKEND_URL = "https://harbor-armed-reporting-assurance.trycloudflare.com"
 
 
 def _run_cmd(cmd: list[str], cwd: Optional[Path] = None, env: Optional[Dict[str, str]] = None) -> str:
@@ -105,9 +105,15 @@ def deploy_to_github_pages(
         raise RuntimeError(f"Unable to locate compiled JS entry asset in '{index_html_path}'.")
     expected_js_asset = js_match.group(0)
 
-    # Copy index.html to 404.html for SPA client routing and add .nojekyll
+    # Copy index.html to 404.html for SPA client routing, add .nojekyll, and write tunnel.json runtime metadata
     shutil.copyfile(index_html_path, dist_dir / "404.html")
     (dist_dir / ".nojekyll").write_text("", encoding="utf-8")
+    tunnel_payload = {
+        "service": "lag-policy-engine-local",
+        "url": clean_backend_url,
+        "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+    }
+    (dist_dir / "tunnel.json").write_text(json.dumps(tunnel_payload, indent=2) + "\n", encoding="utf-8")
 
     # 2. Scan dist bundle to guarantee zero secret leakage
     forbidden_tokens = [
