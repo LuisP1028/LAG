@@ -541,7 +541,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
       style={{
         position: 'absolute',
         top: 14,
-        right: 14,
+        right: isChatOpen ? 'min(454px, calc(45vw + 14px))' : 14,
         left: isInspectionOpen ? 'min(404px, calc(45vw + 14px))' : 14,
         display: 'flex',
         flexWrap: 'wrap',

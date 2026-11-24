@@ -32,6 +32,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
   const draggedNodeRef = useRef<GraphNode | null>(null);
   const dragMovedRef = useRef<boolean>(false);
   const dragStartPosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const prevPositionsRef = useRef<Map<string, { x: number; y: number }>>(new Map());
   const nodesRef = useRef<GraphNode[]>(nodes);
   nodesRef.current = nodes;
 
@@ -47,24 +48,30 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     isChatOpen,
   } = useGraphSync();
 
+  const layoutStateRef = useRef({ isMobileViewport, isChatOpen, isInspectionOpen: Boolean(selectedNode || selectedEdge) });
+  layoutStateRef.current = {
+    isMobileViewport,
+    isChatOpen,
+    isInspectionOpen: Boolean(selectedNode || selectedEdge),
+  };
+
   const renderRef = useRef<() => void>(() => {});
 
   const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
   const [hoveredEdge, setHoveredEdge] = useState<GraphLink | null>(null);
 
-  // Smooth camera zoom-to-fit framing for active illuminated subgraph
-  const frameActiveSubgraph = useCallback((targetPKs: Set<string>) => {
+  // Smooth camera zoom-to-fit framing for any target node subset inside the unobscured viewport
+  const frameNodes = useCallback((targetNodes: GraphNode[], durationMs = 350) => {
     const canvas = canvasRef.current;
-    if (!canvas || targetPKs.size === 0) return;
+    if (!canvas || targetNodes.length === 0) return;
 
-    // Paint active illumination immediately at t = 0ms before transition ticks
     renderRef.current();
 
-    const matchedNodes = nodes.filter((n) => targetPKs.has(n.primary_key) && n.x !== undefined && n.y !== undefined);
-    if (matchedNodes.length === 0) return;
+    const positioned = targetNodes.filter((n) => n.x !== undefined && n.y !== undefined);
+    if (positioned.length === 0) return;
 
     let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-    matchedNodes.forEach((n) => {
+    positioned.forEach((n) => {
       minX = Math.min(minX, n.x!);
       maxX = Math.max(maxX, n.x!);
       minY = Math.min(minY, n.y!);
@@ -76,31 +83,56 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     const width = (canvas.width / dpr) || rect.width || canvas.clientWidth || 900;
     const height = (canvas.height / dpr) || rect.height || canvas.clientHeight || 650;
 
-    const boundsWidth = Math.max(maxX - minX, 100);
-    const boundsHeight = Math.max(maxY - minY, 100);
+    const { isMobileViewport: mobile, isChatOpen: chatOpen, isInspectionOpen: inspectOpen } = layoutStateRef.current;
+    const leftInset = !mobile && inspectOpen ? Math.min(390, width * 0.45) : 0;
+    const rightInset = !mobile && chatOpen ? Math.min(440, width * 0.45) : 0;
+    const topInset = mobile ? 104 : 84;
+    const visibleWidth = Math.max(220, width - leftInset - rightInset);
+    const visibleHeight = Math.max(220, height - topInset - 24);
 
-    const scale = Math.min(2.5, Math.max(0.6, 0.8 / Math.max(boundsWidth / width, boundsHeight / height)));
+    const boundsWidth = Math.max(maxX - minX, 120);
+    const boundsHeight = Math.max(maxY - minY, 120);
+
+    const scale = Math.min(
+      2.2,
+      Math.max(0.35, 0.78 / Math.max(boundsWidth / visibleWidth, boundsHeight / visibleHeight))
+    );
     const centerX = (minX + maxX) / 2;
     const centerY = (minY + maxY) / 2;
+    const screenCenterX = leftInset + visibleWidth / 2;
+    const screenCenterY = topInset + visibleHeight / 2;
 
     const targetTransform = d3.zoomIdentity
-      .translate(width / 2, height / 2)
+      .translate(screenCenterX, screenCenterY)
       .scale(scale)
       .translate(-centerX, -centerY);
 
     const selection = d3.select(canvas);
     if (zoomBehaviorRef.current) {
-      selection
-        .interrupt()
-        .transition()
-        .duration(350)
-        .ease(d3.easeCubicInOut)
-        .call(zoomBehaviorRef.current.transform, targetTransform)
-        .on('end', () => {
-          renderRef.current();
-        });
+      if (durationMs <= 0) {
+        selection.interrupt().call(zoomBehaviorRef.current.transform, targetTransform);
+        renderRef.current();
+      } else {
+        selection
+          .interrupt()
+          .transition()
+          .duration(durationMs)
+          .ease(d3.easeCubicInOut)
+          .call(zoomBehaviorRef.current.transform, targetTransform)
+          .on('end', () => {
+            renderRef.current();
+          });
+      }
     }
-  }, [nodes]);
+  }, []);
+
+  // Smooth camera zoom-to-fit framing for active illuminated subgraph
+  const frameActiveSubgraph = useCallback((targetPKs: Set<string>) => {
+    if (targetPKs.size === 0) return;
+    const matchedNodes = nodes.filter((n) => targetPKs.has(n.primary_key) && n.x !== undefined && n.y !== undefined);
+    if (matchedNodes.length === 0) return;
+    frameNodes(matchedNodes, 350);
+  }, [nodes, frameNodes]);
 
   const syncCanvasDimensions = useCallback((canvas: HTMLCanvasElement) => {
     const dpr = window.devicePixelRatio || 1;
@@ -540,7 +572,7 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     renderRef.current = render;
   }, [render]);
 
-  // Set up d3 force simulation
+  // Set up d3 force simulation with viewport-centered seeding so nodes never start off-screen at (0,0)
   useEffect(() => {
     if (!nodes.length) return;
 
@@ -548,6 +580,24 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     if (!canvas) return;
     const width = canvas.clientWidth || 900;
     const height = canvas.clientHeight || 650;
+    const cx = width / 2;
+    const cy = height / 2;
+    const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+
+    nodes.forEach((n, idx) => {
+      if (n.x === undefined || n.y === undefined) {
+        const cached = prevPositionsRef.current.get(n.primary_key);
+        if (cached) {
+          n.x = cached.x;
+          n.y = cached.y;
+        } else {
+          const r = 12 * Math.sqrt(idx + 0.5);
+          const theta = idx * goldenAngle;
+          n.x = cx + r * Math.cos(theta);
+          n.y = cy + r * Math.sin(theta);
+        }
+      }
+    });
 
     // Simulation parameters conforming to Ticket 005
     const simulation = d3
@@ -566,15 +616,25 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
         'collision',
         d3.forceCollide<GraphNode>().radius((d) => (d.radius || 10) + 6)
       )
-      .force('center', d3.forceCenter(width / 2, height / 2).strength(0.08))
+      .force('center', d3.forceCenter(cx, cy).strength(0.08))
       .alphaDecay(0.028)
       .velocityDecay(0.4);
 
-    if (nodes.some((n) => n.x === undefined || n.y === undefined)) {
-      simulation.tick(1);
-    }
+    // Pre-warm layout synchronously so camera framing always locks onto settled viewport coordinates
+    const warmupTicks = nodes.length <= 350 ? 45 : 8;
+    simulation.tick(warmupTicks);
+    nodes.forEach((n) => {
+      if (n.x !== undefined && n.y !== undefined) {
+        prevPositionsRef.current.set(n.primary_key, { x: n.x, y: n.y });
+      }
+    });
 
     simulation.on('tick', () => {
+      nodes.forEach((n) => {
+        if (n.x !== undefined && n.y !== undefined) {
+          prevPositionsRef.current.set(n.primary_key, { x: n.x, y: n.y });
+        }
+      });
       renderRef.current();
     });
 
@@ -672,17 +732,19 @@ export const GraphCanvas: React.FC<GraphCanvasProps> = ({
     return () => cancelAnimationFrame(rafId);
   }, [render, isIlluminated, activeNodePKs, activeEdgeKeys, selectedNode, selectedEdge, hoveredNode, hoveredEdge]);
 
-  // Trigger camera framing or immediate de-illumination repaint after simulation & zoom are initialized
+  // Trigger camera framing for illuminated subgraphs or filtered/reset node sets
   useEffect(() => {
     if (isIlluminated && activeNodePKs.size > 0) {
       frameActiveSubgraph(activeNodePKs);
+    } else if (nodes.length > 0) {
+      frameNodes(nodes, 300);
     } else {
       if (canvasRef.current) {
         d3.select(canvasRef.current).interrupt();
       }
       renderRef.current();
     }
-  }, [isIlluminated, activeNodePKs, frameActiveSubgraph]);
+  }, [isIlluminated, activeNodePKs, nodes, frameActiveSubgraph, frameNodes]);
 
   // Mouse click and hover detection for nodes and edges
   const findNodeAtEvent = (e: React.MouseEvent<HTMLCanvasElement>): GraphNode | null => {
