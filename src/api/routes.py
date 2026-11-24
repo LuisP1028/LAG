@@ -1,7 +1,7 @@
 """FastAPI REST routes for graph topology, entity resolution, and GraphRAG operations."""
 
 import time
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Dict, List, Optional, Set, Tuple
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from neo4j import Session
 

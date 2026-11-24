@@ -296,6 +296,9 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         setMicroFact(DEFAULT_GRAPH_MICRO_FACT);
         return;
       }
+      if (backendState !== 'online') {
+        return;
+      }
       try {
         const params = new URLSearchParams();
         if (policyKeyword) params.append('policy_keyword', policyKeyword);
@@ -333,7 +336,7 @@ export const GraphSyncProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     return () => {
       cancelled = true;
     };
-  }, [dataSourceMode, policyKeyword, filterState, selectedNode]);
+  }, [dataSourceMode, backendState, policyKeyword, filterState, selectedNode]);
 
   const availableStates = useMemo<StateOption[]>(() => {
     if (jurisdictionScope && DME_JURISDICTIONS[jurisdictionScope]) {

@@ -11,7 +11,7 @@
  * 5. Falls back to build-time `VITE_API_BASE_URL` or `DEFAULT_PUBLIC_INGRESS_URL`.
  */
 
-export const DEFAULT_PUBLIC_INGRESS_URL = 'https://harbor-armed-reporting-assurance.trycloudflare.com';
+export const DEFAULT_PUBLIC_INGRESS_URL = 'https://place-import-alike-ate.trycloudflare.com';
 export const DEFAULT_HF_SPACE_URL = DEFAULT_PUBLIC_INGRESS_URL;
 
 const STORAGE_KEY = 'lag_runtime_api_url';

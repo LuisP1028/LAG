@@ -24,7 +24,7 @@ import httpx
 
 DEFAULT_GITHUB_REPO = "LuisP1028/lag-policy-engine-showcase"
 DEFAULT_PAGES_URL = "https://luisp1028.github.io/lag-policy-engine-showcase/"
-DEFAULT_BACKEND_URL = "https://harbor-armed-reporting-assurance.trycloudflare.com"
+DEFAULT_BACKEND_URL = "https://place-import-alike-ate.trycloudflare.com"
 
 
 def _run_cmd(cmd: list[str], cwd: Optional[Path] = None, env: Optional[Dict[str, str]] = None) -> str:

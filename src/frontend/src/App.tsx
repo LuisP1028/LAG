@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useEffect, useState, useCallback, useMemo, useRef } from 'react';
 import { GraphSyncProvider, useGraphSync } from './context/GraphSyncContext';
 import { GraphCanvas } from './components/GraphCanvas';
 import { FilterToolbar } from './components/FilterToolbar';
@@ -6,7 +6,7 @@ import { NodeDetailDrawer } from './components/NodeDetailDrawer';
 import { AgentChatDrawer } from './components/AgentChatDrawer';
 import type { GraphNode, GraphLink, DataSourceMode } from './types/graph';
 import { getNodeVisual } from './styles/graph_theme';
-import { getApiBaseUrl, getPrecomputedRunUrl } from './utils/apiConfig';
+import { getApiBaseUrl, getPrecomputedRunUrl, initRuntimeTunnelConfig } from './utils/apiConfig';
 import { filterPrecomputedTopology } from './utils/precomputedTopology';
 
 interface RawTopologyNode {
@@ -34,6 +34,8 @@ const MainVisualizer: React.FC = () => {
   const [links, setLinks] = useState<GraphLink[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const didInitRef = useRef<boolean>(false);
+  const topologyRequestIdRef = useRef<number>(0);
 
   const {
     setAvailablePolicies,
@@ -41,7 +43,9 @@ const MainVisualizer: React.FC = () => {
     filterJurisdiction,
     policyKeyword,
     filterCategory,
+    setFilterCategory,
     searchQuery,
+    setSearchQuery,
     includeFeeSchedules,
     dataSourceMode,
     setDataSourceMode,
@@ -95,6 +99,7 @@ const MainVisualizer: React.FC = () => {
       includeFeeOverride?: boolean,
       modeOverride?: DataSourceMode
     ) => {
+      const requestId = ++topologyRequestIdRef.current;
       const activeMode = modeOverride || dataSourceMode;
       const effectiveFeeToggle =
         includeFeeOverride !== undefined ? includeFeeOverride : includeFeeSchedules;
@@ -109,18 +114,24 @@ const MainVisualizer: React.FC = () => {
             activeMode === 'precomputed_ivig' || policy.toUpperCase() === 'IVIG' ? 'IVIG' : 'LTA';
           const runUrl = getPrecomputedRunUrl(runKey);
           const res = await fetch(runUrl);
+          if (requestId !== topologyRequestIdRef.current) return;
           if (!res.ok) {
             throw new Error(
               `Failed to load pre-computed run artifact (${runUrl}): HTTP ${res.status}`
             );
           }
           const exportPayload = await res.json();
+          if (requestId !== topologyRequestIdRef.current) return;
           const filtered = filterPrecomputedTopology(exportPayload, {
             stateFilter,
             jurisdictionFilter,
             policyKeyword: policy,
             includeFeeSchedules: effectiveFeeToggle,
           });
+          setAvailablePolicies([
+            { keyword: 'LTA', label: 'LTA (Lymphedema Treatment Act)' },
+            { keyword: 'IVIG', label: 'IVIG (Medicare IVIG Access Enhancement Act)' },
+          ]);
           setNodes(filtered.nodes);
           setLinks(filtered.links);
           return;
@@ -142,6 +153,7 @@ const MainVisualizer: React.FC = () => {
         }
 
         const res = await fetch(`${getApiBaseUrl()}/api/graph/topology?${params.toString()}`);
+        if (requestId !== topologyRequestIdRef.current) return;
         if (!res.ok) {
           let errDetail = `Failed to load topology: HTTP ${res.status}`;
           try {
@@ -156,6 +168,7 @@ const MainVisualizer: React.FC = () => {
         }
 
         const data: RawTopologyResponse = await res.json();
+        if (requestId !== topologyRequestIdRef.current) return;
 
         const transformedNodes: GraphNode[] = (data.nodes || []).map((n) => {
           const visual = getNodeVisual(n.label);
@@ -210,6 +223,7 @@ const MainVisualizer: React.FC = () => {
         setBackendState('online');
         setBackendMessage(null);
       } catch (err: unknown) {
+        if (requestId !== topologyRequestIdRef.current) return;
         const message = err instanceof Error ? err.message : 'Error loading graph topology.';
         setFetchError(message);
         setExecutionStatus('error');
@@ -218,7 +232,9 @@ const MainVisualizer: React.FC = () => {
           setBackendMessage(message);
         }
       } finally {
-        setLoading(false);
+        if (requestId === topologyRequestIdRef.current) {
+          setLoading(false);
+        }
       }
     },
     [
@@ -232,6 +248,8 @@ const MainVisualizer: React.FC = () => {
   );
 
   useEffect(() => {
+    if (didInitRef.current) return;
+    didInitRef.current = true;
     probeHealth();
     fetchTopology('', 'LTA', '', false, 'live');
   }, [probeHealth, fetchTopology]);
@@ -311,6 +329,20 @@ const MainVisualizer: React.FC = () => {
         nodes={visibleNodes}
         links={visibleLinks}
         loading={loading}
+        emptyFilterMessage={
+          nodes.length > 0 && visibleNodes.length === 0
+            ? `No graph entities match active filters (${[
+                filterCategory ? `category="${filterCategory}"` : null,
+                searchQuery.trim() ? `search="${searchQuery.trim()}"` : null,
+              ]
+                .filter(Boolean)
+                .join(', ')}).`
+            : null
+        }
+        onResetFilters={() => {
+          setFilterCategory('');
+          setSearchQuery('');
+        }}
         isBannerActive={isBannerActive}
       />
       <NodeDetailDrawer nodes={nodes} links={links} />
@@ -379,7 +411,8 @@ const MainVisualizer: React.FC = () => {
           </span>
           <button
             data-testid="retry-backend-btn"
-            onClick={() => {
+            onClick={async () => {
+              await initRuntimeTunnelConfig();
               probeHealth();
               fetchTopology(
                 filterState,

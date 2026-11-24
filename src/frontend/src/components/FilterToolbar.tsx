@@ -90,7 +90,17 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
   const handlePolicyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const val = e.target.value;
     setPolicyKeyword(val);
-    onReloadTopology(filterState, val, filterJurisdiction, includeFeeSchedules, dataSourceMode);
+    let nextMode: DataSourceMode = dataSourceMode;
+    if (dataSourceMode !== 'live') {
+      if (val.toUpperCase() === 'IVIG') {
+        nextMode = 'precomputed_ivig';
+        setDataSourceMode(nextMode);
+      } else if (val.toUpperCase() === 'LTA') {
+        nextMode = 'precomputed_lta';
+        setDataSourceMode(nextMode);
+      }
+    }
+    onReloadTopology(filterState, val, filterJurisdiction, includeFeeSchedules, nextMode);
   };
 
   const handleFeeToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -104,6 +114,14 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
       case 'executing':
         return {
           label: '● EXECUTING PIPELINE',
+          bg: 'rgba(255, 183, 3, 0.2)',
+          border: '#ffb703',
+          color: '#ffd166',
+        };
+      case 'querying':
+      case 'streaming':
+        return {
+          label: '● QUERYING GRAPHRAG',
           bg: 'rgba(255, 183, 3, 0.2)',
           border: '#ffb703',
           color: '#ffd166',
@@ -122,6 +140,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
           border: '#fb7185',
           color: '#fda4af',
         };
+      case 'completed':
       case 'idle':
       default:
         return {
