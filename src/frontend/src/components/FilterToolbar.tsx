@@ -67,7 +67,13 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({ onReloadTopology }
     const mode = e.target.value as DataSourceMode;
     setDataSourceMode(mode);
     const nextPolicy =
-      mode === 'precomputed_ivig' ? 'IVIG' : mode === 'precomputed_lta' ? 'LTA' : policyKeyword;
+      mode === 'precomputed_ivig'
+        ? 'IVIG'
+        : mode === 'precomputed_lta'
+          ? 'LTA'
+          : dataSourceMode === 'precomputed_ivig'
+            ? 'LTA'
+            : policyKeyword;
     if (nextPolicy !== policyKeyword) {
       setPolicyKeyword(nextPolicy);
     }
